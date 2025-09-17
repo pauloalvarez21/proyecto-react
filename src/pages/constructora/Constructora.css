@@ -1,0 +1,142 @@
+/* Estilos para el componente Constructora */
+.constructora {
+  font-family: Arial, sans-serif;
+  color: #333;
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.constructora * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Columna izquierda */
+.constructora-col-izquierda {
+  background-color: #e87a2e; /* Naranja */
+  color: white;
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.constructora-col-izquierda h1 {
+  font-size: 80px;
+  line-height: 1.2;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Columna derecha */
+.constructora-col-derecha {
+  flex: 2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Cada item */
+.constructora-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.constructora-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  /* hexágono */
+}
+
+.constructora-texto h3 {
+  color: #000;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.constructora-texto p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.constructora-logo-grupo {
+  align-self: flex-end;
+  margin-top: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .constructora {
+    flex-direction: column;
+  }
+
+  .constructora-col-izquierda {
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .constructora-col-derecha {
+    padding: 20px;
+  }
+  
+  .constructora-logo-grupo {
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .constructora-col-izquierda h1 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .constructora-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .constructora-item img {
+    margin-bottom: 10px;
+  }
+  
+  .constructora-col-izquierda h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .constructora-col-izquierda h1 {
+    font-size: 32px;
+  }
+  
+  .constructora-col-derecha {
+    padding: 15px;
+    gap: 30px;
+  }
+  
+  .constructora-item {
+    gap: 10px;
+  }
+  
+  .constructora-item img {
+    width: 80px;
+    height: 80px;
+  }
+}

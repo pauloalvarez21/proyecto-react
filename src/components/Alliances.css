@@ -1,0 +1,35 @@
+.alliances {
+  background: linear-gradient(
+    to right,
+    rgba(255, 165, 0, 0.8) 50%,  /* naranja con 80% opacidad */
+    rgba(0, 128, 0, 0.8) 50%     /* verde con 80% opacidad */
+  );
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+
+.alliances-logos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.alliances img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.alliances img:hover {
+  transform: scale(1.05);
+}
+

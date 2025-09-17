@@ -1,0 +1,28 @@
+.presentation {
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    rgba(255, 165, 0, 0.8) 50%,  /* naranja con 80% opacidad */
+    rgba(0, 128, 0, 0.8) 50%     /* verde con 80% opacidad */
+  );
+  color: white; /* para que el texto contraste */
+}
+
+.presentation h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.video-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-slide video {
+  max-width: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+

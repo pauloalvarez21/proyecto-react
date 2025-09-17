@@ -1,0 +1,156 @@
+/* === Navbar general === */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 40px;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  position: relative;
+  z-index: 50;
+}
+
+/* === Logos === */
+.navbar-logo img,
+.navbar-logo-right img {
+  height: 50px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.navbar-logo img:hover,
+.navbar-logo-right img:hover {
+  transform: scale(1.05);
+}
+
+/* === Links list === */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.navbar-links li a:hover {
+  color: #28a745;
+  background: rgba(40, 167, 69, 0.06);
+}
+
+/* === Active link === */
+.navbar-links li a.active {
+  color: #28a745;
+  font-weight: 700;
+}
+
+/* === Botón hamburguesa (oculto en escritorio) === */
+.hamburger {
+  display: none;
+  width: 42px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #333;
+  border-radius: 3px;
+  transition: all 0.25s ease;
+}
+.hamburger.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* === Responsive: menú colapsado === */
+@media (max-width: 980px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 72px; /* debajo del navbar */
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    display: none;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-logo-right {
+    display: none; /* se esconde en móvil */
+  }
+
+  .navbar-left {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .navbar-extra {
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 0;
+  }
+}
+
+/* === Bloque izquierdo (logo + enlaces cortos) === */
+.navbar-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Quiénes somos / Historia */
+.navbar-extra {
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+}
+
+.navbar-extra a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.navbar-extra a:hover {
+  color: #e65c00;
+}
+
+.navbar-extra a.active {
+  color: #e65c00; /* naranja cuando está activo */
+}

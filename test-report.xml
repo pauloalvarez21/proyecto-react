@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="G:\programacion\proyecto-react\src\components\Presentation.test.tsx">
+    <testCase name="Presentation renderiza título y estructura básica" duration="343"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\pages\innovacion\InnovacionTecnologia.test.tsx">
+    <testCase name="InnovacionTecnologia Component debería renderizar el título principal &quot;Innovación y Tecnología&quot;" duration="281"/>
+    <testCase name="InnovacionTecnologia Component debería renderizar los 3 items de innovación" duration="15"/>
+    <testCase name="InnovacionTecnologia Component debería renderizar las descripciones de cada item" duration="77"/>
+    <testCase name="InnovacionTecnologia Component debería renderizar el logo del grupo" duration="10"/>
+    <testCase name="InnovacionTecnologia Component debería tener el orden correcto de los elementos" duration="55"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\pages\history\History.test.tsx">
+    <testCase name="History Component debería renderizar el título principal &quot;Historia&quot;" duration="317"/>
+    <testCase name="History Component debería renderizar el logo del grupo" duration="129"/>
+    <testCase name="History Component debería renderizar los 4 eventos de la línea de tiempo" duration="28"/>
+    <testCase name="History Component debería renderizar los títulos de los eventos" duration="27"/>
+    <testCase name="History Component debería tener el texto SUMYT en negrita" duration="9"/>
+    <testCase name="History Component debería renderizar en el orden cronológico correcto" duration="20"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\pages\fondo\FondoAsociados.test.tsx">
+    <testCase name="FondoAsociados Component debería renderizar el logo SUMYT" duration="134"/>
+    <testCase name="FondoAsociados Component debería renderizar los 3 items principales" duration="65"/>
+    <testCase name="FondoAsociados Component debería renderizar todas las imágenes de los items" duration="247"/>
+    <testCase name="FondoAsociados Component debería tener los src correctos en las imágenes" duration="8"/>
+    <testCase name="FondoAsociados Component debería renderizar la descripción del propósito" duration="46"/>
+    <testCase name="FondoAsociados Component debería renderizar la lista de segmentos" duration="76"/>
+    <testCase name="FondoAsociados Component debería renderizar la lista de proyecciones" duration="8"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\pages\juridicos\ServiciosJuridicos.test.tsx">
+    <testCase name="ServiciosJuridicos Component debería renderizar el título principal &quot;Servicios Jurídicos y Financieros&quot;" duration="318"/>
+    <testCase name="ServiciosJuridicos Component debería renderizar las 3 imágenes de servicios jurídicos" duration="41"/>
+    <testCase name="ServiciosJuridicos Component debería tener los src correctos en las imágenes" duration="12"/>
+    <testCase name="ServiciosJuridicos Component debería renderizar los títulos de los servicios" duration="26"/>
+    <testCase name="ServiciosJuridicos Component debería renderizar la descripción de servicios a empresas" duration="12"/>
+    <testCase name="ServiciosJuridicos Component debería renderizar la lista de planes de pago" duration="34"/>
+    <testCase name="ServiciosJuridicos Component debería renderizar la descripción de infraestructura" duration="5"/>
+    <testCase name="ServiciosJuridicos Component debería renderizar el logo del grupo con el ancho correcto" duration="5"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\components\Navbar.test.tsx">
+    <testCase name="Navbar Component debería renderizar los logos principales" duration="414"/>
+    <testCase name="Navbar Component debería renderizar los enlaces extra &quot;Quiénes somos&quot; e &quot;Historia&quot;" duration="69"/>
+    <testCase name="Navbar Component debería abrir y cerrar el menú al hacer clic en el botón hamburguesa" duration="159"/>
+    <testCase name="Navbar Component debería renderizar todos los elementos del menú" duration="27"/>
+    <testCase name="Navbar Component debería tener un enlace de descarga para &quot;Observatorio&quot;" duration="27"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\pages\turismo\Turismo.test.tsx">
+    <testCase name="Turismo Component debería renderizar el título principal &quot;Operador Turístico&quot;" duration="345"/>
+    <testCase name="Turismo Component debería renderizar las 3 imágenes de turismo" duration="46"/>
+    <testCase name="Turismo Component debería tener los src correctos en las imágenes" duration="17"/>
+    <testCase name="Turismo Component debería renderizar los títulos de los items" duration="15"/>
+    <testCase name="Turismo Component debería renderizar la descripción de alianzas estratégicas" duration="16"/>
+    <testCase name="Turismo Component debería renderizar la lista de enfoques turísticos" duration="34"/>
+    <testCase name="Turismo Component debería renderizar la información de afiliados" duration="16"/>
+    <testCase name="Turismo Component debería renderizar el logo del grupo con el ancho correcto" duration="7"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\pages\marketing\Marketing.test.tsx">
+    <testCase name="Marketing Component debería renderizar el título principal &quot;Agencia de Marketing y Publicidad&quot;" duration="459"/>
+    <testCase name="Marketing Component debería renderizar las 3 imágenes de marketing" duration="29"/>
+    <testCase name="Marketing Component debería tener los src correctos en las imágenes" duration="8"/>
+    <testCase name="Marketing Component debería renderizar los títulos de los servicios de marketing" duration="25"/>
+    <testCase name="Marketing Component debería renderizar la lista de estrategias innovadoras" duration="67"/>
+    <testCase name="Marketing Component debería renderizar la descripción de colaboraciones" duration="11"/>
+    <testCase name="Marketing Component debería renderizar la descripción de desarrollo de contenidos" duration="16"/>
+    <testCase name="Marketing Component debería renderizar el logo del grupo con el ancho correcto" duration="65"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\components\Footer.test.tsx">
+    <testCase name="Footer Component debería renderizar el botón de contacto inicialmente" duration="239"/>
+    <testCase name="Footer Component debería abrir el modal al hacer clic en el botón de contacto" duration="76"/>
+    <testCase name="Footer Component debería cerrar el modal al hacer clic en cancelar" duration="26"/>
+    <testCase name="Footer Component debería mostrar error cuando el nombre es muy corto" duration="44"/>
+    <testCase name="Footer Component debería mostrar error cuando el mensaje es muy corto" duration="26"/>
+    <testCase name="Footer Component debería enviar el formulario exitosamente" duration="81"/>
+    <testCase name="Footer Component debería mostrar error cuando el servidor falla" duration="81"/>
+    <testCase name="Footer Component debería mostrar error de conexión cuando fetch falla" duration="38"/>
+    <testCase name="Footer Component debería mostrar el copyright con el año actual" duration="4"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\pages\constructora\Construtora.test.tsx">
+    <testCase name="Constructora Component debería renderizar el título principal &quot;Constructora&quot;" duration="76"/>
+    <testCase name="Constructora Component debería renderizar los 3 items de construcción" duration="23"/>
+    <testCase name="Constructora Component debería renderizar los títulos de los proyectos" duration="8"/>
+    <testCase name="Constructora Component debería tener las imágenes con alt text correcto" duration="9"/>
+    <testCase name="Constructora Component debería tener los src correctos en las imágenes" duration="8"/>
+    <testCase name="Constructora Component debería tener el logo del grupo con el ancho correcto" duration="5"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\components\Alliances.test.tsx">
+    <testCase name="Alliances Component debería renderizar el título &quot;Alianzas&quot;" duration="9"/>
+    <testCase name="Alliances Component debería renderizar todas las imágenes de aliados" duration="9"/>
+    <testCase name="Alliances Component debería renderizar exactamente 9 imágenes" duration="68"/>
+    <testCase name="Alliances Component debería tener los src correctos en las imágenes" duration="10"/>
+    <testCase name="Alliances Component debería renderizar las imágenes en el orden correcto" duration="36"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\components\Pillars.test.tsx">
+    <testCase name="Pillars Component debería renderizar el título correctamente" duration="20"/>
+    <testCase name="Pillars Component debería renderizar los 4 pilares" duration="25"/>
+    <testCase name="Pillars Component debería renderizar todos los pilares con sus labels correctos" duration="10"/>
+    <testCase name="Pillars Component debería renderizar las imágenes de los pilares" duration="77"/>
+    <testCase name="Pillars Component debería tener los src correctos en las imágenes" duration="13"/>
+    <testCase name="Pillars Component debería renderizar los pilares en el orden correcto" duration="17"/>
+    <testCase name="Pillars Component debería tener la estructura semántica correcta" duration="28"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\pages\somos\Somos.test.tsx">
+    <testCase name="Somos Component debería renderizar el logo del grupo" duration="138"/>
+    <testCase name="Somos Component debería renderizar la imagen hexagonal del equipo" duration="11"/>
+    <testCase name="Somos Component debería renderizar el nombre de la empresa en negrita" duration="31"/>
+    <testCase name="Somos Component debería renderizar el texto SUMYT en rojo" duration="15"/>
+    <testCase name="Somos Component debería contener todos los párrafos de texto" duration="12"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\pages\seguros\Seguros.test.tsx">
+    <testCase name="Seguros Component debería renderizar el título principal &quot;Corredor de Seguros&quot;" duration="196"/>
+    <testCase name="Seguros Component debería renderizar las 4 imágenes de seguros" duration="81"/>
+    <testCase name="Seguros Component debería tener los src correctos en las imágenes" duration="15"/>
+    <testCase name="Seguros Component debería renderizar los títulos de las secciones" duration="20"/>
+    <testCase name="Seguros Component debería renderizar la descripción de convenio seguros" duration="14"/>
+    <testCase name="Seguros Component debería renderizar la lista de segmentos de seguros" duration="78"/>
+    <testCase name="Seguros Component debería renderizar la lista de estrategias" duration="29"/>
+    <testCase name="Seguros Component debería renderizar el logo del grupo en el footer" duration="9"/>
+    <testCase name="Seguros Component debería tener la estructura correcta con secciones" duration="45"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\App.test.tsx">
+    <testCase name="App Component debería renderizar Navbar y Footer en todas las rutas" duration="35"/>
+    <testCase name="App Component debería renderizar componentes principales en la ruta raíz &quot;/&quot;" duration="10"/>
+    <testCase name="App Component debería renderizar Fondos en la ruta &quot;/fondos&quot;" duration="8"/>
+    <testCase name="App Component debería renderizar Somos en la ruta &quot;/quienes-somos&quot;" duration="4"/>
+    <testCase name="App Component debería renderizar History en la ruta &quot;/historia&quot;" duration="14"/>
+    <testCase name="App Component debería renderizar Marketing en la ruta &quot;/marketing&quot;" duration="5"/>
+    <testCase name="App Component debería renderizar Seguros en la ruta &quot;/seguros&quot;" duration="6"/>
+    <testCase name="App Component debería renderizar Turismo en la ruta &quot;/turistico&quot;" duration="5"/>
+    <testCase name="App Component debería renderizar Constructora en la ruta &quot;/constructora&quot;" duration="7"/>
+    <testCase name="App Component debería renderizar ServiciosJuridicos en la ruta &quot;/juridicos&quot;" duration="5"/>
+    <testCase name="App Component debería renderizar InnovacionTecnologia en la ruta &quot;/innovacion&quot;" duration="5"/>
+    <testCase name="App Component debería tener un elemento main para el contenido" duration="91"/>
+    <testCase name="App Component debería no renderizar componentes de la página principal en otras rutas" duration="8"/>
+  </file>
+</testExecutions>

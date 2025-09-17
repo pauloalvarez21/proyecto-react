@@ -1,0 +1,19 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  margin: 10px 0 20px;
+  font-size: 20px;
+}
+
+section {
+  padding: 20px;
+}

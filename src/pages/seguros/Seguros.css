@@ -1,0 +1,126 @@
+/* Estilos para el componente Seguros */
+.seguros-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.seguros-container {
+  font-family: Arial, sans-serif;
+  background: #4CAF50; /* verde brillante como en la imagen */
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Columna izquierda */
+.seguros-left {
+  background-color: #e87a2e; /* Naranja */
+  color: white;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.seguros-left h1 {
+  font-size: 80px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Columna derecha */
+.seguros-right {
+  flex: 2;
+  padding: 40px;
+  background: white;
+}
+
+.seguros-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.seguros-hexagon {
+  width: 100px;
+  height: 100px;
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.seguros-hexagon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Colores de hexágonos */
+.seguros-hexagon.blue { background-color: #003399; }
+.seguros-hexagon.orange { background-color: #ff6600; }
+.seguros-hexagon.green { background-color: #6cb33f; }
+
+.seguros-text h2 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.seguros-text p, .seguros-text ul {
+  font-size: 1rem;
+  color: #333;
+}
+
+.seguros-text ul {
+  margin-left: 20px;
+  list-style: disc;
+}
+
+.seguros-footer {
+  margin-top: 40px;
+  text-align: right;
+}
+
+.seguros-footer img {
+  width: 400px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .seguros-container {
+    flex-direction: column;
+  }
+  
+  .seguros-left {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .seguros-left h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  .seguros-right {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .seguros-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .seguros-hexagon {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .seguros-footer {
+    text-align: center;
+  }
+}

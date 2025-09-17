@@ -1,0 +1,7 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import './InnovacionTecnologia.css'; // Crearemos este archivo CSS
+import grupo from "../../assets/image/grupo.svg";
+const InnovacionTecnologia = () => {
+    return (_jsxs("section", { className: "innovacion-tecnologia", children: [_jsx("div", { className: "innovacion-col-izquierda", children: _jsx("h1", { children: "Innovaci\u00F3n y Tecnolog\u00EDa" }) }), _jsxs("div", { className: "innovacion-col-derecha", children: [_jsx("div", { className: "innovacion-item", children: _jsxs("div", { className: "innovacion-texto", children: [_jsx("h3", { children: "Servicios a Empresas del Holding" }), _jsx("p", { children: "Desarrollo de soluciones tecnol\u00F3gicas para mejorar la eficiencia y la sostenibilidad" })] }) }), _jsx("div", { className: "innovacion-item", children: _jsxs("div", { className: "innovacion-texto", children: [_jsx("h3", { children: "Energ\u00EDa Limpia" }), _jsx("p", { children: "Promoci\u00F3n del uso de veh\u00EDculos el\u00E9ctricos y energ\u00EDas renovables" })] }) }), _jsx("div", { className: "innovacion-item", children: _jsxs("div", { className: "innovacion-texto", children: [_jsx("h3", { children: "Onboarding Digital" }), _jsx("p", { children: "Proceso de captaci\u00F3n de asociados mediante plataformas digitales innovadoras" })] }) }), _jsx("img", { src: grupo, width: "200", alt: "Logo Grupo Servitransporte", className: "innovacion-logo-grupo" })] })] }));
+};
+export default InnovacionTecnologia;

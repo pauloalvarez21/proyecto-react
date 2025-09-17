@@ -1,0 +1,154 @@
+/* FondoAsociados.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+/* Lado verde - Fondo completo */
+.left {
+  flex: 1;
+  background-color: #5cb85c;
+  color: white;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh; /* Asegura que ocupe toda la altura */
+}
+
+.left h1 {
+  font-size: 80px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.left img {
+  margin-top: 20px;
+  width: 120px;
+}
+
+/* Lado derecho */
+.right {
+  flex: 2;
+  background: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.image {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background: #ff7f32;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text {
+  flex: 1;
+}
+
+.text h2 {
+  font-size: 20px;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.text p,
+.text ul {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.text ul {
+  padding-left: 20px;
+}
+
+.text li {
+  margin-bottom: 5px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .left {
+    min-height: auto;
+    padding: 30px 20px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .right {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .left h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .left {
+    padding: 20px 15px;
+  }
+  
+  .right {
+    padding: 20px 15px;
+    gap: 30px;
+  }
+  
+  .left h1 {
+    font-size: 24px;
+  }
+  
+  .text h2 {
+    font-size: 18px;
+  }
+}

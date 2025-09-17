@@ -1,0 +1,151 @@
+/* Variables CSS para mantener consistencia y facilitar cambios */
+:root {
+  --color-primary: #8bc34a;
+  --color-text: #333;
+  --color-heading: #000;
+  --color-light: #fff;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 40px;
+  --border-radius: 8px;
+  --font-family: Arial, sans-serif;
+}
+
+/* Estilos para el componente Turismo */
+.operador-turismo {
+  font-family: var(--font-family);
+  color: var(--color-text);
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.operador-turismo * {
+  box-sizing: inherit; /* Mejor que border-box universal */
+}
+
+/* Contenedor principal - ya definido arriba */
+
+/* Columna izquierda */
+.turismo-col-izquierda {
+  background: var(--color-primary);
+  color: var(--color-light);
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.turismo-col-izquierda h1 {
+  font-size: clamp(2rem, 10vw, 5rem); /* Tamaño responsive entre 32px y 80px */
+  line-height: 1.2;
+  margin: 0 0 var(--spacing-sm) 0; /* Evitar márgenes colapsantes */
+}
+
+/* Columna derecha */
+.turismo-col-derecha {
+  flex: 2;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-lg);
+}
+
+/* Cada item */
+.turismo-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.turismo-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  flex-shrink: 0; /* Evitar que la imagen se distorsione */
+}
+
+.turismo-texto h3 {
+  color: var(--color-heading);
+  font-size: 1.25rem; /* Usar rem en lugar de px */
+  margin-bottom: var(--spacing-sm);
+}
+
+.turismo-texto p, 
+.turismo-texto ul {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.turismo-texto ul {
+  margin-left: var(--spacing-md);
+  padding-left: 0; /* Mejorar espaciado de lista */
+}
+
+.turismo-texto li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.turismo-logo-grupo {
+  align-self: flex-end;
+  margin-top: var(--spacing-md);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .operador-turismo {
+    flex-direction: column;
+  }
+
+  .turismo-col-izquierda {
+    flex: none;
+    width: 100%;
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .turismo-col-derecha {
+    padding: var(--spacing-md);
+  }
+  
+  .turismo-logo-grupo {
+    align-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .turismo-item {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+
+  .turismo-item img {
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .turismo-col-izquierda h1 {
+    font-size: 2rem; /* Ya controlado por clamp() pero refuerzo para navegadores antiguos */
+    background: #4CAF50; /* verde brillante como en la imagen */
+  }
+  
+  .turismo-texto ul {
+    margin-left: var(--spacing-sm);
+  }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .operador-turismo * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

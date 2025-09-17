@@ -1,0 +1,114 @@
+/* Reset básico */
+.history-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.history-page {
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Header */
+.history-page header {
+  margin-bottom: 40px;
+}
+
+.history-page header h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.history-page header .logo {
+  height: 50px;
+}
+
+/* Línea de tiempo */
+.history-page .timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin-top: 50px;
+  padding: 20px 0;
+}
+
+.history-page .timeline::before {
+  content: "";
+  position: absolute;
+  top: 175px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #00796b;
+  z-index: 1;
+}
+
+.history-page .event {
+  position: relative;
+  width: 22%;
+  text-align: left;
+}
+
+.history-page .event::before {
+  content: "";
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 16px;
+  height: 16px;
+  background: #004d40;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.history-page .event h2 {
+  color: #009688;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.history-page .event h3 {
+  color: #e65c00;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.history-page .event p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .history-page .timeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .history-page .timeline::before {
+    top: 0;
+    left: 20px;
+    width: 4px;
+    height: 100%;
+  }
+
+  .history-page .event {
+    width: 100%;
+    padding-left: 40px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .history-page .event::before {
+    left: 10px;
+    top: 0;
+  }
+}

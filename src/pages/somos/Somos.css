@@ -1,0 +1,91 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  gap: 30px;
+}
+
+/* Columna izquierda */
+.text-content {
+  flex: 1;
+}
+
+.logo {
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.text-content h2 {
+  font-size: 24px;
+  color: #e65c00; /* naranja */
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Columna derecha */
+.image-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hexagon {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  aspect-ratio: 1;
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+  background: #69b34c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hexagon img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  clip-path: inherit;
+  background: white;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hexagon {
+    width: 250px;
+  }
+
+  .text-content h2 {
+    font-size: 20px;
+  }
+}
+
+.texto-rojo {
+  color: red;
+  font-weight: bold; /* opcional */
+}
+
