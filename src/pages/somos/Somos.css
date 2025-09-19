@@ -15,9 +15,11 @@ body {
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start; /* Cambiado de center a flex-start para mejor alineación */
   padding: 40px;
   gap: 30px;
+  max-width: 1200px; /* Opcional: para limitar el ancho máximo */
+  margin: 0 auto; /* Centrar el contenedor */
 }
 
 /* Columna izquierda */
@@ -39,6 +41,9 @@ body {
 .text-content p {
   margin-bottom: 15px;
   font-size: 16px;
+  text-align: justify; /* ✅ ESTA ES LA PROPIEDAD CLAVE */
+  text-justify: inter-word; /* Mejora la justificación para palabras */
+  hyphens: auto; /* Permite división de palabras cuando sea necesario */
 }
 
 /* Columna derecha */
@@ -75,8 +80,13 @@ body {
     text-align: center;
   }
 
+  .text-content p {
+    text-align: justify; /* Mantener justificado en móvil también */
+  }
+
   .hexagon {
     width: 250px;
+    height: 250px;
   }
 
   .text-content h2 {
@@ -86,6 +96,6 @@ body {
 
 .texto-rojo {
   color: red;
-  font-weight: bold; /* opcional */
+  font-weight: bold;
 }
 

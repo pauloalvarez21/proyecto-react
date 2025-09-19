@@ -1,126 +1,158 @@
-/* Estilos para el componente ServiciosJuridicos */
-.servicios-juridicos * {
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  overflow-x: hidden;
 }
 
-.servicios-juridicos {
-  font-family: Arial, sans-serif;
-  color: #333;
+.juridicos-page {
   display: flex;
   min-height: 100vh;
-  flex-wrap: wrap;
+  width: 100vw;
 }
 
-/* Columna izquierda */
-.servicios-juridicos .juridicos-col-izquierda {
-  background-color: #e87a2e; /* Naranja */
+/* Lado izquierdo */
+.juridicos-left {
+  flex: 0 0 35%;
+  background: #e26225;
   color: white;
-  flex: 1;
-  min-width: 250px;
+  padding: 60px 40px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
+  align-items: flex-start;
 }
 
-.servicios-juridicos .juridicos-col-izquierda h1 {
-  font-size: 80px;
-  line-height: 1.3;
-  font-weight: bold;
+.juridicos-left h1 {
+  font-size: 3.5rem;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
 }
 
-/* Columna derecha */
-.servicios-juridicos .juridicos-col-derecha {
-  flex: 2;
-  padding: 40px;
+.juridicos-left h2 {
+  font-size: 1.8rem;
+  margin: 0 0 30px 0;
+  font-weight: 600;
+  color: #E8F5E9;
+}
+
+.juridicos-left img {
+  margin-top: 20px;
+  width: 150px;
+}
+
+/* Lado derecho */
+.juridicos-right {
+  flex: 0 0 65%;
+  background: #ffffff;
+  padding: 60px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 40px;
 }
 
-/* Cada item */
-.servicios-juridicos .juridicos-item {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.section h3 {
+  font-size: 1.5rem;
+  margin: 0 0 15px 0;
+  color: #2E7D32;
+  font-weight: 700;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 8px;
 }
 
-.servicios-juridicos .juridicos-item img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-  /* hexágono */
+.section p,
+.section li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #424242;
 }
 
-.servicios-juridicos .juridicos-texto h3 {
-  color: #000;
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.servicios-juridicos .juridicos-texto p,
-.servicios-juridicos .juridicos-texto ul {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.servicios-juridicos .juridicos-texto ul {
-  margin-left: 20px;
+.section ul {
+  margin: 12px 0 0 0;
+  padding-left: 20px;
   list-style: disc;
 }
 
-.servicios-juridicos .juridicos-logo-grupo {
-  align-self: flex-end;
-  margin-top: 20px;
+/* Logo decorativo */
+.juridicos-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 200px;
+  opacity: 0.9;
 }
 
-/* ===== RESPONSIVE ===== */
+/* Responsive */
 @media (max-width: 992px) {
-  .servicios-juridicos {
+  .juridicos-page {
     flex-direction: column;
   }
 
-  .servicios-juridicos .juridicos-col-izquierda {
-    flex: none;
+  .juridicos-left,
+  .juridicos-right {
+    flex: 0 0 auto;
     width: 100%;
+    padding: 40px 30px;
+    text-align: center;
+    align-items: center;
   }
 
-  .servicios-juridicos .juridicos-col-derecha {
-    padding: 20px;
+  .juridicos-left h1 {
+    font-size: 2.5rem;
   }
-  
-  .servicios-juridicos .juridicos-logo-grupo {
-    align-self: center;
+
+  .juridicos-left h2 {
+    font-size: 1.5rem;
+  }
+
+  .juridicos-logo {
+    position: static;
+    margin: 20px auto 0 auto;
+    display: block;
   }
 }
 
 @media (max-width: 768px) {
-  .servicios-juridicos .juridicos-col-izquierda h1 {
-    font-size: 28px;
+  .juridicos-left h1 {
+    font-size: 2rem;
+  }
+  .juridicos-left h2 {
+    font-size: 1.3rem;
+  }
+  .section h3 {
+    font-size: 1.3rem;
+  }
+  .section p,
+  .section li {
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 600px) {
-  .servicios-juridicos .juridicos-item {
-    flex-direction: column;
-    text-align: center;
+@media (max-width: 480px) {
+  .juridicos-left {
+    padding: 30px 20px;
   }
+  .juridicos-right {
+    padding: 30px 20px;
+  }
+  .juridicos-left h1 {
+    font-size: 1.8rem;
+  }
+  .juridicos-left h2 {
+    font-size: 1.2rem;
+  }
+}
 
-  .servicios-juridicos .juridicos-item img {
-    margin-bottom: 10px;
-  }
-  
-  .servicios-juridicos .juridicos-col-izquierda h1 {
-    font-size: 24px;
-  }
-  
-  .servicios-juridicos .juridicos-texto ul {
-    margin-left: 15px;
-  }
+.texto-rojo {
+  color: red;
+  font-weight: bold;
+}
+
+p {
+ text-align: justify;
 }

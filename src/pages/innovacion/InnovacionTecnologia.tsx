@@ -1,40 +1,50 @@
-import './InnovacionTecnologia.css'; // Crearemos este archivo CSS
-import grupo from "../../assets/image/grupo.svg";
+import React from "react";
+import "./InnovacionTecnologia.css";
+
+// Ejemplo de imágenes, cámbialas por las tuyas
+import grupo from "../../assets/image/grupo.png";
 
 const InnovacionTecnologia = () => {
   return (
-    <section className="innovacion-tecnologia">
-      {/* Columna izquierda */}
-      <div className="innovacion-col-izquierda">
-        <h1>Innovación y Tecnología</h1>
+    <div className="innovacion-page">
+      {/* Lado izquierdo */}
+      <div className="innovacion-left">
+        <h1>
+          Innovación y Tecnología
+        </h1>
       </div>
 
-      {/* Columna derecha */}
-      <div className="innovacion-col-derecha">
-        <div className="innovacion-item">
-          <div className="innovacion-texto">
-            <h3>Servicios a Empresas del Holding</h3>
-            <p>Desarrollo de soluciones tecnológicas para mejorar la eficiencia y la sostenibilidad</p>
-          </div>
+      {/* Lado derecho */}
+      <div className="innovacion-right">
+        <div className="section">
+          <p>
+            El avance tecnológico del proyecto es significativo, alcanzando un
+            <strong>60% de desarrollo</strong>. Se prevé el lanzamiento de la plataforma {' '} 
+            <span className="texto-rojo">SUMYT</span> para el ultimo trimestre del 2026. Esta plataforma integral
+            conectará <strong>transporte, turismo y mensajería</strong>, y ha sido desarrollada
+            con el apoyo de instituciones como <strong>la Universidad Santo Tomás, la
+            Universidad Cooperativa de Colombia y el SENA</strong>.
+          </p>
+          <p>
+            <strong>Movilidad y Conectividad Inteligente:</strong> Se está implementando
+            tecnología avanzada IA enfocada en la <strong>movilidad urbana inteligente</strong>,
+            apoyada en energías limpias y sistemas de transporte público y
+            turístico que promuevan el bienestar y la sostenibilidad.
+          </p>
+          <p>
+            <strong>Integración de Servicios Complementarios:</strong> La plataforma no solo
+            abordará el transporte, sino que también incluirá servicios clave
+            como el <strong>fondo de empleados, un corredor de seguros, un operador
+            turístico, una constructora, y una agencia de mercadeo y publicidad,
+            desarrollo tecnológico, con un fuerte enfoque en cuatro pilares:
+            educación, salud, vivienda y tecnología</strong>.
+          </p>
         </div>
-
-        <div className="innovacion-item">
-          <div className="innovacion-texto">
-            <h3>Energía Limpia</h3>
-            <p>Promoción del uso de vehículos eléctricos y energías renovables</p>
-          </div>
-        </div>
-
-        <div className="innovacion-item">
-          <div className="innovacion-texto">
-            <h3>Onboarding Digital</h3>
-            <p>Proceso de captación de asociados mediante plataformas digitales innovadoras</p>
-          </div>
-        </div>
-        
-        <img src={grupo} width="200" alt="Logo Grupo Servitransporte" className="innovacion-logo-grupo" />
       </div>
-    </section>
+
+      {/* Logo decorativo opcional */}
+      <img src={grupo} alt="Logo Derecho" className="innovacion-logo" />
+    </div>
   );
 };
 

@@ -1,151 +1,159 @@
-/* Variables CSS para mantener consistencia y facilitar cambios */
-:root {
-  --color-primary: #8bc34a;
-  --color-text: #333;
-  --color-heading: #000;
-  --color-light: #fff;
-  --spacing-sm: 10px;
-  --spacing-md: 20px;
-  --spacing-lg: 40px;
-  --border-radius: 8px;
-  --font-family: Arial, sans-serif;
-}
-
-/* Estilos para el componente Turismo */
-.operador-turismo {
-  font-family: var(--font-family);
-  color: var(--color-text);
-  display: flex;
-  min-height: 100vh;
-  flex-wrap: wrap;
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  overflow-x: hidden;
 }
 
-.operador-turismo * {
-  box-sizing: inherit; /* Mejor que border-box universal */
-}
 
-/* Contenedor principal - ya definido arriba */
-
-/* Columna izquierda */
-.turismo-col-izquierda {
-  background: var(--color-primary);
-  color: var(--color-light);
-  flex: 1;
-  min-width: 250px;
+.turismo-page {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: var(--spacing-md);
+  min-height: 100vh;
+  width: 100vw;
 }
 
-.turismo-col-izquierda h1 {
-  font-size: clamp(2rem, 10vw, 5rem); /* Tamaño responsive entre 32px y 80px */
-  line-height: 1.2;
-  margin: 0 0 var(--spacing-sm) 0; /* Evitar márgenes colapsantes */
-}
-
-/* Columna derecha */
-.turismo-col-derecha {
-  flex: 2;
-  padding: var(--spacing-lg);
+/* Lado izquierdo */
+.turismo-left {
+  flex: 0 0 35%;
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  color: white;
+  padding: 60px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--spacing-lg);
+  align-items: flex-start;
 }
 
-/* Cada item */
-.turismo-item {
+.turismo-left h1 {
+  font-size: 3.5rem;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.turismo-left h2 {
+  font-size: 1.8rem;
+  margin: 0 0 30px 0;
+  font-weight: 600;
+  color: #E8F5E9;
+}
+
+.turismo-left img {
+  margin-top: 20px;
+  width: 150px;
+}
+
+/* Lado derecho */
+.turismo-right {
+  flex: 0 0 65%;
+  background: #ffffff;
+  padding: 60px 50px;
   display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
 }
 
-.turismo-item img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-  flex-shrink: 0; /* Evitar que la imagen se distorsione */
+.turismo h3 {
+  font-size: 1.5rem;
+  margin: 0 0 15px 0;
+  color: #2E7D32;
+  font-weight: 700;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 8px;
 }
 
-.turismo-texto h3 {
-  color: var(--color-heading);
-  font-size: 1.25rem; /* Usar rem en lugar de px */
-  margin-bottom: var(--spacing-sm);
+.turismo p,
+.turismo li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #424242;
 }
 
-.turismo-texto p, 
-.turismo-texto ul {
-  font-size: 1rem;
-  line-height: 1.5;
+.turismo ul {
+  margin: 12px 0 0 0;
+  padding-left: 20px;
+  list-style: disc;
 }
 
-.turismo-texto ul {
-  margin-left: var(--spacing-md);
-  padding-left: 0; /* Mejorar espaciado de lista */
+/* Logo decorativo */
+.turismo-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 200px;
+  opacity: 0.9;
 }
 
-.turismo-texto li {
-  margin-bottom: var(--spacing-sm);
-}
-
-.turismo-logo-grupo {
-  align-self: flex-end;
-  margin-top: var(--spacing-md);
-}
-
-/* ===== RESPONSIVE ===== */
+/* Responsive */
 @media (max-width: 992px) {
-  .operador-turismo {
+  .turismo-page {
     flex-direction: column;
   }
 
-  .turismo-col-izquierda {
-    flex: none;
+  .turismo-left,
+  .turismo-right {
+    flex: 0 0 auto;
     width: 100%;
-    padding: var(--spacing-lg) var(--spacing-md);
-  }
-
-  .turismo-col-derecha {
-    padding: var(--spacing-md);
-  }
-  
-  .turismo-logo-grupo {
-    align-self: center;
-  }
-}
-
-@media (max-width: 600px) {
-  .turismo-item {
-    flex-direction: column;
+    padding: 40px 30px;
     text-align: center;
-    gap: var(--spacing-sm);
+    align-items: center;
   }
 
-  .turismo-item img {
-    margin-bottom: var(--spacing-sm);
+  .turismo-left h1 {
+    font-size: 2.5rem;
   }
-  
-  .turismo-col-izquierda h1 {
-    font-size: 2rem; /* Ya controlado por clamp() pero refuerzo para navegadores antiguos */
-    background: #4CAF50; /* verde brillante como en la imagen */
+
+  .turismo-left h2 {
+    font-size: 1.5rem;
   }
-  
-  .turismo-texto ul {
-    margin-left: var(--spacing-sm);
+
+  .turismo-logo {
+    position: static;
+    margin: 20px auto 0 auto;
+    display: block;
   }
 }
 
-/* Mejoras de accesibilidad */
-@media (prefers-reduced-motion: reduce) {
-  .operador-turismo * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+@media (max-width: 768px) {
+  .turismo-left h1 {
+    font-size: 2rem;
   }
+  .turismo-left h2 {
+    font-size: 1.3rem;
+  }
+  .section h3 {
+    font-size: 1.3rem;
+  }
+  .section p,
+  .section li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .turismo-left {
+    padding: 30px 20px;
+  }
+  .turismo-right {
+    padding: 30px 20px;
+  }
+  .turismo-left h1 {
+    font-size: 1.8rem;
+  }
+  .turismo-left h2 {
+    font-size: 1.2rem;
+  }
+}
+
+.texto-rojo {
+  color: red;
+  font-weight: bold;
+}
+
+p {
+  text-align: justify;
 }

@@ -1,38 +1,61 @@
 import Slider from "react-slick";
 import "./Presentation.css";
 
-// Importa todos tus videos
+// Importa tus videos e imágenes
 import video from "../assets/video/video.mp4";
+import img1 from "../assets/image/img1.jpeg";
+import img2 from "../assets/image/img2.jpeg";
+import img3 from "../assets/image/img3.jpeg";
+import img4 from "../assets/image/img4.jpeg";
+import img5 from "../assets/image/img5.jpeg";
+import img6 from "../assets/image/img6.jpeg";
+import img7 from "../assets/image/img7.jpeg";
 
 const Presentation = () => {
-  const settings = {
-    dots: true, // puntos debajo
-    infinite: true, // loop infinito
-    speed: 500,
-    slidesToShow: 1, // de a un video
+  const videoSettings = {
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true, // flechas de navegación
+    arrows: true,
+    autoplay: false, // movimiento automático
+    autoplaySpeed: 10000, // cada 5 segundos
   };
 
-  const videos = [video, video, video];
+  const imageSettings = {
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: false,
+    autoplaySpeed: 10000, // cada 3 segundos
+  };
+
+  const videos = [video, video];
+  const images = [img1, img2, img3, img4, img5, img6, img7];
 
   return (
     <section className="presentation">
-      <h2>Presentaciones</h2>
-      <Slider {...settings}>
-        {videos.map((src) => (
-          <div key={src} className="video-slide">
-            <video controls width="400">
+      <h2>Presentaciones en Video</h2>
+      <Slider {...videoSettings}>
+        {videos.map((src, index) => (
+          <div key={index} className="video-slide">
+            <video controls width="100%">
               <source src={src} type="video/mp4" />
-              <track
-                kind="captions"
-                src=""
-                srcLang="es"
-                label="Español"
-                default
-              />
               Tu navegador no soporta videos.
             </video>
+          </div>
+        ))}
+      </Slider>
+
+      <h2>Presentaciones en Imágenes</h2>
+      <Slider {...imageSettings}>
+        {images.map((src, index) => (
+          <div key={index} className="image-slide">
+            <img src={src} alt={`slide-${index}`} />
           </div>
         ))}
       </Slider>
@@ -41,4 +64,5 @@ const Presentation = () => {
 };
 
 export default Presentation;
+
 

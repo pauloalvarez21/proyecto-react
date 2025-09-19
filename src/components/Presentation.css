@@ -2,27 +2,89 @@
   text-align: center;
   background: linear-gradient(
     to right,
-    rgba(255, 165, 0, 0.8) 50%,  /* naranja con 80% opacidad */
-    rgba(0, 128, 0, 0.8) 50%     /* verde con 80% opacidad */
+    #df7034 50%,  
+    #5baa43 50%    
   );
-  color: white; /* para que el texto contraste */
+  color: white;
+  padding: 40px 20px;
 }
 
+/* título */
 .presentation h2 {
   font-size: 28px;
-  margin-bottom: 20px;
+  margin: 30px 0 20px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
 }
 
-.video-slide {
-  display: flex;
+/* carrusel centrado y responsivo */
+.presentation .slick-slider {
+  width: 90%;       /* en móviles ocupa 90% */
+  max-width: 600px; /* en desktop no pasa de 800px */
+  margin: 0 auto;   /* centrado */
+}
+
+/* slides centrados */
+.video-slide,
+.image-slide {
+  display: flex !important;
   justify-content: center;
   align-items: center;
 }
 
-.video-slide video {
-  max-width: 80%;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+/* estilos compartidos */
+.video-slide video,
+.image-slide img {
+  width: 80%;          /* se adapta al ancho disponible */
+  max-height: 400px;    /* altura máxima */
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+  object-fit: cover;    /* recorta para no deformar */
+  transition: transform 0.3s ease;
 }
 
+/* efecto hover en imágenes */
+.image-slide img:hover {
+  transform: scale(1.05);
+}
+
+/* dots */
+.slick-dots li button:before {
+  font-size: 12px;
+  color: white;
+  opacity: 0.7;
+}
+.slick-dots li.slick-active button:before {
+  color: #fff;
+  opacity: 1;
+}
+
+/* flechas */
+.slick-prev:before,
+.slick-next:before {
+  font-size: 30px;
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .presentation h2 {
+    font-size: 22px;
+  }
+
+  .video-slide video,
+  .image-slide img {
+    max-height: 300px; /* más bajo en tablets/móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .presentation h2 {
+    font-size: 18px;
+  }
+
+  .video-slide video,
+  .image-slide img {
+    max-height: 220px;
+  }
+}
 

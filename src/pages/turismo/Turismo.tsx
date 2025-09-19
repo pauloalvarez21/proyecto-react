@@ -1,47 +1,58 @@
-import './Turismo.css'; // Crearemos este archivo CSS
-import turismo1 from "./turismo1.png";
-import turismo2 from "./turismo2.png";
-import turismo3 from "./turismo3.png";
+import React from "react";
+import "./Turismo.css";
+
+// Ejemplo de imágenes, cámbialas por las tuyas
 import grupo from "../../assets/image/grupo.png";
 
 const Turismo = () => {
   return (
-    <section className="operador-turismo">
-      <div className="turismo-col-izquierda">
-        <h1>Operador<br />Turístico</h1>
+    <div className="turismo-page">
+      {/* Lado izquierdo */}
+      <div className="turismo-left">
+        <h1>Operador Turístico</h1>
+        <h2>Servitrasporte S.A.S</h2>
       </div>
 
-      <div className="turismo-col-derecha">
-        <div className="turismo-item">
-          <img src={turismo1} alt="Hoteles" />
-          <div className="turismo-texto">
-            <h3>Alianzas Estratégicas</h3>
-            <p>Convenios con hoteles, moteles, restaurantes y otros servicios turísticos</p>
-          </div>
+      {/* Lado derecho */}
+      <div className="turismo-right">
+        <div className="section">
+          <p>
+            El <strong>Operador Turístico</strong> Servitrasporte desempeña un
+            papel clave en el desarrollo del segundo módulo de la herramienta
+            tecnológica <span className="texto-rojo">SUMYT</span>, a través de
+            la cual se generarán acuerdos comerciales con toda la cadena de
+            valor del sector turismo: hoteles, moteles, restaurantes, bares,
+            guías turísticos, agencias de viajes y operadores turísticos. Estos
+            acuerdos garantizarán ganancias equitativas para todos los
+            involucrados, evitando las prácticas de imposición de precios que
+            actualmente afectan al sector.
+          </p>
+          <p>
+            En la actualidad, el operador turístico cuenta con{" "}
+            <strong>260 afiliados a INHOTELCOL</strong>, la asociación de
+            hoteleros y moteles de Colombia, con una fuerte presencia en Bogotá,
+            la región amazónica y el Quindío, regiones con alto potencial
+            turístico. El módulo de la plataforma permitirá a los usuarios
+            reservar, pagar y participar en una amplia gama de ofertas
+            turísticas, con un especial énfasis en el turismo de salud, tanto a
+            nivel nacional como internacional.
+          </p>
+          <p>
+            <strong>Desarrollo y Requisitos en Tecnología</strong>
+          </p>
+          <p>
+            Este operador turístico es de base tecnológica, permitiendo la
+            captación de asociados a través de estrategias de onboarding
+            digital. Los servicios turísticos serán gestionados desde
+            plataformas independientes, lo que permitirá una mayor eficiencia y
+            accesibilidad para los usuarios y operadores.
+          </p>
         </div>
-
-        <div className="turismo-item">
-          <img src={turismo2} alt="Turismo" />
-          <div className="turismo-texto">
-            <h3>Enfoque</h3>
-            <ul>
-              <li>Turismo nacional e internacional.</li>
-              <li>Turismo en salud, aprovechando nuestra red de servicios médicos.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="turismo-item">
-          <img src={turismo3} alt="Transporte" />
-          <div className="turismo-texto">
-            <h3>Afiliados</h3>
-            <p>260 asociados a INHOTELCOL, fortaleciendo nuestra red de servicios turísticos</p>
-          </div>
-        </div>
-        
-        <img src={grupo} width="200" alt="Logo Grupo Servitransporte" className="turismo-logo-grupo" />
       </div>
-    </section>
+
+      {/* Logo decorativo opcional */}
+      <img src={grupo} alt="Logo Derecho" className="turismo-logo" />
+    </div>
   );
 };
 

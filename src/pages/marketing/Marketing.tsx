@@ -1,52 +1,56 @@
-import './Marketing.css'; // Crearemos este archivo CSS
-import marketing1 from "./marketing1.png";
-import marketing2 from "./marketing2.png";
-import marketing3 from "./marketing3.png";
+import React from "react";
+import "./Marketing.css";
+
+// Ejemplo de imágenes, cámbialas por las tuyas
 import grupo from "../../assets/image/grupo.png";
 
 const Marketing = () => {
   return (
-    <section className="marketing">
-      {/* Columna izquierda */}
-      <div className="col-izquierda">
-        <h1>Agencia de<br />Marketing y<br />Publicidad</h1>
+    <div className="marketing-page">
+      {/* Lado izquierdo */}
+      <div className="marketing-left">
+        <h1>Marketing</h1>
+        <h2>Servitrasporte S.A.S</h2>
       </div>
 
-      {/* Columna derecha */}
-      <div className="col-derecha">
-        {/* Estrategias Innovadoras */}
-        <div className="item">
-          <img src={marketing1} alt="Estrategias Innovadoras" />
-          <div className="texto">
-            <h3>Estrategias Innovadoras</h3>
-            <ul>
-              <li>Neuro marketing para entender y captar mejor a nuestra audiencia.</li>
-              <li>Comunicación asertiva</li>
-            </ul>
-          </div>
+      {/* Lado derecho */}
+      <div className="marketing-right">
+        <div className="section">
+          <p>
+            La <strong>Agencia de Marketing y Publicidad Servitrasporte</strong>{" "}
+            será fundamental para la estrategia comercial del grupo y las
+            empresas que forman parte del holding. Sus actividades se alinearán
+            con los cuatro ejes principales del grupo:{" "}
+            <strong>salud, educación, vivienda y tecnología</strong>, contará
+            con el apoyo de las universidades y el SENA para reducir costos en
+            el desarrollo de contenidos audiovisuales.
+          </p>
+          <p>
+            La agencia implementará estrategias de{" "}
+            <strong>neuromarketing</strong> y comunicación asertiva,
+            aprovechando el <strong>cerebro emocional</strong> en la toma de
+            decisiones de compra. Contar historias visuales será una herramienta
+            clave para comunicar más rápidamente que solo texto, con uniformidad
+            en los colores y diseño de los productos y servicios del grupo,
+            generando una percepción positiva entre los consumidores y
+            operadores.
+          </p>
+          <p>
+            <strong>Desarrollo y Requisitos en Tecnología</strong>
+          </p>
+          <p>
+            La agencia de marketing también es de base tecnológica,
+            implementando estrategias de onboarding digital para la captación de
+            clientes y el desarrollo de contenidos y campañas publicitarias en
+            línea. Esto permitirá optimizar la comercialización de los productos
+            y servicios del grupo a través de plataformas digitales <span className="texto-rojo">SUMYT</span>.
+          </p>
         </div>
-
-        {/* Colaboraciones */}
-        <div className="item">
-          <img src={marketing2} alt="Colaboraciones" />
-          <div className="texto">
-            <h3>Colaboraciones</h3>
-            <p>Trabajo conjunto con universidades y el SENA para el desarrollo de talento y conocimiento.</p>
-          </div>
-        </div>
-
-        {/* Desarrollo de Contenidos */}
-        <div className="item">
-          <img src={marketing3} alt="Desarrollo de Contenidos" />
-          <div className="texto">
-            <h3>Desarrollo de Contenidos</h3>
-            <p>Creación de contenido audiovisual de alta calidad para nuestras campañas publicitarias.</p>
-          </div>
-        </div>
-        
-        <img src={grupo} width="200" alt="Logo Grupo Servitransporte" className="logo-grupo" />
       </div>
-    </section>
+
+      {/* Logo decorativo opcional */}
+      <img src={grupo} alt="Logo Derecho" className="marketing-logo" />
+    </div>
   );
 };
 

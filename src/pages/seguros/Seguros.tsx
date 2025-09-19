@@ -1,60 +1,55 @@
-import './Seguros.css'; // Crearemos este archivo CSS
-import estado from "./estado.png";
-import segmentos from "./segmentos.png";
-import estrategia from "./estrategia.png";
-import grupo from "../../assets/image/grupo.svg";
+import React from "react";
+import "./Seguros.css";
+
+// Ejemplo de imágenes, cámbialas por las tuyas
+import grupo from "../../assets/image/grupo.png";
 
 const Seguros = () => {
   return (
-    <div className="seguros-container">
-      {/* Columna izquierda */}
+    <div className="seguros-page">
+      {/* Lado izquierdo */}
       <div className="seguros-left">
         <h1>Corredor de Seguros</h1>
+        <h2>Servitrasporte Ltda</h2>
       </div>
 
-      {/* Columna derecha */}
+      {/* Lado derecho */}
       <div className="seguros-right">
-        <div className="seguros-section">
-          <div className="seguros-hexagon blue">
-            <img src={estado} alt="Convenio Seguros" />
-          </div>
-          <div className="seguros-text">
-            <h2>Convenio Seguros del Estado</h2>
-            <p>Productos adaptados a las necesidades de los clientes</p>
-          </div>
-        </div>
-
-        <div className="seguros-section">
-          <div className="seguros-hexagon orange">
-            <img src={segmentos} alt="Segmentos" />
-          </div>
-          <div className="seguros-text">
-            <h2>Segmentos</h2>
-            <ul>
-              <li>Seguros personales.</li>
-              <li>Seguros patrimoniales.</li>
-              <li>Seguros de prestación de servicios.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="seguros-section">
-          <div className="seguros-hexagon green">
-            <img src={estrategia} alt="Estrategia" />
-          </div>
-          <div className="seguros-text">
-            <h2>Estrategia</h2>
-            <ul>
-              <li>Oferta productos a bajo costo.</li>
-              <li>Ventas en volumen para maximizar beneficios.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="seguros-footer">
-          <img src={grupo} alt="Logo Grupo Servitransporte" />
+        <div className="section">
+          <p>
+            A través de un acuerdo en desarrollo con{" "}
+            <strong>Seguros del Estado</strong> y otras aseguradoras,{" "}
+            <strong>Servitrasporte Ltda</strong>. comercializará una amplia gama
+            de pólizas, desde seguros personales hasta seguros de daño
+            patrimonial y seguros de prestación de servicios en diversos
+            sectores, como el turismo y el transporte. El corredor de seguros
+            también ofrecerá toda la línea de seguros de medicina prepagada de
+            Medplus, en virtud de un acuerdo firmado con Grupo{" "}
+            <strong>Servitrasporte S.A.S</strong>.
+          </p>
+          <p>
+            El número proyectado de clientes incluye{" "}
+            <strong>60,000 operadores</strong>, más los usuarios de las
+            plataformas <span className="texto-rojo">SUMYT</span>, con un
+            crecimiento exponencial previsto a medida que la plataforma se
+            desarrolle y sus líneas de negocio se expandan.
+          </p>
+          <p>
+            <strong>Desarrollo y Requisitos en Tecnología</strong>
+          </p>
+          <p>
+            Este corredor de seguros, al igual que el fondo de asociados, es de
+            base tecnológica. Utiliza plataformas digitales que permiten captar
+            asociados, facilitar la inscripción y generar rutas de solicitud de
+            servicios, aprovechando al máximo las herramientas de <strong>onboarding</strong> y
+            permitiendo a los usuarios realizar aportes y compras con descuentos
+            en las plataformas de transporte, turismo y mensajería.
+          </p>
         </div>
       </div>
+
+      {/* Logo decorativo opcional */}
+      <img src={grupo} alt="Logo Derecho" className="seguros-logo" />
     </div>
   );
 };

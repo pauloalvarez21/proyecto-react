@@ -1,7 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import './History.css'; // Crearemos este archivo CSS
-import grupo from "../../assets/image/grupo.svg";
-const History = () => {
-    return (_jsxs("div", { className: "history-page", children: [_jsxs("header", { children: [_jsx("h1", { children: "Historia" }), _jsx("img", { src: grupo, alt: "Grupo Servitransporte", width: 300, height: 400, className: "logo" })] }), _jsxs("section", { className: "timeline", children: [_jsxs("div", { className: "event", children: [_jsx("h2", { children: "2018" }), _jsx("h3", { children: "Fundaci\u00F3n renovando sue\u00F1os" }), _jsx("p", { children: "Apoyo propietarios y transportadores en la defensa de los derechos del servicio p\u00FAblico" })] }), _jsxs("div", { className: "event", children: [_jsx("h2", { children: "2019" }), _jsx("h3", { children: "Grupo Alianza Sevitransporte" }), _jsx("p", { children: "Empresa de transporte p\u00FAblico en modalidad de servicio p\u00FAblico, especial y todas las modalidades" })] }), _jsxs("div", { className: "event", children: [_jsx("h2", { children: "2021" }), _jsx("h3", { children: "Grupo de Servicios de transportes especiales de Colombia - Servitransporte" }), _jsx("p", { children: "Desarrollo Holding" })] }), _jsxs("div", { className: "event", children: [_jsx("h2", { children: "Presente" }), _jsx("h3", { children: "Servicios Unificados de Movilidad y Turismo" }), _jsxs("p", { children: [_jsx("strong", { children: "SUMYT" }), " Plataforma Tecnol\u00F3gica"] })] })] })] }));
-};
-export default History;

@@ -1,11 +1,11 @@
 .pillars {
   text-align: center;
   padding: 40px 20px; /* agrega padding para que se vea mejor */
-  background: linear-gradient(
+ background: linear-gradient(
     to right,
-    rgba(255, 165, 0, 0.8) 50%,  /* naranja con 80% opacidad */
-    rgba(0, 128, 0, 0.8) 50%     /* verde con 80% opacidad */
-  );
+    #df7034 50%,  /* Naranja #ffa500 con 80% opacidad = #cc */
+    #5baa43  50%    /* Verde #008000 con 80% opacidad = #cc */
+);
   color: white; /* texto blanco para contraste */
 }
 

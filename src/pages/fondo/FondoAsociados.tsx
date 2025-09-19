@@ -1,65 +1,85 @@
 import React from "react";
 import "./FondoAsociados.css";
-
-// Importa las imágenes desde assets
 import sumyt from "../../assets/image/sumyt.png";
-import proposito from "./proposito.png";
-import segmentos from "./segmentos.png";
-import proyecciones from "./proyecciones.png";
+import grupo from "../../assets/image/grupo.png";
 
-const FondoAsociados = () => {
+const FondoAsociados: React.FC = () => {
   return (
-    <div className="container">
-      {/* Lado izquierdo */}
-      <div className="left">
+    <div className="fondo-page">
+      {/* LEFT - columna pegada al borde izquierdo */}
+      <aside className="fondo-left">
         <h1>
-          Fondo de <br /> Asociados SUMYT
+          Fondo de <br />
+          Asociados <span className="texto-rojo">SUMYT</span>
         </h1>
-        <img src={sumyt} alt="Logo SUMYT" />
-      </div>
+        <img src={sumyt} alt="Logo SUMYT" className="fondo-left__logo" />
+      </aside>
 
-      {/* Lado derecho */}
-      <div className="right">
-        <div className="item">
-          <div className="image">
-            <img src={proposito} alt="Propósito" />
-          </div>
-          <div className="text">
-            <h2>Propósito</h2>
-            <p>Fomentar el ahorro y la cooperación entre nuestros asociados.</p>
-          </div>
-        </div>
+      {/* RIGHT - contenido principal */}
+      <main className="fondo-right">
+        <section className="fondo-section">
+          <p>
+            El Fondo de Asociados <span className="texto-rojo">SUMYT</span> está
+            diseñado para integrar a los prestadores de servicios de la
+            plataforma, divididos en cuatro segmentos clave:
+          </p>
+          <ul>
+            <li>
+              <strong>Sector Transporte:</strong> transporte especial, taxis,
+              vehículos de lujo y transporte alternativo.
+            </li>
+            <li>
+              <strong>Sector Turismo:</strong> hoteles, restaurantes, guías,
+              agencias de viajes y operadores turísticos.
+            </li>
+            <li>
+              <strong>Sector Carga:</strong> interconexión entre pequeños
+              transportadores y usuarios de servicio de carga; servicio de
+              courier para estudiantes.
+            </li>
+            <li>
+              <strong>Empresas del Holding:</strong> empresas que forman parte
+              del grupo.
+            </li>
+          </ul>
+          <p>
+            El propósito principal del fondo es fomentar la cultura del ahorro y
+            la cooperación entre sus afiliados, brindándoles acceso a servicios
+            esenciales como educación, vivienda, recreación, turismo, y una
+            amplia oferta de bienes y servicios. Este fondo también ofrecerá
+            capacitación a sus miembros a través de alianzas con la Universidad
+            Cooperativa Seccional Indesco, y se estima que contará con un
+            promedio de 60,000 afiliados. La afiliación al fondo será un
+            requisito previo para ingresar a la herramienta tecnológica de la
+            plataforma <span className="texto-rojo">SUMYT</span>.
+          </p>
+          <p>
+            <strong>Desarrollo y Requisitos en Tecnología</strong>
+          </p>
+          <p>
+            El{" "}
+            <strong>
+              Fondo de Asociados <span className="texto-rojo">SUMYT</span>
+            </strong>{" "}
+            es una entidad basada en tecnología digital, diseñada para maximizar
+            el aprovechamiento del entorno digital. Esto incluye estrategias de
+            onboarding digital para captar asociados y crear rutas eficientes de
+            inscripción y solicitud de servicios, a través de plataformas
+            independientes para cada unidad de negocio interconectadas con la
+            plataforma <span className="texto-rojo">SUMYT</span>. Además, se
+            facilitará la realización de aportes por medio de descuentos desde
+            la plataforma de transporte, turismo y mensajería.
+          </p>
+        </section>
 
-        <div className="item">
-          <div className="image">
-            <img src={segmentos} alt="Segmentos" />
-          </div>
-          <div className="text">
-            <h2>Segmentos</h2>
-            <ul>
-              <li>Transporte público.</li>
-              <li>Turismo.</li>
-              <li>Mensajería.</li>
-              <li>Empresas del holding.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="item">
-          <div className="image">
-            <img src={proyecciones} alt="Proyecciones" />
-          </div>
-          <div className="text">
-            <h2>Proyecciones</h2>
-            <ul>
-              <li>Meta de 60,000 afiliados.</li>
-              <li>
-                Programas de beneficios y apoyo financiero para los asociados.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+        <section className="fondo-section fondo-footer">
+          <img
+            src={grupo}
+            alt="Grupo Servitransporte"
+            className="fondo-logo"
+          />
+        </section>
+      </main>
     </div>
   );
 };

@@ -1,105 +1,158 @@
-/* Reset */
-.marketing * {
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  overflow-x: hidden;
 }
 
-/* Contenedor principal */
-.marketing {
+.marketing-page {
   display: flex;
   min-height: 100vh;
-  flex-wrap: wrap;
+  width: 100vw;
 }
 
-/* Columna izquierda */
-.marketing .col-izquierda {
-  background: #4CAF50; /* verde brillante como en la imagen */
+/* Lado izquierdo */
+.marketing-left {
+  flex: 0 0 35%;
+  background: #59ab44;
   color: white;
-  flex: 1;
-  min-width: 250px;
+  padding: 60px 40px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: left;
-  padding: 40px;
+  align-items: flex-start;
 }
 
-.marketing .col-izquierda h1 {
-  font-size: 80px;
-  font-weight: bold;
-  line-height: 1.3;
+.marketing-left h1 {
+  font-size: 3.5rem;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
 }
 
-/* Columna derecha */
-.marketing .col-derecha {
-  flex: 2;
-  padding: 40px;
+.marketing-left h2 {
+  font-size: 1.8rem;
+  margin: 0 0 30px 0;
+  font-weight: 600;
+  color: #E8F5E9;
+}
+
+.marketing-left img {
+  margin-top: 20px;
+  width: 150px;
+}
+
+/* Lado derecho */
+.marketing-right {
+  flex: 0 0 65%;
+  background: #ffffff;
+  padding: 60px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 40px;
 }
 
-/* Cada item */
-.marketing .item {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.section h3 {
+  font-size: 1.5rem;
+  margin: 0 0 15px 0;
+  color: #2E7D32;
+  font-weight: 700;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 8px;
 }
 
-.marketing .item img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-  /* forma hexágono */
+.section p,
+.section li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #424242;
 }
 
-.marketing .texto h3 {
-  color: #000;
-  font-size: 20px;
-  margin-bottom: 10px;
+.section ul {
+  margin: 12px 0 0 0;
+  padding-left: 20px;
+  list-style: disc;
 }
 
-.marketing .texto p, 
-.marketing .texto ul {
-  font-size: 16px;
-  line-height: 1.5;
+/* Logo decorativo */
+.marketing-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 200px;
+  opacity: 0.9;
 }
 
-.marketing .texto ul {
-  margin-left: 20px;
-}
-
-.marketing .logo-grupo {
-  align-self: center;
-  margin-top: 20px;
-}
-
-/* ===== Responsive ===== */
+/* Responsive */
 @media (max-width: 992px) {
-  .marketing {
+  .marketing-page {
     flex-direction: column;
   }
 
-  .marketing .col-izquierda {
+  .marketing-left,
+  .marketing-right {
+    flex: 0 0 auto;
     width: 100%;
+    padding: 40px 30px;
     text-align: center;
+    align-items: center;
   }
 
-  .marketing .col-derecha {
-    padding: 20px;
+  .marketing-left h1 {
+    font-size: 2.5rem;
+  }
+
+  .marketing-left h2 {
+    font-size: 1.5rem;
+  }
+
+  .marketing-logo {
+    position: static;
+    margin: 20px auto 0 auto;
+    display: block;
   }
 }
 
-@media (max-width: 600px) {
-  .marketing .item {
-    flex-direction: column;
-    text-align: center;
+@media (max-width: 768px) {
+  .marketing-left h1 {
+    font-size: 2rem;
   }
+  .marketing-left h2 {
+    font-size: 1.3rem;
+  }
+  .section h3 {
+    font-size: 1.3rem;
+  }
+  .section p,
+  .section li {
+    font-size: 1rem;
+  }
+}
 
-  .marketing .item img {
-    margin-bottom: 10px;
+@media (max-width: 480px) {
+  .marketing-left {
+    padding: 30px 20px;
   }
+  .marketing-right {
+    padding: 30px 20px;
+  }
+  .marketing-left h1 {
+    font-size: 1.8rem;
+  }
+  .marketing-left h2 {
+    font-size: 1.2rem;
+  }
+}
+
+.texto-rojo {
+  color: red;
+  font-weight: bold;
+}
+
+p {
+  text-align: justify;
 }
