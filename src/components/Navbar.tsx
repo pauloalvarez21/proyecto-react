@@ -23,48 +23,49 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      {/* Logo izquierdo que lleva al inicio */}
-      <div className="navbar-left">
-        <div className="navbar-logo">
-          <NavLink to="/" onClick={() => setOpen(false)}>
-            <img src={grupo} alt="Grupo Servitransporte" />
-          </NavLink>
-        </div>
-      </div>
-
-      {/* Botón hamburguesa */}
-      <button
-        className={`hamburger ${open ? "open" : ""}`}
-        aria-label="menu"
-        onClick={() => setOpen((s) => !s)}
-      >
-        <span />
-        <span />
-        <span />
-      </button>
-
-      {/* Links */}
-      <ul className={`navbar-links ${open ? "open" : ""}`}>
-        {menu.map((item) => (
-          <li key={item.path}>
-            <NavLink
-              to={item.path}
-              className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={() => setOpen(false)}
-            >
-              {item.label}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-
-      {/* Logo derecho que también lleva al inicio */}
-      <div className="navbar-logo-right">
+  {/* Fila superior: logos + hamburguesa */}
+  <div className="navbar-top">
+    <div className="navbar-left">
+      <div className="navbar-logo">
         <NavLink to="/" onClick={() => setOpen(false)}>
-          <img src={sumyt} alt="SUMYT" />
+          <img src={grupo} alt="Grupo Servitransporte" />
         </NavLink>
       </div>
-    </nav>
+    </div>
+
+    <button
+      className={`hamburger ${open ? "open" : ""}`}
+      aria-label="menu"
+      onClick={() => setOpen((s) => !s)}
+    >
+      <span />
+      <span />
+      <span />
+    </button>
+
+    <div className="navbar-logo-right">
+      <NavLink to="/" onClick={() => setOpen(false)}>
+        <img src={sumyt} alt="SUMYT" />
+      </NavLink>
+    </div>
+  </div>
+
+  {/* Menú en segunda fila */}
+  <ul className={`navbar-links ${open ? "open" : ""}`}>
+    {menu.map((item) => (
+      <li key={item.path}>
+        <NavLink
+          to={item.path}
+          className={({ isActive }) => (isActive ? "active" : "")}
+          onClick={() => setOpen(false)}
+        >
+          {item.label}
+        </NavLink>
+      </li>
+    ))}
+  </ul>
+</nav>
+
   );
 };
 

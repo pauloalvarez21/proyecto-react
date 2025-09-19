@@ -1,8 +1,10 @@
 import React from "react";
 import "./Constructora.css";
 
-// Ejemplo de imágenes, cámbialas por las tuyas
 import grupo from "../../assets/image/grupo.png";
+import constructora1 from "./constructora1.png";
+import constructora2 from "./constructora2.png";
+import constructora3 from "./constructora3.png";
 
 const Constructora = () => {
   return (
@@ -15,6 +17,11 @@ const Constructora = () => {
 
       {/* Lado derecho */}
       <div className="constructora-right">
+        <p className="imagenes-constructora">
+          <img src={constructora1} alt="Constructora" className="constructora-img" />
+          <img src={constructora2} alt="Constructora" className="constructora-img" />
+          <img src={constructora3} alt="Constructora" className="constructora-img" />
+        </p>
         <div className="section">
           <p>
             La <strong>Constructora Servitrasporte</strong> se creará o se
@@ -52,9 +59,11 @@ const Constructora = () => {
             proyecto verde del holding, impulsando el crecimiento económico,
             social y ambiental de la región.
           </p>
+          <br />
           <p>
             <strong>Desarrollo y Requisitos en Tecnología</strong>
           </p>
+          <br />
           <p>
             La constructora utilizará tecnologías digitales para captar
             asociados y gestionar la inscripción y solicitud de servicios desde

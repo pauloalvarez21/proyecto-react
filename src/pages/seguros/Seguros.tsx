@@ -1,8 +1,10 @@
 import React from "react";
 import "./Seguros.css";
 
-// Ejemplo de imágenes, cámbialas por las tuyas
 import grupo from "../../assets/image/grupo.png";
+import estado from "./estado.png";
+import estrategia from "./estrategia.png";
+import segmentos from "./segmentos.png";
 
 const Seguros = () => {
   return (
@@ -15,6 +17,11 @@ const Seguros = () => {
 
       {/* Lado derecho */}
       <div className="seguros-right">
+        <p className="imagenes-seguros">
+          <img src={estado} alt="Seguro" className="seguros-img" />
+          <img src={estrategia} alt="Seguro" className="seguros-img" />
+          <img src={segmentos} alt="Seguro" className="seguros-img" />
+        </p>
         <div className="section">
           <p>
             A través de un acuerdo en desarrollo con{" "}
@@ -34,9 +41,11 @@ const Seguros = () => {
             crecimiento exponencial previsto a medida que la plataforma se
             desarrolle y sus líneas de negocio se expandan.
           </p>
+          <br />
           <p>
             <strong>Desarrollo y Requisitos en Tecnología</strong>
           </p>
+          <br />
           <p>
             Este corredor de seguros, al igual que el fondo de asociados, es de
             base tecnológica. Utiliza plataformas digitales que permiten captar

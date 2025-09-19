@@ -2,6 +2,9 @@ import React from "react";
 import "./FondoAsociados.css";
 import sumyt from "../../assets/image/sumyt.png";
 import grupo from "../../assets/image/grupo.png";
+import proposito from "./proposito.png";
+import proyecciones from "./proyecciones.png";
+import segmentos from "./segmentos.png";
 
 const FondoAsociados: React.FC = () => {
   return (
@@ -17,6 +20,11 @@ const FondoAsociados: React.FC = () => {
 
       {/* RIGHT - contenido principal */}
       <main className="fondo-right">
+        <p className="imagenes-fondo">
+          <img src={proposito} alt="Fondo" className="fondo-img" />
+          <img src={proyecciones} alt="Fondo" className="fondo-img" />
+          <img src={segmentos} alt="Fondo" className="fondo-img" />
+        </p>
         <section className="fondo-section">
           <p>
             El Fondo de Asociados <span className="texto-rojo">SUMYT</span> está
@@ -53,9 +61,11 @@ const FondoAsociados: React.FC = () => {
             requisito previo para ingresar a la herramienta tecnológica de la
             plataforma <span className="texto-rojo">SUMYT</span>.
           </p>
+          <br />
           <p>
             <strong>Desarrollo y Requisitos en Tecnología</strong>
           </p>
+          <br />
           <p>
             El{" "}
             <strong>

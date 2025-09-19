@@ -17,7 +17,7 @@ body, html {
 /* Lado izquierdo */
 .turismo-left {
   flex: 0 0 35%;
-  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  background: #59ab44;
   color: white;
   padding: 60px 40px;
   display: flex;
@@ -156,4 +156,17 @@ body, html {
 
 p {
   text-align: justify;
+}
+
+.imagenes-turismo {
+  display: flex;
+  justify-content: center; /* centra en horizontal */
+  align-items: center;     /* centra en vertical si hace falta */
+  gap: 20px;               /* espacio entre las imágenes */
+}
+
+.imagenes-turismo img {
+  width: 300px;  /* ajusta el tamaño que quieras */
+  height: auto;
+  border-radius: 8px; /* opcional, esquinas redondeadas */
 }

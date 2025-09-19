@@ -1,7 +1,6 @@
 import React from "react";
 import "./Observatorio.css";
 
-// Ejemplo de imágenes, cámbialas por las tuyas
 import grupo from "../../assets/image/grupo.png";
 import oset from "../../assets/image/oset.png";
 import estructura from "../../assets/image/estructura.png";
@@ -22,6 +21,7 @@ const Observatorio = () => {
             <strong>NOMBRE:</strong> OBSERVATORIO DE SERVICIOS ESPECIALZIADOS
             TURISTICOS “OSET”
           </p>
+          <br />
           <p>
             <strong>MISIÓN:</strong> Recopilar, analizar y difundir información
             estratégica sobre la oferta, demanda, tendencias y desempeño de los
@@ -31,6 +31,7 @@ const Observatorio = () => {
             sostenibilidad organizacional del sector y la identificación de
             nuevas oportunidades de negocio.
           </p>
+          <br />
           <p>
             <strong>VISIÓN:</strong> Ser el referente nacional e internacional
             en inteligencia turística para servicios especializados, impulsando
@@ -38,10 +39,12 @@ const Observatorio = () => {
             Colombia como destino turístico de alto valor compartido y
             asociatividad.
           </p>
+          <br />
           <p>
             <strong>ESTRUCTURA:</strong>
           </p>
-          <p>
+          <br />
+          <p className="img-fluid">
             <img src={estructura} alt="Estructura" />
           </p>
           <section className="objetivos">

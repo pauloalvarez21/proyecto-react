@@ -1,12 +1,13 @@
+/* ====== SECCIÓN ====== */
 .pillars {
   text-align: center;
-  padding: 40px 20px; /* agrega padding para que se vea mejor */
- background: linear-gradient(
+  padding: 40px 20px;
+  background: linear-gradient(
     to right,
-    #df7034 50%,  /* Naranja #ffa500 con 80% opacidad = #cc */
-    #5baa43  50%    /* Verde #008000 con 80% opacidad = #cc */
-);
-  color: white; /* texto blanco para contraste */
+    #df7034cc 50%,  /* Naranja */
+    #5baa43cc 50%   /* Verde */
+  );
+  color: white;
 }
 
 .pillars h2 {
@@ -18,7 +19,7 @@
   justify-content: center;
   gap: 50px;
   margin-top: 20px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* en móvil baja en columnas */
 }
 
 .pillar {
@@ -26,7 +27,14 @@
   flex-direction: column;
   align-items: center;
   font-weight: bold;
-  color: white; /* asegura que los textos también sean visibles */
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.pillar:hover {
+  transform: scale(1.1); /* efecto de zoom */
+  color: #ffe082; /* texto con amarillo suave */
 }
 
 .pillar-icon {
@@ -34,4 +42,105 @@
   height: 60px;
   object-fit: contain;
   margin-bottom: 8px;
+  display: block;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.pillar:hover .pillar-icon {
+  transform: scale(1.2); /* hace crecer la imagen */
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)); /* brilla */
+}
+
+/* ====== POPUP ====== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: white;
+  color: #333;
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content h3 {
+  margin-bottom: 10px;
+  color: #df7034;
+}
+
+.popup-content p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.popup-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .pillar-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .pillars-list {
+    gap: 30px;
+  }
+
+  .popup-content {
+    width: 90%;
+    max-width: none;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pillars {
+    padding: 20px 10px;
+  }
+
+  .pillar-icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .popup-content {
+    width: 95%;
+    padding: 25px 20px;
+    font-size: 16px;
+  }
+
+  .popup-content h3 {
+    font-size: 20px;
+  }
+
+  .popup-content p {
+    font-size: 15px;
+  }
 }

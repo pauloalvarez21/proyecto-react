@@ -14,6 +14,7 @@ import Constructora from "./pages/constructora/Constructora";
 import ServiciosJuridicos from "./pages/juridicos/ServiciosJuridicos";
 import InnovacionTecnologia from "./pages/innovacion/InnovacionTecnologia";
 import Observatorio from "./pages/observatorio/Observatorio";
+import Transporte from "./pages/transporte/Transporte";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/juridicos" element={<ServiciosJuridicos />} />
           <Route path="/innovacion" element={<InnovacionTecnologia />} />
           <Route path="/observatorio" element={<Observatorio />} />
+          <Route path="/transporte" element={<Transporte />} />
           {/* Puedes seguir agregando más páginas */}
           {/* <Route path="/seguros" element={<Seguros />} /> */}
         </Routes>

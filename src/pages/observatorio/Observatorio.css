@@ -16,7 +16,7 @@ body, html {
 /* Lado izquierdo */
 .observatorio-left {
   flex: 0 0 35%;
-  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  background: #e26225;
   color: white;
   padding: 60px 40px;
   display: flex;
@@ -146,4 +146,8 @@ body, html {
 
 p {
     text-align: justify;
+}
+
+.img-fluid {
+    text-align: center;
 }

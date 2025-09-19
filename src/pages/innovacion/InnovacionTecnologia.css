@@ -156,3 +156,16 @@ body, html {
 p {
   text-align: justify;
 }
+
+.imagenes-innovacion {
+  display: flex;
+  justify-content: center; /* centra en horizontal */
+  align-items: center;     /* centra en vertical si hace falta */
+  gap: 20px;               /* espacio entre las imágenes */
+}
+
+.imagenes-innovacion img {
+  width: 300px;  /* ajusta el tamaño que quieras */
+  height: auto;
+  border-radius: 8px; /* opcional, esquinas redondeadas */
+}

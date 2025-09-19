@@ -1,20 +1,27 @@
 import React from "react";
 import "./Marketing.css";
 
-// Ejemplo de imágenes, cámbialas por las tuyas
 import grupo from "../../assets/image/grupo.png";
+import marketing1 from "./marketing1.png";
+import marketing2 from "./marketing2.png";
+import marketing3 from "./marketing3.png";
 
 const Marketing = () => {
   return (
     <div className="marketing-page">
       {/* Lado izquierdo */}
       <div className="marketing-left">
-        <h1>Marketing</h1>
+        <h1>Agencia de Marketing y Publicidad </h1>
         <h2>Servitrasporte S.A.S</h2>
       </div>
 
       {/* Lado derecho */}
       <div className="marketing-right">
+        <p className="imagenes-marketing">
+          <img src={marketing1} alt="Marketing" className="marketing-img" />
+          <img src={marketing2} alt="Marketing" className="marketing-img" />
+          <img src={marketing3} alt="Marketing" className="marketing-img" />
+        </p>
         <div className="section">
           <p>
             La <strong>Agencia de Marketing y Publicidad Servitrasporte</strong>{" "}
@@ -22,7 +29,7 @@ const Marketing = () => {
             empresas que forman parte del holding. Sus actividades se alinearán
             con los cuatro ejes principales del grupo:{" "}
             <strong>salud, educación, vivienda y tecnología</strong>, contará
-            con el apoyo de las universidades y el SENA para reducir costos en
+            con el apoyo de las universidades y el <strong>SENA</strong> para reducir costos en
             el desarrollo de contenidos audiovisuales.
           </p>
           <p>
@@ -35,9 +42,11 @@ const Marketing = () => {
             generando una percepción positiva entre los consumidores y
             operadores.
           </p>
+          <br />
           <p>
             <strong>Desarrollo y Requisitos en Tecnología</strong>
           </p>
+          <br />
           <p>
             La agencia de marketing también es de base tecnológica,
             implementando estrategias de onboarding digital para la captación de

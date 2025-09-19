@@ -1,16 +1,23 @@
-/* === Navbar general === */
+/* Navbar en columna */
 .navbar {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 40px;
-  border-bottom: 1px solid #eee;
+  flex-direction: column;
   background-color: #fff;
-  position: relative;
+  border-bottom: 1px solid #eee;
+  padding: 0 40px;
   z-index: 50;
 }
 
-/* === Logos === */
+/* Fila superior: logos + hamburguesa */
+.navbar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  width: 100%;
+}
+
+/* Logos */
 .navbar-logo img,
 .navbar-logo-right img {
   height: 50px;
@@ -24,14 +31,18 @@
   transform: scale(1.05);
 }
 
-/* === Links list === */
+/* Menú ocupa segunda fila */
 .navbar-links {
   display: flex;
+  flex-wrap: wrap;   
+  justify-content: center;
+  flex: 0 1 auto;
   gap: 20px;
   list-style: none;
   margin: 0;
-  padding: 0;
-  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+  width: 100%;
 }
 
 .navbar-links li a {
@@ -48,13 +59,12 @@
   background: rgba(40, 167, 69, 0.06);
 }
 
-/* === Active link === */
 .navbar-links li a.active {
   color: #28a745;
   font-weight: 700;
 }
 
-/* === Botón hamburguesa (oculto en escritorio) === */
+/* Botón hamburguesa solo en móvil */
 .hamburger {
   display: none;
   width: 42px;
@@ -84,7 +94,7 @@
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* === Responsive: menú colapsado === */
+/* Responsive */
 @media (max-width: 980px) {
   .hamburger {
     display: flex;
@@ -92,7 +102,7 @@
 
   .navbar-links {
     position: absolute;
-    top: 72px; /* debajo del navbar */
+    top: 72px;
     left: 0;
     right: 0;
     background: #fff;
@@ -109,48 +119,8 @@
   }
 
   .navbar-logo-right {
-    display: none; /* se esconde en móvil */
-  }
-
-  .navbar-left {
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .navbar-extra {
-    flex-direction: column;
-    gap: 8px;
-    margin-left: 0;
+    display: none;
   }
 }
 
-/* === Bloque izquierdo (logo + enlaces cortos) === */
-.navbar-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
 
-/* Quiénes somos / Historia */
-.navbar-extra {
-  display: flex;
-  gap: 15px;
-  margin-top: 8px;
-}
-
-.navbar-extra a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  font-size: 14px;
-  transition: color 0.2s ease;
-}
-
-.navbar-extra a:hover {
-  color: #e65c00;
-}
-
-.navbar-extra a.active {
-  color: #e65c00; /* naranja cuando está activo */
-}

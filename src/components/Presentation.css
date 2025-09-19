@@ -2,8 +2,8 @@
   text-align: center;
   background: linear-gradient(
     to right,
-    #df7034 50%,  
-    #5baa43 50%    
+    #df7034cc 50%,  
+    #5baa43cc 50%    
   );
   color: white;
   padding: 40px 20px;
@@ -88,3 +88,50 @@
   }
 }
 
+/* ====== POPUP (corregido) ====== */
+.popup-overlay {
+  position: fixed;      /* top:0; right:0; bottom:0; left:0; */
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  position: relative;
+  max-width: 90vw;         /* ocupa hasta 90% del ancho de la ventana */
+  max-height: 90vh;        /* ocupa hasta 90% de la altura de la ventana */
+  overflow: auto;
+  border-radius: 12px;
+  padding: 8px;
+  background: transparent; /* o blanco si prefieres */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(90vh - 40px); /* deja espacio para el close */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+}
+
+.popup-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #fff;
+  border: none;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}

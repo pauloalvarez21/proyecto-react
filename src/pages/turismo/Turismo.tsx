@@ -1,8 +1,10 @@
 import React from "react";
 import "./Turismo.css";
 
-// Ejemplo de imágenes, cámbialas por las tuyas
 import grupo from "../../assets/image/grupo.png";
+import turismo1 from "./turismo1.png";
+import turismo2 from "./turismo2.png";
+import turismo3 from "./turismo3.png";
 
 const Turismo = () => {
   return (
@@ -15,6 +17,11 @@ const Turismo = () => {
 
       {/* Lado derecho */}
       <div className="turismo-right">
+        <p className="imagenes-turismo">
+          <img src={turismo1} alt="Turismo" className="turismo-img" />
+          <img src={turismo2} alt="Turismo" className="turismo-img" />
+          <img src={turismo3} alt="Turismo" className="turismo-img" />
+        </p>
         <div className="section">
           <p>
             El <strong>Operador Turístico</strong> Servitrasporte desempeña un
@@ -37,9 +44,11 @@ const Turismo = () => {
             turísticas, con un especial énfasis en el turismo de salud, tanto a
             nivel nacional como internacional.
           </p>
+          <br />
           <p>
             <strong>Desarrollo y Requisitos en Tecnología</strong>
           </p>
+          <br />
           <p>
             Este operador turístico es de base tecnológica, permitiendo la
             captación de asociados a través de estrategias de onboarding
