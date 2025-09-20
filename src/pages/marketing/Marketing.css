@@ -1,3 +1,4 @@
+/* ====== RESETEO Y BASE ====== */
 body, html {
   margin: 0;
   padding: 0;
@@ -7,13 +8,18 @@ body, html {
   overflow-x: hidden;
 }
 
+p {
+  text-align: justify;
+}
+
+/* ====== LAYOUT GENERAL ====== */
 .marketing-page {
   display: flex;
   min-height: 100vh;
   width: 100vw;
 }
 
-/* Lado izquierdo */
+/* ====== LADO IZQUIERDO ====== */
 .marketing-left {
   flex: 0 0 35%;
   background: #59ab44;
@@ -45,7 +51,7 @@ body, html {
   width: 150px;
 }
 
-/* Lado derecho */
+/* ====== LADO DERECHO ====== */
 .marketing-right {
   flex: 0 0 65%;
   background: #ffffff;
@@ -78,7 +84,7 @@ body, html {
   list-style: disc;
 }
 
-/* Logo decorativo */
+/* ====== LOGO DECORATIVO ====== */
 .marketing-logo {
   position: absolute;
   bottom: 20px;
@@ -87,7 +93,29 @@ body, html {
   opacity: 0.9;
 }
 
-/* Responsive */
+/* ====== IMÁGENES ====== */
+.imagenes-marketing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.imagenes-marketing img {
+   width: 200px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  flex: 1 1 auto;
+}
+
+/* ====== TEXTO DESTACADO ====== */
+.texto-rojo {
+  color: red;
+  font-weight: bold;
+}
+
+/* ====== RESPONSIVE ====== */
 @media (max-width: 992px) {
   .marketing-page {
     flex-direction: column;
@@ -131,6 +159,16 @@ body, html {
   .section li {
     font-size: 1rem;
   }
+
+  /* 👉 imágenes en columna cuando es pequeño */
+  .imagenes-marketing {
+    flex-direction: column;
+  }
+
+  .imagenes-marketing img {
+    width: 80%;      /* más flexible en móviles */
+    max-width: 250px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -146,26 +184,4 @@ body, html {
   .marketing-left h2 {
     font-size: 1.2rem;
   }
-}
-
-.texto-rojo {
-  color: red;
-  font-weight: bold;
-}
-
-p {
-  text-align: justify;
-}
-
-.imagenes-marketing {
-  display: flex;
-  justify-content: center; /* centra en horizontal */
-  align-items: center;     /* centra en vertical si hace falta */
-  gap: 20px;               /* espacio entre las imágenes */
-}
-
-.imagenes-marketing img {
-  width: 200px;  /* ajusta el tamaño que quieras */
-  height: auto;
-  border-radius: 8px; /* opcional, esquinas redondeadas */
 }

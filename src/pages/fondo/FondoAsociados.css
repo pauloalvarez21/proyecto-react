@@ -165,7 +165,9 @@ p {
 }
 
 .imagenes-fondo img {
-  width: 200px;  /* ajusta el tamaño que quieras */
+   width: 200px;
+  max-width: 100%;
   height: auto;
-  border-radius: 8px; /* opcional, esquinas redondeadas */
+  border-radius: 8px;
+  flex: 1 1 auto;
 }

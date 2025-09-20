@@ -131,6 +131,17 @@ body, html {
   .section li {
     font-size: 1rem;
   }
+
+  /* imágenes en columna */
+  .imagenes-seguros {
+    flex-direction: column;   /* de fila a columna */
+    gap: 16px;
+  }
+
+  .imagenes-seguros img {
+    width: 80%;               /* ancho relativo */
+    max-width: 250px;         /* límite opcional */
+  }
 }
 
 @media (max-width: 480px) {
@@ -157,6 +168,7 @@ p {
   text-align: justify;
 }
 
+/* Imágenes de seguros (desktop por defecto: en fila) */
 .imagenes-seguros {
   display: flex;
   justify-content: center; /* centra en horizontal */
@@ -165,7 +177,9 @@ p {
 }
 
 .imagenes-seguros img {
-  width: 200px;  /* ajusta el tamaño que quieras */
+   width: 200px;
+  max-width: 100%;
   height: auto;
-  border-radius: 8px; /* opcional, esquinas redondeadas */
+  border-radius: 8px;
+  flex: 1 1 auto;
 }

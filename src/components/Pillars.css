@@ -29,8 +29,8 @@
 }
 
 .pillar:hover {
-  transform: scale(1.1); /* efecto de zoom */
-  color: #ffe082; /* texto con amarillo suave */
+  transform: scale(1.1);
+  color: #ffe082;
 }
 
 .pillar-icon {
@@ -43,8 +43,8 @@
 }
 
 .pillar:hover .pillar-icon {
-  transform: scale(1.2); /* hace crecer la imagen */
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)); /* brilla */
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
 }
 
 /* ====== POPUP ====== */
@@ -100,19 +100,20 @@
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
-  .pillar-icon {
-    width: 80px;
-    height: 80px;
-  }
-
   .pillars-list {
     gap: 30px;
   }
 
+  /* Popup estilo nativo */
+  .popup-overlay {
+    align-items: flex-end; /* aparece desde abajo */
+  }
+
   .popup-content {
-    width: 90%;
+    width: 100%;
     max-width: none;
-    border-radius: 16px;
+    border-radius: 16px 16px 0 0; /* redondeado arriba */
+    animation: slideUp 0.3s ease-out;
   }
 }
 
@@ -121,22 +122,21 @@
     padding: 20px 10px;
   }
 
-  .pillar-icon {
-    width: 90px;
-    height: 90px;
-  }
-
+  /* Popup más limpio en móvil */
   .popup-content {
-    width: 95%;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
     padding: 25px 20px;
-    font-size: 16px;
   }
+}
 
-  .popup-content h3 {
-    font-size: 20px;
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0.8;
   }
-
-  .popup-content p {
-    font-size: 15px;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

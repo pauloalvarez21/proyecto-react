@@ -8,7 +8,7 @@ const menu = [
   { label: "Quiénes somos", path: "/quienes-somos" },
   { label: "Historia", path: "/historia" },
   { label: "Transporte", path: "/transporte" },
-  { label: "Fondos de Asociados", path: "/fondos" },
+  { label: "Fondo de Asociados", path: "/fondos" },
   { label: "Corredor de Seguros", path: "/seguros" },
   { label: "Operador Turístico", path: "/turistico" },
   { label: "Constructora", path: "/constructora" },

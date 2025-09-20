@@ -55,13 +55,14 @@
 }
 
 .navbar-links li a:hover {
-  color: #28a745;
+  color: #C4DAFA;
   background: rgba(40, 167, 69, 0.06);
 }
 
 .navbar-links li a.active {
-  color: #C4DAFA;
+  color: #333;
   font-weight: 700;
+  background-color: #fff;
 }
 
 /* Botón hamburguesa solo en móvil */
@@ -94,24 +95,24 @@
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Responsive */
 @media (max-width: 980px) {
   .hamburger {
     display: flex;
   }
 
   .navbar-links {
-    position: absolute;
-    top: 72px;
+    position: fixed;  /* Para que se superponga */
+    top: 72px;        /* Altura de la navbar */
     left: 0;
     right: 0;
-    background: #C4DAFA;
+    bottom: 0;        /* Que ocupe todo el alto */
+    background: rgba(196, 218, 250, 0.95); /* Fondo con opacidad */
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding: 20px;
-    border-top: 1px solid #eee;
+    gap: 16px;
+    padding: 30px 20px;
     display: none;
+    z-index: 9999; /* Muy por encima */
   }
 
   .navbar-links.open {
