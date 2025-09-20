@@ -2,11 +2,7 @@
 .pillars {
   text-align: center;
   padding: 40px 20px;
-  background: linear-gradient(
-    to right,
-    #df7034cc 50%,  /* Naranja */
-    #5baa43cc 50%   /* Verde */
-  );
+  background: #C4DAFA;
   color: white;
 }
 

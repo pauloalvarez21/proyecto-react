@@ -60,7 +60,7 @@
 }
 
 .navbar-links li a.active {
-  color: #28a745;
+  color: #C4DAFA;
   font-weight: 700;
 }
 
@@ -105,7 +105,7 @@
     top: 72px;
     left: 0;
     right: 0;
-    background: #fff;
+    background: #C4DAFA;
     flex-direction: column;
     align-items: center;
     gap: 12px;
@@ -123,4 +123,26 @@
   }
 }
 
+/* Aplica un borde a cada ítem del menú */
+.navbar-links li {
+  border: 1px solid #ccc; /* Cambia el color si lo deseas */
+  padding: 8px 12px;
+  margin: 4px; /* Espacio entre ítems */
+  border-radius: 4px; /* Opcional: bordes redondeados */
+  transition: all 0.3s ease;
+  background-color: #C4DAFA;
+}
+
+/* Opcional: cambiar el borde cuando el ítem está activo */
+.navbar-links li .active {
+  border-color: #007BFF; /* Color del borde para el ítem activo */
+  font-weight: bold;
+  color: #007BFF;
+}
+
+/* Opcional: hover */
+.navbar-links li:hover {
+  border-color: #999;
+  background-color: #f9f9f9;
+}
 

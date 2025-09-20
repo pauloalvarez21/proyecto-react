@@ -152,3 +152,16 @@ body, html {
   color: red;
   font-weight: bold;
 }
+
+.imagenes-transporte {
+  display: flex;
+  justify-content: center; /* centra en horizontal */
+  align-items: center;     /* centra en vertical si hace falta */
+  gap: 20px;               /* espacio entre las imágenes */
+}
+
+.imagenes-transporte img {
+  width: 200px;  /* ajusta el tamaño que quieras */
+  height: auto;
+  border-radius: 8px; /* opcional, esquinas redondeadas */
+}

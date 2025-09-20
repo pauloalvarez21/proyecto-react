@@ -1,10 +1,6 @@
 .presentation {
   text-align: center;
-  background: linear-gradient(
-    to right,
-    #df7034cc 50%,  
-    #5baa43cc 50%    
-  );
+  background:   #C4DAFA;
   color: white;
   padding: 40px 20px;
 }

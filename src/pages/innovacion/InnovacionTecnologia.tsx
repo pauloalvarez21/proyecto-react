@@ -12,6 +12,9 @@ const InnovacionTecnologia = () => {
         <h1>
           Innovación y Tecnología
         </h1>
+        <h2>
+          Servitrasporte S.A.S
+        </h2>
       </div>
 
       {/* Lado derecho */}

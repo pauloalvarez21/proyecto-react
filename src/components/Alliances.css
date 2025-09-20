@@ -1,9 +1,5 @@
 .alliances {
- background: linear-gradient(
-    to right,
-    #df7034cc 50%,  /* Naranja #ffa500 con 80% opacidad = #cc */
-    #5baa43cc  50%    /* Verde #008000 con 80% opacidad = #cc */
-);
+ background: #C4DAFA;
   padding: 40px 20px;
   text-align: center;
   color: white;

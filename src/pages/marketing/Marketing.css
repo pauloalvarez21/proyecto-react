@@ -165,7 +165,7 @@ p {
 }
 
 .imagenes-marketing img {
-  width: 300px;  /* ajusta el tamaño que quieras */
+  width: 200px;  /* ajusta el tamaño que quieras */
   height: auto;
   border-radius: 8px; /* opcional, esquinas redondeadas */
 }
