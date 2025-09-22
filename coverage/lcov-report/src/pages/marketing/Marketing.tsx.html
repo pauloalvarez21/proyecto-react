@@ -115,14 +115,30 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,66 +183,92 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import './Marketing.css'; // Crearemos este archivo CSS
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+import "./Marketing.css";
+&nbsp;
+import grupo from "../../assets/image/grupo.png";
 import marketing1 from "./marketing1.png";
 import marketing2 from "./marketing2.png";
 import marketing3 from "./marketing3.png";
-import grupo from "../../assets/image/grupo.png";
 &nbsp;
 const Marketing = () =&gt; {
   return (
-    &lt;section className="marketing"&gt;
-      {/* Columna izquierda */}
-      &lt;div className="col-izquierda"&gt;
-        &lt;h1&gt;Agencia de&lt;br /&gt;Marketing y&lt;br /&gt;Publicidad&lt;/h1&gt;
+    &lt;div className="marketing-page"&gt;
+      {/* Lado izquierdo */}
+      &lt;div className="marketing-left"&gt;
+        &lt;h1&gt;Agencia de Marketing y Publicidad &lt;/h1&gt;
+        &lt;h2&gt;Servitrasporte S.A.S&lt;/h2&gt;
       &lt;/div&gt;
 &nbsp;
-      {/* Columna derecha */}
-      &lt;div className="col-derecha"&gt;
-        {/* Estrategias Innovadoras */}
-        &lt;div className="item"&gt;
-          &lt;img src={marketing1} alt="Estrategias Innovadoras" /&gt;
-          &lt;div className="texto"&gt;
-            &lt;h3&gt;Estrategias Innovadoras&lt;/h3&gt;
-            &lt;ul&gt;
-              &lt;li&gt;Neuro marketing para entender y captar mejor a nuestra audiencia.&lt;/li&gt;
-              &lt;li&gt;Comunicación asertiva&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/div&gt;
+      {/* Lado derecho */}
+      &lt;div className="marketing-right"&gt;
+        &lt;p className="imagenes-marketing"&gt;
+          &lt;img src={marketing1} alt="Marketing" className="marketing-img" /&gt;
+          &lt;img src={marketing2} alt="Marketing" className="marketing-img" /&gt;
+          &lt;img src={marketing3} alt="Marketing" className="marketing-img" /&gt;
+        &lt;/p&gt;
+        &lt;div className="section"&gt;
+          &lt;p&gt;
+            La &lt;strong&gt;Agencia de Marketing y Publicidad Servitrasporte&lt;/strong&gt;{" "}
+            será fundamental para la estrategia comercial del grupo y las
+            empresas que forman parte del holding. Sus actividades se alinearán
+            con los cuatro ejes principales del grupo:{" "}
+            &lt;strong&gt;salud, educación, vivienda y tecnología&lt;/strong&gt;, contará
+            con el apoyo de las universidades y el &lt;strong&gt;SENA&lt;/strong&gt; para reducir costos en
+            el desarrollo de contenidos audiovisuales.
+          &lt;/p&gt;
+          &lt;p&gt;
+            La agencia implementará estrategias de{" "}
+            &lt;strong&gt;neuromarketing&lt;/strong&gt; y comunicación asertiva,
+            aprovechando el &lt;strong&gt;cerebro emocional&lt;/strong&gt; en la toma de
+            decisiones de compra. Contar historias visuales será una herramienta
+            clave para comunicar más rápidamente que solo texto, con uniformidad
+            en los colores y diseño de los productos y servicios del grupo,
+            generando una percepción positiva entre los consumidores y
+            operadores.
+          &lt;/p&gt;
+          &lt;br /&gt;
+          &lt;p&gt;
+            &lt;strong&gt;Desarrollo y Requisitos en Tecnología&lt;/strong&gt;
+          &lt;/p&gt;
+          &lt;br /&gt;
+          &lt;p&gt;
+            La agencia de marketing también es de base tecnológica,
+            implementando estrategias de onboarding digital para la captación de
+            clientes y el desarrollo de contenidos y campañas publicitarias en
+            línea. Esto permitirá optimizar la comercialización de los productos
+            y servicios del grupo a través de plataformas digitales &lt;span className="texto-rojo"&gt;SUMYT&lt;/span&gt;.
+          &lt;/p&gt;
         &lt;/div&gt;
-&nbsp;
-        {/* Colaboraciones */}
-        &lt;div className="item"&gt;
-          &lt;img src={marketing2} alt="Colaboraciones" /&gt;
-          &lt;div className="texto"&gt;
-            &lt;h3&gt;Colaboraciones&lt;/h3&gt;
-            &lt;p&gt;Trabajo conjunto con universidades y el SENA para el desarrollo de talento y conocimiento.&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-&nbsp;
-        {/* Desarrollo de Contenidos */}
-        &lt;div className="item"&gt;
-          &lt;img src={marketing3} alt="Desarrollo de Contenidos" /&gt;
-          &lt;div className="texto"&gt;
-            &lt;h3&gt;Desarrollo de Contenidos&lt;/h3&gt;
-            &lt;p&gt;Creación de contenido audiovisual de alta calidad para nuestras campañas publicitarias.&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        
-        &lt;img src={grupo} width="200" alt="Logo Grupo Servitransporte" className="logo-grupo" /&gt;
       &lt;/div&gt;
-    &lt;/section&gt;
+&nbsp;
+      {/* Logo decorativo opcional */}
+      &lt;img src={grupo} alt="Logo Derecho" className="marketing-logo" /&gt;
+    &lt;/div&gt;
   );
 };
 &nbsp;
-export default Marketing;</pre></td></tr></table></pre>
+export default Marketing;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-17T20:20:16.331Z
+                at 2025-09-22T19:54:54.395Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

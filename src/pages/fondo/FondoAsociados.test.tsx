@@ -5,71 +5,114 @@ import FondoAsociados from './FondoAsociados';
 // Mocks para CSS e imágenes
 jest.mock('./FondoAsociados.css', () => ({}));
 jest.mock('../../assets/image/sumyt.png', () => 'sumyt-mock-url');
+jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
 jest.mock('./proposito.png', () => 'proposito-mock-url');
-jest.mock('./segmentos.png', () => 'segmentos-mock-url');
 jest.mock('./proyecciones.png', () => 'proyecciones-mock-url');
+jest.mock('./segmentos.png', () => 'segmentos-mock-url');
 
 describe('FondoAsociados Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it('debería renderizar el logo SUMYT', () => {
+  it('debería renderizar el logo SUMYT en la sección izquierda', () => {
     render(<FondoAsociados />);
-    expect(screen.getByAltText('Logo SUMYT')).toBeInTheDocument();
-    expect(screen.getByAltText('Logo SUMYT')).toHaveAttribute('src', 'sumyt-mock-url');
+    
+    const sumytLogo = screen.getByAltText('Logo SUMYT');
+    expect(sumytLogo).toBeInTheDocument();
+    expect(sumytLogo).toHaveAttribute('src', 'sumyt-mock-url');
+    expect(sumytLogo).toHaveClass('fondo-left__logo');
   });
 
-  it('debería renderizar los 3 items principales', () => {
+  it('debería renderizar todas las imágenes de fondo', () => {
     render(<FondoAsociados />);
     
-    expect(screen.getByText('Propósito')).toBeInTheDocument();
-    expect(screen.getByText('Segmentos')).toBeInTheDocument();
-    expect(screen.getByText('Proyecciones')).toBeInTheDocument();
+    const fondoImages = screen.getAllByAltText('Fondo');
+    expect(fondoImages).toHaveLength(3);
+    
+    expect(fondoImages[0]).toHaveAttribute('src', 'proposito-mock-url');
+    expect(fondoImages[1]).toHaveAttribute('src', 'proyecciones-mock-url');
+    expect(fondoImages[2]).toHaveAttribute('src', 'segmentos-mock-url');
+    expect(fondoImages[0]).toHaveClass('fondo-img');
   });
 
-  it('debería renderizar todas las imágenes de los items', () => {
+  it('debería renderizar el logo del grupo en el footer', () => {
     render(<FondoAsociados />);
     
-    const images = screen.getAllByRole('img');
-    expect(images).toHaveLength(4); // logo SUMYT + 3 imágenes de items
-    
-    expect(screen.getByAltText('Propósito')).toBeInTheDocument();
-    expect(screen.getByAltText('Segmentos')).toBeInTheDocument();
-    expect(screen.getByAltText('Proyecciones')).toBeInTheDocument();
+    const grupoLogo = screen.getByAltText('Grupo Servitransporte');
+    expect(grupoLogo).toBeInTheDocument();
+    expect(grupoLogo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(grupoLogo).toHaveClass('fondo-logo');
   });
 
-  it('debería tener los src correctos en las imágenes', () => {
+  it('debería renderizar la lista de segmentos clave', () => {
     render(<FondoAsociados />);
     
-    expect(screen.getByAltText('Logo SUMYT')).toHaveAttribute('src', 'sumyt-mock-url');
-    expect(screen.getByAltText('Propósito')).toHaveAttribute('src', 'proposito-mock-url');
-    expect(screen.getByAltText('Segmentos')).toHaveAttribute('src', 'segmentos-mock-url');
-    expect(screen.getByAltText('Proyecciones')).toHaveAttribute('src', 'proyecciones-mock-url');
-  });
-
-  it('debería renderizar la descripción del propósito', () => {
-    render(<FondoAsociados />);
-    expect(screen.getByText('Fomentar el ahorro y la cooperación entre nuestros asociados.')).toBeInTheDocument();
-  });
-
-  it('debería renderizar la lista de segmentos', () => {
-    render(<FondoAsociados />);
-    
-    expect(screen.getByText('Transporte público.')).toBeInTheDocument();
-    expect(screen.getByText('Turismo.')).toBeInTheDocument();
-    expect(screen.getByText('Mensajería.')).toBeInTheDocument();
-    expect(screen.getByText('Empresas del holding.')).toBeInTheDocument();
-    
-    // Verificar que es una lista
     const listItems = screen.getAllByRole('listitem');
-    expect(listItems.length).toBe(6); // 4 segmentos + 2 proyecciones
+    expect(listItems).toHaveLength(4);
+    
+    expect(screen.getByText('Sector Transporte:')).toBeInTheDocument();
+    expect(screen.getByText('transporte especial, taxis, vehículos de lujo y transporte alternativo.')).toBeInTheDocument();
+    
+    expect(screen.getByText('Sector Turismo:')).toBeInTheDocument();
+    expect(screen.getByText('hoteles, restaurantes, guías, agencias de viajes y operadores turísticos.')).toBeInTheDocument();
+    
+    expect(screen.getByText('Sector Carga:')).toBeInTheDocument();
+    expect(screen.getByText('interconexión entre pequeños transportadores y usuarios de servicio de carga; servicio de courier para estudiantes.')).toBeInTheDocument();
+    
+    expect(screen.getByText('Empresas del Holding:')).toBeInTheDocument();
+    expect(screen.getByText('empresas que forman parte del grupo.')).toBeInTheDocument();
   });
 
-  it('debería renderizar la lista de proyecciones', () => {
+  it('debería mencionar SUMYT múltiples veces en el texto', () => {
     render(<FondoAsociados />);
     
-    expect(screen.getByText('Meta de 60,000 afiliados.')).toBeInTheDocument();
-    expect(screen.getByText('Programas de beneficios y apoyo financiero para los asociados.')).toBeInTheDocument();
+    const sumytElements = screen.getAllByText('SUMYT');
+    expect(sumytElements.length).toBeGreaterThan(1);
+    
+    // Verificar que al menos uno tiene la clase texto-rojo
+    const sumytWithClass = sumytElements.find(element => 
+      element.classList.contains('texto-rojo')
+    );
+    expect(sumytWithClass).toBeInTheDocument();
+  });
+
+  it('debería tener texto en negrita para los títulos de sectores', () => {
+    render(<FondoAsociados />);
+    
+    const strongElements = document.querySelectorAll('strong');
+    expect(strongElements.length).toBeGreaterThan(4);
+    
+    // Verificar algunos textos específicos en negrita
+    expect(screen.getByText('Sector Transporte:')).toContainHTML('strong');
+    expect(screen.getByText('Sector Turismo:')).toContainHTML('strong');
+    expect(screen.getByText('Sector Carga:')).toContainHTML('strong');
+    expect(screen.getByText('Empresas del Holding:')).toContainHTML('strong');
+  });
+
+  it('debería tener la estructura de clases CSS correcta', () => {
+    const { container } = render(<FondoAsociados />);
+    
+    expect(container.querySelector('.fondo-page')).toBeInTheDocument();
+    expect(container.querySelector('.fondo-left')).toBeInTheDocument();
+    expect(container.querySelector('.fondo-right')).toBeInTheDocument();
+    expect(container.querySelector('.imagenes-fondo')).toBeInTheDocument();
+    expect(container.querySelector('.fondo-section')).toBeInTheDocument();
+    expect(container.querySelector('.fondo-footer')).toBeInTheDocument();
+    expect(container.querySelectorAll('.fondo-img')).toHaveLength(3);
+  });
+
+  it('debería coincidir con el snapshot', () => {
+    const { container } = render(<FondoAsociados />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('debería tener la estructura semántica correcta', () => {
+    const { container } = render(<FondoAsociados />);
+    
+    expect(container.querySelector('aside')).toBeInTheDocument();
+    expect(container.querySelector('main')).toBeInTheDocument();
+    expect(container.querySelectorAll('section')).toHaveLength(2);
+    expect(container.querySelector('ul')).toBeInTheDocument();
   });
 });

@@ -4,78 +4,87 @@ import Turismo from './Turismo';
 
 // Mocks para CSS e imágenes
 jest.mock('./Turismo.css', () => ({}));
+jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
 jest.mock('./turismo1.png', () => 'turismo1-mock-url');
 jest.mock('./turismo2.png', () => 'turismo2-mock-url');
 jest.mock('./turismo3.png', () => 'turismo3-mock-url');
-jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
 
 describe('Turismo Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it('debería renderizar el título principal "Operador Turístico"', () => {
+  it('debería renderizar el subtítulo', () => {
     render(<Turismo />);
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Operador');
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Turístico');
+    expect(screen.getByText('Servitrasporte S.A.S')).toBeInTheDocument();
   });
 
-  it('debería renderizar las 3 imágenes de turismo', () => {
-    render(<Turismo />);
-    
-    const images = screen.getAllByRole('img');
-    expect(images).toHaveLength(4); // 3 imágenes de items + 1 logo grupo
-    
-    expect(screen.getByAltText('Hoteles')).toBeInTheDocument();
-    expect(screen.getByAltText('Turismo')).toBeInTheDocument();
-    expect(screen.getByAltText('Transporte')).toBeInTheDocument();
-    expect(screen.getByAltText('Logo Grupo Servitransporte')).toBeInTheDocument();
-  });
-
-  it('debería tener los src correctos en las imágenes', () => {
+  it('debería renderizar todas las imágenes de turismo', () => {
     render(<Turismo />);
     
-    expect(screen.getByAltText('Hoteles')).toHaveAttribute('src', 'turismo1-mock-url');
-    expect(screen.getByAltText('Turismo')).toHaveAttribute('src', 'turismo2-mock-url');
-    expect(screen.getByAltText('Transporte')).toHaveAttribute('src', 'turismo3-mock-url');
-    expect(screen.getByAltText('Logo Grupo Servitransporte')).toHaveAttribute('src', 'grupo-mock-url');
+    const turismoImages = screen.getAllByAltText('Turismo');
+    expect(turismoImages).toHaveLength(3);
+    
+    expect(turismoImages[0]).toHaveAttribute('src', 'turismo1-mock-url');
+    expect(turismoImages[1]).toHaveAttribute('src', 'turismo2-mock-url');
+    expect(turismoImages[2]).toHaveAttribute('src', 'turismo3-mock-url');
+    expect(turismoImages[0]).toHaveClass('turismo-img');
   });
 
-  it('debería renderizar los títulos de los items', () => {
+  it('debería renderizar el logo del grupo', () => {
     render(<Turismo />);
     
-    expect(screen.getByText('Alianzas Estratégicas')).toBeInTheDocument();
-    expect(screen.getByText('Enfoque')).toBeInTheDocument();
-    expect(screen.getByText('Afiliados')).toBeInTheDocument();
+    const logo = screen.getByAltText('Logo Derecho');
+    expect(logo).toBeInTheDocument();
+    expect(logo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(logo).toHaveClass('turismo-logo');
   });
 
-  it('debería renderizar la descripción de alianzas estratégicas', () => {
-    render(<Turismo />);
-    expect(screen.getByText('Convenios con hoteles, moteles, restaurantes y otros servicios turísticos')).toBeInTheDocument();
-  });
-
-  it('debería renderizar la lista de enfoques turísticos', () => {
+  it('debería mencionar SUMYT en el texto', () => {
     render(<Turismo />);
     
-    expect(screen.getByText('Turismo nacional e internacional.')).toBeInTheDocument();
-    expect(screen.getByText('Turismo en salud, aprovechando nuestra red de servicios médicos.')).toBeInTheDocument();
+    const sumytElements = screen.getAllByText('SUMYT');
+    expect(sumytElements.length).toBeGreaterThan(0);
     
-    // Verificar que es una lista
-    const listItems = screen.getAllByRole('listitem');
-    expect(listItems.length).toBe(2);
+    // Verificar que SUMYT tiene la clase texto-rojo
+    const sumytWithClass = sumytElements.find(element => 
+      element.classList.contains('texto-rojo')
+    );
+    expect(sumytWithClass).toBeInTheDocument();
   });
 
-  it('debería renderizar la información de afiliados', () => {
-    render(<Turismo />);
-    expect(screen.getByText('260 asociados a INHOTELCOL, fortaleciendo nuestra red de servicios turísticos')).toBeInTheDocument();
-  });
-
-  it('debería renderizar el logo del grupo con el ancho correcto', () => {
-    render(<Turismo />);
+  it('debería tener la estructura de clases CSS correcta', () => {
+    const { container } = render(<Turismo />);
     
-    const grupoLogo = screen.getByAltText('Logo Grupo Servitransporte');
-    expect(grupoLogo).toHaveAttribute('width', '200');
-    expect(grupoLogo).toHaveClass('turismo-logo-grupo');
+    expect(container.querySelector('.turismo-page')).toBeInTheDocument();
+    expect(container.querySelector('.turismo-left')).toBeInTheDocument();
+    expect(container.querySelector('.turismo-right')).toBeInTheDocument();
+    expect(container.querySelector('.imagenes-turismo')).toBeInTheDocument();
+    expect(container.querySelector('.section')).toBeInTheDocument();
+    expect(container.querySelectorAll('.turismo-img')).toHaveLength(3);
   });
 
+  it('debería coincidir con el snapshot', () => {
+    const { container } = render(<Turismo />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('debería tener la estructura de dos columnas', () => {
+    const { container } = render(<Turismo />);
+    
+    const leftColumn = container.querySelector('.turismo-left');
+    const rightColumn = container.querySelector('.turismo-right');
+    
+    expect(leftColumn).toBeInTheDocument();
+    expect(rightColumn).toBeInTheDocument();
+    
+    // Verificar que la columna izquierda tiene los títulos
+    expect(leftColumn).toHaveTextContent('Operador Turístico');
+    expect(leftColumn).toHaveTextContent('Servitrasporte S.A.S');
+    
+    // Verificar que la columna derecha tiene el contenido principal
+    expect(rightColumn).toHaveTextContent('SUMYT');
+    expect(rightColumn).toHaveTextContent('INHOTELCOL');
+    expect(rightColumn).toHaveTextContent('onboarding digital');
+  });
 });

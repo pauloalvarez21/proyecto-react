@@ -4,75 +4,111 @@ import ServiciosJuridicos from './ServiciosJuridicos';
 
 // Mocks para CSS e imágenes
 jest.mock('./ServiciosJuridicos.css', () => ({}));
+jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
 jest.mock('./juridicos1.png', () => 'juridicos1-mock-url');
 jest.mock('./juridicos2.png', () => 'juridicos2-mock-url');
 jest.mock('./juridicos3.png', () => 'juridicos3-mock-url');
-jest.mock('../../assets/image/grupo.svg', () => 'grupo-mock-url');
 
 describe('ServiciosJuridicos Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it('debería renderizar el título principal "Servicios Jurídicos y Financieros"', () => {
+  it('debería renderizar el título principal', () => {
     render(<ServiciosJuridicos />);
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Servicios Jurídicos y Financieros');
+    expect(screen.getByText('Servicios Jurídicos y Financieros')).toBeInTheDocument();
   });
 
-  it('debería renderizar las 3 imágenes de servicios jurídicos', () => {
+  it('debería renderizar el subtítulo', () => {
     render(<ServiciosJuridicos />);
-    
-    const images = screen.getAllByRole('img');
-    expect(images).toHaveLength(4); // 3 imágenes de items + 1 logo grupo
-    
-    expect(screen.getByAltText('Servicios a Empresas del Holding')).toBeInTheDocument();
-    expect(screen.getByAltText('Planes de Pago')).toBeInTheDocument();
-    expect(screen.getByAltText('Infraestructura')).toBeInTheDocument();
-    expect(screen.getByAltText('Logo Grupo Servitransporte')).toBeInTheDocument();
+    expect(screen.getByText('Servitrsporte S.A.S')).toBeInTheDocument();
   });
 
-  it('debería tener los src correctos en las imágenes', () => {
+  it('debería renderizar todas las imágenes jurídicas', () => {
     render(<ServiciosJuridicos />);
     
-    expect(screen.getByAltText('Servicios a Empresas del Holding')).toHaveAttribute('src', 'juridicos1-mock-url');
-    expect(screen.getByAltText('Planes de Pago')).toHaveAttribute('src', 'juridicos2-mock-url');
-    expect(screen.getByAltText('Infraestructura')).toHaveAttribute('src', 'juridicos3-mock-url');
-    expect(screen.getByAltText('Logo Grupo Servitransporte')).toHaveAttribute('src', 'grupo-mock-url');
+    const juridicosImages = screen.getAllByAltText('Jurídicos');
+    expect(juridicosImages).toHaveLength(3);
+    
+    expect(juridicosImages[0]).toHaveAttribute('src', 'juridicos1-mock-url');
+    expect(juridicosImages[1]).toHaveAttribute('src', 'juridicos2-mock-url');
+    expect(juridicosImages[2]).toHaveAttribute('src', 'juridicos3-mock-url');
+    expect(juridicosImages[0]).toHaveClass('juridicos-img');
   });
 
-  it('debería renderizar los títulos de los servicios', () => {
+  it('debería renderizar el logo del grupo', () => {
     render(<ServiciosJuridicos />);
     
-    expect(screen.getByText('Servicios a Empresas del Holding')).toBeInTheDocument();
-    expect(screen.getByText('Planes de Pago')).toBeInTheDocument();
-    expect(screen.getByText('Infraestructura')).toBeInTheDocument();
+    const logo = screen.getByAltText('Logo Derecho');
+    expect(logo).toBeInTheDocument();
+    expect(logo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(logo).toHaveClass('juridicos-logo');
   });
 
-  it('debería renderizar la descripción de servicios a empresas', () => {
-    render(<ServiciosJuridicos />);
-    expect(screen.getByText('Asesoría jurídica y financiera para apoyar el crecimiento y la estabilidad de nuestras empresas.')).toBeInTheDocument();
-  });
-
-  it('debería renderizar la lista de planes de pago', () => {
+  it('debería mencionar la Constructora Servitrasporte', () => {
     render(<ServiciosJuridicos />);
     
-    expect(screen.getByText('Financiamiento y planes de pago adaptados a las necesidades de clientes.')).toBeInTheDocument();
-    
-    // Verificar que es una lista
-    const listItems = screen.getAllByRole('listitem');
-    expect(listItems.length).toBe(1);
+    expect(screen.getByText('Constructora Servitrasporte')).toBeInTheDocument();
+    expect(screen.getByText('Constructora Servitrasporte')).toContainHTML('strong');
   });
 
-  it('debería renderizar la descripción de infraestructura', () => {
-    render(<ServiciosJuridicos />);
-    expect(screen.getByText('Gestión y optimización de recursos para garantizar un servicio eficiente y eficaz.')).toBeInTheDocument();
-  });
-
-  it('debería renderizar el logo del grupo con el ancho correcto', () => {
+  it('debería mencionar SUMYT en el texto', () => {
     render(<ServiciosJuridicos />);
     
-    const grupoLogo = screen.getByAltText('Logo Grupo Servitransporte');
-    expect(grupoLogo).toHaveAttribute('width', '200');
-    expect(grupoLogo).toHaveClass('juridicos-logo-grupo');
+    const sumytElements = screen.getAllByText('SUMYT');
+    expect(sumytElements.length).toBeGreaterThan(0);
+    
+    // Verificar que SUMYT tiene la clase texto-rojo
+    const sumytWithClass = sumytElements.find(element => 
+      element.classList.contains('texto-rojo')
+    );
+    expect(sumytWithClass).toBeInTheDocument();
+  });
+
+  it('debería tener texto en negrita para énfasis', () => {
+    render(<ServiciosJuridicos />);
+    
+    const strongElements = document.querySelectorAll('strong');
+    expect(strongElements.length).toBeGreaterThan(2);
+    
+    // Verificar algunos textos específicos en negrita
+    expect(screen.getByText('Servicios Jurídicos y Económicos Servitrasporte')).toContainHTML('strong');
+    expect(screen.getByText('Constructora Servitrasporte')).toContainHTML('strong');
+    expect(screen.getByText('Desarrollo y Requisitos en Tecnología')).toContainHTML('strong');
+  });
+
+  it('debería tener la estructura de clases CSS correcta', () => {
+    const { container } = render(<ServiciosJuridicos />);
+    
+    expect(container.querySelector('.juridicos-page')).toBeInTheDocument();
+    expect(container.querySelector('.juridicos-left')).toBeInTheDocument();
+    expect(container.querySelector('.juridicos-right')).toBeInTheDocument();
+    expect(container.querySelector('.imagenes-juridicos')).toBeInTheDocument();
+    expect(container.querySelector('.section')).toBeInTheDocument();
+    expect(container.querySelectorAll('.juridicos-img')).toHaveLength(3);
+  });
+
+  it('debería coincidir con el snapshot', () => {
+    const { container } = render(<ServiciosJuridicos />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('debería tener la estructura de dos columnas', () => {
+    const { container } = render(<ServiciosJuridicos />);
+    
+    const leftColumn = container.querySelector('.juridicos-left');
+    const rightColumn = container.querySelector('.juridicos-right');
+    
+    expect(leftColumn).toBeInTheDocument();
+    expect(rightColumn).toBeInTheDocument();
+    
+    // Verificar que la columna izquierda tiene los títulos
+    expect(leftColumn).toHaveTextContent('Servicios Jurídicos y Financieros');
+    expect(leftColumn).toHaveTextContent('Servitrsporte S.A.S');
+    
+    // Verificar que la columna derecha tiene el contenido principal
+    expect(rightColumn).toHaveTextContent('Servicios Jurídicos y Económicos Servitrasporte');
+    expect(rightColumn).toHaveTextContent('Constructora Servitrasporte');
+    expect(rightColumn).toHaveTextContent('SUMYT');
   });
 });

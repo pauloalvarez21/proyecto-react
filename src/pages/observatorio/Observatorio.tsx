@@ -418,10 +418,10 @@ const Observatorio = () => {
               tecnologías y fuentes de datos (ej. inteligencia artificial, IoT)
               para mantener la vanguardia en inteligencia turística.
             </p>
-            <br />
             <p>
               Para más información, puedes descargar el documento oficial
               haciendo clic en el siguiente enlace:
+              <br />
               <a
                 href="/Firma_observatorio_2025.docx"
                 download="Firma_observatorio_2025.docx"

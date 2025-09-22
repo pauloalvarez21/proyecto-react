@@ -111,14 +111,30 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,62 +175,88 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import './ServiciosJuridicos.css'; // Crearemos este archivo CSS
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+import "./ServiciosJuridicos.css";
+&nbsp;
+import grupo from "../../assets/image/grupo.png";
 import juridicos1 from "./juridicos1.png";
 import juridicos2 from "./juridicos2.png";
 import juridicos3 from "./juridicos3.png";
-import grupo from "../../assets/image/grupo.svg";
 &nbsp;
 const ServiciosJuridicos = () =&gt; {
   return (
-    &lt;section className="servicios-juridicos"&gt;
-      {/* Columna izquierda */}
-      &lt;div className="juridicos-col-izquierda"&gt;
+    &lt;div className="juridicos-page"&gt;
+      {/* Lado izquierdo */}
+      &lt;div className="juridicos-left"&gt;
         &lt;h1&gt;Servicios Jurídicos y Financieros&lt;/h1&gt;
+        &lt;h2&gt;Servitrsporte S.A.S&lt;/h2&gt;
       &lt;/div&gt;
 &nbsp;
-      {/* Columna derecha */}
-      &lt;div className="juridicos-col-derecha"&gt;
-        &lt;div className="juridicos-item"&gt;
-          &lt;img src={juridicos1} alt="Servicios a Empresas del Holding" /&gt;
-          &lt;div className="juridicos-texto"&gt;
-            &lt;h3&gt;Servicios a Empresas del Holding&lt;/h3&gt;
-            &lt;p&gt;Asesoría jurídica y financiera para apoyar el crecimiento y la estabilidad de nuestras empresas.&lt;/p&gt;
-          &lt;/div&gt;
+      {/* Lado derecho */}
+      &lt;div className="juridicos-right"&gt;
+        &lt;p className="imagenes-juridicos"&gt;
+          &lt;img src={juridicos1} alt="Jurídicos" className="juridicos-img" /&gt;
+          &lt;img src={juridicos2} alt="Jurídicos" className="juridicos-img" /&gt;
+          &lt;img src={juridicos3} alt="Jurídicos" className="juridicos-img" /&gt;
+        &lt;/p&gt;
+        &lt;div className="section"&gt;
+          &lt;p&gt;
+            La unidad de{" "}
+            &lt;strong&gt;Servicios Jurídicos y Económicos Servitrasporte&lt;/strong&gt;{" "}
+            proporcionará servicios tanto a las empresas del holding como a los
+            operadores de las plataformas del grupo. Se ofrecerán tarifas y
+            planes de pago accesibles, con la opción de pagos diferidos en
+            línea. Además, la unidad gestionará el financiamiento necesario para
+            el desarrollo de infraestructura turística, ejecutando los proyectos
+            a través de la &lt;strong&gt;Constructora Servitrasporte&lt;/strong&gt;.
+          &lt;/p&gt;
+          &lt;br /&gt;
+          &lt;p&gt;
+            &lt;strong&gt;Desarrollo y Requisitos en Tecnología&lt;/strong&gt;
+          &lt;/p&gt;
+          &lt;br /&gt;
+          &lt;p&gt;
+            Este servicio está respaldado por una sólida infraestructura
+            tecnológica, permitiendo el análisis de datos y la gestión de pagos
+            en línea para servicios jurídicos y financieros. Estos pagos podrán
+            ser descontados automáticamente desde los servicios de transporte y
+            otros sectores de la plataforma. Por ser de base tecnológica,
+            implementando estrategias de onboarding digital para la captación de
+            clientes de servicios jurídicos y financieros y el desarrollo de
+            contenidos y campañas publicitarias en línea. Esto permitirá
+            optimizar la comercialización de los productos y el mejoramiento de
+            servicios del grupo a través de plataformas digitales &lt;span className="texto-rojo"&gt;SUMYT&lt;/span&gt;.
+          &lt;/p&gt;
         &lt;/div&gt;
-&nbsp;
-        &lt;div className="juridicos-item"&gt;
-          &lt;img src={juridicos2} alt="Planes de Pago" /&gt;
-          &lt;div className="juridicos-texto"&gt;
-            &lt;h3&gt;Planes de Pago&lt;/h3&gt;
-            &lt;ul&gt;
-              &lt;li&gt;Financiamiento y planes de pago adaptados a las necesidades de clientes.&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-&nbsp;
-        &lt;div className="juridicos-item"&gt;
-          &lt;img src={juridicos3} alt="Infraestructura" /&gt;
-          &lt;div className="juridicos-texto"&gt;
-            &lt;h3&gt;Infraestructura&lt;/h3&gt;
-            &lt;p&gt;Gestión y optimización de recursos para garantizar un servicio eficiente y eficaz.&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        
-        &lt;img src={grupo} width="200" alt="Logo Grupo Servitransporte" className="juridicos-logo-grupo" /&gt;
       &lt;/div&gt;
-    &lt;/section&gt;
+&nbsp;
+      {/* Logo decorativo opcional */}
+      &lt;img src={grupo} alt="Logo Derecho" className="juridicos-logo" /&gt;
+    &lt;/div&gt;
   );
 };
 &nbsp;
-export default ServiciosJuridicos;</pre></td></tr></table></pre>
+export default ServiciosJuridicos;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-17T20:20:16.331Z
+                at 2025-09-22T19:54:54.395Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

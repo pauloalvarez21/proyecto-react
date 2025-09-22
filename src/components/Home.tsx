@@ -49,10 +49,26 @@ const logos = [
 ];
 
 const pillars: Pillar[] = [
-  { img: educacion, label: "Educación", info: "La educación es la base del desarrollo personal y social." },
-  { img: vivienda, label: "Vivienda", info: "La vivienda digna es esencial para el bienestar de las familias." },
-  { img: salud, label: "Salud", info: "El acceso a la salud es un derecho fundamental para todos." },
-  { img: tecnologia, label: "Tecnología", info: "La tecnología impulsa la innovación y el progreso de la sociedad." },
+  {
+    img: educacion,
+    label: "Educación",
+    info: "La educación es la base del desarrollo personal y social.",
+  },
+  {
+    img: vivienda,
+    label: "Vivienda",
+    info: "La vivienda digna es esencial para el bienestar de las familias.",
+  },
+  {
+    img: salud,
+    label: "Salud",
+    info: "El acceso a la salud es un derecho fundamental para todos.",
+  },
+  {
+    img: tecnologia,
+    label: "Tecnología",
+    info: "La tecnología impulsa la innovación y el progreso de la sociedad.",
+  },
 ];
 
 const videos = [video, video1, video2, video3];
@@ -79,10 +95,17 @@ const Home = () => {
       <section className="presentation">
         <h2>Presentaciones en Video</h2>
         <Slider {...sliderSettings}>
-          {videos.map((src, index) => (
-            <div key={index} className="video-slide">
+          {videos.map((src) => (
+            <div key={src} className="video-slide">
               <video controls width="100%">
                 <source src={src} type="video/mp4" />
+                <track
+                  kind="captions"
+                  srcLang="es"
+                  label="Español"
+                  src="captions.vtt"
+                  default
+                />
                 Tu navegador no soporta videos.
               </video>
             </div>
@@ -91,14 +114,19 @@ const Home = () => {
 
         <h2>Presentaciones en Imágenes</h2>
         <Slider {...sliderSettings}>
-          {images.map((src, index) => (
-            <div key={index} className="image-slide">
-              <img
-                src={src}
-                alt={`slide-${index}`}
+          {images.map((src) => (
+            <div key={src} className="image-slide">
+              <button
                 onClick={() => setSelectedImage(src)}
                 className="clickable-img"
-              />
+                style={{
+                  border: "none",
+                  background: "transparent",
+                  padding: 0,
+                }}
+              >
+                <img src={src} alt={`slide-${src}`} className="clickable-img" />
+              </button>
             </div>
           ))}
         </Slider>
@@ -109,10 +137,20 @@ const Home = () => {
         <h2>4 PILARES FUNDAMENTALES</h2>
         <div className="pillars-list">
           {pillars.map((p) => (
-            <div key={p.label} className="pillar" onClick={() => setSelectedPillar(p)}>
+            <button
+              key={p.label}
+              className="pillar"
+              onClick={() => setSelectedPillar(p)}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+              }}
+            >
               <img src={p.img} alt={p.label} className="pillar-icon" />
               <p>{p.label}</p>
-            </div>
+            </button>
           ))}
         </div>
       </section>
@@ -129,9 +167,27 @@ const Home = () => {
 
       {/* POPUPS */}
       {selectedPillar && (
-        <div className="popup-overlay" onClick={() => setSelectedPillar(null)}>
-          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-            <button className="popup-close" onClick={() => setSelectedPillar(null)}>✖</button>
+        <div
+          className="popup-overlay"
+          role="button"
+          tabIndex={0}
+          onClick={() => setSelectedPillar(null)}
+          onKeyDown={(e) => e.key === "Enter" && setSelectedPillar(null)}
+        >
+          <div
+            className="popup-content"
+            role="dialog"
+            aria-modal="true"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="popup-close"
+              onClick={() => setSelectedPillar(null)}
+              aria-label="Cerrar popup"
+            >
+              ✕
+            </button>
+
             <h3>{selectedPillar.label}</h3>
             <p>{selectedPillar.info}</p>
           </div>
@@ -141,7 +197,12 @@ const Home = () => {
       {selectedImage && (
         <div className="popup-overlay" onClick={() => setSelectedImage(null)}>
           <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-            <button className="popup-close" onClick={() => setSelectedImage(null)}>✖</button>
+            <button
+              className="popup-close"
+              onClick={() => setSelectedImage(null)}
+            >
+              ✖
+            </button>
             <img src={selectedImage} alt="popup" className="popup-img" />
           </div>
         </div>

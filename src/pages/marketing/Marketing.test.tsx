@@ -4,79 +4,107 @@ import Marketing from './Marketing';
 
 // Mocks para CSS e imágenes
 jest.mock('./Marketing.css', () => ({}));
+jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
 jest.mock('./marketing1.png', () => 'marketing1-mock-url');
 jest.mock('./marketing2.png', () => 'marketing2-mock-url');
 jest.mock('./marketing3.png', () => 'marketing3-mock-url');
-jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
 
 describe('Marketing Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it('debería renderizar el título principal "Agencia de Marketing y Publicidad"', () => {
+  it('debería renderizar el título principal', () => {
     render(<Marketing />);
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Agencia de');
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Marketing y');
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Publicidad');
+    expect(screen.getByText('Agencia de Marketing y Publicidad')).toBeInTheDocument();
   });
 
-  it('debería renderizar las 3 imágenes de marketing', () => {
+  it('debería renderizar el subtítulo', () => {
     render(<Marketing />);
-    
-    const images = screen.getAllByRole('img');
-    expect(images).toHaveLength(4); // 3 imágenes de items + 1 logo grupo
-    
-    expect(screen.getByAltText('Estrategias Innovadoras')).toBeInTheDocument();
-    expect(screen.getByAltText('Colaboraciones')).toBeInTheDocument();
-    expect(screen.getByAltText('Desarrollo de Contenidos')).toBeInTheDocument();
-    expect(screen.getByAltText('Logo Grupo Servitransporte')).toBeInTheDocument();
+    expect(screen.getByText('Servitrasporte S.A.S')).toBeInTheDocument();
   });
 
-  it('debería tener los src correctos en las imágenes', () => {
+  it('debería renderizar todas las imágenes de marketing', () => {
     render(<Marketing />);
     
-    expect(screen.getByAltText('Estrategias Innovadoras')).toHaveAttribute('src', 'marketing1-mock-url');
-    expect(screen.getByAltText('Colaboraciones')).toHaveAttribute('src', 'marketing2-mock-url');
-    expect(screen.getByAltText('Desarrollo de Contenidos')).toHaveAttribute('src', 'marketing3-mock-url');
-    expect(screen.getByAltText('Logo Grupo Servitransporte')).toHaveAttribute('src', 'grupo-mock-url');
+    const marketingImages = screen.getAllByAltText('Marketing');
+    expect(marketingImages).toHaveLength(3);
+    
+    expect(marketingImages[0]).toHaveAttribute('src', 'marketing1-mock-url');
+    expect(marketingImages[1]).toHaveAttribute('src', 'marketing2-mock-url');
+    expect(marketingImages[2]).toHaveAttribute('src', 'marketing3-mock-url');
+    expect(marketingImages[0]).toHaveClass('marketing-img');
   });
 
-  it('debería renderizar los títulos de los servicios de marketing', () => {
+  it('debería renderizar el logo del grupo', () => {
     render(<Marketing />);
     
-    expect(screen.getByText('Estrategias Innovadoras')).toBeInTheDocument();
-    expect(screen.getByText('Colaboraciones')).toBeInTheDocument();
-    expect(screen.getByText('Desarrollo de Contenidos')).toBeInTheDocument();
+    const logo = screen.getByAltText('Logo Derecho');
+    expect(logo).toBeInTheDocument();
+    expect(logo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(logo).toHaveClass('marketing-logo');
   });
 
-  it('debería renderizar la lista de estrategias innovadoras', () => {
+  it('debería mencionar SUMYT en el texto', () => {
     render(<Marketing />);
     
-    expect(screen.getByText('Neuro marketing para entender y captar mejor a nuestra audiencia.')).toBeInTheDocument();
-    expect(screen.getByText('Comunicación asertiva')).toBeInTheDocument();
+    const sumytElements = screen.getAllByText('SUMYT');
+    expect(sumytElements.length).toBeGreaterThan(0);
     
-    // Verificar que es una lista
-    const listItems = screen.getAllByRole('listitem');
-    expect(listItems.length).toBe(2);
+    // Verificar que SUMYT tiene la clase texto-rojo
+    const sumytWithClass = sumytElements.find(element => 
+      element.classList.contains('texto-rojo')
+    );
+    expect(sumytWithClass).toBeInTheDocument();
   });
 
-  it('debería renderizar la descripción de colaboraciones', () => {
-    render(<Marketing />);
-    expect(screen.getByText('Trabajo conjunto con universidades y el SENA para el desarrollo de talento y conocimiento.')).toBeInTheDocument();
-  });
-
-  it('debería renderizar la descripción de desarrollo de contenidos', () => {
-    render(<Marketing />);
-    expect(screen.getByText('Creación de contenido audiovisual de alta calidad para nuestras campañas publicitarias.')).toBeInTheDocument();
-  });
-
-  it('debería renderizar el logo del grupo con el ancho correcto', () => {
+  it('debería tener texto en negrita para énfasis', () => {
     render(<Marketing />);
     
-    const grupoLogo = screen.getByAltText('Logo Grupo Servitransporte');
-    expect(grupoLogo).toHaveAttribute('width', '200');
-    expect(grupoLogo).toHaveClass('logo-grupo');
+    const strongElements = document.querySelectorAll('strong');
+    expect(strongElements.length).toBeGreaterThan(5);
+    
+    // Verificar algunos textos específicos en negrita
+    expect(screen.getByText('Agencia de Marketing y Publicidad Servitrasporte')).toContainHTML('strong');
+    expect(screen.getByText('salud, educación, vivienda y tecnología')).toContainHTML('strong');
+    expect(screen.getByText('SENA')).toContainHTML('strong');
+    expect(screen.getByText('neuromarketing')).toContainHTML('strong');
+    expect(screen.getByText('cerebro emocional')).toContainHTML('strong');
+    expect(screen.getByText('Desarrollo y Requisitos en Tecnología')).toContainHTML('strong');
   });
 
+  it('debería tener la estructura de clases CSS correcta', () => {
+    const { container } = render(<Marketing />);
+    
+    expect(container.querySelector('.marketing-page')).toBeInTheDocument();
+    expect(container.querySelector('.marketing-left')).toBeInTheDocument();
+    expect(container.querySelector('.marketing-right')).toBeInTheDocument();
+    expect(container.querySelector('.imagenes-marketing')).toBeInTheDocument();
+    expect(container.querySelector('.section')).toBeInTheDocument();
+    expect(container.querySelectorAll('.marketing-img')).toHaveLength(3);
+  });
+
+  it('debería coincidir con el snapshot', () => {
+    const { container } = render(<Marketing />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('debería tener la estructura de dos columnas', () => {
+    const { container } = render(<Marketing />);
+    
+    const leftColumn = container.querySelector('.marketing-left');
+    const rightColumn = container.querySelector('.marketing-right');
+    
+    expect(leftColumn).toBeInTheDocument();
+    expect(rightColumn).toBeInTheDocument();
+    
+    // Verificar que la columna izquierda tiene los títulos
+    expect(leftColumn).toHaveTextContent('Agencia de Marketing y Publicidad');
+    expect(leftColumn).toHaveTextContent('Servitrasporte S.A.S');
+    
+    // Verificar que la columna derecha tiene el contenido principal
+    expect(rightColumn).toHaveTextContent('Agencia de Marketing y Publicidad Servitrasporte');
+    expect(rightColumn).toHaveTextContent('neuromarketing');
+    expect(rightColumn).toHaveTextContent('SUMYT');
+  });
 });

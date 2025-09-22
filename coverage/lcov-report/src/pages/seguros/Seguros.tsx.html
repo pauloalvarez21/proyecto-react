@@ -124,14 +124,21 @@
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,75 +192,83 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import './Seguros.css'; // Crearemos este archivo CSS
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+import "./Seguros.css";
+&nbsp;
+import grupo from "../../assets/image/grupo.png";
 import estado from "./estado.png";
-import segmentos from "./segmentos.png";
 import estrategia from "./estrategia.png";
-import grupo from "../../assets/image/grupo.svg";
+import segmentos from "./segmentos.png";
 &nbsp;
 const Seguros = () =&gt; {
   return (
-    &lt;div className="seguros-container"&gt;
-      {/* Columna izquierda */}
+    &lt;div className="seguros-page"&gt;
+      {/* Lado izquierdo */}
       &lt;div className="seguros-left"&gt;
         &lt;h1&gt;Corredor de Seguros&lt;/h1&gt;
+        &lt;h2&gt;Servitrasporte Ltda&lt;/h2&gt;
       &lt;/div&gt;
 &nbsp;
-      {/* Columna derecha */}
+      {/* Lado derecho */}
       &lt;div className="seguros-right"&gt;
-        &lt;div className="seguros-section"&gt;
-          &lt;div className="seguros-hexagon blue"&gt;
-            &lt;img src={estado} alt="Convenio Seguros" /&gt;
-          &lt;/div&gt;
-          &lt;div className="seguros-text"&gt;
-            &lt;h2&gt;Convenio Seguros del Estado&lt;/h2&gt;
-            &lt;p&gt;Productos adaptados a las necesidades de los clientes&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-&nbsp;
-        &lt;div className="seguros-section"&gt;
-          &lt;div className="seguros-hexagon orange"&gt;
-            &lt;img src={segmentos} alt="Segmentos" /&gt;
-          &lt;/div&gt;
-          &lt;div className="seguros-text"&gt;
-            &lt;h2&gt;Segmentos&lt;/h2&gt;
-            &lt;ul&gt;
-              &lt;li&gt;Seguros personales.&lt;/li&gt;
-              &lt;li&gt;Seguros patrimoniales.&lt;/li&gt;
-              &lt;li&gt;Seguros de prestación de servicios.&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-&nbsp;
-        &lt;div className="seguros-section"&gt;
-          &lt;div className="seguros-hexagon green"&gt;
-            &lt;img src={estrategia} alt="Estrategia" /&gt;
-          &lt;/div&gt;
-          &lt;div className="seguros-text"&gt;
-            &lt;h2&gt;Estrategia&lt;/h2&gt;
-            &lt;ul&gt;
-              &lt;li&gt;Oferta productos a bajo costo.&lt;/li&gt;
-              &lt;li&gt;Ventas en volumen para maximizar beneficios.&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-&nbsp;
-        &lt;div className="seguros-footer"&gt;
-          &lt;img src={grupo} alt="Logo Grupo Servitransporte" /&gt;
+        &lt;p className="imagenes-seguros"&gt;
+          &lt;img src={estado} alt="Seguro" className="seguros-img" /&gt;
+          &lt;img src={estrategia} alt="Seguro" className="seguros-img" /&gt;
+          &lt;img src={segmentos} alt="Seguro" className="seguros-img" /&gt;
+        &lt;/p&gt;
+        &lt;div className="section"&gt;
+          &lt;p&gt;
+            A través de un acuerdo en desarrollo con{" "}
+            &lt;strong&gt;Seguros del Estado&lt;/strong&gt; y otras aseguradoras,{" "}
+            &lt;strong&gt;Servitrasporte Ltda&lt;/strong&gt;. comercializará una amplia gama
+            de pólizas, desde seguros personales hasta seguros de daño
+            patrimonial y seguros de prestación de servicios en diversos
+            sectores, como el turismo y el transporte. El corredor de seguros
+            también ofrecerá toda la línea de seguros de medicina prepagada de
+            Medplus, en virtud de un acuerdo firmado con Grupo{" "}
+            &lt;strong&gt;Servitrasporte S.A.S&lt;/strong&gt;.
+          &lt;/p&gt;
+          &lt;p&gt;
+            El número proyectado de clientes incluye{" "}
+            &lt;strong&gt;60,000 operadores&lt;/strong&gt;, más los usuarios de las
+            plataformas &lt;span className="texto-rojo"&gt;SUMYT&lt;/span&gt;, con un
+            crecimiento exponencial previsto a medida que la plataforma se
+            desarrolle y sus líneas de negocio se expandan.
+          &lt;/p&gt;
+          &lt;br /&gt;
+          &lt;p&gt;
+            &lt;strong&gt;Desarrollo y Requisitos en Tecnología&lt;/strong&gt;
+          &lt;/p&gt;
+          &lt;br /&gt;
+          &lt;p&gt;
+            Este corredor de seguros, al igual que el fondo de asociados, es de
+            base tecnológica. Utiliza plataformas digitales que permiten captar
+            asociados, facilitar la inscripción y generar rutas de solicitud de
+            servicios, aprovechando al máximo las herramientas de &lt;strong&gt;onboarding&lt;/strong&gt; y
+            permitiendo a los usuarios realizar aportes y compras con descuentos
+            en las plataformas de transporte, turismo y mensajería.
+          &lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
+&nbsp;
+      {/* Logo decorativo opcional */}
+      &lt;img src={grupo} alt="Logo Derecho" className="seguros-logo" /&gt;
     &lt;/div&gt;
   );
 };
 &nbsp;
-export default Seguros;</pre></td></tr></table></pre>
+export default Seguros;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-17T20:20:16.331Z
+                at 2025-09-22T19:54:54.395Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

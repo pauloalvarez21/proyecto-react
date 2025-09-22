@@ -4,55 +4,108 @@ import InnovacionTecnologia from './InnovacionTecnologia';
 
 // Mocks para CSS e imágenes
 jest.mock('./InnovacionTecnologia.css', () => ({}));
-jest.mock('../../assets/image/grupo.svg', () => 'grupo-mock-url');
+jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
+jest.mock('./innovacion.png', () => 'innovacion-mock-url');
 
 describe('InnovacionTecnologia Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it('debería renderizar el título principal "Innovación y Tecnología"', () => {
+  it('debería renderizar el título principal', () => {
     render(<InnovacionTecnologia />);
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Innovación y Tecnología');
+    expect(screen.getByText('Innovación y Tecnología')).toBeInTheDocument();
   });
 
-  it('debería renderizar los 3 items de innovación', () => {
+  it('debería renderizar el subtítulo', () => {
     render(<InnovacionTecnologia />);
-    
-    expect(screen.getByText('Servicios a Empresas del Holding')).toBeInTheDocument();
-    expect(screen.getByText('Energía Limpia')).toBeInTheDocument();
-    expect(screen.getByText('Onboarding Digital')).toBeInTheDocument();
+    expect(screen.getByText('Servitrasporte S.A.S')).toBeInTheDocument();
   });
 
-  it('debería renderizar las descripciones de cada item', () => {
+  it('debería renderizar la imagen de innovación', () => {
     render(<InnovacionTecnologia />);
     
-    expect(screen.getByText('Desarrollo de soluciones tecnológicas para mejorar la eficiencia y la sostenibilidad')).toBeInTheDocument();
-    expect(screen.getByText('Promoción del uso de vehículos eléctricos y energías renovables')).toBeInTheDocument();
-    expect(screen.getByText('Proceso de captación de asociados mediante plataformas digitales innovadoras')).toBeInTheDocument();
+    const innovacionImage = screen.getByAltText('Innovación');
+    expect(innovacionImage).toBeInTheDocument();
+    expect(innovacionImage).toHaveAttribute('src', 'innovacion-mock-url');
+    expect(innovacionImage).toHaveClass('innovacion-img');
   });
 
   it('debería renderizar el logo del grupo', () => {
     render(<InnovacionTecnologia />);
     
-    const logo = screen.getByAltText('Logo Grupo Servitransporte');
+    const logo = screen.getByAltText('Logo Derecho');
     expect(logo).toBeInTheDocument();
     expect(logo).toHaveAttribute('src', 'grupo-mock-url');
-    expect(logo).toHaveAttribute('width', '200');
+    expect(logo).toHaveClass('innovacion-logo');
   });
 
-  it('debería tener el orden correcto de los elementos', () => {
+  it('debería mencionar SUMYT en el texto', () => {
     render(<InnovacionTecnologia />);
     
-    const headings = screen.getAllByRole('heading');
-    const headingTexts = headings.map(heading => heading.textContent);
+    const sumytElements = screen.getAllByText('SUMYT');
+    expect(sumytElements.length).toBeGreaterThan(0);
     
-    // Verificar que el h1 está primero y luego los h3
-    expect(headingTexts[0]).toBe('Innovación y Tecnología');
-    expect(headingTexts.slice(1)).toEqual([
-      'Servicios a Empresas del Holding',
-      'Energía Limpia',
-      'Onboarding Digital'
-    ]);
+    // Verificar que SUMYT tiene la clase texto-rojo
+    const sumytWithClass = sumytElements.find(element => 
+      element.classList.contains('texto-rojo')
+    );
+    expect(sumytWithClass).toBeInTheDocument();
+  });
+
+  it('debería resaltar el porcentaje de desarrollo', () => {
+    render(<InnovacionTecnologia />);
+    
+    const desarrolloText = screen.getByText('60% de desarrollo');
+    expect(desarrolloText).toBeInTheDocument();
+    expect(desarrolloText).toContainHTML('strong');
+  });
+
+  it('debería tener texto en negrita para énfasis', () => {
+    render(<InnovacionTecnologia />);
+    
+    const strongElements = document.querySelectorAll('strong');
+    expect(strongElements.length).toBeGreaterThan(5);
+    
+    // Verificar algunos textos específicos en negrita
+    expect(screen.getByText('60% de desarrollo')).toContainHTML('strong');
+    expect(screen.getByText('transporte, turismo y mensajería')).toContainHTML('strong');
+    expect(screen.getByText('Movilidad y Conectividad Inteligente:')).toContainHTML('strong');
+    expect(screen.getByText('Integración de Servicios Complementarios:')).toContainHTML('strong');
+  });
+
+  it('debería tener la estructura de clases CSS correcta', () => {
+    const { container } = render(<InnovacionTecnologia />);
+    
+    expect(container.querySelector('.innovacion-page')).toBeInTheDocument();
+    expect(container.querySelector('.innovacion-left')).toBeInTheDocument();
+    expect(container.querySelector('.innovacion-right')).toBeInTheDocument();
+    expect(container.querySelector('.imagenes-innovacion')).toBeInTheDocument();
+    expect(container.querySelector('.section')).toBeInTheDocument();
+    expect(container.querySelector('.innovacion-img')).toBeInTheDocument();
+    expect(container.querySelector('.innovacion-logo')).toBeInTheDocument();
+  });
+
+  it('debería coincidir con el snapshot', () => {
+    const { container } = render(<InnovacionTecnologia />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('debería tener la estructura de dos columnas', () => {
+    const { container } = render(<InnovacionTecnologia />);
+    
+    const leftColumn = container.querySelector('.innovacion-left');
+    const rightColumn = container.querySelector('.innovacion-right');
+    
+    expect(leftColumn).toBeInTheDocument();
+    expect(rightColumn).toBeInTheDocument();
+    
+    // Verificar que la columna izquierda tiene los títulos
+    expect(leftColumn).toHaveTextContent('Innovación y Tecnología');
+    expect(leftColumn).toHaveTextContent('Servitrasporte S.A.S');
+    
+    // Verificar que la columna derecha tiene el contenido principal
+    expect(rightColumn).toHaveTextContent('SUMYT');
+    expect(rightColumn).toHaveTextContent('60% de desarrollo');
   });
 });

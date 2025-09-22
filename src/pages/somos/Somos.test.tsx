@@ -29,26 +29,73 @@ describe('Somos Component', () => {
     expect(hexaImage).toHaveAttribute('src', 'hexa-mock-url');
   });
 
-  it('debería renderizar el nombre de la empresa en negrita', () => {
+  it('debería mencionar el nombre completo de la empresa', () => {
     render(<Somos />);
     
-    const empresaName = screen.getByText('Grupo Servitrasporte S.A.S.');
-    expect(empresaName).toBeInTheDocument();
-    expect(empresaName.tagName).toBe('STRONG');
+    expect(screen.getByText('Grupo Servitrasporte S.A.S.')).toBeInTheDocument();
+    expect(screen.getByText('Grupo Servitrasporte S.A.S.')).toContainHTML('strong');
   });
 
-  it('debería renderizar el texto SUMYT en rojo', () => {
+  it('debería mencionar los modelos de negocio B2B y B2C', () => {
     render(<Somos />);
     
-    const sumytText = screen.getByText('SUMYT');
-    expect(sumytText).toBeInTheDocument();
-    expect(sumytText).toHaveClass('texto-rojo');
+    expect(screen.getByText('(B2B, B2C)')).toBeInTheDocument();
+    expect(screen.getByText('(B2B, B2C)')).toContainHTML('strong');
   });
 
-  it('debería contener todos los párrafos de texto', () => {
+  it('debería mencionar SUMYT y su significado', () => {
     render(<Somos />);
     
-    const paragraphs = screen.getAllByText(/./); // Busca cualquier texto
-    expect(paragraphs.length).toBeGreaterThan(3); // Al menos 3 párrafos
+    const sumytElements = screen.getAllByText('SUMYT');
+    expect(sumytElements.length).toBeGreaterThan(0);
+    
+    // Verificar que SUMYT tiene la clase texto-rojo
+    const sumytWithClass = sumytElements.find(element => 
+      element.classList.contains('texto-rojo')
+    );
+    expect(sumytWithClass).toBeInTheDocument();
+  });
+
+  it('debería mencionar los cuatro pilares fundamentales', () => {
+    render(<Somos />);
+    
+    expect(screen.getByText('Salud, Educación, Vivienda y Tecnología')).toBeInTheDocument();
+    expect(screen.getByText('Salud, Educación, Vivienda y Tecnología')).toContainHTML('strong');
+  });
+
+  it('debería mencionar los objetivos de desarrollo sostenible', () => {
+    render(<Somos />);
+    
+    expect(screen.getByText('17 Objetivos de Desarrollo Sostenible')).toBeInTheDocument();
+    expect(screen.getByText('17 Objetivos de Desarrollo Sostenible')).toContainHTML('strong');
+  });
+
+  it('debería tener la estructura de clases CSS correcta', () => {
+    const { container } = render(<Somos />);
+    
+    expect(container.querySelector('.container')).toBeInTheDocument();
+    expect(container.querySelector('.text-content')).toBeInTheDocument();
+    expect(container.querySelector('.image-content')).toBeInTheDocument();
+    expect(container.querySelector('.hexagon')).toBeInTheDocument();
+  });
+
+  it('debería coincidir con el snapshot', () => {
+    const { container } = render(<Somos />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('debería tener la estructura de dos columnas', () => {
+    const { container } = render(<Somos />);
+    
+    const textColumn = container.querySelector('.text-content');
+    const imageColumn = container.querySelector('.image-content');
+    
+    expect(textColumn).toBeInTheDocument();
+    expect(imageColumn).toBeInTheDocument();
+    
+    // Verificar que la columna de texto tiene el contenido principal
+    expect(textColumn).toHaveTextContent('Grupo Servitrasporte S.A.S.');
+    expect(textColumn).toHaveTextContent('SUMYT');
+    
   });
 });

@@ -1,29 +1,34 @@
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import Footer from './Footer';
-
-// Mock de fetch global
-global.fetch = jest.fn();
 
 // Mock para CSS
 jest.mock('./Footer.css', () => ({}));
 
+// Mock de fetch global
+global.fetch = jest.fn();
+
 describe('Footer Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    (fetch as jest.Mock).mockReset();
+    (fetch as jest.Mock).mockResolvedValue({
+      text: jest.fn().mockResolvedValue('success'),
+    });
   });
 
-  it('debería renderizar el botón de contacto inicialmente', () => {
-    render(<Footer />);
-    expect(screen.getByText('📞 Contáctanos')).toBeInTheDocument();
-  });
-
-  it('debería abrir el modal al hacer clic en el botón de contacto', () => {
+  it('debería renderizar el botón de contacto y el copyright', () => {
     render(<Footer />);
     
-    const button = screen.getByText('📞 Contáctanos');
-    fireEvent.click(button);
+    expect(screen.getByText('📞 Contáctanos')).toBeInTheDocument();
+    expect(screen.getByText(/© \d{4} Grupo Servitransporte/)).toBeInTheDocument();
+  });
+
+  it('debería abrir el modal al hacer clic en el botón de contacto', async () => {
+    const user = userEvent.setup();
+    render(<Footer />);
+    
+    await user.click(screen.getByText('📞 Contáctanos'));
     
     expect(screen.getByText('Contáctanos')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Tu nombre')).toBeInTheDocument();
@@ -31,85 +36,62 @@ describe('Footer Component', () => {
     expect(screen.getByPlaceholderText('Escribe tu mensaje...')).toBeInTheDocument();
   });
 
-  it('debería cerrar el modal al hacer clic en cancelar', () => {
+  it('debería cerrar el modal al hacer clic en cancelar', async () => {
+    const user = userEvent.setup();
     render(<Footer />);
     
-    // Abrir modal
-    fireEvent.click(screen.getByText('📞 Contáctanos'));
+    await user.click(screen.getByText('📞 Contáctanos'));
     expect(screen.getByText('Contáctanos')).toBeInTheDocument();
     
-    // Cerrar modal
-    fireEvent.click(screen.getByText('Cancelar'));
-    
+    await user.click(screen.getByText('Cancelar'));
     expect(screen.queryByText('Contáctanos')).not.toBeInTheDocument();
   });
 
-  it('debería mostrar error cuando el nombre es muy corto', async () => {
+  it('debería mostrar error por nombre muy corto', async () => {
+    const user = userEvent.setup();
     render(<Footer />);
     
-    // Abrir modal
-    fireEvent.click(screen.getByText('📞 Contáctanos'));
+    await user.click(screen.getByText('📞 Contáctanos'));
     
-    // Llenar formulario con datos inválidos
-    fireEvent.change(screen.getByPlaceholderText('Tu nombre'), {
-      target: { value: 'ab' } // Nombre muy corto
-    });
-    fireEvent.change(screen.getByPlaceholderText('Tu correo'), {
-      target: { value: 'test@example.com' }
-    });
-    fireEvent.change(screen.getByPlaceholderText('Escribe tu mensaje...'), {
-      target: { value: 'Este es un mensaje de prueba válido' }
-    });
+    await user.type(screen.getByPlaceholderText('Tu nombre'), 'ab');
+    await user.type(screen.getByPlaceholderText('Tu correo'), 'test@example.com');
+    await user.type(screen.getByPlaceholderText('Escribe tu mensaje...'), 'Mensaje de prueba con más de 10 caracteres');
     
-    // Enviar formulario
-    fireEvent.click(screen.getByText('Enviar'));
+    await user.click(screen.getByText('Enviar'));
     
-    expect(await screen.findByText('El nombre debe tener entre 3 y 50 caracteres.')).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText('El nombre debe tener entre 3 y 50 caracteres.')).toBeInTheDocument();
+    });
   });
 
-
-  it('debería mostrar error cuando el mensaje es muy corto', async () => {
+  it('debería mostrar error por mensaje muy corto', async () => {
+    const user = userEvent.setup();
     render(<Footer />);
     
-    fireEvent.click(screen.getByText('📞 Contáctanos'));
+    await user.click(screen.getByText('📞 Contáctanos'));
     
-    fireEvent.change(screen.getByPlaceholderText('Tu nombre'), {
-      target: { value: 'Juan Pérez' }
-    });
-    fireEvent.change(screen.getByPlaceholderText('Tu correo'), {
-      target: { value: 'test@example.com' }
-    });
-    fireEvent.change(screen.getByPlaceholderText('Escribe tu mensaje...'), {
-      target: { value: 'Corto' } // Mensaje muy corto
-    });
+    await user.type(screen.getByPlaceholderText('Tu nombre'), 'Juan Pérez');
+    await user.type(screen.getByPlaceholderText('Tu correo'), 'test@example.com');
+    await user.type(screen.getByPlaceholderText('Escribe tu mensaje...'), 'Corto');
     
-    fireEvent.click(screen.getByText('Enviar'));
+    await user.click(screen.getByText('Enviar'));
     
-    expect(await screen.findByText('El mensaje debe tener entre 10 y 500 caracteres.')).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText('El mensaje debe tener entre 10 y 500 caracteres.')).toBeInTheDocument();
+    });
   });
 
-  it('debería enviar el formulario exitosamente', async () => {
-    // Mock de fetch exitoso
-    (fetch as jest.Mock).mockResolvedValueOnce({
-      text: jest.fn().mockResolvedValue('success')
-    });
-    
+  it('debería enviar el formulario exitosamente con datos válidos', async () => {
+    const user = userEvent.setup();
     render(<Footer />);
     
-    fireEvent.click(screen.getByText('📞 Contáctanos'));
+    await user.click(screen.getByText('📞 Contáctanos'));
     
-    // Llenar formulario con datos válidos
-    fireEvent.change(screen.getByPlaceholderText('Tu nombre'), {
-      target: { value: 'Juan Pérez' }
-    });
-    fireEvent.change(screen.getByPlaceholderText('Tu correo'), {
-      target: { value: 'test@example.com' }
-    });
-    fireEvent.change(screen.getByPlaceholderText('Escribe tu mensaje...'), {
-      target: { value: 'Este es un mensaje de prueba válido con más de 10 caracteres' }
-    });
+    await user.type(screen.getByPlaceholderText('Tu nombre'), 'Juan Pérez');
+    await user.type(screen.getByPlaceholderText('Tu correo'), 'test@example.com');
+    await user.type(screen.getByPlaceholderText('Escribe tu mensaje...'), 'Este es un mensaje de prueba con más de 10 caracteres');
     
-    fireEvent.click(screen.getByText('Enviar'));
+    await user.click(screen.getByText('Enviar'));
     
     await waitFor(() => {
       expect(screen.getByText('✅ Tu mensaje fue enviado correctamente.')).toBeInTheDocument();
@@ -119,67 +101,60 @@ describe('Footer Component', () => {
       'https://gruposervitrasporte.com/sendmail.php',
       expect.objectContaining({
         method: 'POST',
-        body: expect.any(FormData)
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
       })
     );
   });
 
-  it('debería mostrar error cuando el servidor falla', async () => {
-    // Mock de fetch fallido
+  it('debería manejar errores del servidor', async () => {
     (fetch as jest.Mock).mockResolvedValueOnce({
-      text: jest.fn().mockResolvedValue('error')
+      text: jest.fn().mockResolvedValue('error'),
     });
     
+    const user = userEvent.setup();
     render(<Footer />);
     
-    fireEvent.click(screen.getByText('📞 Contáctanos'));
+    await user.click(screen.getByText('📞 Contáctanos'));
     
-    fireEvent.change(screen.getByPlaceholderText('Tu nombre'), {
-      target: { value: 'Juan Pérez' }
-    });
-    fireEvent.change(screen.getByPlaceholderText('Tu correo'), {
-      target: { value: 'test@example.com' }
-    });
-    fireEvent.change(screen.getByPlaceholderText('Escribe tu mensaje...'), {
-      target: { value: 'Este es un mensaje de prueba válido con más de 10 caracteres' }
-    });
+    await user.type(screen.getByPlaceholderText('Tu nombre'), 'Juan Pérez');
+    await user.type(screen.getByPlaceholderText('Tu correo'), 'test@example.com');
+    await user.type(screen.getByPlaceholderText('Escribe tu mensaje...'), 'Este es un mensaje de prueba con más de 10 caracteres');
     
-    fireEvent.click(screen.getByText('Enviar'));
+    await user.click(screen.getByText('Enviar'));
     
     await waitFor(() => {
       expect(screen.getByText('❌ Hubo un error al enviar el mensaje. Intenta nuevamente.')).toBeInTheDocument();
     });
   });
 
-  it('debería mostrar error de conexión cuando fetch falla', async () => {
-    // Mock de fetch que lanza error
-    (fetch as jest.Mock).mockRejectedValueOnce(new Error('Network error'));
-    
+  it('debería sanitizar los inputs correctamente', async () => {
+    const user = userEvent.setup();
     render(<Footer />);
     
-    fireEvent.click(screen.getByText('📞 Contáctanos'));
+    await user.click(screen.getByText('📞 Contáctanos'));
     
-    fireEvent.change(screen.getByPlaceholderText('Tu nombre'), {
-      target: { value: 'Juan Pérez' }
-    });
-    fireEvent.change(screen.getByPlaceholderText('Tu correo'), {
-      target: { value: 'test@example.com' }
-    });
-    fireEvent.change(screen.getByPlaceholderText('Escribe tu mensaje...'), {
-      target: { value: 'Este es un mensaje de prueba válido con más de 10 caracteres' }
-    });
+    await user.type(screen.getByPlaceholderText('Tu nombre'), 'Juan\nPérez');
+    await user.type(screen.getByPlaceholderText('Tu correo'), 'test@example.com');
+    await user.type(screen.getByPlaceholderText('Escribe tu mensaje...'), 'Mensaje\ncon\nsaltos\nde\nlínea');
     
-    fireEvent.click(screen.getByText('Enviar'));
+    await user.click(screen.getByText('Enviar'));
     
     await waitFor(() => {
-      expect(screen.getByText(/⚠️ No se pudo conectar con el servidor./)).toBeInTheDocument();
+      expect(fetch).toHaveBeenCalled();
     });
   });
 
-  it('debería mostrar el copyright con el año actual', () => {
+  it('debería limpiar el estado al cerrar el modal', async () => {
+    const user = userEvent.setup();
     render(<Footer />);
     
-    const currentYear = new Date().getFullYear();
-    expect(screen.getByText(`© ${currentYear} Grupo Servitransporte. Todos los derechos reservados.`)).toBeInTheDocument();
+    await user.click(screen.getByText('📞 Contáctanos'));
+    await user.type(screen.getByPlaceholderText('Tu nombre'), 'Juan Pérez');
+    await user.click(screen.getByText('Cancelar'));
+    
+    await user.click(screen.getByText('📞 Contáctanos'));
+    expect(screen.getByPlaceholderText('Tu nombre')).toHaveValue('');
   });
 });

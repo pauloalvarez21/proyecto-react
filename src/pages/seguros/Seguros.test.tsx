@@ -4,86 +4,127 @@ import Seguros from './Seguros';
 
 // Mocks para CSS e imágenes
 jest.mock('./Seguros.css', () => ({}));
+jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
 jest.mock('./estado.png', () => 'estado-mock-url');
-jest.mock('./segmentos.png', () => 'segmentos-mock-url');
 jest.mock('./estrategia.png', () => 'estrategia-mock-url');
-jest.mock('../../assets/image/grupo.svg', () => 'grupo-mock-url');
+jest.mock('./segmentos.png', () => 'segmentos-mock-url');
 
 describe('Seguros Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it('debería renderizar el título principal "Corredor de Seguros"', () => {
+  it('debería renderizar el título principal', () => {
     render(<Seguros />);
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Corredor de Seguros');
+    expect(screen.getByText('Corredor de Seguros')).toBeInTheDocument();
   });
 
-  it('debería renderizar las 4 imágenes de seguros', () => {
+  it('debería renderizar todas las imágenes de seguros', () => {
     render(<Seguros />);
     
-    const images = screen.getAllByRole('img');
-    expect(images).toHaveLength(4); // 3 imágenes hexagonales + 1 logo grupo
+    const segurosImages = screen.getAllByAltText('Seguro');
+    expect(segurosImages).toHaveLength(3);
     
-    expect(screen.getByAltText('Convenio Seguros')).toBeInTheDocument();
-    expect(screen.getByAltText('Segmentos')).toBeInTheDocument();
-    expect(screen.getByAltText('Estrategia')).toBeInTheDocument();
-    expect(screen.getByAltText('Logo Grupo Servitransporte')).toBeInTheDocument();
+    expect(segurosImages[0]).toHaveAttribute('src', 'estado-mock-url');
+    expect(segurosImages[1]).toHaveAttribute('src', 'estrategia-mock-url');
+    expect(segurosImages[2]).toHaveAttribute('src', 'segmentos-mock-url');
+    expect(segurosImages[0]).toHaveClass('seguros-img');
   });
 
-  it('debería tener los src correctos en las imágenes', () => {
+  it('debería renderizar el logo del grupo', () => {
     render(<Seguros />);
     
-    expect(screen.getByAltText('Convenio Seguros')).toHaveAttribute('src', 'estado-mock-url');
-    expect(screen.getByAltText('Segmentos')).toHaveAttribute('src', 'segmentos-mock-url');
-    expect(screen.getByAltText('Estrategia')).toHaveAttribute('src', 'estrategia-mock-url');
-    expect(screen.getByAltText('Logo Grupo Servitransporte')).toHaveAttribute('src', 'grupo-mock-url');
+    const logo = screen.getByAltText('Logo Derecho');
+    expect(logo).toBeInTheDocument();
+    expect(logo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(logo).toHaveClass('seguros-logo');
   });
 
-  it('debería renderizar los títulos de las secciones', () => {
+  it('debería mencionar Seguros del Estado', () => {
     render(<Seguros />);
     
-    expect(screen.getByText('Convenio Seguros del Estado')).toBeInTheDocument();
-    expect(screen.getByText('Segmentos')).toBeInTheDocument();
-    expect(screen.getByText('Estrategia')).toBeInTheDocument();
+    expect(screen.getByText('Seguros del Estado')).toBeInTheDocument();
+    expect(screen.getByText('Seguros del Estado')).toContainHTML('strong');
   });
 
-  it('debería renderizar la descripción de convenio seguros', () => {
+  it('debería mencionar Servitrasporte Ltda y Servitrasporte S.A.S', () => {
     render(<Seguros />);
-    expect(screen.getByText('Productos adaptados a las necesidades de los clientes')).toBeInTheDocument();
+    expect(screen.getByText('Servitrasporte S.A.S')).toBeInTheDocument();
+    expect(screen.getByText('Servitrasporte S.A.S')).toContainHTML('strong');
   });
 
-  it('debería renderizar la lista de segmentos de seguros', () => {
-    render(<Seguros />);
-    
-    expect(screen.getByText('Seguros personales.')).toBeInTheDocument();
-    expect(screen.getByText('Seguros patrimoniales.')).toBeInTheDocument();
-    expect(screen.getByText('Seguros de prestación de servicios.')).toBeInTheDocument();
-    
-    // Verificar que es una lista
-    const listItems = screen.getAllByRole('listitem');
-    expect(listItems.length).toBe(5); // 3 segmentos + 2 estrategias
-  });
-
-  it('debería renderizar la lista de estrategias', () => {
+  it('debería mencionar los sectores atendidos', () => {
     render(<Seguros />);
     
-    expect(screen.getByText('Oferta productos a bajo costo.')).toBeInTheDocument();
-    expect(screen.getByText('Ventas en volumen para maximizar beneficios.')).toBeInTheDocument();
+    expect(screen.getByText(/turismo y el transporte/)).toBeInTheDocument();
   });
 
-  it('debería renderizar el logo del grupo en el footer', () => {
+  it('debería mostrar la proyección de clientes', () => {
     render(<Seguros />);
     
-    const grupoLogo = screen.getByAltText('Logo Grupo Servitransporte');
-    expect(grupoLogo).toBeInTheDocument();
+    expect(screen.getByText('60,000 operadores')).toBeInTheDocument();
+    expect(screen.getByText('60,000 operadores')).toContainHTML('strong');
   });
 
-  it('debería tener la estructura correcta con secciones', () => {
+  it('debería mencionar SUMYT en el texto', () => {
     render(<Seguros />);
     
-    const headings = screen.getAllByRole('heading');
-    expect(headings).toHaveLength(4); // h1 + 3 h2
+    const sumytElements = screen.getAllByText('SUMYT');
+    expect(sumytElements.length).toBeGreaterThan(0);
+    
+    // Verificar que SUMYT tiene la clase texto-rojo
+    const sumytWithClass = sumytElements.find(element => 
+      element.classList.contains('texto-rojo')
+    );
+    expect(sumytWithClass).toBeInTheDocument();
   });
 
+  it('debería tener texto en negrita para énfasis', () => {
+    render(<Seguros />);
+    
+    const strongElements = document.querySelectorAll('strong');
+    expect(strongElements.length).toBeGreaterThan(5);
+    
+    // Verificar algunos textos específicos en negrita
+    expect(screen.getByText('Seguros del Estado')).toContainHTML('strong');
+    expect(screen.getByText('Servitrasporte S.A.S')).toContainHTML('strong');
+    expect(screen.getByText('60,000 operadores')).toContainHTML('strong');
+    expect(screen.getByText('Desarrollo y Requisitos en Tecnología')).toContainHTML('strong');
+    expect(screen.getByText('onboarding')).toContainHTML('strong');
+  });
+
+  it('debería tener la estructura de clases CSS correcta', () => {
+    const { container } = render(<Seguros />);
+    
+    expect(container.querySelector('.seguros-page')).toBeInTheDocument();
+    expect(container.querySelector('.seguros-left')).toBeInTheDocument();
+    expect(container.querySelector('.seguros-right')).toBeInTheDocument();
+    expect(container.querySelector('.imagenes-seguros')).toBeInTheDocument();
+    expect(container.querySelector('.section')).toBeInTheDocument();
+    expect(container.querySelectorAll('.seguros-img')).toHaveLength(3);
+  });
+
+  it('debería coincidir con el snapshot', () => {
+    const { container } = render(<Seguros />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('debería tener la estructura de dos columnas', () => {
+    const { container } = render(<Seguros />);
+    
+    const leftColumn = container.querySelector('.seguros-left');
+    const rightColumn = container.querySelector('.seguros-right');
+    
+    expect(leftColumn).toBeInTheDocument();
+    expect(rightColumn).toBeInTheDocument();
+    
+    // Verificar que la columna izquierda tiene los títulos
+    expect(leftColumn).toHaveTextContent('Corredor de Seguros');
+    expect(leftColumn).toHaveTextContent('Servitrasporte Ltda');
+    
+    // Verificar que la columna derecha tiene el contenido principal
+    expect(rightColumn).toHaveTextContent('Seguros del Estado');
+    expect(rightColumn).toHaveTextContent('SUMYT');
+    expect(rightColumn).toHaveTextContent('onboarding');
+  });
 });
