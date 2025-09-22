@@ -118,18 +118,13 @@ body, html {
 }
 
 @media (max-width: 768px) {
-  .fondo-left h1 {
-    font-size: 2rem;
+  .imagenes-fondo {
+    flex-direction: column; /* 👉 en móvil se apilan vertical */
   }
-  .fondo-left h2 {
-    font-size: 1.3rem;
-  }
-  .section h3 {
-    font-size: 1.3rem;
-  }
-  .section p,
-  .section li {
-    font-size: 1rem;
+
+  .imagenes-fondo img {
+    width: 80%;   /* opcional: que ocupen más ancho en vertical */
+    max-width: 300px;
   }
 }
 
@@ -159,13 +154,14 @@ p {
 
 .imagenes-fondo {
   display: flex;
-  justify-content: center; /* centra en horizontal */
-  align-items: center;     /* centra en vertical si hace falta */
-  gap: 20px;               /* espacio entre las imágenes */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* por si no caben en horizontal */
 }
 
 .imagenes-fondo img {
-   width: 200px;
+  width: 200px;
   max-width: 100%;
   height: auto;
   border-radius: 8px;

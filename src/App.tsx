@@ -1,9 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Presentation from "./components/Presentation";
-import Pillars from "./components/Pillars";
-import Alliances from "./components/Alliances";
 import Footer from "./components/Footer";
+import Home from "./components/Home"; // ✅ Nuevo componente unificado
+
 import Fondos from "./pages/fondo/FondoAsociados";
 import Somos from "./pages/somos/Somos";
 import History from "./pages/history/History";
@@ -22,19 +21,10 @@ function App() {
       <Navbar />
       <main>
         <Routes>
-          {/* Página principal */}
-          <Route
-            path="/"
-            element={
-              <>
-                <Presentation />
-                <Pillars />
-                <Alliances />
-              </>
-            }
-          />
+          {/* ✅ Página principal unificada */}
+          <Route path="/" element={<Home />} />
 
-          {/* Página Fondos */}
+          {/* Otras páginas */}
           <Route path="/fondos" element={<Fondos />} />
           <Route path="/quienes-somos" element={<Somos />} />
           <Route path="/historia" element={<History />} />
@@ -46,8 +36,6 @@ function App() {
           <Route path="/innovacion" element={<InnovacionTecnologia />} />
           <Route path="/observatorio" element={<Observatorio />} />
           <Route path="/transporte" element={<Transporte />} />
-          {/* Puedes seguir agregando más páginas */}
-          {/* <Route path="/seguros" element={<Seguros />} /> */}
         </Routes>
       </main>
       <Footer />

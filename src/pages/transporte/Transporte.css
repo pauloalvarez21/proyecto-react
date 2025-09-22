@@ -118,18 +118,8 @@ body, html {
 }
 
 @media (max-width: 768px) {
-  .transporte-left h1 {
-    font-size: 2rem;
-  }
-  .transporte-left h2 {
-    font-size: 1.3rem;
-  }
-  .section h3 {
-    font-size: 1.3rem;
-  }
-  .section p,
-  .section li {
-    font-size: 1rem;
+  .imagenes-transporte {
+    flex-direction: column; /* de fila pasa a columna */
   }
 }
 
