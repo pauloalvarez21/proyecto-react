@@ -19,10 +19,10 @@
 }
 
 .presentation .slick-slider {
-  margin: 0 auto; /* ya estaba, pero lo reforzamos */
+  margin: 0 auto;
   display: block;
   width: 90%;
-  max-width: 800px; /* agrégalo si quieres más ancho que el de videos */
+  max-width: 800px;
 }
 
 .video-slide,
@@ -81,25 +81,32 @@
   flex-wrap: wrap;
 }
 
+/* -------------- NUEVA REGLA CENTRADA -------------- */
 .pillar {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;      /* horizontal */
+  justify-content: center;  /* vertical */
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s ease, color 0.2s ease;
+  color: #fff;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: center;
 }
 
 .pillar:hover {
   transform: scale(1.1);
-  color: #ffe082;
+  color: #000;
 }
 
 .pillar-icon {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  margin-bottom: 8px;
+  margin-bottom: 8px; /* separa icono ↔ texto */
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
@@ -107,6 +114,7 @@
   transform: scale(1.2);
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
 }
+/* -------------------------------------------------- */
 
 /* ====== ALIANZAS ====== */
 .alliances {
@@ -296,12 +304,27 @@
   text-align: center;
 }
 
-/* Letras blancas por defecto */
-.pillar {
-  color: #fff;
+/* Solo centrado para galería de fotos */
+.image-slide {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
-/* En hover: texto negro + efectos actuales */
-.pillar:hover {
-  color: #000;
+.image-slide img {
+  margin: 0 auto;
+  display: block;
 }
+
+/* Videos: se mantienen con el estilo original */
+.video-slide {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.video-slide video {
+  margin: 0 auto;
+  display: block;
+}
+

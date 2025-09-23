@@ -1,5 +1,5 @@
 import './History.css'; // Crearemos este archivo CSS
-import grupo from "../../assets/image/grupo.svg";
+import grupo from "../../assets/image/grupo.png";
 import sumyt from "../../assets/image/sumyt.png"
 
 const History = () => {
