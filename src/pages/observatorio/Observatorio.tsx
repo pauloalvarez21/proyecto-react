@@ -10,7 +10,8 @@ const Observatorio = () => {
     <div className="observatorio-page">
       {/* Lado izquierdo */}
       <div className="observatorio-left">
-        <h1>Observatorio</h1>
+        <h1>OBSERVATORIO DE SERVICIOS ESPECIALZIADOS
+            TURISTICOS “OSET”</h1>
         <img src={oset} alt="Observatorio" />
       </div>
 
@@ -18,8 +19,8 @@ const Observatorio = () => {
       <div className="observatorio-right">
         <div className="section">
           <p>
-            <strong>NOMBRE:</strong> OBSERVATORIO DE SERVICIOS ESPECIALZIADOS
-            TURISTICOS “OSET”
+            <strong>NOMBRE: OBSERVATORIO DE SERVICIOS ESPECIALZIADOS
+            TURISTICOS “OSET”</strong>
           </p>
           <br />
           <p>

@@ -6,8 +6,8 @@
 
 .contact-btn {
   display: inline-block;
-  background-color: #28a745;
-  color: #fff;
+  background-color: #C4DAFA;
+  color: #333;
   padding: 12px 25px;
   border-radius: 8px;
   font-size: 16px;
@@ -72,7 +72,7 @@
 }
 
 .send-btn {
-  background-color: #28a745;
+  background-color: #C4DAFA;
   color: white;
   padding: 10px 18px;
   border: none;

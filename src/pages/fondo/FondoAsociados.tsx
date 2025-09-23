@@ -78,7 +78,7 @@ const FondoAsociados: React.FC = () => {
             independientes para cada unidad de negocio interconectadas con la
             plataforma <span className="texto-rojo">SUMYT</span>. Además, se
             facilitará la realización de aportes por medio de descuentos desde
-            la plataforma de transporte, turismo y mensajería.
+            la plataforma de transporte, turismo y carga.
           </p>
         </section>
 

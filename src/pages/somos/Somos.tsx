@@ -17,7 +17,7 @@ const Somos = () => {
           Trasporte y regulada por la Súper Intendencia De Trasporte,
           desarrollando recursos tecnológicos como plataformas las cuales se
           transforma en I-commers utilizando IA con el propósito de mejorar la
-          logística del trasporte, turismo y mensajería entre solicitantes de
+          logística del trasporte, turismo y carga, entre solicitantes de
           servicios y operadores al igual que empresas y solicitantes de
           servicios <strong>(B2B, B2C)</strong>, con una alta escalabilidad por implementar buenas prácticas
           comerciales entre los operadores y clientes al pertenecer al marco

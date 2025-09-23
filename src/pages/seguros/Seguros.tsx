@@ -52,7 +52,7 @@ const Seguros = () => {
             asociados, facilitar la inscripción y generar rutas de solicitud de
             servicios, aprovechando al máximo las herramientas de <strong>onboarding</strong> y
             permitiendo a los usuarios realizar aportes y compras con descuentos
-            en las plataformas de transporte, turismo y mensajería.
+            en las plataformas de transporte, turismo y carga.
           </p>
         </div>
       </div>

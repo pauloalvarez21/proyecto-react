@@ -38,7 +38,7 @@ const Transporte = () => {
             Prestando asistencia eficiente para nuestros operadores de vehículos
             de Servicio Especial en sus 5 modalidades{" "}
             <strong>
-              1-Escolar 2-Empresarial 3-Turimo 4-Grupos Homogéneos 5-Medico
+              1-Escolar 2-Empresarial 3-Turismo 4-Grupos Homogéneos 5-Medico
             </strong>{" "}
             no Especializado, Taxi, Alternativo, Carga y Courier generando de
             esta forma una óptimo experiencia de servicio a nuestros usuarios y

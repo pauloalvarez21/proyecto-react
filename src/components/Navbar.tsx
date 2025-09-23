@@ -15,7 +15,7 @@ const menu = [
   { label: "Marketing y Publicidad", path: "/marketing" },
   { label: "Jurídicos y Financieros", path: "/juridicos" },
   { label: "Innovación y Tecnología", path: "/innovacion" },
-  { label: "Observatorio", path: "/observatorio" }, // ahora es como los demás
+  { label: "Observatorio \"OSET\"", path: "/observatorio" },
 ];
 
 const Navbar = () => {
