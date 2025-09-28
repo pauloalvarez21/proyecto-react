@@ -18,16 +18,13 @@ import vivienda from "../assets/image/vivienda.png";
 import salud from "../assets/image/salud.png";
 import tecnologia from "../assets/image/tecnologia.png";
 
-import video from "../assets/video/video.mp4";
-import video1 from "../assets/video/video1.mp4";
-import video2 from "../assets/video/video2.mp4";
-import video3 from "../assets/video/video3.mp4";
 import img1 from "../assets/image/img1.jpeg";
 import img2 from "../assets/image/img2.jpeg";
 import img3 from "../assets/image/img3.jpeg";
 import img4 from "../assets/image/img4.jpeg";
 import img5 from "../assets/image/img5.jpeg";
 import img6 from "../assets/image/img6.jpeg";
+import img7 from "../assets/image/img7.jpeg";
 
 // Tipos
 type Pillar = {
@@ -80,8 +77,15 @@ const pillars: Pillar[] = [
   },
 ];
 
-const videos = [video, video1, video2, video3];
-const images = [img1, img2, img3, img4, img5, img6];
+const youtubeVideos = [
+  "https://www.youtube.com/embed/fs-F9Mq6ZUc",
+  "https://www.youtube.com/embed/jLGyTnMvfq0",
+  "https://www.youtube.com/embed/SR7v6YYdzW8",
+  "https://www.youtube.com/embed/RxboWcSLndg",
+  "https://www.youtube.com/embed/sNfAQrqi8S0"
+];
+
+const images = [img1, img2, img3, img4, img5, img6, img7];
 
 const Home = () => {
   const [selectedPillar, setSelectedPillar] = useState<Pillar | null>(null);
@@ -128,21 +132,18 @@ const Home = () => {
       <section className="presentation">
         <h2>Galería de Videos</h2>
         <Slider {...sliderSettings}>
-          {videos.map((src) => (
-            <div key={src} className="video-slide">
-              <video controls width="100%">
-                <source src={src} type="video/mp4" />
-                <track
-                  kind="captions"
-                  srcLang="es"
-                  label="Español"
-                  src="captions.vtt"
-                  default
-                />
-                Tu navegador no soporta videos.
-              </video>
-            </div>
-          ))}
+          {youtubeVideos.map((url) => (
+    <div key={url} className="video-slide">
+      <iframe
+        width="100%"
+        height="400"
+        src={url}
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+  ))}
         </Slider>
 
         <h2>Galería de Fotos</h2>
@@ -173,14 +174,15 @@ const Home = () => {
         <h2>4 PILARES FUNDAMENTALES</h2>
         <div className="pillars-list">
           {pillars.map((p) => (
-            <div
+            <button
               key={p.label}
+              type="button"
               className="pillar"
               onClick={() => setSelectedPillar(p)}
             >
               <img src={p.img} alt={p.label} className="pillar-icon" />
               <p>{p.label}</p>
-            </div>
+            </button>
           ))}
         </div>
       </section>
