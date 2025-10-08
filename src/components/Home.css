@@ -328,3 +328,7 @@
   display: block;
 }
 
+.texto-rojo {
+  color: red;
+  font-weight: bold;
+}

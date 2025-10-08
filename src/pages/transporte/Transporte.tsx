@@ -73,7 +73,7 @@ const Transporte = () => {
           </p>
         </div>
       </div>
-
+      
       {/* Logo decorativo opcional */}
       <img src={grupo} alt="Logo Derecho" className="transporte-logo" />
     </div>

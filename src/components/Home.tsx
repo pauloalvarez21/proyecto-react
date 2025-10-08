@@ -59,7 +59,7 @@ const pillars: Pillar[] = [
     label: "Vivienda",
     info: "Desde GST S.A.S nos preocupamos por el acceso a una vivienda digna para el sector del trasporte y el turismo y sus servicios conexos por eso Grupo Servitrasporte dispuso del proyecto de vivienda de interés social denominado “Villa Valentina” ubicado en la localidad de Ciudad Bolívar en límite con Usme el cual inicialmente se está planificando para 2000 unidades de vivienda y el centro de desarrollo de GST, Además del proyecto de vivienda, estamos desarrollando un plan parcial entre la localidad de Usme y Ciudad Bolívar donde contamos con una extensión de terreno de 20 hectáreas  con capacidad para  20.000 unidades habitacionales más la dotación requerida en infraestructura, servicios públicos y equipamientos “ colegios, centros de salud, parques, centros comunitarios, centros comerciales y  vías” uniéndose esto al proceso de recuperación ambiental de 20 hectáreas denominado la loma el cual tiene una conexión directa con el plan parcial y villa valentina.",
     introduction:
-      "Pensando en el desarrollo y beneficio de la comunidad de GST y de su E-commerce SUMYT se ha basado en la creación de cuatro pilares fundamentales Educación, Salud, Vivienda y Tecnología los cuales sirven como soporte de desarrollo social el cual esta parametrizado para el beneficio de la comunidad que utiliza los servicios del E-commerce SUMYT siendo prestador de servicios o consumidor de los mismos",
+      "Pensando en el desarrollo y beneficio de la comunidad de GST y de su E-commerce SUMYT se ha basado en la creación de cuatro pilares fundamentales Educación, Salud, Vivienda y Tecnología los cuales sirven como soporte de desarrollo social el cual esta parametrizado para el beneficio de la comunidad que utiliza los servicios del E-commerce SUMYT siendo prestador de servicios o consumidor de los mismos.",
   },
   {
     img: salud,
@@ -71,9 +71,9 @@ const pillars: Pillar[] = [
   {
     img: tecnologia,
     label: "Tecnología",
-    info: "Es la columna vertebral de  Grupo Servitrasporte S.A.S. somos una empresa colombiana con base tecnológica “startup” que cumple con los requerimientos de la normativa Colombia, desarrollando recursos tecnológicos como plataformas las cuales se transforma en I-commers utilizando IA con el propósito de mejorar la logística del trasporte, turismo y carga entre solicitantes de servicios y operadores al igual que empresas y solicitantes de servicios (B2B, B2C), con una alta escalabilidad por implementar buenas prácticas comerciales entre los operadores y clientes desde herramientas tecnológicas, nos permite aprovechar recursos tecnológicos y convencionales con soluciones disruptivas innovadoras para satisfacer las necesidades de los usuarios y operadores en los sectores de influencia. dándole cumplimiento a nuestros cuatro pilares, Educación, Salud, Vivienda y Tecnología desde nuestras 7 líneas de negocio con base tecnológica, 1-fondo de asociados de la plataforma SUMYT, 2-corredor de seguros, 3-constructora, 4-operador turístico. 5-servicios jurídicos y financieros, 6-marketing y publicidad. 7-desarrollo y soporte tecnológico.",
+    info: "Es la columna vertebral de  Grupo Servitrasporte S.A.S. somos una empresa colombiana con base tecnológica “startup” que cumple con los requerimientos de la normativa Colombia, desarrollando recursos tecnológicos como plataformas las cuales se transforma en I-commers utilizando IA con el propósito de mejorar la logística del trasporte, turismo y carga entre solicitantes de servicios y operadores al igual que empresas y solicitantes de servicios (B2B, B2C), con una alta escalabilidad por implementar buenas prácticas comerciales entre los operadores y clientes desde herramientas tecnológicas, nos permite aprovechar recursos tecnológicos y convencionales con soluciones disruptivas innovadoras para satisfacer las necesidades de los usuarios y operadores en los sectores de influencia. dándole cumplimiento a nuestros cuatro pilares, Educación, Salud, Vivienda y Tecnología desde nuestras 7 líneas de negocio con base tecnológica, 1-fondo de asociados de la plataforma SUMYT, 2-corredor de seguros, 3-constructora, 4-operador turístico. 5-servicios jurídicos y financieros, 6-marketing y publicidad. 7-desarrollo y soporte tecnológico.",
     introduction:
-      "Pensando en el desarrollo y beneficio de la comunidad de GST y de su E-commerce SUMYT se ha basado en la creación de cuatro pilares fundamentales Educación, Salud, Vivienda y Tecnología los cuales sirven como soporte de desarrollo social el cual esta parametrizado para el beneficio de la comunidad que utiliza los servicios del E-commerce SUMYT siendo prestador de servicios o consumidor de los mismos",
+      "Pensando en el desarrollo y beneficio de la comunidad de GST y de su E-commerce SUMYT se ha basado en la creación de cuatro pilares fundamentales Educación, Salud, Vivienda y Tecnología los cuales sirven como soporte de desarrollo social el cual esta parametrizado para el beneficio de la comunidad que utiliza los servicios del E-commerce SUMYT siendo prestador de servicios o consumidor de los mismos.",
   },
 ];
 
@@ -83,7 +83,9 @@ const youtubeVideos = [
   "https://www.youtube.com/embed/SR7v6YYdzW8",
   "https://www.youtube.com/embed/RxboWcSLndg",
   "https://www.youtube.com/embed/sNfAQrqi8S0",
-  "https://www.youtube.com/embed/TmtYoEoT6QU"
+  "https://www.youtube.com/embed/TmtYoEoT6QU",
+  "https://www.youtube.com/embed/gtaxiqh395Q",
+  "https://www.youtube.com/embed/ezErUQuMxKk",
 ];
 
 const images = [img1, img2, img3, img4, img5, img6, img7];
@@ -99,11 +101,10 @@ const Home = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 10000,
   };
 
-  // Detectar si es móvil
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -111,7 +112,6 @@ const Home = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Configuración del carrusel de logos
   const logoSliderSettings = {
     dots: false,
     infinite: true,
@@ -127,6 +127,11 @@ const Home = () => {
     ],
   };
 
+  // ✅ Función para resaltar automáticamente todas las palabras "SUMYT"
+  const highlightSUMYT = (text: string) => {
+    return text.replace(/sumyt/gi, "<span class='texto-rojo'>SUMYT</span>");
+  };
+
   return (
     <div className="home">
       {/* SECCIÓN PRESENTACIONES */}
@@ -134,40 +139,39 @@ const Home = () => {
         <h2>Galería de Videos</h2>
         <Slider {...sliderSettings}>
           {youtubeVideos.map((url) => (
-    <div key={url} className="video-slide">
-      <iframe
-        width="100%"
-        height="400"
-        src={url}
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-    </div>
-  ))}
+            <div key={url} className="video-slide">
+              <iframe
+                width="100%"
+                height="400"
+                src={url}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          ))}
         </Slider>
 
         <h2>Galería de Fotos</h2>
-<div className="gallery-wrapper">
-  <Slider {...sliderSettings}>
-    {images.map((src) => (
-      <div key={src} className="image-slide">
-        <button
-          onClick={() => setSelectedImage(src)}
-          className="clickable-img"
-          style={{
-            border: "none",
-            background: "transparent",
-            padding: 0,
-          }}
-        >
-          <img src={src} alt={`slide-${src}`} className="clickable-img" />
-        </button>
-      </div>
-    ))}
-  </Slider>
-</div>
-
+        <div className="gallery-wrapper">
+          <Slider {...sliderSettings}>
+            {images.map((src) => (
+              <div key={src} className="image-slide">
+                <button
+                  onClick={() => setSelectedImage(src)}
+                  className="clickable-img"
+                  style={{
+                    border: "none",
+                    background: "transparent",
+                    padding: 0,
+                  }}
+                >
+                  <img src={src} alt={`slide-${src}`} className="clickable-img" />
+                </button>
+              </div>
+            ))}
+          </Slider>
+        </div>
       </section>
 
       {/* SECCIÓN PILARES */}
@@ -241,8 +245,16 @@ const Home = () => {
               ✕
             </button>
             <h3>{selectedPillar.label}</h3>
-            <p>{selectedPillar.introduction}</p>
-            <p>{selectedPillar.info}</p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: highlightSUMYT(selectedPillar.introduction),
+              }}
+            ></p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: highlightSUMYT(selectedPillar.info),
+              }}
+            ></p>
           </div>
         </div>
       )}

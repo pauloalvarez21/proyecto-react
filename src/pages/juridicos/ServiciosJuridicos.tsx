@@ -12,7 +12,7 @@ const ServiciosJuridicos = () => {
       {/* Lado izquierdo */}
       <div className="juridicos-left">
         <h1>Servicios Jurídicos y Financieros</h1>
-        <h2>Servitrsporte S.A.S</h2>
+        <h2>Servitrasporte S.A.S</h2>
       </div>
 
       {/* Lado derecho */}

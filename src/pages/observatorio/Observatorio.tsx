@@ -128,6 +128,7 @@ const Observatorio = () => {
             </div>
 
             <div className="componente">
+              <br />
               <h3>2. Equipos de Investigación y Análisis</h3>
               <p>
                 Grupo multidisciplinario encargado de la conceptualización,
@@ -156,6 +157,7 @@ const Observatorio = () => {
             </div>
 
             <div className="componente">
+              <br />
               <h3>3. Red de Fuentes de Información y Aliados Estratégicos</h3>
               <p>
                 Conjunto de entidades y organizaciones que proveen datos,
@@ -198,6 +200,7 @@ const Observatorio = () => {
             </div>
 
             <div className="componente">
+              <br />
               <h3>4. Mecanismos de Difusión y Comunicación</h3>
               <p>
                 Canales y estrategias para hacer accesible la información
@@ -274,6 +277,7 @@ const Observatorio = () => {
             </div>
 
             <div className="unidad">
+              <br />
               <h3>DIRECCIÓN</h3>
               <p>
                 Encargado del desarrollo de los objetivos estratégicos y los
@@ -324,6 +328,7 @@ const Observatorio = () => {
             </div>
 
             <div className="unidad">
+              <br />
               <h3>UNIDAD ACADÉMICA</h3>
               <p>
                 Generación de conocimiento científico, experticia metodológica,
@@ -349,6 +354,7 @@ const Observatorio = () => {
             </div>
 
             <div className="unidad">
+              <br />
               <h3>UNIDAD GREMIAL</h3>
               <p>
                 Fuente de datos primarios, insights operativos, validación de
