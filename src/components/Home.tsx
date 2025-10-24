@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Slider from "react-slick";
+import CookieConsent from "./CookieConsent";
 import "./Home.css";
 
 // Importar imágenes y videos
@@ -258,6 +259,7 @@ const Home = () => {
           </div>
         </div>
       )}
+      <CookieConsent />
 
       {selectedImage && (
         <div className="popup-overlay" onClick={() => setSelectedImage(null)}>
