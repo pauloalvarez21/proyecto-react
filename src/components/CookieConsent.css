@@ -1,33 +1,101 @@
 .cookie-banner {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #222;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: 90%;
+  max-width: 500px;
+  background: rgba(34, 34, 34, 0.9);
   color: white;
-  text-align: center;
-  padding: 1rem;
-  z-index: 1000;
+  border-radius: 16px;
+  padding: 1.2rem;
+  z-index: 2000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.cookie-banner.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.cookie-banner.hide {
+  transform: translateX(-50%) translateY(100%);
+  opacity: 0;
+}
+
+.cookie-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.cookie-icon {
+  width: 48px;
+  height: 48px;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.cookie-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 1rem;
 }
 
 .cookie-buttons button {
-  margin: 0 0.5rem;
-  padding: 0.4rem 0.8rem;
+  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-.cookie-buttons button:first-child {
+.cookie-buttons .accept {
   background-color: #4caf50;
   color: white;
 }
 
-.cookie-buttons button:last-child {
+.cookie-buttons .accept:hover {
+  background-color: #43a047;
+  transform: scale(1.05);
+}
+
+.cookie-buttons .reject {
   background-color: #f44336;
   color: white;
 }
+
+.cookie-buttons .reject:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
