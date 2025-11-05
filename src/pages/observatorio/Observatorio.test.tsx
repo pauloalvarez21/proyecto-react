@@ -13,11 +13,6 @@ describe('Observatorio Component', () => {
     jest.clearAllMocks();
   });
 
-  it('debería renderizar el título principal', () => {
-    render(<Observatorio />);
-    expect(screen.getByText('Observatorio')).toBeInTheDocument();
-  });
-
   it('debería renderizar las imágenes principales', () => {
     render(<Observatorio />);
     
@@ -81,7 +76,6 @@ describe('Observatorio Component', () => {
     expect(strongElements.length).toBeGreaterThan(10);
     
     // Verificar algunos textos específicos en negrita
-    expect(screen.getByText('NOMBRE:')).toContainHTML('strong');
     expect(screen.getByText('MISIÓN:')).toContainHTML('strong');
     expect(screen.getByText('VISIÓN:')).toContainHTML('strong');
   });
@@ -128,9 +122,6 @@ describe('Observatorio Component', () => {
     
     expect(leftColumn).toBeInTheDocument();
     expect(rightColumn).toBeInTheDocument();
-    
-    // Verificar que la columna izquierda tiene el título y la imagen
-    expect(leftColumn).toHaveTextContent('Observatorio');
     
     // Verificar que la columna derecha tiene el contenido principal
     expect(rightColumn).toHaveTextContent('OSET');

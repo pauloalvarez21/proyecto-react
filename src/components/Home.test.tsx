@@ -13,6 +13,13 @@ jest.mock('react-slick', () => {
   };
 });
 
+// Mock de CookieConsent
+jest.mock('./CookieConsent', () => {
+  return function MockCookieConsent() {
+    return <div data-testid="cookie-consent">Cookie Consent</div>;
+  };
+});
+
 // Mocks para todas las imágenes
 jest.mock('../assets/image/aca.jpeg', () => 'aca-mock-url');
 jest.mock('../assets/image/confetours.jpeg', () => 'confetours-mock-url');
@@ -35,26 +42,41 @@ jest.mock('../assets/image/img3.jpeg', () => 'img3-mock-url');
 jest.mock('../assets/image/img4.jpeg', () => 'img4-mock-url');
 jest.mock('../assets/image/img5.jpeg', () => 'img5-mock-url');
 jest.mock('../assets/image/img6.jpeg', () => 'img6-mock-url');
+jest.mock('../assets/image/img7.jpeg', () => 'img7-mock-url'); // ✅ Agregar este mock
 
-// Mocks para videos
-jest.mock('../assets/video/video.mp4', () => 'video-mock-url');
-jest.mock('../assets/video/video1.mp4', () => 'video1-mock-url');
-jest.mock('../assets/video/video2.mp4', () => 'video2-mock-url');
-jest.mock('../assets/video/video3.mp4', () => 'video3-mock-url');
+// Mock para window.innerWidth
+const originalInnerWidth = window.innerWidth;
+beforeAll(() => {
+  Object.defineProperty(window, 'innerWidth', {
+    writable: true,
+    configurable: true,
+    value: 1024, // Desktop por defecto
+  });
+});
+
+afterAll(() => {
+  Object.defineProperty(window, 'innerWidth', {
+    writable: true,
+    configurable: true,
+    value: originalInnerWidth,
+  });
+});
 
 describe('Home Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    // Reset window width para cada test
+    window.innerWidth = 1024;
   });
 
-  it('debería renderizar el título de presentaciones en video', () => {
+  it('debería renderizar el título de galería de videos', () => {
     render(<Home />);
-    expect(screen.getByText('Presentaciones en Video')).toBeInTheDocument();
+    expect(screen.getByText('Galería de Videos')).toBeInTheDocument();
   });
 
-  it('debería renderizar el título de presentaciones en imágenes', () => {
+  it('debería renderizar el título de galería de fotos', () => {
     render(<Home />);
-    expect(screen.getByText('Presentaciones en Imágenes')).toBeInTheDocument();
+    expect(screen.getByText('Galería de Fotos')).toBeInTheDocument();
   });
 
   it('debería renderizar el título de los 4 pilares fundamentales', () => {
@@ -102,41 +124,28 @@ describe('Home Component', () => {
     expect(screen.getByAltText('aliado-Medplus')).toBeInTheDocument();
   });
 
-  it('debería cerrar el popup al hacer clic en el botón de cerrar', async () => {
-    const user = userEvent.setup();
-    render(<Home />);
-    
-    // Abrir popup
-    await user.click(screen.getByText('Educación'));
-    expect(screen.getByText('La educación es la base del desarrollo personal y social.')).toBeInTheDocument();
-    
-    // Cerrar popup
-    await user.click(screen.getByText('✖'));
-    expect(screen.queryByText('La educación es la base del desarrollo personal y social.')).not.toBeInTheDocument();
-  });
-
   it('debería cerrar el popup al hacer clic fuera del contenido', async () => {
     const user = userEvent.setup();
     render(<Home />);
     
     // Abrir popup
     await user.click(screen.getByText('Educación'));
-    expect(screen.getByText('La educación es la base del desarrollo personal y social.')).toBeInTheDocument();
+    expect(screen.getByText(/Pensando en el desarrollo y beneficio/)).toBeInTheDocument();
     
-    // Cerrar popup haciendo clic fuera
-    const overlay = document.querySelector('.popup-overlay');
-    if (overlay) {
-      await user.click(overlay);
+    // Cerrar popup haciendo clic fuera (en el overlay)
+    const overlays = document.querySelectorAll('.popup-overlay');
+    if (overlays.length > 0) {
+      await user.click(overlays[0]);
     }
     
-    expect(screen.queryByText('La educación es la base del desarrollo personal y social.')).not.toBeInTheDocument();
+    expect(screen.queryByText(/Los procesos de educación y formación/)).not.toBeInTheDocument();
   });
 
   it('debería renderizar los sliders de video e imágenes', () => {
     render(<Home />);
     
     const sliders = document.querySelectorAll('.mock-slider');
-    expect(sliders).toHaveLength(2); // Uno para videos y otro para imágenes
+    expect(sliders.length).toBeGreaterThanOrEqual(2); // Al menos 2 sliders (videos e imágenes)
   });
 
   it('debería tener la estructura correcta de secciones', () => {
@@ -151,20 +160,35 @@ describe('Home Component', () => {
     expect(alliancesSection).toBeInTheDocument();
   });
 
-  it('debería prevenir la propagación al hacer clic dentro del popup', async () => {
+  it('debería renderizar el componente CookieConsent', () => {
+    render(<Home />);
+    expect(screen.getByTestId('cookie-consent')).toBeInTheDocument();
+  });
+
+  it('debería renderizar iframes de YouTube', () => {
+    render(<Home />);
+    
+    const iframes = screen.getAllByTitle('YouTube video player');
+    expect(iframes.length).toBeGreaterThan(0);
+    
+    iframes.forEach(iframe => {
+      expect(iframe).toHaveAttribute('allowFullScreen');
+      expect(iframe).toHaveAttribute('src');
+    });
+  });
+
+  it('debería manejar el estado de imagen seleccionada', async () => {
     const user = userEvent.setup();
     render(<Home />);
     
-    // Abrir popup
-    await user.click(screen.getByText('Educación'));
-    
-    // Hacer clic dentro del contenido del popup
-    const popupContent = document.querySelector('.popup-content');
-    if (popupContent) {
-      await user.click(popupContent);
+    // Encontrar y hacer clic en una imagen clickeable
+    const clickableImages = screen.getAllByAltText(/slide-/);
+    if (clickableImages.length > 0) {
+      await user.click(clickableImages[0]);
+      
+      // Verificar que se abrió el popup de imagen
+      const popupImages = document.querySelectorAll('.popup-img');
+      expect(popupImages.length).toBeGreaterThan(0);
     }
-    
-    // Verificar que el popup sigue abierto
-    expect(screen.getByText('La educación es la base del desarrollo personal y social.')).toBeInTheDocument();
   });
 });

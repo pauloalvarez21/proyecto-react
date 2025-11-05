@@ -63,7 +63,7 @@ const Footer = () => {
       );
 
       const text = await response.text();
-      console.log("Respuesta del servidor:", text); // Para debugging
+       // Para debugging
 
       if (text.includes("success")) {
         setSuccess("✅ Tu mensaje fue enviado correctamente.");
@@ -72,7 +72,6 @@ const Footer = () => {
         setError("❌ Hubo un error al enviar el mensaje. Intenta nuevamente.");
       }
     } catch (err) {
-      console.error("Error completo:", err); // Para debugging
       setError("⚠️ No se pudo conectar con el servidor. Error: " + err);
     }
   };

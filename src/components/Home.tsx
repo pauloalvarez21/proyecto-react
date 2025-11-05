@@ -130,7 +130,7 @@ const Home = () => {
 
   // ✅ Función para resaltar automáticamente todas las palabras "SUMYT"
   const highlightSUMYT = (text: string) => {
-    return text.replace(/sumyt/gi, "<span class='texto-rojo'>SUMYT</span>");
+    return text.replaceAll(/sumyt/gi, "<span class='texto-rojo'>SUMYT</span>");
   };
 
   return (
@@ -167,7 +167,11 @@ const Home = () => {
                     padding: 0,
                   }}
                 >
-                  <img src={src} alt={`slide-${src}`} className="clickable-img" />
+                  <img
+                    src={src}
+                    alt={`slide-${src}`}
+                    className="clickable-img"
+                  />
                 </button>
               </div>
             ))}
@@ -225,23 +229,18 @@ const Home = () => {
 
       {/* POPUPS */}
       {selectedPillar && (
-        <div
+        <dialog
           className="popup-overlay"
-          role="button"
-          tabIndex={0}
+          open
           onClick={() => setSelectedPillar(null)}
-          onKeyDown={(e) => e.key === "Enter" && setSelectedPillar(null)}
+          onKeyDown={(e) => e.key === "Escape" && setSelectedPillar(null)}
         >
-          <div
-            className="popup-content"
-            role="dialog"
-            aria-modal="true"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
             <button
               className="popup-close"
               onClick={() => setSelectedPillar(null)}
               aria-label="Cerrar popup"
+              autoFocus
             >
               ✕
             </button>
@@ -257,22 +256,29 @@ const Home = () => {
               }}
             ></p>
           </div>
-        </div>
+        </dialog>
       )}
       <CookieConsent />
 
       {selectedImage && (
-        <div className="popup-overlay" onClick={() => setSelectedImage(null)}>
+        <dialog
+          className="popup-overlay"
+          open
+          onClick={() => setSelectedImage(null)}
+          onKeyDown={(e) => e.key === "Escape" && setSelectedImage(null)}
+        >
           <div className="popup-content" onClick={(e) => e.stopPropagation()}>
             <button
               className="popup-close"
               onClick={() => setSelectedImage(null)}
+              aria-label="Cerrar imagen"
+              autoFocus
             >
               ✖
             </button>
             <img src={selectedImage} alt="popup" className="popup-img" />
           </div>
-        </div>
+        </dialog>
       )}
     </div>
   );

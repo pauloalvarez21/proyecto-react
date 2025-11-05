@@ -4,7 +4,7 @@ import History from './History';
 
 // Mocks para CSS e imágenes
 jest.mock('./History.css', () => ({}));
-jest.mock('../../assets/image/grupo.svg', () => 'grupo-mock-url');
+jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
 jest.mock('../../assets/image/sumyt.png', () => 'sumyt-mock-url');
 
 describe('History Component', () => {

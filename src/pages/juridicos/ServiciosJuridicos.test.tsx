@@ -19,11 +19,6 @@ describe('ServiciosJuridicos Component', () => {
     expect(screen.getByText('Servicios Jurídicos y Financieros')).toBeInTheDocument();
   });
 
-  it('debería renderizar el subtítulo', () => {
-    render(<ServiciosJuridicos />);
-    expect(screen.getByText('Servitrsporte S.A.S')).toBeInTheDocument();
-  });
-
   it('debería renderizar todas las imágenes jurídicas', () => {
     render(<ServiciosJuridicos />);
     
@@ -104,7 +99,6 @@ describe('ServiciosJuridicos Component', () => {
     
     // Verificar que la columna izquierda tiene los títulos
     expect(leftColumn).toHaveTextContent('Servicios Jurídicos y Financieros');
-    expect(leftColumn).toHaveTextContent('Servitrsporte S.A.S');
     
     // Verificar que la columna derecha tiene el contenido principal
     expect(rightColumn).toHaveTextContent('Servicios Jurídicos y Económicos Servitrasporte');

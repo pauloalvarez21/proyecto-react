@@ -9,10 +9,10 @@ jest.mock('./Navbar.css', () => ({}));
 jest.mock('../assets/image/grupo.png', () => 'grupo-mock-url');
 jest.mock('../assets/image/sumyt.png', () => 'sumyt-mock-url');
 
-// Mock de react-router-dom para NavLink
-jest.mock('react-router-dom', () => ({
+// Mock mejorado de react-router-dom para NavLink
+ jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  NavLink: ({ to, children, onClick, className }: any) => (
+  NavLink: ({ to, children, onClick, className }: never) => (
     <a href={to} onClick={onClick} className={className}>
       {children}
     </a>
@@ -43,7 +43,7 @@ describe('Navbar Component', () => {
   it('debería renderizar el botón hamburguesa', () => {
     renderWithRouter(<Navbar />);
     
-    const hamburgerButton = screen.getByLabelText('menu');
+    const hamburgerButton = screen.getByRole('button', { name: /menu/i });
     expect(hamburgerButton).toBeInTheDocument();
     expect(hamburgerButton).toHaveClass('hamburger');
   });
@@ -53,13 +53,16 @@ describe('Navbar Component', () => {
     
     const menu = screen.getByRole('list');
     expect(menu).not.toHaveClass('open');
+    
+    const hamburgerButton = screen.getByRole('button', { name: /menu/i });
+    expect(hamburgerButton).not.toHaveClass('open');
   });
 
   it('debería abrir y cerrar el menú al hacer clic en el botón hamburguesa', async () => {
     const user = userEvent.setup();
     renderWithRouter(<Navbar />);
     
-    const hamburgerButton = screen.getByLabelText('menu');
+    const hamburgerButton = screen.getByRole('button', { name: /menu/i });
     const menu = screen.getByRole('list');
     
     // Abrir menú
@@ -90,7 +93,7 @@ describe('Navbar Component', () => {
     expect(screen.getByText('Marketing y Publicidad')).toBeInTheDocument();
     expect(screen.getByText('Jurídicos y Financieros')).toBeInTheDocument();
     expect(screen.getByText('Innovación y Tecnología')).toBeInTheDocument();
-    expect(screen.getByText('Observatorio')).toBeInTheDocument();
+    expect(screen.getByText('Observatorio "OSET"')).toBeInTheDocument();
   });
 
   it('debería cerrar el menú al hacer clic en un enlace', async () => {
@@ -98,7 +101,8 @@ describe('Navbar Component', () => {
     renderWithRouter(<Navbar />);
     
     // Abrir menú primero
-    await user.click(screen.getByLabelText('menu'));
+    const hamburgerButton = screen.getByRole('button', { name: /menu/i });
+    await user.click(hamburgerButton);
     expect(screen.getByRole('list')).toHaveClass('open');
     
     // Hacer clic en un enlace del menú
@@ -111,14 +115,12 @@ describe('Navbar Component', () => {
   it('debería tener enlaces con las rutas correctas', () => {
     renderWithRouter(<Navbar />);
     
-    const links = screen.getAllByRole('link');
-    
-    // Verificar algunas rutas importantes
-    expect(links[0]).toHaveAttribute('href', '/'); // Logo grupo
-    expect(links[1]).toHaveAttribute('href', '/'); // Logo sumyt
-    expect(links[2]).toHaveAttribute('href', '/quienes-somos');
-    expect(links[3]).toHaveAttribute('href', '/historia');
-    expect(links[4]).toHaveAttribute('href', '/transporte');
+    // Buscar enlaces específicos en lugar de todos
+    expect(screen.getByAltText('Grupo Servitransporte').closest('a')).toHaveAttribute('href', '/');
+    expect(screen.getByAltText('SUMYT').closest('a')).toHaveAttribute('href', '/');
+    expect(screen.getByText('Quiénes somos')).toHaveAttribute('href', '/quienes-somos');
+    expect(screen.getByText('Historia')).toHaveAttribute('href', '/historia');
+    expect(screen.getByText('Transporte')).toHaveAttribute('href', '/transporte');
   });
 
   it('debería tener la estructura correcta con navbar-top y navbar-links', () => {
