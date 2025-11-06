@@ -4,11 +4,6 @@ import FondoAsociados from './FondoAsociados';
 
 // Mocks para CSS e imágenes
 jest.mock('./FondoAsociados.css', () => ({}));
-jest.mock('../../assets/image/sumyt.png', () => 'sumyt-mock-url');
-jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
-jest.mock('./proposito.png', () => 'proposito-mock-url');
-jest.mock('./proyecciones.png', () => 'proyecciones-mock-url');
-jest.mock('./segmentos.png', () => 'segmentos-mock-url');
 
 describe('FondoAsociados Component', () => {
   beforeEach(() => {
@@ -20,7 +15,7 @@ describe('FondoAsociados Component', () => {
     
     const sumytLogo = screen.getByAltText('Logo SUMYT');
     expect(sumytLogo).toBeInTheDocument();
-    expect(sumytLogo).toHaveAttribute('src', 'sumyt-mock-url');
+    expect(sumytLogo).toHaveAttribute('src', 'test-file-stub');
     expect(sumytLogo).toHaveClass('fondo-left__logo');
   });
 
@@ -30,9 +25,9 @@ describe('FondoAsociados Component', () => {
     const fondoImages = screen.getAllByAltText('Fondo');
     expect(fondoImages).toHaveLength(3);
     
-    expect(fondoImages[0]).toHaveAttribute('src', 'proposito-mock-url');
-    expect(fondoImages[1]).toHaveAttribute('src', 'proyecciones-mock-url');
-    expect(fondoImages[2]).toHaveAttribute('src', 'segmentos-mock-url');
+    expect(fondoImages[0]).toHaveAttribute('src', 'test-file-stub');
+    expect(fondoImages[1]).toHaveAttribute('src', 'test-file-stub');
+    expect(fondoImages[2]).toHaveAttribute('src', 'test-file-stub');
     expect(fondoImages[0]).toHaveClass('fondo-img');
   });
 
@@ -41,7 +36,7 @@ describe('FondoAsociados Component', () => {
     
     const grupoLogo = screen.getByAltText('Grupo Servitransporte');
     expect(grupoLogo).toBeInTheDocument();
-    expect(grupoLogo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(grupoLogo).toHaveAttribute('src', 'test-file-stub');
     expect(grupoLogo).toHaveClass('fondo-logo');
   });
 

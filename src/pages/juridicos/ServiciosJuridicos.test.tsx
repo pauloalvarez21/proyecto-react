@@ -4,10 +4,6 @@ import ServiciosJuridicos from './ServiciosJuridicos';
 
 // Mocks para CSS e imágenes
 jest.mock('./ServiciosJuridicos.css', () => ({}));
-jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
-jest.mock('./juridicos1.png', () => 'juridicos1-mock-url');
-jest.mock('./juridicos2.png', () => 'juridicos2-mock-url');
-jest.mock('./juridicos3.png', () => 'juridicos3-mock-url');
 
 describe('ServiciosJuridicos Component', () => {
   beforeEach(() => {
@@ -25,9 +21,9 @@ describe('ServiciosJuridicos Component', () => {
     const juridicosImages = screen.getAllByAltText('Jurídicos');
     expect(juridicosImages).toHaveLength(3);
     
-    expect(juridicosImages[0]).toHaveAttribute('src', 'juridicos1-mock-url');
-    expect(juridicosImages[1]).toHaveAttribute('src', 'juridicos2-mock-url');
-    expect(juridicosImages[2]).toHaveAttribute('src', 'juridicos3-mock-url');
+    expect(juridicosImages[0]).toHaveAttribute('src', 'test-file-stub');
+    expect(juridicosImages[1]).toHaveAttribute('src', 'test-file-stub');
+    expect(juridicosImages[2]).toHaveAttribute('src', 'test-file-stub');
     expect(juridicosImages[0]).toHaveClass('juridicos-img');
   });
 
@@ -36,7 +32,7 @@ describe('ServiciosJuridicos Component', () => {
     
     const logo = screen.getByAltText('Logo Derecho');
     expect(logo).toBeInTheDocument();
-    expect(logo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(logo).toHaveAttribute('src', 'test-file-stub');
     expect(logo).toHaveClass('juridicos-logo');
   });
 

@@ -4,10 +4,6 @@ import Marketing from './Marketing';
 
 // Mocks para CSS e imágenes
 jest.mock('./Marketing.css', () => ({}));
-jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
-jest.mock('./marketing1.png', () => 'marketing1-mock-url');
-jest.mock('./marketing2.png', () => 'marketing2-mock-url');
-jest.mock('./marketing3.png', () => 'marketing3-mock-url');
 
 describe('Marketing Component', () => {
   beforeEach(() => {
@@ -30,9 +26,9 @@ describe('Marketing Component', () => {
     const marketingImages = screen.getAllByAltText('Marketing');
     expect(marketingImages).toHaveLength(3);
     
-    expect(marketingImages[0]).toHaveAttribute('src', 'marketing1-mock-url');
-    expect(marketingImages[1]).toHaveAttribute('src', 'marketing2-mock-url');
-    expect(marketingImages[2]).toHaveAttribute('src', 'marketing3-mock-url');
+    expect(marketingImages[0]).toHaveAttribute('src', 'test-file-stub');
+    expect(marketingImages[1]).toHaveAttribute('src', 'test-file-stub');
+    expect(marketingImages[2]).toHaveAttribute('src', 'test-file-stub');
     expect(marketingImages[0]).toHaveClass('marketing-img');
   });
 
@@ -41,7 +37,7 @@ describe('Marketing Component', () => {
     
     const logo = screen.getByAltText('Logo Derecho');
     expect(logo).toBeInTheDocument();
-    expect(logo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(logo).toHaveAttribute('src', 'test-file-stub');
     expect(logo).toHaveClass('marketing-logo');
   });
 

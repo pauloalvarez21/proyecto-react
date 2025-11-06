@@ -156,8 +156,8 @@ const Home = () => {
         <h2>Galería de Fotos</h2>
         <div className="gallery-wrapper">
           <Slider {...sliderSettings}>
-            {images.map((src) => (
-              <div key={src} className="image-slide">
+            {images.map((src, index) => (
+              <div key={`image-${index}`} className="image-slide">
                 <button
                   onClick={() => setSelectedImage(src)}
                   className="clickable-img"
@@ -169,7 +169,7 @@ const Home = () => {
                 >
                   <img
                     src={src}
-                    alt={`slide-${src}`}
+                    alt={`slide-${index}`}
                     className="clickable-img"
                   />
                 </button>

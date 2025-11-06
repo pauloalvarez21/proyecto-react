@@ -22,7 +22,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" data-testid="navbar">
   {/* Fila superior: logos + hamburguesa */}
   <div className="navbar-top">
     <div className="navbar-left">

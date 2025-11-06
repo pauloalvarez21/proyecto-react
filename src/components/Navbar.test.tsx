@@ -4,16 +4,21 @@ import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import Navbar from './Navbar';
 
-// Mocks para CSS e imágenes
-jest.mock('./Navbar.css', () => ({}));
-jest.mock('../assets/image/grupo.png', () => 'grupo-mock-url');
-jest.mock('../assets/image/sumyt.png', () => 'sumyt-mock-url');
+// Mock de CSS
+jest.mock('./Navbar.css', () => ({}), { virtual: true });
 
 // Mock mejorado de react-router-dom para NavLink
- jest.mock('react-router-dom', () => ({
+jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  NavLink: ({ to, children, onClick, className }: never) => (
-    <a href={to} onClick={onClick} className={className}>
+  NavLink: ({ to, children, onClick, className }: any) => (
+    <a 
+      href={to} 
+      onClick={(e: React.MouseEvent) => {
+        e.preventDefault(); // Prevenir navegación real
+        if (onClick) onClick(e);
+      }} 
+      className={className}
+    >
       {children}
     </a>
   ),
@@ -35,9 +40,9 @@ describe('Navbar Component', () => {
     const sumytLogo = screen.getByAltText('SUMYT');
     
     expect(grupoLogo).toBeInTheDocument();
-    expect(grupoLogo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(grupoLogo).toHaveAttribute('src', 'test-file-stub');
     expect(sumytLogo).toBeInTheDocument();
-    expect(sumytLogo).toHaveAttribute('src', 'sumyt-mock-url');
+    expect(sumytLogo).toHaveAttribute('src', 'test-file-stub');
   });
 
   it('debería renderizar el botón hamburguesa', () => {

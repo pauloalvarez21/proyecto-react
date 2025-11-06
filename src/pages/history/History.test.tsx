@@ -4,8 +4,6 @@ import History from './History';
 
 // Mocks para CSS e imágenes
 jest.mock('./History.css', () => ({}));
-jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
-jest.mock('../../assets/image/sumyt.png', () => 'sumyt-mock-url');
 
 describe('History Component', () => {
   beforeEach(() => {
@@ -24,11 +22,11 @@ describe('History Component', () => {
     const sumytLogo = screen.getByAltText('sumyt');
     
     expect(grupoLogo).toBeInTheDocument();
-    expect(grupoLogo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(grupoLogo).toHaveAttribute('src', 'test-file-stub');
     expect(grupoLogo).toHaveClass('logo');
     
     expect(sumytLogo).toBeInTheDocument();
-    expect(sumytLogo).toHaveAttribute('src', 'sumyt-mock-url');
+    expect(sumytLogo).toHaveAttribute('src', 'test-file-stub');
     expect(sumytLogo).toHaveClass('logoSumyt');
     expect(sumytLogo).toHaveAttribute('width', '100');
   });

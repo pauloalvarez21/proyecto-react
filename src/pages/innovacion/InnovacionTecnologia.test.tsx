@@ -4,8 +4,6 @@ import InnovacionTecnologia from './InnovacionTecnologia';
 
 // Mocks para CSS e imágenes
 jest.mock('./InnovacionTecnologia.css', () => ({}));
-jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
-jest.mock('./innovacion.png', () => 'innovacion-mock-url');
 
 describe('InnovacionTecnologia Component', () => {
   beforeEach(() => {
@@ -27,7 +25,7 @@ describe('InnovacionTecnologia Component', () => {
     
     const innovacionImage = screen.getByAltText('Innovación');
     expect(innovacionImage).toBeInTheDocument();
-    expect(innovacionImage).toHaveAttribute('src', 'innovacion-mock-url');
+    expect(innovacionImage).toHaveAttribute('src', 'test-file-stub');
     expect(innovacionImage).toHaveClass('innovacion-img');
   });
 
@@ -36,7 +34,7 @@ describe('InnovacionTecnologia Component', () => {
     
     const logo = screen.getByAltText('Logo Derecho');
     expect(logo).toBeInTheDocument();
-    expect(logo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(logo).toHaveAttribute('src', 'test-file-stub');
     expect(logo).toHaveClass('innovacion-logo');
   });
 

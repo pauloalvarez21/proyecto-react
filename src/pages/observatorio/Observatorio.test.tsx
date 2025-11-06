@@ -4,9 +4,6 @@ import Observatorio from './Observatorio';
 
 // Mocks para CSS e imágenes
 jest.mock('./Observatorio.css', () => ({}));
-jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
-jest.mock('../../assets/image/oset.png', () => 'oset-mock-url');
-jest.mock('../../assets/image/estructura.png', () => 'estructura-mock-url');
 
 describe('Observatorio Component', () => {
   beforeEach(() => {
@@ -21,13 +18,13 @@ describe('Observatorio Component', () => {
     const grupoLogo = screen.getByAltText('Logo Derecho');
     
     expect(osetImage).toBeInTheDocument();
-    expect(osetImage).toHaveAttribute('src', 'oset-mock-url');
+    expect(osetImage).toHaveAttribute('src', 'test-file-stub');
     
     expect(estructuraImage).toBeInTheDocument();
-    expect(estructuraImage).toHaveAttribute('src', 'estructura-mock-url');
+    expect(estructuraImage).toHaveAttribute('src', 'test-file-stub');
     
     expect(grupoLogo).toBeInTheDocument();
-    expect(grupoLogo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(grupoLogo).toHaveAttribute('src', 'test-file-stub');
     expect(grupoLogo).toHaveClass('observatorio-logo');
   });
 

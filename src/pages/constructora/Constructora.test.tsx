@@ -4,10 +4,6 @@ import Constructora from './Constructora';
 
 // Mocks para CSS e imágenes
 jest.mock('./Constructora.css', () => ({}));
-jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
-jest.mock('./constructora1.png', () => 'constructora1-mock-url');
-jest.mock('./constructora2.png', () => 'constructora2-mock-url');
-jest.mock('./constructora3.png', () => 'constructora3-mock-url');
 
 describe('Constructora Component', () => {
   beforeEach(() => {
@@ -30,9 +26,9 @@ describe('Constructora Component', () => {
     const constructionImages = screen.getAllByAltText('Constructora');
     expect(constructionImages).toHaveLength(3);
     
-    expect(constructionImages[0]).toHaveAttribute('src', 'constructora1-mock-url');
-    expect(constructionImages[1]).toHaveAttribute('src', 'constructora2-mock-url');
-    expect(constructionImages[2]).toHaveAttribute('src', 'constructora3-mock-url');
+    expect(constructionImages[0]).toHaveAttribute('src', 'test-file-stub');
+    expect(constructionImages[1]).toHaveAttribute('src', 'test-file-stub');
+    expect(constructionImages[2]).toHaveAttribute('src', 'test-file-stub');
   });
 
   it('debería renderizar el logo del grupo', () => {
@@ -40,7 +36,7 @@ describe('Constructora Component', () => {
     
     const logo = screen.getByAltText('Logo Derecho');
     expect(logo).toBeInTheDocument();
-    expect(logo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(logo).toHaveAttribute('src', 'test-file-stub');
     expect(logo).toHaveClass('constructora-logo');
   });
 

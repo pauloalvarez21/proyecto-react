@@ -4,10 +4,6 @@ import Transporte from './Transporte';
 
 // Mocks para CSS e imágenes
 jest.mock('./Transporte.css', () => ({}));
-jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
-jest.mock('./transporte1.jpg', () => 'transporte1-mock-url');
-jest.mock('../fondo/segmentos.png', () => 'segmentos-mock-url');
-jest.mock('./transporte.jpg', () => 'transporte2-mock-url');
 
 describe('Transporte Component', () => {
   beforeEach(() => {
@@ -30,13 +26,13 @@ describe('Transporte Component', () => {
     const segmentoImage = screen.getByAltText('Logo segmento');
     const camionImage = screen.getByAltText('Logo camion');
     
-    expect(taxiImage).toHaveAttribute('src', 'transporte1-mock-url');
+    expect(taxiImage).toHaveAttribute('src', 'test-file-stub');
     expect(taxiImage).toHaveClass('transporte-taxi');
     
-    expect(segmentoImage).toHaveAttribute('src', 'segmentos-mock-url');
+    expect(segmentoImage).toHaveAttribute('src', 'test-file-stub');
     expect(segmentoImage).toHaveClass('transporte-taxi');
     
-    expect(camionImage).toHaveAttribute('src', 'transporte2-mock-url');
+    expect(camionImage).toHaveAttribute('src', 'test-file-stub');
     expect(camionImage).toHaveClass('transporte-taxi');
   });
 
@@ -45,7 +41,7 @@ describe('Transporte Component', () => {
     
     const logo = screen.getByAltText('Logo Derecho');
     expect(logo).toBeInTheDocument();
-    expect(logo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(logo).toHaveAttribute('src', 'test-file-stub');
     expect(logo).toHaveClass('transporte-logo');
   });
 

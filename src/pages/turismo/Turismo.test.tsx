@@ -4,10 +4,6 @@ import Turismo from './Turismo';
 
 // Mocks para CSS e imágenes
 jest.mock('./Turismo.css', () => ({}));
-jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
-jest.mock('./turismo1.png', () => 'turismo1-mock-url');
-jest.mock('./turismo2.png', () => 'turismo2-mock-url');
-jest.mock('./turismo3.png', () => 'turismo3-mock-url');
 
 describe('Turismo Component', () => {
   beforeEach(() => {
@@ -25,9 +21,9 @@ describe('Turismo Component', () => {
     const turismoImages = screen.getAllByAltText('Turismo');
     expect(turismoImages).toHaveLength(3);
     
-    expect(turismoImages[0]).toHaveAttribute('src', 'turismo1-mock-url');
-    expect(turismoImages[1]).toHaveAttribute('src', 'turismo2-mock-url');
-    expect(turismoImages[2]).toHaveAttribute('src', 'turismo3-mock-url');
+    expect(turismoImages[0]).toHaveAttribute('src', 'test-file-stub');
+    expect(turismoImages[1]).toHaveAttribute('src', 'test-file-stub');
+    expect(turismoImages[2]).toHaveAttribute('src', 'test-file-stub');
     expect(turismoImages[0]).toHaveClass('turismo-img');
   });
 
@@ -36,7 +32,7 @@ describe('Turismo Component', () => {
     
     const logo = screen.getByAltText('Logo Derecho');
     expect(logo).toBeInTheDocument();
-    expect(logo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(logo).toHaveAttribute('src', 'test-file-stub');
     expect(logo).toHaveClass('turismo-logo');
   });
 

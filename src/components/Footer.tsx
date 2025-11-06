@@ -77,7 +77,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer">
+    <footer className="footer" data-testid="footer">
       <button className="contact-btn" onClick={() => setOpen(true)}>
         📞 Contáctanos
       </button>

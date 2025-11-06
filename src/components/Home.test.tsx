@@ -20,29 +20,7 @@ jest.mock('./CookieConsent', () => {
   };
 });
 
-// Mocks para todas las imágenes
-jest.mock('../assets/image/aca.jpeg', () => 'aca-mock-url');
-jest.mock('../assets/image/confetours.jpeg', () => 'confetours-mock-url');
-jest.mock('../assets/image/ecovehiculos.jpeg', () => 'ecovehiculos-mock-url');
-jest.mock('../assets/image/luxcarta.jpeg', () => 'luxcarta-mock-url');
-jest.mock('../assets/image/medplus.jpeg', () => 'medplus-mock-url');
-jest.mock('../assets/image/sectoriales.jpeg', () => 'sectoriales-mock-url');
-jest.mock('../assets/image/seguros.jpeg', () => 'seguros-mock-url');
-jest.mock('../assets/image/sena.jpeg', () => 'sena-mock-url');
-jest.mock('../assets/image/ucc.jpeg', () => 'ucc-mock-url');
 
-jest.mock('../assets/image/educacion.png', () => 'educacion-mock-url');
-jest.mock('../assets/image/vivienda.png', () => 'vivienda-mock-url');
-jest.mock('../assets/image/salud.png', () => 'salud-mock-url');
-jest.mock('../assets/image/tecnologia.png', () => 'tecnologia-mock-url');
-
-jest.mock('../assets/image/img1.jpeg', () => 'img1-mock-url');
-jest.mock('../assets/image/img2.jpeg', () => 'img2-mock-url');
-jest.mock('../assets/image/img3.jpeg', () => 'img3-mock-url');
-jest.mock('../assets/image/img4.jpeg', () => 'img4-mock-url');
-jest.mock('../assets/image/img5.jpeg', () => 'img5-mock-url');
-jest.mock('../assets/image/img6.jpeg', () => 'img6-mock-url');
-jest.mock('../assets/image/img7.jpeg', () => 'img7-mock-url'); // ✅ Agregar este mock
 
 // Mock para window.innerWidth
 const originalInnerWidth = window.innerWidth;
@@ -104,10 +82,10 @@ describe('Home Component', () => {
     const pillarImages = screen.getAllByAltText(/Educación|Vivienda|Salud|Tecnología/);
     expect(pillarImages).toHaveLength(4);
     
-    expect(screen.getByAltText('Educación')).toHaveAttribute('src', 'educacion-mock-url');
-    expect(screen.getByAltText('Vivienda')).toHaveAttribute('src', 'vivienda-mock-url');
-    expect(screen.getByAltText('Salud')).toHaveAttribute('src', 'salud-mock-url');
-    expect(screen.getByAltText('Tecnología')).toHaveAttribute('src', 'tecnologia-mock-url');
+    expect(screen.getByAltText('Educación')).toHaveAttribute('src', 'test-file-stub');
+    expect(screen.getByAltText('Vivienda')).toHaveAttribute('src', 'test-file-stub');
+    expect(screen.getByAltText('Salud')).toHaveAttribute('src', 'test-file-stub');
+    expect(screen.getByAltText('Tecnología')).toHaveAttribute('src', 'test-file-stub');
   });
 
   it('debería renderizar todos los logos de alianzas', () => {
@@ -182,7 +160,7 @@ describe('Home Component', () => {
     render(<Home />);
     
     // Encontrar y hacer clic en una imagen clickeable
-    const clickableImages = screen.getAllByAltText(/slide-/);
+    const clickableImages = screen.getAllByAltText(/slide-\d+/);
     if (clickableImages.length > 0) {
       await user.click(clickableImages[0]);
       

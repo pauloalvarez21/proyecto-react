@@ -4,8 +4,6 @@ import Somos from './Somos';
 
 // Mocks para CSS e imágenes
 jest.mock('./Somos.css', () => ({}));
-jest.mock('../../assets/image/grupo.png', () => 'grupo-mock-url');
-jest.mock('./hexa.png', () => 'hexa-mock-url');
 
 describe('Somos Component', () => {
   beforeEach(() => {
@@ -17,7 +15,7 @@ describe('Somos Component', () => {
     
     const logo = screen.getByAltText('Grupo Servitransporte');
     expect(logo).toBeInTheDocument();
-    expect(logo).toHaveAttribute('src', 'grupo-mock-url');
+    expect(logo).toHaveAttribute('src', 'test-file-stub');
     expect(logo).toHaveClass('logo');
   });
 
@@ -26,7 +24,7 @@ describe('Somos Component', () => {
     
     const hexaImage = screen.getByAltText('Equipo de trabajo');
     expect(hexaImage).toBeInTheDocument();
-    expect(hexaImage).toHaveAttribute('src', 'hexa-mock-url');
+    expect(hexaImage).toHaveAttribute('src', 'test-file-stub');
   });
 
   it('debería mencionar el nombre completo de la empresa', () => {
