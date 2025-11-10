@@ -7,7 +7,7 @@ const Footer = () => {
   const [success, setSuccess] = useState("");
 
   const sanitize = (str: string) => {
-    return str.replace(/[\r\n&?=<>]/g, ""); // quita saltos de línea e inyecciones básicas
+    return str.replaceAll(/[\r\n&?=<>]/g, ""); // quita saltos de línea e inyecciones básicas
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -63,7 +63,7 @@ const Footer = () => {
       );
 
       const text = await response.text();
-       // Para debugging
+      // Para debugging
 
       if (text.includes("success")) {
         setSuccess("✅ Tu mensaje fue enviado correctamente.");

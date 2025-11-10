@@ -4,7 +4,7 @@ import App from "./App";
 
 describe("App Component", () => {
   const renderWithRouter = (ui: React.ReactElement, { route = "/" } = {}) => {
-    window.history.pushState({}, "Test page", route);
+    globalThis.history.pushState({}, "Test page", route);
     return render(ui, { wrapper: BrowserRouter });
   };
 
@@ -23,48 +23,89 @@ describe("App Component", () => {
 
   test("renders correct components for different routes", () => {
     const routes = [
-      { path: "/fondos", test: () => {
-        // Look for "Fondo de Asociados" in an h1 element specifically
-        const heading = screen.getByRole('heading', { level: 1 });
-        expect(heading).toHaveTextContent('Fondo de Asociados');
-      }},
-      { path: "/quienes-somos", test: () => {
-        expect(screen.getByText("Grupo Servitrasporte S.A.S.")).toBeInTheDocument();
-      }},
-      { path: "/historia", test: () => {
-        const heading = screen.getByRole('heading', { level: 1 });
-        expect(heading).toHaveTextContent('Historia');
-      }},
-      { path: "/marketing", test: () => {
-        expect(screen.getByText("Marketing y Publicidad")).toBeInTheDocument();
-      }},
-      { path: "/seguros", test: () => {
-        const heading = screen.getByRole('heading', { level: 1 });
-        expect(heading).toHaveTextContent('Corredor de Seguros');
-      }},
-      { path: "/turistico", test: () => {
-        const heading = screen.getByRole('heading', { level: 1 });
-        expect(heading).toHaveTextContent('Operador Turístico');
-      }},
-      { path: "/constructora", test: () => {
-        const heading = screen.getByRole('heading', { level: 1 });
-        expect(heading).toHaveTextContent('Constructora');
-      }},
-      { path: "/juridicos", test: () => {
-        expect(screen.getByText("Servicios Jurídicos y Financieros")).toBeInTheDocument();
-      }},
-      { path: "/innovacion", test: () => {
-        const heading = screen.getByRole('heading', { level: 1 });
-        expect(heading).toHaveTextContent('Innovación y Tecnología');
-      }},
-      { path: "/observatorio", test: () => {
-        const heading = screen.getByRole('heading', { level: 1 });
-        expect(heading).toHaveTextContent(/OBSERVATORIO DE SERVICIOS ESPECIALZIADOS TURISTICOS.*OSET/);
-      }},
-      { path: "/transporte", test: () => {
-        const heading = screen.getByRole('heading', { level: 1 });
-        expect(heading).toHaveTextContent('Transporte');
-      }},
+      {
+        path: "/fondos",
+        test: () => {
+          // Look for "Fondo de Asociados" in an h1 element specifically
+          const heading = screen.getByRole("heading", { level: 1 });
+          expect(heading).toHaveTextContent("Fondo de Asociados");
+        },
+      },
+      {
+        path: "/quienes-somos",
+        test: () => {
+          expect(
+            screen.getByText("Grupo Servitrasporte S.A.S.")
+          ).toBeInTheDocument();
+        },
+      },
+      {
+        path: "/historia",
+        test: () => {
+          const heading = screen.getByRole("heading", { level: 1 });
+          expect(heading).toHaveTextContent("Historia");
+        },
+      },
+      {
+        path: "/marketing",
+        test: () => {
+          expect(
+            screen.getByText("Marketing y Publicidad")
+          ).toBeInTheDocument();
+        },
+      },
+      {
+        path: "/seguros",
+        test: () => {
+          const heading = screen.getByRole("heading", { level: 1 });
+          expect(heading).toHaveTextContent("Corredor de Seguros");
+        },
+      },
+      {
+        path: "/turistico",
+        test: () => {
+          const heading = screen.getByRole("heading", { level: 1 });
+          expect(heading).toHaveTextContent("Operador Turístico");
+        },
+      },
+      {
+        path: "/constructora",
+        test: () => {
+          const heading = screen.getByRole("heading", { level: 1 });
+          expect(heading).toHaveTextContent("Constructora");
+        },
+      },
+      {
+        path: "/juridicos",
+        test: () => {
+          expect(
+            screen.getByText("Servicios Jurídicos y Financieros")
+          ).toBeInTheDocument();
+        },
+      },
+      {
+        path: "/innovacion",
+        test: () => {
+          const heading = screen.getByRole("heading", { level: 1 });
+          expect(heading).toHaveTextContent("Innovación y Tecnología");
+        },
+      },
+      {
+        path: "/observatorio",
+        test: () => {
+          const heading = screen.getByRole("heading", { level: 1 });
+          expect(heading).toHaveTextContent(
+            /OBSERVATORIO DE SERVICIOS ESPECIALZIADOS TURISTICOS.*OSET/
+          );
+        },
+      },
+      {
+        path: "/transporte",
+        test: () => {
+          const heading = screen.getByRole("heading", { level: 1 });
+          expect(heading).toHaveTextContent("Transporte");
+        },
+      },
     ];
 
     routes.forEach(({ path, test }) => {
