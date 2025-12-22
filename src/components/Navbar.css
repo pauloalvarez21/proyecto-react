@@ -1,14 +1,15 @@
-/* Navbar en columna */
+/* ===== ESTILOS GENERALES ===== */
 .navbar {
   display: flex;
   flex-direction: column;
   background-color: #fff;
   border-bottom: 1px solid #eee;
   padding: 0 40px;
-  z-index: 50;
+  position: relative;
+  z-index: 1000;
 }
 
-/* Fila superior: logos + hamburguesa */
+/* ===== FILA SUPERIOR ===== */
 .navbar-top {
   display: flex;
   align-items: center;
@@ -17,7 +18,7 @@
   width: 100%;
 }
 
-/* Logos */
+/* ===== LOGOS ===== */
 .navbar-logo img,
 .navbar-logo-right img {
   height: 50px;
@@ -31,12 +32,11 @@
   transform: scale(1.05);
 }
 
-/* Menú ocupa segunda fila */
+/* ===== MENÚ DESKTOP ===== */
 .navbar-links {
   display: flex;
-  flex-wrap: wrap;   
+  flex-wrap: wrap;
   justify-content: center;
-  flex: 0 1 auto;
   gap: 20px;
   list-style: none;
   margin: 0;
@@ -45,27 +45,42 @@
   width: 100%;
 }
 
+/* Items del menú desktop */
+.navbar-links li {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background-color: #c4dafa;
+}
+
 .navbar-links li a {
   text-decoration: none;
   color: #333;
   font-size: 14px;
-  padding: 6px 8px;
-  border-radius: 6px;
-  transition: color 0.2s, background 0.2s;
+  display: block;
+  padding: 4px 8px;
+  transition: color 0.2s;
 }
 
 .navbar-links li a:hover {
-  color: #C4DAFA;
-  background: rgba(40, 167, 69, 0.06);
+  color: #2a5db0;
 }
 
 .navbar-links li a.active {
   color: #333;
   font-weight: 700;
-  background-color: #fff;
 }
 
-/* Botón hamburguesa solo en móvil */
+/* Efecto hover en item completo */
+.navbar-links li:hover {
+  border-color: #999;
+  background-color: #f9f9f9;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== BOTÓN HAMBURGUESA ===== */
 .hamburger {
   display: none;
   width: 42px;
@@ -77,7 +92,10 @@
   justify-content: center;
   gap: 6px;
   padding: 6px;
+  position: relative;
+  z-index: 1001;
 }
+
 .hamburger span {
   display: block;
   height: 3px;
@@ -85,65 +103,208 @@
   border-radius: 3px;
   transition: all 0.25s ease;
 }
+
+/* Animación hamburguesa a X */
 .hamburger.open span:nth-child(1) {
   transform: translateY(6px) rotate(45deg);
 }
+
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.open span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
 
+/* ===== OVERLAY PARA MÓVIL ===== */
+.navbar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== MENÚ MÓVIL ===== */
+.navbar-mobile {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #c4dafa 0%, #a8c6fa 100%);
+  z-index: 999;
+  overflow-y: auto;
+  padding: 20px 0 40px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.navbar-mobile.open {
+  transform: translateX(0);
+}
+
+/* Lista del menú móvil */
+.navbar-mobile-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Items del menú móvil */
+.navbar-mobile-links li {
+  margin: 0 15px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.navbar-mobile-links li a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+/* Efectos hover y active en móvil */
+.navbar-mobile-links li:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: #2a5db0;
+  transform: translateX(5px);
+}
+
+.navbar-mobile-links li a.active {
+  color: #2a5db0;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Efecto al tocar en móvil */
+.navbar-mobile-links li:active {
+  transform: scale(0.98);
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablet y móvil */
 @media (max-width: 980px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  /* Mostrar hamburguesa */
   .hamburger {
     display: flex;
   }
 
+  /* Ocultar menú desktop en móvil */
   .navbar-links {
-    position: fixed;  /* Para que se superponga */
-    top: 72px;        /* Altura de la navbar */
-    left: 0;
-    right: 0;
-    bottom: 0;        /* Que ocupe todo el alto */
-    background: rgba(196, 218, 250, 0.95); /* Fondo con opacidad */
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    padding: 30px 20px;
     display: none;
-    z-index: 9999; /* Muy por encima */
   }
 
-  .navbar-links.open {
-    display: flex;
+  /* Mostrar overlay cuando el menú está abierto */
+  .navbar-overlay {
+    display: block;
   }
 
+  /* Mostrar menú móvil */
+  .navbar-mobile {
+    display: block;
+  }
+
+  /* Ocultar logo derecho en móvil */
   .navbar-logo-right {
     display: none;
   }
 }
 
-/* Aplica un borde a cada ítem del menú */
-.navbar-links li {
-  border: 1px solid #ccc; /* Cambia el color si lo deseas */
-  padding: 8px 12px;
-  margin: 4px; /* Espacio entre ítems */
-  border-radius: 4px; /* Opcional: bordes redondeados */
-  transition: all 0.3s ease;
-  background-color: #C4DAFA;
+/* Desktop grande */
+@media (min-width: 981px) {
+  /* Ocultar elementos móviles en desktop */
+  .navbar-overlay,
+  .navbar-mobile {
+    display: none !important;
+  }
+
+  /* Asegurar que menú desktop esté visible */
+  .navbar-links {
+    display: flex;
+  }
 }
 
-/* Opcional: cambiar el borde cuando el ítem está activo */
-.navbar-links li .active {
-  border-color: #007BFF; /* Color del borde para el ítem activo */
-  font-weight: bold;
-  color: #007BFF;
+/* Móvil pequeño */
+@media (max-width: 480px) {
+  .navbar-mobile-links li a {
+    font-size: 15px;
+    padding: 12px 15px;
+  }
+
+  .navbar-mobile-links li {
+    margin: 0 10px;
+  }
+
+  .navbar {
+    padding: 0 15px;
+  }
 }
 
-/* Opcional: hover */
-.navbar-links li:hover {
-  border-color: #999;
-  background-color: #f9f9f9;
+/* Ajustes para landscape móvil */
+@media (max-height: 600px) and (orientation: landscape) {
+  .navbar-mobile {
+    top: 60px;
+    padding: 10px 0 20px;
+  }
+
+  .navbar-mobile-links li a {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .navbar-mobile-links {
+    gap: 5px;
+  }
 }
 
+/* ===== ACCESIBILIDAD ===== */
+/* Focus styles */
+.hamburger:focus,
+.navbar-links li a:focus,
+.navbar-mobile-links li a:focus {
+  outline: 2px solid #2a5db0;
+  outline-offset: 2px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .navbar-links li,
+  .navbar-mobile-links li,
+  .navbar-mobile,
+  .hamburger span {
+    transition: none;
+  }
+}
