@@ -87,6 +87,7 @@ const youtubeVideos = [
   "https://www.youtube.com/embed/TmtYoEoT6QU",
   "https://www.youtube.com/embed/gtaxiqh395Q",
   "https://www.youtube.com/embed/ezErUQuMxKk",
+  "https://www.youtube.com/embed/0C3hzjj4SLk",
 ];
 
 const images = [img1, img2, img3, img4, img5, img6, img7];

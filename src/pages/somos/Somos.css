@@ -15,11 +15,11 @@ body {
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Cambiado de center a flex-start para mejor alineación */
+  align-items: flex-start;
   padding: 40px;
   gap: 30px;
-  max-width: 1200px; /* Opcional: para limitar el ancho máximo */
-  margin: 0 auto; /* Centrar el contenedor */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Columna izquierda */
@@ -34,16 +34,16 @@ body {
 
 .text-content h2 {
   font-size: 24px;
-  color: #e65c00; /* naranja */
+  color: #e65c00;
   margin-bottom: 20px;
 }
 
 .text-content p {
   margin-bottom: 15px;
   font-size: 16px;
-  text-align: justify; /* ✅ ESTA ES LA PROPIEDAD CLAVE */
-  text-justify: inter-word; /* Mejora la justificación para palabras */
-  hyphens: auto; /* Permite división de palabras cuando sea necesario */
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 /* Columna derecha */
@@ -63,6 +63,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 2s ease-in-out; /* Animación de aparición */
 }
 
 .hexagon img {
@@ -73,6 +74,18 @@ body {
   background: white;
 }
 
+/* Definición de la animación de aparición */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Responsivo */
 @media (max-width: 900px) {
   .container {
@@ -81,12 +94,13 @@ body {
   }
 
   .text-content p {
-    text-align: justify; /* Mantener justificado en móvil también */
+    text-align: justify;
   }
 
   .hexagon {
     width: 250px;
     height: 250px;
+    animation: fadeIn 2s ease-in-out; /* Mantener animación en móvil */
   }
 
   .text-content h2 {
@@ -98,4 +112,3 @@ body {
   color: red;
   font-weight: bold;
 }
-
