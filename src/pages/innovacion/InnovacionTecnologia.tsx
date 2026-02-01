@@ -13,7 +13,7 @@ const InnovacionTecnologia = () => {
           Innovación y Tecnología
         </h1>
         <h2>
-          Servitrasporte S.A.S
+          Servitransporte S.A.S
         </h2>
       </div>
 
@@ -26,7 +26,7 @@ const InnovacionTecnologia = () => {
           <p>
             El avance tecnológico del proyecto es significativo, alcanzando un{" "}
             <strong>60% de desarrollo</strong>. Se prevé el lanzamiento de la plataforma{" "}
-            <span className="texto-rojo">SUMYT</span> para el ultimo trimestre del 2026. Esta plataforma integral
+            <span className="texto-rojo">SUMYT</span> para el último trimestre del 2026. Esta plataforma integral
             conectará <strong>transporte, turismo y mensajería</strong>, y ha sido desarrollada
             con el apoyo de instituciones como <strong>la Universidad Santo Tomás, la
             Universidad Cooperativa de Colombia y el SENA</strong>.

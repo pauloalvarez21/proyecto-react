@@ -12,7 +12,7 @@ const Constructora = () => {
       {/* Lado izquierdo */}
       <div className="constructora-left">
         <h1>Constructora</h1>
-        <h2>Servitrasporte S.A.S</h2>
+        <h2>Servitransporte S.A.S</h2>
       </div>
 
       {/* Lado derecho */}
@@ -24,7 +24,7 @@ const Constructora = () => {
         </p>
         <div className="section">
           <p>
-            La <strong>Constructora Servitrasporte</strong> se creará o se
+            La <strong>Constructora Servitransporte</strong> se creará o se
             gestionará sobre una empresa ya constituida. Esta constructora
             tendrá como objetivo desarrollar <strong>viviendas</strong> de
             interés social, como el proyecto <strong>“Villa Valentina”</strong>,
@@ -45,10 +45,10 @@ const Constructora = () => {
             <strong>
               20 hectáreas en las cuales se calcula un promedio de 20.000
               unidades habitacionales
-            </strong>{" "}
+            </strong>,{" "}
             con toda la dotación requerida en infraestructura, servicios
-            públicos y equipamientos “ colegios, centros de salud, parques,
-            centros comunitarios, centros comerciales vías” todo encajado en la
+            públicos y equipamientos: colegios, centros de salud, parques,
+            centros comunitarios, centros comerciales y vías; todo encajado en la
             construcción de ciudades inteligentes, conectándose directamente
             como zona de compensación con la{" "}
             <strong>recuperación ambiental de 20 hectáreas</strong> en la misma
@@ -70,9 +70,9 @@ const Constructora = () => {
             plataformas independientes. Esto facilitará la compra de servicios
             por los usuarios de las plataformas <span className="texto-rojo">SUMYT</span>, con descuentos aplicados
             automáticamente desde las plataformas de transporte, turismo y
-            mensajería. Al igual todos los procesos constructivos en la
-            implementación de ciudades inteligentes e implementación de energías
-            limpias como modelo de vivienda sostenible y eficiente
+            mensajería. Al igual que todos los procesos constructivos en la
+            implementación de ciudades inteligentes y la implementación de energías
+            limpias como modelo de vivienda sostenible y eficiente.
           </p>
         </div>
       </div>

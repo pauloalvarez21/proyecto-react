@@ -12,7 +12,7 @@ const Turismo = () => {
       {/* Lado izquierdo */}
       <div className="turismo-left">
         <h1>Operador Turístico</h1>
-        <h2>Servitrasporte S.A.S</h2>
+        <h2>Servitransporte S.A.S</h2>
       </div>
 
       {/* Lado derecho */}
@@ -24,7 +24,7 @@ const Turismo = () => {
         </p>
         <div className="section">
           <p>
-            El <strong>Operador Turístico</strong> Servitrasporte desempeña un
+            El <strong>Operador Turístico</strong> Servitransporte desempeña un
             papel clave en el desarrollo del segundo módulo de la herramienta
             tecnológica <span className="texto-rojo">SUMYT</span>, a través de
             la cual se generarán acuerdos comerciales con toda la cadena de

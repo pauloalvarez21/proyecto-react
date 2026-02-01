@@ -12,7 +12,7 @@ const Transporte = () => {
       {/* Lado izquierdo */}
       <div className="transporte-left">
         <h1>Transporte</h1>
-        <h2>Grupo Servitrasporte S.A.S</h2>
+        <h2>Grupo Servitransporte S.A.S</h2>
       </div>
 
       {/* Lado derecho */}
@@ -24,12 +24,12 @@ const Transporte = () => {
         </p>
         <div className="section">
           <p>
-            <strong>Grupo Servitrasporte S.A.S</strong> Construye en tripartita “Estado,
+            <strong>Grupo Servitransporte S.A.S</strong> construye en tripartita “Estado,
             Universidades, Sector Privado” implementando los 17 ODS en la
             profesionalización del transporte Especial, Taxi, Alternativo, Carga
             y Courier en Colombia, alcanzando la integración de servicios de
-            trasporte, turismo y carga desde Startups implementando Plataformas
-            y E-commerce con usuarios y prestadores de servicios integrados
+            transporte, turismo y carga desde startups implementando plataformas
+            y e-commerce con usuarios y prestadores de servicios integrados
             desde nuestra herramienta tecnológica{" "}
             <strong>
               <span className="texto-rojo">SUMYT</span>
@@ -38,18 +38,18 @@ const Transporte = () => {
             Prestando asistencia eficiente para nuestros operadores de vehículos
             de Servicio Especial en sus 5 modalidades{" "}
             <strong>
-              1-Escolar 2-Empresarial 3-Turismo 4-Grupos Homogéneos 5-Medico
+              1. Escolar, 2. Empresarial, 3. Turismo, 4. Grupos Homogéneos, 5. Médico
             </strong>{" "}
             no Especializado, Taxi, Alternativo, Carga y Courier generando de
-            esta forma una óptimo experiencia de servicio a nuestros usuarios y
+            esta forma una óptima experiencia de servicio a nuestros usuarios y
             operadores <strong>“B2B y B2C”</strong> con vehículos de primera
             línea, homologados por el ministerio del transporte e implementando
-            herramientas tecnológicas (APP- E-commerce-), con la inclusión de
+            herramientas tecnológicas (App, e-commerce), con la inclusión de
             energías renovables y limpias para Colombia y el mundo
             convirtiéndose en la primera empresa socialmente responsable en el
-            transporte el cual incluye proyectos en desarrollo desde nuestros
+            transporte, el cual incluye proyectos en desarrollo desde nuestros
             cuatro ejes rectores Salud – Educación – Vivienda – Tecnología con
-            el propósito de mejorar la calidad de vida del sector del trasporte
+            el propósito de mejorar la calidad de vida del sector del transporte.
           </p>
           <br />
           <p><strong>Objetivo Inmediato:</strong></p>
@@ -58,7 +58,7 @@ const Transporte = () => {
             Ser reconocidos como la primera empresa de Transporte Especial,
             Taxi, Alternativo, Carga y Courier en caminada al desarrollo de
             herramientas tecnológicas utilizando IA en nuestras
-            (Plataformas–E-commerce, <strong><span className="texto-rojo">SUMYT</span></strong>). Implementando la profesionalización
+            (Plataformas, e-commerce, <strong><span className="texto-rojo">SUMYT</span></strong>). Implementando la profesionalización
             del transporte en sus diferentes modalidades de la mano de la
             academia, utilizando herramientas tecnológicas creadas a las
             necesidades de nuestro país y el continente desde su marco

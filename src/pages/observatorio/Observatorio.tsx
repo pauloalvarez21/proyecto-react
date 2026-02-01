@@ -10,8 +10,8 @@ const Observatorio = () => {
     <div className="observatorio-page">
       {/* Lado izquierdo */}
       <div className="observatorio-left">
-        <h1>OBSERVATORIO DE SERVICIOS ESPECIALZIADOS
-            TURISTICOS “OSET”</h1>
+        <h1>OBSERVATORIO DE SERVICIOS ESPECIALIZADOS
+            TURÍSTICOS “OSET”</h1>
         <img src={oset} alt="Observatorio" />
       </div>
 
@@ -19,8 +19,8 @@ const Observatorio = () => {
       <div className="observatorio-right">
         <div className="section">
           <p>
-            <strong>NOMBRE: OBSERVATORIO DE SERVICIOS ESPECIALZIADOS
-            TURISTICOS “OSET”</strong>
+            <strong>NOMBRE: OBSERVATORIO DE SERVICIOS ESPECIALIZADOS
+            TURÍSTICOS “OSET”</strong>
           </p>
           <br />
           <p>
@@ -136,7 +136,7 @@ const Observatorio = () => {
               </p>
               <div className="subcomponentes">
                 <p>
-                  <strong>2.1 Investigadores todas las categorías:</strong> Con
+                  <strong>2.1 Investigadores de todas las categorías:</strong> Con
                   experiencia o interés en trabajar con turismo, economía,
                   estadística, marketing.
                 </p>
