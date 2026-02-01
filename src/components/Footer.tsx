@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import "./Footer.css";
+import { useLanguageStore } from "../store";
+import { translations } from "../translations";
 
 const Footer = () => {
   const [open, setOpen] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const { language } = useLanguageStore();
+  const t = translations[language].footer;
 
   const sanitize = (str: string) => {
     return str.replaceAll(/[\r\n&?=<>]/g, ""); // quita saltos de línea e inyecciones básicas
@@ -25,7 +29,7 @@ const Footer = () => {
 
     // Validaciones
     if (nombre.length < 3 || nombre.length > 50) {
-      setError("El nombre debe tener entre 3 y 50 caracteres.");
+      setError(t.form.validations.name);
       return;
     }
 
@@ -34,12 +38,12 @@ const Footer = () => {
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
     if (!emailRegex.test(correo)) {
-      setError("Por favor ingresa un correo válido.");
+      setError(t.form.validations.email);
       return;
     }
 
     if (mensaje.length < 10 || mensaje.length > 500) {
-      setError("El mensaje debe tener entre 10 y 500 caracteres.");
+      setError(t.form.validations.message);
       return;
     }
 
@@ -66,31 +70,31 @@ const Footer = () => {
       // Para debugging
 
       if (text.includes("success")) {
-        setSuccess("✅ Tu mensaje fue enviado correctamente.");
+        setSuccess(t.form.success);
         form.reset();
       } else {
-        setError("❌ Hubo un error al enviar el mensaje. Intenta nuevamente.");
+        setError(t.form.error);
       }
     } catch (err) {
-      setError("⚠️ No se pudo conectar con el servidor. Error: " + err);
+      setError(t.form.connectionError + err);
     }
   };
 
   return (
     <footer className="footer" data-testid="footer">
       <button className="contact-btn" onClick={() => setOpen(true)}>
-        📞 Contáctanos
+        📞 {t.contact}
       </button>
 
       {open && (
         <div className="modal-overlay">
           <div className="modal">
-            <h2>Contáctanos</h2>
+            <h2>{t.form.title}</h2>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="nombre"
-                placeholder="Tu nombre"
+                placeholder={t.form.name}
                 minLength={3}
                 maxLength={50}
                 required
@@ -98,13 +102,13 @@ const Footer = () => {
               <input
                 type="email"
                 name="correo"
-                placeholder="Tu correo"
+                placeholder={t.form.email}
                 maxLength={100}
                 required
               />
               <textarea
                 name="mensaje"
-                placeholder="Escribe tu mensaje..."
+                placeholder={t.form.message}
                 rows={4}
                 minLength={10}
                 maxLength={500}
@@ -114,7 +118,7 @@ const Footer = () => {
               {success && <p className="success">{success}</p>}
               <div className="modal-actions">
                 <button type="submit" className="send-btn">
-                  Enviar
+                  {t.form.send}
                 </button>
                 <button
                   type="button"
@@ -125,7 +129,7 @@ const Footer = () => {
                     setSuccess("");
                   }}
                 >
-                  Cancelar
+                  {t.form.cancel}
                 </button>
               </div>
             </form>
@@ -135,8 +139,7 @@ const Footer = () => {
 
       {/* CopyRight */}
       <div className="copyright">
-        © {new Date().getFullYear()} Grupo Servitransporte. Todos los derechos
-        reservados.
+        © {new Date().getFullYear()} Grupo Servitransporte. {t.rights}.
       </div>
     </footer>
   );

@@ -1,37 +1,29 @@
-import './History.css'; // Crearemos este archivo CSS
+import './History.css';
 import grupo from "../../assets/image/grupo.png";
-import sumyt from "../../assets/image/sumyt.png"
+import sumyt from "../../assets/image/sumyt.png";
+import { useLanguageStore } from "../../store";
+import { translations } from "../../translations";
 
 const History = () => {
+  const { language } = useLanguageStore();
+  const t = translations[language].history;
+
   return (
     <div className="history-page">
       <header>
-        <h1>Historia</h1>
-        <img src={grupo} alt="Grupo Servitransporte"  className="logo" />
-        <img src={sumyt} alt="sumyt"  className="logoSumyt" width={100} />
+        <h1>{t.title}</h1>
+        <img src={grupo} alt="Grupo Servitransporte" className="logo" />
+        <img src={sumyt} alt="sumyt" className="logoSumyt" width={100} />
       </header>
 
       <section className="timeline">
-        <div className="event">
-          <h2>2018</h2>
-          <h3>Fundación renovando sueños</h3>
-          <p>Apoyo propietarios y transportadores en la defensa de los derechos del servicio público</p>
-        </div>
-        <div className="event">
-          <h2>2019</h2>
-          <h3>Grupo Alianza Sevitransporte</h3>
-          <p>Empresa de transporte público en modalidad de servicio público, especial y todas las modalidades</p>
-        </div>
-        <div className="event">
-          <h2>2021</h2>
-          <h3>Grupo de Servicios de transportes especiales de Colombia - Servitransporte</h3>
-          <p>Desarrollo Holding</p>
-        </div>
-        <div className="event">
-          <h2>Presente</h2>
-          <h3>Servicios Unificados de Movilidad y Turismo</h3>
-          <p><strong><span className='texto-rojo'>SUMYT</span></strong> Plataforma Tecnológica</p>
-        </div>
+        {t.events.map((event, index) => (
+          <div className="event" key={index}>
+            <h2>{event.year}</h2>
+            <h3>{event.title}</h3>
+            <p dangerouslySetInnerHTML={{ __html: event.desc }} />
+          </div>
+        ))}
       </section>
     </div>
   );

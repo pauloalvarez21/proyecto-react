@@ -1,4 +1,5 @@
-import React from "react";
+import { translations } from "../../translations";
+import { useLanguageStore } from "../../store";
 import "./Transporte.css";
 
 import grupo from "../../assets/image/grupo.png";
@@ -7,73 +8,33 @@ import segmento from "../fondo/segmentos.png";
 import transporte2 from "./transporte.jpg";
 
 const Transporte = () => {
+  const { language } = useLanguageStore();
+  const t = translations[language].transporte;
+
   return (
     <div className="transporte-page">
       {/* Lado izquierdo */}
       <div className="transporte-left">
-        <h1>Transporte</h1>
-        <h2>Grupo Servitransporte S.A.S</h2>
+        <h1>{t.title}</h1>
+        <h2>{t.subtitle}</h2>
       </div>
 
       {/* Lado derecho */}
       <div className="transporte-right">
         <p className="imagenes-transporte">
-        <img src={transporte1} alt="Logo taxi" className="transporte-taxi" />
-        <img src={segmento} alt="Logo segmento" className="transporte-taxi" />
-        <img src={transporte2} alt="Logo camion" className="transporte-taxi" />
+          <img src={transporte1} alt="Logo taxi" className="transporte-taxi" />
+          <img src={segmento} alt="Logo segmento" className="transporte-taxi" />
+          <img src={transporte2} alt="Logo camion" className="transporte-taxi" />
         </p>
         <div className="section">
-          <p>
-            <strong>Grupo Servitransporte S.A.S</strong> construye en tripartita “Estado,
-            Universidades, Sector Privado” implementando los 17 ODS en la
-            profesionalización del transporte Especial, Taxi, Alternativo, Carga
-            y Courier en Colombia, alcanzando la integración de servicios de
-            transporte, turismo y carga desde startups implementando plataformas
-            y e-commerce con usuarios y prestadores de servicios integrados
-            desde nuestra herramienta tecnológica{" "}
-            <strong>
-              <span className="texto-rojo">SUMYT</span>
-            </strong>{" "}
-            como factor fundamental para el crecimiento de las regiones.
-            Prestando asistencia eficiente para nuestros operadores de vehículos
-            de Servicio Especial en sus 5 modalidades{" "}
-            <strong>
-              1. Escolar, 2. Empresarial, 3. Turismo, 4. Grupos Homogéneos, 5. Médico
-            </strong>{" "}
-            no Especializado, Taxi, Alternativo, Carga y Courier generando de
-            esta forma una óptima experiencia de servicio a nuestros usuarios y
-            operadores <strong>“B2B y B2C”</strong> con vehículos de primera
-            línea, homologados por el ministerio del transporte e implementando
-            herramientas tecnológicas (App, e-commerce), con la inclusión de
-            energías renovables y limpias para Colombia y el mundo
-            convirtiéndose en la primera empresa socialmente responsable en el
-            transporte, el cual incluye proyectos en desarrollo desde nuestros
-            cuatro ejes rectores Salud – Educación – Vivienda – Tecnología con
-            el propósito de mejorar la calidad de vida del sector del transporte.
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: t.p1 }} />
           <br />
-          <p><strong>Objetivo Inmediato:</strong></p>
+          <p><strong>{t.objectiveTitle}</strong></p>
           <br />
-          <p>
-            Ser reconocidos como la primera empresa de Transporte Especial,
-            Taxi, Alternativo, Carga y Courier en caminada al desarrollo de
-            herramientas tecnológicas utilizando IA en nuestras
-            (Plataformas, e-commerce, <strong><span className="texto-rojo">SUMYT</span></strong>). Implementando la profesionalización
-            del transporte en sus diferentes modalidades de la mano de la
-            academia, utilizando herramientas tecnológicas creadas a las
-            necesidades de nuestro país y el continente desde su marco
-            regulatorio e impulsando el uso de energías renovables y limpias con
-            el propósito de prestar un servicio de calidad dirigido a nuestros
-            usuarios y operadores, con la implementación de programas especiales
-            dirigidos al sector Turístico, volviendo más fuertes de esta forma
-            los eslabones de la cadena de valor de la economía circular. Esta
-            meta la tendremos consolidada al 2027 desde Bogotá a las regiones y
-            de Colombia para el mundo como modelo colaborativo y de integración
-            de los sectores.
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: t.p2 }} />
         </div>
       </div>
-      
+
       {/* Logo decorativo opcional */}
       <img src={grupo} alt="Logo Derecho" className="transporte-logo" />
     </div>
