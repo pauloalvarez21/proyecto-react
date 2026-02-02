@@ -12,7 +12,7 @@ describe('Seguros Component', () => {
 
   it('debería renderizar el título principal', () => {
     render(<Seguros />);
-    expect(screen.getByText('Corredor de Seguros')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: /Corredor de Seguros/i })).toBeInTheDocument();
   });
 
   it('debería renderizar todas las imágenes de seguros', () => {
@@ -43,10 +43,10 @@ describe('Seguros Component', () => {
     expect(screen.getByText('Seguros del Estado')).toContainHTML('strong');
   });
 
-  it('debería mencionar Servitrasporte Ltda y Servitrasporte S.A.S', () => {
+  it('debería mencionar Servitransporte Ltda y Servitransporte S.A.S', () => {
     render(<Seguros />);
-    expect(screen.getByText('Servitrasporte S.A.S')).toBeInTheDocument();
-    expect(screen.getByText('Servitrasporte S.A.S')).toContainHTML('strong');
+    expect(screen.getByText('Servitransporte S.A.S')).toBeInTheDocument();
+    expect(screen.getByText('Servitransporte S.A.S')).toContainHTML('strong');
   });
 
   it('debería mencionar los sectores atendidos', () => {
@@ -83,7 +83,7 @@ describe('Seguros Component', () => {
     
     // Verificar algunos textos específicos en negrita
     expect(screen.getByText('Seguros del Estado')).toContainHTML('strong');
-    expect(screen.getByText('Servitrasporte S.A.S')).toContainHTML('strong');
+    expect(screen.getByText('Servitransporte S.A.S')).toContainHTML('strong');
     expect(screen.getByText('60,000 operadores')).toContainHTML('strong');
     expect(screen.getByText('Desarrollo y Requisitos en Tecnología')).toContainHTML('strong');
     expect(screen.getByText('onboarding')).toContainHTML('strong');
@@ -116,7 +116,7 @@ describe('Seguros Component', () => {
     
     // Verificar que la columna izquierda tiene los títulos
     expect(leftColumn).toHaveTextContent('Corredor de Seguros');
-    expect(leftColumn).toHaveTextContent('Servitrasporte Ltda');
+    expect(leftColumn).toHaveTextContent('Servitransporte Ltda');
     
     // Verificar que la columna derecha tiene el contenido principal
     expect(rightColumn).toHaveTextContent('Seguros del Estado');

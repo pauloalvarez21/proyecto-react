@@ -17,7 +17,7 @@ describe('Marketing Component', () => {
 
   it('debería renderizar el subtítulo', () => {
     render(<Marketing />);
-    expect(screen.getByText('Servitrasporte S.A.S')).toBeInTheDocument();
+    expect(screen.getByText('Servitransporte S.A.S')).toBeInTheDocument();
   });
 
   it('debería renderizar todas las imágenes de marketing', () => {
@@ -61,7 +61,7 @@ describe('Marketing Component', () => {
     expect(strongElements.length).toBeGreaterThan(5);
     
     // Verificar algunos textos específicos en negrita
-    expect(screen.getByText('Agencia de Marketing y Publicidad Servitrasporte')).toContainHTML('strong');
+    expect(screen.getByText('Agencia de Marketing y Publicidad Servitransporte')).toContainHTML('strong');
     expect(screen.getByText('salud, educación, vivienda y tecnología')).toContainHTML('strong');
     expect(screen.getByText('SENA')).toContainHTML('strong');
     expect(screen.getByText('neuromarketing')).toContainHTML('strong');
@@ -96,10 +96,10 @@ describe('Marketing Component', () => {
     
     // Verificar que la columna izquierda tiene los títulos
     expect(leftColumn).toHaveTextContent('Agencia de Marketing y Publicidad');
-    expect(leftColumn).toHaveTextContent('Servitrasporte S.A.S');
+    expect(leftColumn).toHaveTextContent('Servitransporte S.A.S');
     
     // Verificar que la columna derecha tiene el contenido principal
-    expect(rightColumn).toHaveTextContent('Agencia de Marketing y Publicidad Servitrasporte');
+    expect(rightColumn).toHaveTextContent('Agencia de Marketing y Publicidad Servitransporte');
     expect(rightColumn).toHaveTextContent('neuromarketing');
     expect(rightColumn).toHaveTextContent('SUMYT');
   });

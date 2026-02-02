@@ -17,7 +17,7 @@ describe('InnovacionTecnologia Component', () => {
 
   it('debería renderizar el subtítulo', () => {
     render(<InnovacionTecnologia />);
-    expect(screen.getByText('Servitrasporte S.A.S')).toBeInTheDocument();
+    expect(screen.getByText('Servitransporte S.A.S')).toBeInTheDocument();
   });
 
   it('debería renderizar la imagen de innovación', () => {
@@ -100,7 +100,7 @@ describe('InnovacionTecnologia Component', () => {
     
     // Verificar que la columna izquierda tiene los títulos
     expect(leftColumn).toHaveTextContent('Innovación y Tecnología');
-    expect(leftColumn).toHaveTextContent('Servitrasporte S.A.S');
+    expect(leftColumn).toHaveTextContent('Servitransporte S.A.S');
     
     // Verificar que la columna derecha tiene el contenido principal
     expect(rightColumn).toHaveTextContent('SUMYT');

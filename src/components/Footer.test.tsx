@@ -98,7 +98,7 @@ describe('Footer Component', () => {
     });
     
     expect(fetch).toHaveBeenCalledWith(
-      'https://gruposervitrasporte.com/sendmail.php',
+      'https://grupoServitransporte.com/sendmail.php',
       expect.objectContaining({
         method: 'POST',
         headers: {

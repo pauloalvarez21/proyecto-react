@@ -97,7 +97,7 @@ describe('Home Component', () => {
     // Verificar algunos logos específicos
     expect(screen.getByAltText('aliado-ACA')).toBeInTheDocument();
     expect(screen.getByAltText('aliado-Confetours')).toBeInTheDocument();
-    expect(screen.getByAltText('aliado-Ecovehiculos')).toBeInTheDocument();
+    expect(screen.getByAltText('aliado-Ecovehículos')).toBeInTheDocument();
     expect(screen.getByAltText('aliado-Luxcarta')).toBeInTheDocument();
     expect(screen.getByAltText('aliado-Medplus')).toBeInTheDocument();
   });

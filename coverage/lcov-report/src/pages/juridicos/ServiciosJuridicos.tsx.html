@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -110,30 +110,20 @@
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,28 +156,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+import { translations } from "../../translations/translations";
+import { useLanguageStore } from "../../store";
 import "./ServiciosJuridicos.css";
 &nbsp;
 import grupo from "../../assets/image/grupo.png";
@@ -196,12 +168,15 @@ import juridicos2 from "./juridicos2.png";
 import juridicos3 from "./juridicos3.png";
 &nbsp;
 const ServiciosJuridicos = () =&gt; {
+  const { language } = useLanguageStore();
+  const t = translations[language].juridicos;
+&nbsp;
   return (
     &lt;div className="juridicos-page"&gt;
       {/* Lado izquierdo */}
       &lt;div className="juridicos-left"&gt;
-        &lt;h1&gt;Servicios Jurídicos y Financieros&lt;/h1&gt;
-        &lt;h2&gt;Servitrsporte S.A.S&lt;/h2&gt;
+        &lt;h1&gt;{t.title}&lt;/h1&gt;
+        &lt;h2&gt;{t.subtitle}&lt;/h2&gt;
       &lt;/div&gt;
 &nbsp;
       {/* Lado derecho */}
@@ -212,33 +187,13 @@ const ServiciosJuridicos = () =&gt; {
           &lt;img src={juridicos3} alt="Jurídicos" className="juridicos-img" /&gt;
         &lt;/p&gt;
         &lt;div className="section"&gt;
-          &lt;p&gt;
-            La unidad de{" "}
-            &lt;strong&gt;Servicios Jurídicos y Económicos Servitrasporte&lt;/strong&gt;{" "}
-            proporcionará servicios tanto a las empresas del holding como a los
-            operadores de las plataformas del grupo. Se ofrecerán tarifas y
-            planes de pago accesibles, con la opción de pagos diferidos en
-            línea. Además, la unidad gestionará el financiamiento necesario para
-            el desarrollo de infraestructura turística, ejecutando los proyectos
-            a través de la &lt;strong&gt;Constructora Servitrasporte&lt;/strong&gt;.
-          &lt;/p&gt;
+          &lt;p dangerouslySetInnerHTML={{ __html: t.p1 }} /&gt;
           &lt;br /&gt;
           &lt;p&gt;
-            &lt;strong&gt;Desarrollo y Requisitos en Tecnología&lt;/strong&gt;
+            &lt;strong&gt;{t.techTitle}&lt;/strong&gt;
           &lt;/p&gt;
           &lt;br /&gt;
-          &lt;p&gt;
-            Este servicio está respaldado por una sólida infraestructura
-            tecnológica, permitiendo el análisis de datos y la gestión de pagos
-            en línea para servicios jurídicos y financieros. Estos pagos podrán
-            ser descontados automáticamente desde los servicios de transporte y
-            otros sectores de la plataforma. Por ser de base tecnológica,
-            implementando estrategias de onboarding digital para la captación de
-            clientes de servicios jurídicos y financieros y el desarrollo de
-            contenidos y campañas publicitarias en línea. Esto permitirá
-            optimizar la comercialización de los productos y el mejoramiento de
-            servicios del grupo a través de plataformas digitales &lt;span className="texto-rojo"&gt;SUMYT&lt;/span&gt;.
-          &lt;/p&gt;
+          &lt;p dangerouslySetInnerHTML={{ __html: t.p2 }} /&gt;
         &lt;/div&gt;
       &lt;/div&gt;
 &nbsp;
@@ -256,7 +211,7 @@ export default ServiciosJuridicos;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-22T19:54:54.395Z
+                at 2026-02-02T14:14:46.287Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

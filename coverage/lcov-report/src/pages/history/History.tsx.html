@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -95,19 +95,17 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -117,7 +115,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,66 +126,47 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import './History.css'; // Crearemos este archivo CSS
-import grupo from "../../assets/image/grupo.svg";
-import sumyt from "../../assets/image/sumyt.png"
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import './History.css';
+import grupo from "../../assets/image/grupo.png";
+import sumyt from "../../assets/image/sumyt.png";
+import { useLanguageStore } from "../../store";
+import { translations } from "../../translations";
 &nbsp;
 const History = () =&gt; {
+  const { language } = useLanguageStore();
+  const t = translations[language].history;
+&nbsp;
   return (
     &lt;div className="history-page"&gt;
       &lt;header&gt;
-        &lt;h1&gt;Historia&lt;/h1&gt;
-        &lt;img src={grupo} alt="Grupo Servitransporte"  className="logo" /&gt;
-        &lt;img src={sumyt} alt="sumyt"  className="logoSumyt" width={100} /&gt;
+        &lt;h1&gt;{t.title}&lt;/h1&gt;
+        &lt;img src={grupo} alt="Grupo Servitransporte" className="logo" /&gt;
+        &lt;img src={sumyt} alt="sumyt" className="logoSumyt" width={100} /&gt;
       &lt;/header&gt;
 &nbsp;
       &lt;section className="timeline"&gt;
-        &lt;div className="event"&gt;
-          &lt;h2&gt;2018&lt;/h2&gt;
-          &lt;h3&gt;Fundación renovando sueños&lt;/h3&gt;
-          &lt;p&gt;Apoyo propietarios y transportadores en la defensa de los derechos del servicio público&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div className="event"&gt;
-          &lt;h2&gt;2019&lt;/h2&gt;
-          &lt;h3&gt;Grupo Alianza Sevitransporte&lt;/h3&gt;
-          &lt;p&gt;Empresa de transporte público en modalidad de servicio público, especial y todas las modalidades&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div className="event"&gt;
-          &lt;h2&gt;2021&lt;/h2&gt;
-          &lt;h3&gt;Grupo de Servicios de transportes especiales de Colombia - Servitransporte&lt;/h3&gt;
-          &lt;p&gt;Desarrollo Holding&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div className="event"&gt;
-          &lt;h2&gt;Presente&lt;/h2&gt;
-          &lt;h3&gt;Servicios Unificados de Movilidad y Turismo&lt;/h3&gt;
-          &lt;p&gt;&lt;strong&gt;&lt;span className='texto-rojo'&gt;SUMYT&lt;/span&gt;&lt;/strong&gt; Plataforma Tecnológica&lt;/p&gt;
-        &lt;/div&gt;
+        {t.events.map((event, index) =&gt; (
+          &lt;div className="event" key={index}&gt;
+            &lt;h2&gt;{event.year}&lt;/h2&gt;
+            &lt;h3&gt;{event.title}&lt;/h3&gt;
+            &lt;p dangerouslySetInnerHTML={{ __html: event.desc }} /&gt;
+          &lt;/div&gt;
+        ))}
       &lt;/section&gt;
     &lt;/div&gt;
   );
 };
 &nbsp;
-export default History;</pre></td></tr></table></pre>
+export default History;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-22T19:54:54.395Z
+                at 2026-02-02T14:14:46.287Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -36,11 +36,11 @@ describe('ServiciosJuridicos Component', () => {
     expect(logo).toHaveClass('juridicos-logo');
   });
 
-  it('debería mencionar la Constructora Servitrasporte', () => {
+  it('debería mencionar la Constructora Servitransporte', () => {
     render(<ServiciosJuridicos />);
     
-    expect(screen.getByText('Constructora Servitrasporte')).toBeInTheDocument();
-    expect(screen.getByText('Constructora Servitrasporte')).toContainHTML('strong');
+    expect(screen.getByText('Constructora Servitransporte')).toBeInTheDocument();
+    expect(screen.getByText('Constructora Servitransporte')).toContainHTML('strong');
   });
 
   it('debería mencionar SUMYT en el texto', () => {
@@ -63,8 +63,8 @@ describe('ServiciosJuridicos Component', () => {
     expect(strongElements.length).toBeGreaterThan(2);
     
     // Verificar algunos textos específicos en negrita
-    expect(screen.getByText('Servicios Jurídicos y Económicos Servitrasporte')).toContainHTML('strong');
-    expect(screen.getByText('Constructora Servitrasporte')).toContainHTML('strong');
+    expect(screen.getByText('Servicios Jurídicos y Económicos Servitransporte')).toContainHTML('strong');
+    expect(screen.getByText('Constructora Servitransporte')).toContainHTML('strong');
     expect(screen.getByText('Desarrollo y Requisitos en Tecnología')).toContainHTML('strong');
   });
 
@@ -97,8 +97,8 @@ describe('ServiciosJuridicos Component', () => {
     expect(leftColumn).toHaveTextContent('Servicios Jurídicos y Financieros');
     
     // Verificar que la columna derecha tiene el contenido principal
-    expect(rightColumn).toHaveTextContent('Servicios Jurídicos y Económicos Servitrasporte');
-    expect(rightColumn).toHaveTextContent('Constructora Servitrasporte');
+    expect(rightColumn).toHaveTextContent('Servicios Jurídicos y Económicos Servitransporte');
+    expect(rightColumn).toHaveTextContent('Constructora Servitransporte');
     expect(rightColumn).toHaveTextContent('SUMYT');
   });
 });

@@ -92,7 +92,7 @@ describe('Transporte Component', () => {
     
     // Verificar que la columna izquierda tiene los títulos
     expect(leftColumn).toHaveTextContent('Transporte');
-    expect(leftColumn).toHaveTextContent('Grupo Servitrasporte S.A.S');
+    expect(leftColumn).toHaveTextContent('Grupo Servitransporte S.A.S');
     
     // Verificar que la columna derecha tiene el contenido principal
     expect(rightColumn).toHaveTextContent('SUMYT');

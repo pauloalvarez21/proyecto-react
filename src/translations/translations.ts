@@ -214,16 +214,16 @@ export const translations = {
     },
     seguros: {
       title: "Corredor de Seguros",
-      subtitle: "Servitrasporte Ltda",
-      p1: "El <strong>Corredor de Seguros</strong> está respaldado por <strong>Seguros del Estado</strong> y <strong>Servitrasporte S.A.S</strong>, ofreciendo una amplia gama de seguros para el sector del <strong>turismo y el transporte</strong>.",
+      subtitle: "Servitransporte Ltda",
+      p1: "El <strong>Corredor de Seguros</strong> está respaldado por <strong>Seguros del Estado</strong> y <strong>Servitransporte S.A.S</strong>, ofreciendo una amplia gama de seguros para el sector del <strong>turismo y el transporte</strong>.",
       p2: "Contamos con una proyección de atención para más de <strong>60,000 operadores</strong> activos en la plataforma <span class='texto-rojo'>SUMYT</span>, garantizando el cumplimiento de la normativa vigente.",
       techTitle: "Desarrollo y Requisitos en Tecnología",
       p3: "Implementamos procesos de <strong>onboarding</strong> digital para la vinculación de nuevos asegurados, agilizando los trámites y la expedición de pólizas de manera eficiente."
     },
     marketing: {
       title: "Agencia de Marketing y Publicidad",
-      subtitle: "Servitrasporte S.A.S",
-      p1: "Nuestra <strong>Agencia de Marketing y Publicidad Servitrasporte</strong> se enfoca en el posicionamiento de marca y la generación de demanda para todos los servicios del holding, con especial énfasis en <strong>salud, educación, vivienda y tecnología</strong>.",
+      subtitle: "Servitransporte S.A.S",
+      p1: "Nuestra <strong>Agencia de Marketing y Publicidad Servitransporte</strong> se enfoca en el posicionamiento de marca y la generación de demanda para todos los servicios del holding, con especial énfasis en <strong>salud, educación, vivienda y tecnología</strong>.",
       p2: "Contamos con el respaldo de instituciones como el <strong>SENA</strong> para la formación de nuestro equipo en estrategias de comunicación digital y mercadeo relacional.",
       techTitle: "Desarrollo y Requisitos en Tecnología",
       p3: "Utilizamos técnicas de <strong>neuromarketing</strong> para conectar con el <strong>cerebro emocional</strong> de nuestros usuarios, optimizando la experiencia en la plataforma <span class='texto-rojo'>SUMYT</span> y maximizando el retorno de inversión."
@@ -512,16 +512,16 @@ export const translations = {
     },
     seguros: {
       title: "Insurance Broker",
-      subtitle: "Servitrasporte Ltda",
-      p1: "The <strong>Insurance Broker</strong> is backed by <strong>Seguros del Estado</strong> and <strong>Servitrasporte S.A.S</strong>, offering a wide range of insurance for the <strong>tourism and transport</strong> sectors.",
+      subtitle: "Servitransporte Ltda",
+      p1: "The <strong>Insurance Broker</strong> is backed by <strong>Seguros del Estado</strong> and <strong>Servitransporte S.A.S</strong>, offering a wide range of insurance for the <strong>tourism and transport</strong> sectors.",
       p2: "We have a service projection for more than <strong>60,000 operators</strong> active on the <span class='texto-rojo'>SUMYT</span> platform, guaranteeing compliance with current regulations.",
       techTitle: "Technology Development and Requirements",
       p3: "We implement digital <strong>onboarding</strong> processes for linking new insured parties, streamlining procedures and the issuance of policies efficiently."
     },
     marketing: {
       title: "Marketing and Advertising Agency",
-      subtitle: "Servitrasporte S.A.S",
-      p1: "Our <strong>Servitrasporte Marketing and Advertising Agency</strong> focuses on brand positioning and demand generation for all holding services, with a special emphasis on <strong>health, education, housing, and technology</strong>.",
+      subtitle: "Servitransporte S.A.S",
+      p1: "Our <strong>Servitransporte Marketing and Advertising Agency</strong> focuses on brand positioning and demand generation for all holding services, with a special emphasis on <strong>health, education, housing, and technology</strong>.",
       p2: "We have the support of institutions such as <strong>SENA</strong> for the training of our team in digital communication strategies and relationship marketing.",
       techTitle: "Technology Development and Requirements",
       p3: "We use <strong>neuromarketing</strong> techniques to connect with the <strong>emotional brain</strong> of our users, optimizing the experience on the <span class='texto-rojo'>SUMYT</span> platform and maximizing return on investment."

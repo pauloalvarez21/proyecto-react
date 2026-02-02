@@ -52,7 +52,7 @@ const Footer = () => {
 
     try {
       const response = await fetch(
-        "https://gruposervitrasporte.com/sendmail.php",
+        "https://grupoServitransporte.com/sendmail.php",
         {
           method: "POST",
           headers: {

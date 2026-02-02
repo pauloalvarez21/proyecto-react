@@ -35,7 +35,7 @@ describe("App Component", () => {
         path: "/quienes-somos",
         test: () => {
           expect(
-            screen.getByText("Grupo Servitrasporte S.A.S.")
+            screen.getByText("Grupo Servitransporte S.A.S.")
           ).toBeInTheDocument();
         },
       },
@@ -49,9 +49,8 @@ describe("App Component", () => {
       {
         path: "/marketing",
         test: () => {
-          expect(
-            screen.getByText("Marketing y Publicidad")
-          ).toBeInTheDocument();
+          const heading = screen.getByRole("heading", { level: 1 });
+          expect(heading).toHaveTextContent("Marketing y Publicidad");
         },
       },
       {
@@ -78,9 +77,8 @@ describe("App Component", () => {
       {
         path: "/juridicos",
         test: () => {
-          expect(
-            screen.getByText("Servicios Jurídicos y Financieros")
-          ).toBeInTheDocument();
+          const heading = screen.getByRole("heading", { level: 1 });
+          expect(heading).toHaveTextContent("Servicios Jurídicos y Financieros");
         },
       },
       {
@@ -95,7 +93,7 @@ describe("App Component", () => {
         test: () => {
           const heading = screen.getByRole("heading", { level: 1 });
           expect(heading).toHaveTextContent(
-            /OBSERVATORIO DE SERVICIOS ESPECIALZIADOS TURISTICOS.*OSET/
+            /OBSERVATORIO DE SERVICIOS ESPECIALIZADOS TURÍSTICOS.*OSET/i
           );
         },
       },

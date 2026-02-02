@@ -17,7 +17,7 @@ describe('Constructora Component', () => {
 
   it('debería renderizar el subtítulo', () => {
     render(<Constructora />);
-    expect(screen.getByText('Servitrasporte S.A.S')).toBeInTheDocument();
+    expect(screen.getByText('Servitransporte S.A.S')).toBeInTheDocument();
   });
 
   it('debería renderizar todas las imágenes de construcción', () => {

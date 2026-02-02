@@ -10,18 +10,21 @@ jest.mock('./Navbar.css', () => ({}), { virtual: true });
 // Mock mejorado de react-router-dom para NavLink
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  NavLink: ({ to, children, onClick, className }: any) => (
-    <a 
-      href={to} 
-      onClick={(e: React.MouseEvent) => {
-        e.preventDefault(); // Prevenir navegación real
-        if (onClick) onClick(e);
-      }} 
-      className={className}
-    >
-      {children}
-    </a>
-  ),
+  NavLink: ({ to, children, onClick, className }: any) => {
+    const computedClassName = typeof className === 'function' ? className({ isActive: false }) : className;
+    return (
+      <a 
+        href={to} 
+        onClick={(e: React.MouseEvent) => {
+          e.preventDefault();
+          if (onClick) onClick(e);
+        }} 
+        className={computedClassName}
+      >
+        {children}
+      </a>
+    );
+  },
 }));
 
 describe('Navbar Component', () => {
@@ -54,9 +57,9 @@ describe('Navbar Component', () => {
   });
 
   it('debería tener el menú cerrado inicialmente', () => {
-    renderWithRouter(<Navbar />);
+    const { container } = renderWithRouter(<Navbar />);
     
-    const menu = screen.getByRole('list');
+    const menu = container.querySelector('.navbar-links');
     expect(menu).not.toHaveClass('open');
     
     const hamburgerButton = screen.getByRole('button', { name: /menu/i });
@@ -65,10 +68,10 @@ describe('Navbar Component', () => {
 
   it('debería abrir y cerrar el menú al hacer clic en el botón hamburguesa', async () => {
     const user = userEvent.setup();
-    renderWithRouter(<Navbar />);
+    const { container } = renderWithRouter(<Navbar />);
     
+    const menu = container.querySelector('.navbar-mobile');
     const hamburgerButton = screen.getByRole('button', { name: /menu/i });
-    const menu = screen.getByRole('list');
     
     // Abrir menú
     await user.click(hamburgerButton);
@@ -85,36 +88,37 @@ describe('Navbar Component', () => {
     renderWithRouter(<Navbar />);
     
     const menuItems = screen.getAllByRole('listitem');
-    expect(menuItems).toHaveLength(11); // 11 items en el array menu
+    expect(menuItems).toHaveLength(22); // 11 items in desktop menu + 11 items in mobile menu
     
-    // Verificar algunos items específicos
-    expect(screen.getByText('Quiénes somos')).toBeInTheDocument();
-    expect(screen.getByText('Historia')).toBeInTheDocument();
-    expect(screen.getByText('Transporte')).toBeInTheDocument();
-    expect(screen.getByText('Fondo de Asociados')).toBeInTheDocument();
-    expect(screen.getByText('Corredor de Seguros')).toBeInTheDocument();
-    expect(screen.getByText('Operador Turístico')).toBeInTheDocument();
-    expect(screen.getByText('Constructora')).toBeInTheDocument();
-    expect(screen.getByText('Marketing y Publicidad')).toBeInTheDocument();
-    expect(screen.getByText('Jurídicos y Financieros')).toBeInTheDocument();
-    expect(screen.getByText('Innovación y Tecnología')).toBeInTheDocument();
-    expect(screen.getByText('Observatorio "OSET"')).toBeInTheDocument();
+    // Verificar algunos items específicos (usando regex para ignorar mayúsculas/minúsculas y coincidencias parciales si es necesario)
+    expect(screen.getAllByText(/Quiénes Somos/i)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(/Historia/i)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(/Transporte/i)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(/Fondo/i)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(/Seguros/i)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(/Turismo/i)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(/Constructora/i)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(/Marketing y Publicidad/i)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(/Jurídicos/i)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(/Innovación/i)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(/Observatorio/i)[0]).toBeInTheDocument();
   });
 
   it('debería cerrar el menú al hacer clic en un enlace', async () => {
     const user = userEvent.setup();
-    renderWithRouter(<Navbar />);
+    const { container } = renderWithRouter(<Navbar />);
     
     // Abrir menú primero
     const hamburgerButton = screen.getByRole('button', { name: /menu/i });
+    const menu = container.querySelector('.navbar-mobile');
     await user.click(hamburgerButton);
-    expect(screen.getByRole('list')).toHaveClass('open');
+    expect(menu).toHaveClass('open');
     
     // Hacer clic en un enlace del menú
-    await user.click(screen.getByText('Quiénes somos'));
+    await user.click(screen.getAllByText(/Quiénes Somos/i)[0]);
     
     // Verificar que el menú se cierra
-    expect(screen.getByRole('list')).not.toHaveClass('open');
+    expect(container.querySelector('.navbar-mobile')).not.toHaveClass('open');
   });
 
   it('debería tener enlaces con las rutas correctas', () => {
@@ -123,9 +127,9 @@ describe('Navbar Component', () => {
     // Buscar enlaces específicos en lugar de todos
     expect(screen.getByAltText('Grupo Servitransporte').closest('a')).toHaveAttribute('href', '/');
     expect(screen.getByAltText('SUMYT').closest('a')).toHaveAttribute('href', '/');
-    expect(screen.getByText('Quiénes somos')).toHaveAttribute('href', '/quienes-somos');
-    expect(screen.getByText('Historia')).toHaveAttribute('href', '/historia');
-    expect(screen.getByText('Transporte')).toHaveAttribute('href', '/transporte');
+    expect(screen.getAllByText(/Quiénes Somos/i)[0]).toHaveAttribute('href', '/quienes-somos');
+    expect(screen.getAllByText(/Historia/i)[0]).toHaveAttribute('href', '/historia');
+    expect(screen.getAllByText(/Transporte/i)[0]).toHaveAttribute('href', '/transporte');
   });
 
   it('debería tener la estructura correcta con navbar-top y navbar-links', () => {

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -107,29 +107,18 @@
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -161,42 +150,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { translations } from "../../translations";
+import { useLanguageStore } from "../../store";
 import "./InnovacionTecnologia.css";
 &nbsp;
 import grupo from "../../assets/image/grupo.png";
 import innovacion from "./innovacion.png";
 &nbsp;
 const InnovacionTecnologia = () =&gt; {
+  const { language } = useLanguageStore();
+  const t = translations[language].innovacion;
+&nbsp;
   return (
     &lt;div className="innovacion-page"&gt;
       {/* Lado izquierdo */}
       &lt;div className="innovacion-left"&gt;
         &lt;h1&gt;
-          Innovación y Tecnología
+          {t.title}
         &lt;/h1&gt;
         &lt;h2&gt;
-          Servitrasporte S.A.S
+          {t.subtitle}
         &lt;/h2&gt;
       &lt;/div&gt;
 &nbsp;
@@ -204,32 +178,13 @@ const InnovacionTecnologia = () =&gt; {
       &lt;div className="innovacion-right"&gt;
         &lt;p className="imagenes-innovacion"&gt;
           &lt;img src={innovacion} alt="Innovación" className="innovacion-img" /&gt;
-        &lt;/p&gt; 
+        &lt;/p&gt;
         &lt;div className="section"&gt;
-          &lt;p&gt;
-            El avance tecnológico del proyecto es significativo, alcanzando un{" "}
-            &lt;strong&gt;60% de desarrollo&lt;/strong&gt;. Se prevé el lanzamiento de la plataforma{" "}
-            &lt;span className="texto-rojo"&gt;SUMYT&lt;/span&gt; para el ultimo trimestre del 2026. Esta plataforma integral
-            conectará &lt;strong&gt;transporte, turismo y mensajería&lt;/strong&gt;, y ha sido desarrollada
-            con el apoyo de instituciones como &lt;strong&gt;la Universidad Santo Tomás, la
-            Universidad Cooperativa de Colombia y el SENA&lt;/strong&gt;.
-          &lt;/p&gt;
+          &lt;p dangerouslySetInnerHTML={{ __html: t.p1 }} /&gt;
           &lt;br /&gt;
-          &lt;p&gt;
-            &lt;strong&gt;Movilidad y Conectividad Inteligente:&lt;/strong&gt; Se está implementando
-            tecnología avanzada IA enfocada en la &lt;strong&gt;movilidad urbana inteligente&lt;/strong&gt;,
-            apoyada en energías limpias y sistemas de transporte público y
-            turístico que promuevan el bienestar y la sostenibilidad.
-          &lt;/p&gt;
+          &lt;p dangerouslySetInnerHTML={{ __html: t.p2 }} /&gt;
           &lt;br /&gt;
-          &lt;p&gt;
-            &lt;strong&gt;Integración de Servicios Complementarios:&lt;/strong&gt; La plataforma no solo
-            abordará el transporte, sino que también incluirá servicios clave
-            como el &lt;strong&gt;fondo de empleados, un corredor de seguros, un operador
-            turístico, una constructora, y una agencia de mercadeo y publicidad,
-            desarrollo tecnológico, con un fuerte enfoque en cuatro pilares:
-            educación, salud, vivienda y tecnología&lt;/strong&gt;.
-          &lt;/p&gt;
+          &lt;p dangerouslySetInnerHTML={{ __html: t.p3 }} /&gt;
         &lt;/div&gt;
       &lt;/div&gt;
 &nbsp;
@@ -247,7 +202,7 @@ export default InnovacionTecnologia;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-22T19:54:54.395Z
+                at 2026-02-02T14:14:46.287Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

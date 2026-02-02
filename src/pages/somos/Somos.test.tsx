@@ -30,8 +30,8 @@ describe('Somos Component', () => {
   it('debería mencionar el nombre completo de la empresa', () => {
     render(<Somos />);
     
-    expect(screen.getByText('Grupo Servitrasporte S.A.S.')).toBeInTheDocument();
-    expect(screen.getByText('Grupo Servitrasporte S.A.S.')).toContainHTML('strong');
+    expect(screen.getByText('Grupo Servitransporte S.A.S.')).toBeInTheDocument();
+    expect(screen.getByText('Grupo Servitransporte S.A.S.')).toContainHTML('strong');
   });
 
   it('debería mencionar los modelos de negocio B2B y B2C', () => {
@@ -92,7 +92,7 @@ describe('Somos Component', () => {
     expect(imageColumn).toBeInTheDocument();
     
     // Verificar que la columna de texto tiene el contenido principal
-    expect(textColumn).toHaveTextContent('Grupo Servitrasporte S.A.S.');
+    expect(textColumn).toHaveTextContent('Grupo Servitransporte S.A.S.');
     expect(textColumn).toHaveTextContent('SUMYT');
     
   });
