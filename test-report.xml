@@ -1,180 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="G:\programacion\proyecto-react\src\pages\juridicos\ServiciosJuridicos.test.tsx">
-    <testCase name="ServiciosJuridicos Component debería renderizar el título principal" duration="117"/>
-    <testCase name="ServiciosJuridicos Component debería renderizar todas las imágenes jurídicas" duration="33"/>
-    <testCase name="ServiciosJuridicos Component debería renderizar el logo del grupo" duration="9"/>
-    <testCase name="ServiciosJuridicos Component debería mencionar la Constructora Servitransporte" duration="14"/>
-    <testCase name="ServiciosJuridicos Component debería mencionar SUMYT en el texto" duration="13"/>
-    <testCase name="ServiciosJuridicos Component debería tener texto en negrita para énfasis" duration="43"/>
-    <testCase name="ServiciosJuridicos Component debería tener la estructura de clases CSS correcta" duration="19"/>
-    <testCase name="ServiciosJuridicos Component debería coincidir con el snapshot" duration="46"/>
-    <testCase name="ServiciosJuridicos Component debería tener la estructura de dos columnas" duration="23"/>
-  </file>
-  <file path="G:\programacion\proyecto-react\src\pages\innovacion\InnovacionTecnologia.test.tsx">
-    <testCase name="InnovacionTecnologia Component debería renderizar el título principal" duration="191"/>
-    <testCase name="InnovacionTecnologia Component debería renderizar el subtítulo" duration="44"/>
-    <testCase name="InnovacionTecnologia Component debería renderizar la imagen de innovación" duration="19"/>
-    <testCase name="InnovacionTecnologia Component debería renderizar el logo del grupo" duration="60"/>
-    <testCase name="InnovacionTecnologia Component debería mencionar SUMYT en el texto" duration="39"/>
-    <testCase name="InnovacionTecnologia Component debería resaltar el porcentaje de desarrollo" duration="10"/>
-    <testCase name="InnovacionTecnologia Component debería tener texto en negrita para énfasis" duration="28"/>
-    <testCase name="InnovacionTecnologia Component debería tener la estructura de clases CSS correcta" duration="20"/>
-    <testCase name="InnovacionTecnologia Component debería coincidir con el snapshot" duration="17"/>
-    <testCase name="InnovacionTecnologia Component debería tener la estructura de dos columnas" duration="12"/>
+  <file path="G:\programacion\proyecto-react\src\pages\history\History.test.tsx">
+    <testCase name="History Component debería renderizar el título principal" duration="95"/>
+    <testCase name="History Component debería renderizar ambos logos" duration="12"/>
+    <testCase name="History Component debería renderizar todos los eventos de la línea de tiempo" duration="11"/>
+    <testCase name="History Component debería renderizar el evento de 2018 correctamente" duration="10"/>
+    <testCase name="History Component debería renderizar el evento de 2019 correctamente" duration="10"/>
+    <testCase name="History Component debería renderizar el evento de 2021 correctamente" duration="10"/>
+    <testCase name="History Component debería mostrar SUMYT en rojo en el evento presente" duration="7"/>
+    <testCase name="History Component debería tener la estructura correcta de clases CSS" duration="8"/>
+    <testCase name="History Component debería tener la estructura semántica correcta" duration="8"/>
+    <testCase name="History Component debería coincidir con el snapshot" duration="11"/>
+    <testCase name="History Component debería renderizar todos los años en orden" duration="11"/>
+    <testCase name="History Component debería renderizar todos los subtítulos de eventos" duration="11"/>
   </file>
   <file path="G:\programacion\proyecto-react\src\pages\transporte\Transporte.test.tsx">
-    <testCase name="Transporte Component debería renderizar el título principal" duration="110"/>
-    <testCase name="Transporte Component debería renderizar todas las imágenes de transporte" duration="131"/>
-    <testCase name="Transporte Component debería renderizar el logo del grupo" duration="33"/>
-    <testCase name="Transporte Component debería mencionar SUMYT en el texto" duration="22"/>
-    <testCase name="Transporte Component debería contener la sección de objetivo inmediato" duration="38"/>
-    <testCase name="Transporte Component debería tener la estructura de clases CSS correcta" duration="21"/>
-    <testCase name="Transporte Component debería coincidir con el snapshot" duration="28"/>
-    <testCase name="Transporte Component debería tener la estructura de dos columnas" duration="9"/>
+    <testCase name="Transporte Component debería renderizar el título principal" duration="68"/>
+    <testCase name="Transporte Component debería renderizar todas las imágenes de transporte" duration="62"/>
+    <testCase name="Transporte Component debería renderizar el logo del grupo" duration="11"/>
+    <testCase name="Transporte Component debería mencionar SUMYT en el texto" duration="11"/>
+    <testCase name="Transporte Component debería contener la sección de objetivo inmediato" duration="18"/>
+    <testCase name="Transporte Component debería tener la estructura de clases CSS correcta" duration="14"/>
+    <testCase name="Transporte Component debería coincidir con el snapshot" duration="18"/>
+    <testCase name="Transporte Component debería tener la estructura de dos columnas" duration="12"/>
   </file>
   <file path="G:\programacion\proyecto-react\src\pages\marketing\Marketing.test.tsx">
-    <testCase name="Marketing Component debería renderizar el título principal" duration="221"/>
-    <testCase name="Marketing Component debería renderizar el subtítulo" duration="23"/>
-    <testCase name="Marketing Component debería renderizar todas las imágenes de marketing" duration="38"/>
-    <testCase name="Marketing Component debería renderizar el logo del grupo" duration="24"/>
-    <testCase name="Marketing Component debería mencionar SUMYT en el texto" duration="10"/>
-    <testCase name="Marketing Component debería tener texto en negrita para énfasis" duration="51"/>
-    <testCase name="Marketing Component debería tener la estructura de clases CSS correcta" duration="39"/>
-    <testCase name="Marketing Component debería coincidir con el snapshot" duration="19"/>
+    <testCase name="Marketing Component debería renderizar el título principal" duration="105"/>
+    <testCase name="Marketing Component debería renderizar el subtítulo" duration="21"/>
+    <testCase name="Marketing Component debería renderizar todas las imágenes de marketing" duration="21"/>
+    <testCase name="Marketing Component debería renderizar el logo del grupo" duration="11"/>
+    <testCase name="Marketing Component debería mencionar SUMYT en el texto" duration="17"/>
+    <testCase name="Marketing Component debería tener texto en negrita para énfasis" duration="25"/>
+    <testCase name="Marketing Component debería tener la estructura de clases CSS correcta" duration="15"/>
+    <testCase name="Marketing Component debería coincidir con el snapshot" duration="14"/>
     <testCase name="Marketing Component debería tener la estructura de dos columnas" duration="8"/>
   </file>
-  <file path="G:\programacion\proyecto-react\src\pages\history\History.test.tsx">
-    <testCase name="History Component debería renderizar el título principal" duration="170"/>
-    <testCase name="History Component debería renderizar ambos logos" duration="19"/>
-    <testCase name="History Component debería renderizar todos los eventos de la línea de tiempo" duration="19"/>
-    <testCase name="History Component debería renderizar el evento de 2018 correctamente" duration="12"/>
-    <testCase name="History Component debería renderizar el evento de 2019 correctamente" duration="12"/>
-    <testCase name="History Component debería renderizar el evento de 2021 correctamente" duration="61"/>
-    <testCase name="History Component debería mostrar SUMYT en rojo en el evento presente" duration="6"/>
-    <testCase name="History Component debería tener la estructura correcta de clases CSS" duration="14"/>
-    <testCase name="History Component debería tener la estructura semántica correcta" duration="14"/>
-    <testCase name="History Component debería coincidir con el snapshot" duration="45"/>
-    <testCase name="History Component debería renderizar todos los años en orden" duration="12"/>
-    <testCase name="History Component debería renderizar todos los subtítulos de eventos" duration="14"/>
-  </file>
-  <file path="G:\programacion\proyecto-react\src\pages\fondo\FondoAsociados.test.tsx">
-    <testCase name="FondoAsociados Component debería renderizar el logo SUMYT en la sección izquierda" duration="232"/>
-    <testCase name="FondoAsociados Component debería renderizar todas las imágenes de fondo" duration="28"/>
-    <testCase name="FondoAsociados Component debería renderizar el logo del grupo en el footer" duration="48"/>
-    <testCase name="FondoAsociados Component debería renderizar la lista de segmentos clave" duration="143"/>
-    <testCase name="FondoAsociados Component debería mencionar SUMYT múltiples veces en el texto" duration="37"/>
-    <testCase name="FondoAsociados Component debería tener texto en negrita para los títulos de sectores" duration="51"/>
-    <testCase name="FondoAsociados Component debería tener la estructura de clases CSS correcta" duration="24"/>
-    <testCase name="FondoAsociados Component debería coincidir con el snapshot" duration="20"/>
-    <testCase name="FondoAsociados Component debería tener la estructura semántica correcta" duration="10"/>
+  <file path="G:\programacion\proyecto-react\src\pages\juridicos\ServiciosJuridicos.test.tsx">
+    <testCase name="ServiciosJuridicos Component debería renderizar el título principal" duration="126"/>
+    <testCase name="ServiciosJuridicos Component debería renderizar todas las imágenes jurídicas" duration="34"/>
+    <testCase name="ServiciosJuridicos Component debería renderizar el logo del grupo" duration="13"/>
+    <testCase name="ServiciosJuridicos Component debería mencionar la Constructora Servitransporte" duration="16"/>
+    <testCase name="ServiciosJuridicos Component debería mencionar SUMYT en el texto" duration="21"/>
+    <testCase name="ServiciosJuridicos Component debería tener texto en negrita para énfasis" duration="14"/>
+    <testCase name="ServiciosJuridicos Component debería tener la estructura de clases CSS correcta" duration="13"/>
+    <testCase name="ServiciosJuridicos Component debería coincidir con el snapshot" duration="13"/>
+    <testCase name="ServiciosJuridicos Component debería tener la estructura de dos columnas" duration="9"/>
   </file>
   <file path="G:\programacion\proyecto-react\src\pages\seguros\Seguros.test.tsx">
-    <testCase name="Seguros Component debería renderizar el título principal" duration="410"/>
-    <testCase name="Seguros Component debería renderizar todas las imágenes de seguros" duration="23"/>
-    <testCase name="Seguros Component debería renderizar el logo del grupo" duration="20"/>
-    <testCase name="Seguros Component debería mencionar Seguros del Estado" duration="18"/>
-    <testCase name="Seguros Component debería mencionar Servitransporte Ltda y Servitransporte S.A.S" duration="9"/>
-    <testCase name="Seguros Component debería mencionar los sectores atendidos" duration="8"/>
-    <testCase name="Seguros Component debería mostrar la proyección de clientes" duration="8"/>
-    <testCase name="Seguros Component debería mencionar SUMYT en el texto" duration="8"/>
-    <testCase name="Seguros Component debería tener texto en negrita para énfasis" duration="37"/>
-    <testCase name="Seguros Component debería tener la estructura de clases CSS correcta" duration="18"/>
+    <testCase name="Seguros Component debería renderizar el título principal" duration="161"/>
+    <testCase name="Seguros Component debería renderizar todas las imágenes de seguros" duration="15"/>
+    <testCase name="Seguros Component debería renderizar el logo del grupo" duration="10"/>
+    <testCase name="Seguros Component debería mencionar Seguros del Estado" duration="16"/>
+    <testCase name="Seguros Component debería mencionar Servitransporte Ltda y Servitransporte S.A.S" duration="29"/>
+    <testCase name="Seguros Component debería mencionar los sectores atendidos" duration="14"/>
+    <testCase name="Seguros Component debería mostrar la proyección de clientes" duration="14"/>
+    <testCase name="Seguros Component debería mencionar SUMYT en el texto" duration="13"/>
+    <testCase name="Seguros Component debería tener texto en negrita para énfasis" duration="22"/>
+    <testCase name="Seguros Component debería tener la estructura de clases CSS correcta" duration="10"/>
     <testCase name="Seguros Component debería coincidir con el snapshot" duration="13"/>
-    <testCase name="Seguros Component debería tener la estructura de dos columnas" duration="21"/>
+    <testCase name="Seguros Component debería tener la estructura de dos columnas" duration="9"/>
   </file>
-  <file path="G:\programacion\proyecto-react\src\pages\observatorio\Observatorio.test.tsx">
-    <testCase name="Observatorio Component debería renderizar las imágenes principales" duration="277"/>
-    <testCase name="Observatorio Component debería mostrar los componentes del observatorio" duration="160"/>
-    <testCase name="Observatorio Component debería mostrar la estructura organizacional" duration="82"/>
-    <testCase name="Observatorio Component debería mostrar las consideraciones adicionales" duration="64"/>
-    <testCase name="Observatorio Component debería mostrar el enlace de descarga del documento" duration="39"/>
-    <testCase name="Observatorio Component debería tener texto en negrita para los títulos y énfasis" duration="28"/>
-    <testCase name="Observatorio Component debería tener la estructura de clases CSS correcta" duration="19"/>
-    <testCase name="Observatorio Component debería coincidir con el snapshot" duration="20"/>
-    <testCase name="Observatorio Component debería mostrar subcomponentes de la plataforma tecnológica" duration="34"/>
-    <testCase name="Observatorio Component debería mostrar los mecanismos de difusión" duration="21"/>
-    <testCase name="Observatorio Component debería tener la estructura de dos columnas" duration="15"/>
+  <file path="G:\programacion\proyecto-react\src\pages\innovacion\InnovacionTecnologia.test.tsx">
+    <testCase name="InnovacionTecnologia Component debería renderizar el título principal" duration="136"/>
+    <testCase name="InnovacionTecnologia Component debería renderizar el subtítulo" duration="32"/>
+    <testCase name="InnovacionTecnologia Component debería renderizar la imagen de innovación" duration="21"/>
+    <testCase name="InnovacionTecnologia Component debería renderizar el logo del grupo" duration="17"/>
+    <testCase name="InnovacionTecnologia Component debería mencionar SUMYT en el texto" duration="17"/>
+    <testCase name="InnovacionTecnologia Component debería resaltar el porcentaje de desarrollo" duration="12"/>
+    <testCase name="InnovacionTecnologia Component debería tener texto en negrita para énfasis" duration="15"/>
+    <testCase name="InnovacionTecnologia Component debería tener la estructura de clases CSS correcta" duration="19"/>
+    <testCase name="InnovacionTecnologia Component debería coincidir con el snapshot" duration="27"/>
+    <testCase name="InnovacionTecnologia Component debería tener la estructura de dos columnas" duration="13"/>
   </file>
-  <file path="G:\programacion\proyecto-react\src\components\Home.test.tsx">
-    <testCase name="Home Component debería renderizar el título de galería de videos" duration="462"/>
-    <testCase name="Home Component debería renderizar el título de galería de fotos" duration="110"/>
-    <testCase name="Home Component debería renderizar el título de los 4 pilares fundamentales" duration="65"/>
-    <testCase name="Home Component debería renderizar el título de alianzas" duration="63"/>
-    <testCase name="Home Component debería renderizar los 4 pilares con sus labels" duration="65"/>
-    <testCase name="Home Component debería renderizar todas las imágenes de los pilares" duration="49"/>
-    <testCase name="Home Component debería renderizar todos los logos de alianzas" duration="44"/>
-    <testCase name="Home Component debería cerrar el popup al hacer clic fuera del contenido" duration="212"/>
-    <testCase name="Home Component debería renderizar los sliders de video e imágenes" duration="41"/>
-    <testCase name="Home Component debería tener la estructura correcta de secciones" duration="44"/>
-    <testCase name="Home Component debería renderizar el componente CookieConsent" duration="42"/>
-    <testCase name="Home Component debería renderizar iframes de YouTube" duration="61"/>
-    <testCase name="Home Component debería manejar el estado de imagen seleccionada" duration="93"/>
-  </file>
-  <file path="G:\programacion\proyecto-react\src\App.test.tsx">
-    <testCase name="App Component renders Navbar and Footer components" duration="254"/>
-    <testCase name="App Component renders Home component on default route" duration="102"/>
-    <testCase name="App Component renders correct components for different routes" duration="259"/>
-    <testCase name="App Component has main element in the document" duration="75"/>
-    <testCase name="App Component matches snapshot" duration="144"/>
+  <file path="G:\programacion\proyecto-react\src\pages\fondo\FondoAsociados.test.tsx">
+    <testCase name="FondoAsociados Component debería renderizar el logo SUMYT en la sección izquierda" duration="122"/>
+    <testCase name="FondoAsociados Component debería renderizar todas las imágenes de fondo" duration="43"/>
+    <testCase name="FondoAsociados Component debería renderizar el logo del grupo en el footer" duration="49"/>
+    <testCase name="FondoAsociados Component debería renderizar la lista de segmentos clave" duration="98"/>
+    <testCase name="FondoAsociados Component debería mencionar SUMYT múltiples veces en el texto" duration="14"/>
+    <testCase name="FondoAsociados Component debería tener texto en negrita para los títulos de sectores" duration="26"/>
+    <testCase name="FondoAsociados Component debería tener la estructura de clases CSS correcta" duration="19"/>
+    <testCase name="FondoAsociados Component debería coincidir con el snapshot" duration="15"/>
+    <testCase name="FondoAsociados Component debería tener la estructura semántica correcta" duration="11"/>
   </file>
   <file path="G:\programacion\proyecto-react\src\pages\turismo\Turismo.test.tsx">
-    <testCase name="Turismo Component debería renderizar el subtítulo" duration="10"/>
-    <testCase name="Turismo Component debería renderizar todas las imágenes de turismo" duration="6"/>
+    <testCase name="Turismo Component debería renderizar el subtítulo" duration="14"/>
+    <testCase name="Turismo Component debería renderizar todas las imágenes de turismo" duration="7"/>
     <testCase name="Turismo Component debería renderizar el logo del grupo" duration="6"/>
-    <testCase name="Turismo Component debería mencionar SUMYT en el texto" duration="5"/>
-    <testCase name="Turismo Component debería tener la estructura de clases CSS correcta" duration="5"/>
-    <testCase name="Turismo Component debería coincidir con el snapshot" duration="7"/>
-    <testCase name="Turismo Component debería tener la estructura de dos columnas" duration="7"/>
-  </file>
-  <file path="G:\programacion\proyecto-react\src\pages\somos\Somos.test.tsx">
-    <testCase name="Somos Component debería renderizar el logo del grupo" duration="8"/>
-    <testCase name="Somos Component debería renderizar la imagen hexagonal del equipo" duration="4"/>
-    <testCase name="Somos Component debería mencionar el nombre completo de la empresa" duration="6"/>
-    <testCase name="Somos Component debería mencionar los modelos de negocio B2B y B2C" duration="4"/>
-    <testCase name="Somos Component debería mencionar SUMYT y su significado" duration="4"/>
-    <testCase name="Somos Component debería mencionar los cuatro pilares fundamentales" duration="3"/>
-    <testCase name="Somos Component debería mencionar los objetivos de desarrollo sostenible" duration="6"/>
-    <testCase name="Somos Component debería tener la estructura de clases CSS correcta" duration="4"/>
-    <testCase name="Somos Component debería coincidir con el snapshot" duration="4"/>
-    <testCase name="Somos Component debería tener la estructura de dos columnas" duration="4"/>
+    <testCase name="Turismo Component debería mencionar SUMYT en el texto" duration="9"/>
+    <testCase name="Turismo Component debería tener la estructura de clases CSS correcta" duration="7"/>
+    <testCase name="Turismo Component debería coincidir con el snapshot" duration="20"/>
+    <testCase name="Turismo Component debería tener la estructura de dos columnas" duration="8"/>
   </file>
   <file path="G:\programacion\proyecto-react\src\pages\constructora\Constructora.test.tsx">
-    <testCase name="Constructora Component debería renderizar el título principal" duration="9"/>
-    <testCase name="Constructora Component debería renderizar el subtítulo" duration="14"/>
-    <testCase name="Constructora Component debería renderizar todas las imágenes de construcción" duration="6"/>
-    <testCase name="Constructora Component debería renderizar el logo del grupo" duration="3"/>
-    <testCase name="Constructora Component debería mencionar SUMYT en el texto" duration="7"/>
-    <testCase name="Constructora Component debería tener la estructura de clases CSS correcta" duration="8"/>
-    <testCase name="Constructora Component debería coincidir con el snapshot" duration="8"/>
+    <testCase name="Constructora Component debería renderizar el título principal" duration="18"/>
+    <testCase name="Constructora Component debería renderizar el subtítulo" duration="11"/>
+    <testCase name="Constructora Component debería renderizar todas las imágenes de construcción" duration="8"/>
+    <testCase name="Constructora Component debería renderizar el logo del grupo" duration="24"/>
+    <testCase name="Constructora Component debería mencionar SUMYT en el texto" duration="8"/>
+    <testCase name="Constructora Component debería tener la estructura de clases CSS correcta" duration="11"/>
+    <testCase name="Constructora Component debería coincidir con el snapshot" duration="9"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\pages\observatorio\Observatorio.test.tsx">
+    <testCase name="Observatorio Component debería renderizar las imágenes principales" duration="140"/>
+    <testCase name="Observatorio Component debería mostrar los componentes del observatorio" duration="74"/>
+    <testCase name="Observatorio Component debería mostrar la estructura organizacional" duration="73"/>
+    <testCase name="Observatorio Component debería mostrar las consideraciones adicionales" duration="58"/>
+    <testCase name="Observatorio Component debería mostrar el enlace de descarga del documento" duration="37"/>
+    <testCase name="Observatorio Component debería tener texto en negrita para los títulos y énfasis" duration="53"/>
+    <testCase name="Observatorio Component debería tener la estructura de clases CSS correcta" duration="28"/>
+    <testCase name="Observatorio Component debería coincidir con el snapshot" duration="45"/>
+    <testCase name="Observatorio Component debería mostrar subcomponentes de la plataforma tecnológica" duration="38"/>
+    <testCase name="Observatorio Component debería mostrar los mecanismos de difusión" duration="40"/>
+    <testCase name="Observatorio Component debería tener la estructura de dos columnas" duration="30"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\pages\somos\Somos.test.tsx">
+    <testCase name="Somos Component debería renderizar el logo del grupo" duration="17"/>
+    <testCase name="Somos Component debería renderizar la imagen hexagonal del equipo" duration="8"/>
+    <testCase name="Somos Component debería mencionar el nombre completo de la empresa" duration="10"/>
+    <testCase name="Somos Component debería mencionar los modelos de negocio B2B y B2C" duration="19"/>
+    <testCase name="Somos Component debería mencionar SUMYT y su significado" duration="6"/>
+    <testCase name="Somos Component debería mencionar los cuatro pilares fundamentales" duration="5"/>
+    <testCase name="Somos Component debería mencionar los objetivos de desarrollo sostenible" duration="5"/>
+    <testCase name="Somos Component debería tener la estructura de clases CSS correcta" duration="5"/>
+    <testCase name="Somos Component debería coincidir con el snapshot" duration="5"/>
+    <testCase name="Somos Component debería tener la estructura de dos columnas" duration="5"/>
   </file>
   <file path="G:\programacion\proyecto-react\src\components\CookieConsent.test.tsx">
-    <testCase name="CookieConsent Component debería mostrar el banner inicialmente" duration="6"/>
-    <testCase name="CookieConsent Component no debería mostrar el banner con consentimiento previo" duration="1"/>
-    <testCase name="CookieConsent Component debería llamar Cookies.set al aceptar" duration="85"/>
-    <testCase name="CookieConsent Component debería llamar Cookies.set al rechazar" duration="62"/>
+    <testCase name="CookieConsent Component debería mostrar el banner inicialmente" duration="10"/>
+    <testCase name="CookieConsent Component no debería mostrar el banner con consentimiento previo" duration="2"/>
+    <testCase name="CookieConsent Component debería llamar Cookies.set al aceptar" duration="93"/>
+    <testCase name="CookieConsent Component debería llamar Cookies.set al rechazar" duration="48"/>
   </file>
   <file path="G:\programacion\proyecto-react\src\components\Navbar.test.tsx">
-    <testCase name="Navbar Component debería renderizar los logos correctamente" duration="13"/>
-    <testCase name="Navbar Component debería renderizar el botón hamburguesa" duration="37"/>
-    <testCase name="Navbar Component debería tener el menú cerrado inicialmente" duration="14"/>
-    <testCase name="Navbar Component debería abrir y cerrar el menú al hacer clic en el botón hamburguesa" duration="132"/>
-    <testCase name="Navbar Component debería renderizar todos los items del menú" duration="48"/>
-    <testCase name="Navbar Component debería cerrar el menú al hacer clic en un enlace" duration="123"/>
-    <testCase name="Navbar Component debería tener enlaces con las rutas correctas" duration="8"/>
-    <testCase name="Navbar Component debería tener la estructura correcta con navbar-top y navbar-links" duration="7"/>
-    <testCase name="Navbar Component debería tener los logos en las posiciones correctas (left y right)" duration="6"/>
-    <testCase name="Navbar Component debería coincidir con el snapshot" duration="8"/>
+    <testCase name="Navbar Component debería renderizar los logos correctamente" duration="25"/>
+    <testCase name="Navbar Component debería renderizar el botón hamburguesa" duration="69"/>
+    <testCase name="Navbar Component debería tener el menú cerrado inicialmente" duration="21"/>
+    <testCase name="Navbar Component debería abrir y cerrar el menú al hacer clic en el botón hamburguesa" duration="128"/>
+    <testCase name="Navbar Component debería renderizar todos los items del menú" duration="61"/>
+    <testCase name="Navbar Component debería cerrar el menú al hacer clic en un enlace" duration="108"/>
+    <testCase name="Navbar Component debería tener enlaces con las rutas correctas" duration="13"/>
+    <testCase name="Navbar Component debería tener la estructura correcta con navbar-top y navbar-links" duration="11"/>
+    <testCase name="Navbar Component debería tener los logos en las posiciones correctas (left y right)" duration="13"/>
+    <testCase name="Navbar Component debería coincidir con el snapshot" duration="14"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\App.test.tsx">
+    <testCase name="App Component renders Navbar and Footer components" duration="349"/>
+    <testCase name="App Component renders Home component on default route" duration="171"/>
+    <testCase name="App Component renders correct components for different routes" duration="372"/>
+    <testCase name="App Component has main element in the document" duration="85"/>
+    <testCase name="App Component matches snapshot" duration="130"/>
+  </file>
+  <file path="G:\programacion\proyecto-react\src\components\Home.test.tsx">
+    <testCase name="Home Component debería renderizar el título de galería de videos" duration="219"/>
+    <testCase name="Home Component debería renderizar el título de galería de fotos" duration="86"/>
+    <testCase name="Home Component debería renderizar el título de los 4 pilares fundamentales" duration="118"/>
+    <testCase name="Home Component debería renderizar el título de alianzas" duration="78"/>
+    <testCase name="Home Component debería renderizar los 4 pilares con sus labels" duration="72"/>
+    <testCase name="Home Component debería renderizar todas las imágenes de los pilares" duration="58"/>
+    <testCase name="Home Component debería renderizar todos los logos de alianzas" duration="73"/>
+    <testCase name="Home Component debería cerrar el popup al hacer clic fuera del contenido" duration="176"/>
+    <testCase name="Home Component debería renderizar los sliders de video e imágenes" duration="95"/>
+    <testCase name="Home Component debería tener la estructura correcta de secciones" duration="41"/>
+    <testCase name="Home Component debería renderizar el componente CookieConsent" duration="40"/>
+    <testCase name="Home Component debería renderizar iframes de YouTube" duration="45"/>
+    <testCase name="Home Component debería manejar el estado de imagen seleccionada" duration="100"/>
   </file>
   <file path="G:\programacion\proyecto-react\src\components\Footer.test.tsx">
-    <testCase name="Footer Component debería renderizar el botón de contacto y el copyright" duration="137"/>
-    <testCase name="Footer Component debería abrir el modal al hacer clic en el botón de contacto" duration="190"/>
-    <testCase name="Footer Component debería cerrar el modal al hacer clic en cancelar" duration="179"/>
-    <testCase name="Footer Component debería mostrar error por nombre muy corto" duration="1259"/>
-    <testCase name="Footer Component debería mostrar error por mensaje muy corto" duration="777"/>
-    <testCase name="Footer Component debería enviar el formulario exitosamente con datos válidos" duration="1531"/>
-    <testCase name="Footer Component debería manejar errores del servidor" duration="1539"/>
-    <testCase name="Footer Component debería sanitizar los inputs correctamente" duration="1136"/>
-    <testCase name="Footer Component debería limpiar el estado al cerrar el modal" duration="407"/>
+    <testCase name="Footer Component debería renderizar el botón de contacto y el copyright" duration="69"/>
+    <testCase name="Footer Component debería abrir el modal al hacer clic en el botón de contacto" duration="123"/>
+    <testCase name="Footer Component debería cerrar el modal al hacer clic en cancelar" duration="136"/>
+    <testCase name="Footer Component debería mostrar error por nombre muy corto" duration="867"/>
+    <testCase name="Footer Component debería mostrar error por mensaje muy corto" duration="520"/>
+    <testCase name="Footer Component debería enviar el formulario exitosamente con datos válidos" duration="1017"/>
+    <testCase name="Footer Component debería manejar errores del servidor" duration="1029"/>
+    <testCase name="Footer Component debería sanitizar los inputs correctamente" duration="605"/>
+    <testCase name="Footer Component debería limpiar el estado al cerrar el modal" duration="411"/>
   </file>
 </testExecutions>

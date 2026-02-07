@@ -1,4 +1,4 @@
-export type Language = 'es' | 'en';
+export type Language = "es" | "en";
 
 export const translations = {
   es: {
@@ -8,7 +8,7 @@ export const translations = {
       p1: "La <strong>Constructora Servitransporte</strong> se creará o se gestionará sobre una empresa ya constituida. Esta constructora tendrá como objetivo desarrollar <strong>viviendas</strong> de interés social, como el proyecto <strong>“Villa Valentina”</strong>, que se ubicará en el sector de Brazuelos, en los límites entre Usme y Ciudad Bolívar. La primera fase del proyecto incluirá 2000 viviendas con implementación de energías renovables y planes de expansión en el plan parcial. Los operadores inscritos y activos en la plataforma <span class='texto-rojo'>SUMYT</span> tendrán acceso a subsidios de vivienda nacional y distrital gestionados a través de las cajas de compensación, lo que permitirá alcanzar el punto de equilibrio junto con el <strong>fondo de asociados.</strong>",
       p2: "Además de proyectos de vivienda, estamos desarrollando la creación de un plan parcial entre la localidad de Usme y Ciudad Bolívar donde contamos con una extensión de terreno de <strong>20 hectáreas en las cuales se calcula un promedio de 20.000 unidades habitacionales</strong>, con toda la dotación requerida en infraestructura, servicios públicos y equipamientos: colegios, centros de salud, parques, centros comunitarios, centros comerciales y vías; todo encajado en la construcción de ciudades inteligentes, conectándose directamente como zona de compensación con la <strong>recuperación ambiental de 20 hectáreas</strong> en la misma zona, colindante con el Parque Cantarrana. Este proyecto de <strong>recuperación ambiental</strong> de cambio de impuestos por servicios forestales denominado <strong>“Recuperación ambiental Villa Valentina”</strong> será el proyecto verde del holding, impulsando el crecimiento económico, social y ambiental de la región.",
       techTitle: "Desarrollo y Requisitos en Tecnología",
-      p3: "La constructora utilizará tecnologías digitales para captar asociados y gestionar la inscripción y solicitud de servicios desde plataformas independientes. Esto facilitará la compra de servicios por los usuarios de las plataformas <span class='texto-rojo'>SUMYT</span>, con descuentos aplicados automáticamente desde las plataformas de transporte, turismo y mensajería. Al igual que todos los procesos constructivos en la implementación de ciudades inteligentes y la implementación de energías limpias como modelo de vivienda sostenible y eficiente."
+      p3: "La constructora utilizará tecnologías digitales para captar asociados y gestionar la inscripción y solicitud de servicios desde plataformas independientes. Esto facilitará la compra de servicios por los usuarios de las plataformas <span class='texto-rojo'>SUMYT</span>, con descuentos aplicados automáticamente desde las plataformas de transporte, turismo y mensajería. Al igual que todos los procesos constructivos en la implementación de ciudades inteligentes y la implementación de energías limpias como modelo de vivienda sostenible y eficiente.",
     },
     home: {
       videoGallery: "Galería de Videos",
@@ -19,43 +19,47 @@ export const translations = {
         educacion: {
           label: "Educación",
           info: "Los procesos de educación y formación son muy importantes para GST, por tal motivo contamos con profesionales de primera línea en procesos de educación y convenios para el desarrollo de tecnología con universidades como la UCC, USTA y el SENA. En el Centro de Formación En Tecnología de GST, se formarán personas en Habilidades Blandas, inglés y Cultura para trabajar con GST S.A.S en los entornos digitales propios y de otras empresas que requieran sus servicios. Nos preocupamos no solo por el bienestar de nuestros operadores y asociados, sino también por la formación integral de su núcleo familiar, el cual se encontrará ubicado en “Villa Valentina”, donde hemos dispuesto un terreno urbano para la construcción y ejecución del centro de desarrollo en 1152 m2. Está proyectado para las personas residentes en la localidad de Ciudad Bolívar y límite con Usme, generándoles herramientas tecnológicas y culturales para el mejoramiento de la calidad de vida de los habitantes del sector y de Bogotá, permitiéndoles tener un proceso formativo y laboral con GST S.A.S y sus aliados estratégicos, los cuales a través de las Universidades presentarán toda la oferta académica con descuentos especiales para nuestros afiliados y sus familias.",
-          intro: "Pensando en el desarrollo y beneficio de la comunidad de GST y de su e-commerce SUMYT, se ha basado en la creación de cuatro pilares fundamentales: Educación, Salud, Vivienda y Tecnología, los cuales sirven como soporte de desarrollo social, el cual está parametrizado para el beneficio de la comunidad que utiliza los servicios del e-commerce SUMYT siendo prestador de servicios o consumidor de los mismos."
+          intro:
+            "Pensando en el desarrollo y beneficio de la comunidad de GST y de su e-commerce SUMYT, se ha basado en la creación de cuatro pilares fundamentales: Educación, Salud, Vivienda y Tecnología, los cuales sirven como soporte de desarrollo social, el cual está parametrizado para el beneficio de la comunidad que utiliza los servicios del e-commerce SUMYT siendo prestador de servicios o consumidor de los mismos.",
         },
         vivienda: {
           label: "Vivienda",
           info: "Desde GST S.A.S nos preocupamos por el acceso a una vivienda digna para el sector del transporte y el turismo y sus servicios conexos; por eso Grupo Servitransporte dispuso del proyecto de vivienda de interés social denominado “Villa Valentina”, ubicado en la localidad de Ciudad Bolívar en límite con Usme, el cual inicialmente se está planificando para 2000 unidades de vivienda y el centro de desarrollo de GST. Además del proyecto de vivienda, estamos desarrollando un plan parcial entre la localidad de Usme y Ciudad Bolívar donde contamos con una extensión de terreno de 20 hectáreas con capacidad para 20.000 unidades habitacionales más la dotación requerida en infraestructura, servicios públicos y equipamientos: colegios, centros de salud, parques, centros comunitarios, centros comerciales y vías; uniéndose esto al proceso de recuperación ambiental de 20 hectáreas denominado La Loma, el cual tiene una conexión directa con el plan parcial y Villa Valentina.",
-          intro: "Pensando en el desarrollo y beneficio de la comunidad de GST y de su e-commerce SUMYT, se ha basado en la creación de cuatro pilares fundamentales: Educación, Salud, Vivienda y Tecnología, los cuales sirven como soporte de desarrollo social, el cual está parametrizado para el beneficio de la comunidad que utiliza los servicios del e-commerce SUMYT siendo prestador de servicios o consumidor de los mismos."
+          intro:
+            "Pensando en el desarrollo y beneficio de la comunidad de GST y de su e-commerce SUMYT, se ha basado en la creación de cuatro pilares fundamentales: Educación, Salud, Vivienda y Tecnología, los cuales sirven como soporte de desarrollo social, el cual está parametrizado para el beneficio de la comunidad que utiliza los servicios del e-commerce SUMYT siendo prestador de servicios o consumidor de los mismos.",
         },
         salud: {
           label: "Salud",
           info: "Para GST S.A.S es muy importante la Salud en el bienestar de nuestros colaboradores en las diferentes unidades de trabajo. Desde el inicio de la investigación de levantamiento de información del sector del transporte en el año 2018 con la Fundación Renovando Sueños por la pérdida del valor de los carros de servicio público, pudimos observar cómo hay una brecha gigante en el sector de la salud por la misma informalidad de los transportadores y el poco acceso a servicios de salud digna. MedPlus del grupo CienoGroup podrá ser adquirida a bajo costo, desde $30.000, con el propósito de poder tener un acceso rápido y eficiente a bajo costo.",
-          intro: "Pensando en el desarrollo y beneficio de la comunidad de GST y de su e-commerce SUMYT, se ha basado en la creación de cuatro pilares fundamentales: Educación, Salud, Vivienda y Tecnología, los cuales sirven como soporte de desarrollo social, el cual está parametrizado para el beneficio de la comunidad que utiliza los servicios del e-commerce SUMYT siendo prestador de servicios o consumidor de los mismos."
+          intro:
+            "Pensando en el desarrollo y beneficio de la comunidad de GST y de su e-commerce SUMYT, se ha basado en la creación de cuatro pilares fundamentales: Educación, Salud, Vivienda y Tecnología, los cuales sirven como soporte de desarrollo social, el cual está parametrizado para el beneficio de la comunidad que utiliza los servicios del e-commerce SUMYT siendo prestador de servicios o consumidor de los mismos.",
         },
         tecnologia: {
           label: "Tecnología",
           info: "Es la columna vertebral de Grupo Servitransporte S.A.S. Somos una empresa colombiana con base tecnológica “startup” que cumple con los requerimientos de la normativa colombiana, desarrollando recursos tecnológicos como plataformas las cuales se transforman en e-commerce utilizando IA con el propósito de mejorar la logística del transporte, turismo y carga entre solicitantes de servicios y operadores, al igual que empresas y solicitantes de servicios (B2B, B2C). Con una alta escalabilidad por implementar buenas prácticas comerciales entre los operadores y clientes desde herramientas tecnológicas, nos permite aprovechar recursos tecnológicos y convencionales con soluciones disruptivas innovadoras para satisfacer las necesidades de los usuarios y operadores en los sectores de influencia, dándole cumplimiento a nuestros cuatro pilares: Educación, Salud, Vivienda y Tecnología desde nuestras 7 líneas de negocio con base tecnológica: 1. Fondo de asociados de la plataforma SUMYT, 2. Corredor de seguros, 3. Constructora, 4. Operador turístico, 5. Servicios jurídicos y financieros, 6. Marketing y publicidad, 7. Desarrollo y soporte tecnológico.",
-          intro: "Pensando en el desarrollo y beneficio de la comunidad de GST y de su e-commerce SUMYT, se ha basado en la creación de cuatro pilares fundamentales: Educación, Salud, Vivienda y Tecnología, los cuales sirven como soporte de desarrollo social, el cual está parametrizado para el beneficio de la comunidad que utiliza los servicios del e-commerce SUMYT siendo prestador de servicios o consumidor de los mismos."
-        }
-      }
+          intro:
+            "Pensando en el desarrollo y beneficio de la comunidad de GST y de su e-commerce SUMYT, se ha basado en la creación de cuatro pilares fundamentales: Educación, Salud, Vivienda y Tecnología, los cuales sirven como soporte de desarrollo social, el cual está parametrizado para el beneficio de la comunidad que utiliza los servicios del e-commerce SUMYT siendo prestador de servicios o consumidor de los mismos.",
+        },
+      },
     },
     somos: {
       p1: "<strong>Grupo Servitransporte S.A.S.</strong> es una empresa colombiana con base tecnológica “startup” que cumple con los requerimientos de la normativa colombiana de transporte emitida por el Ministerio de Transporte y regulada por la Superintendencia de Transporte, desarrollando recursos tecnológicos como plataformas las cuales se transforman en e-commerce utilizando IA con el propósito de mejorar la logística del transporte, turismo y carga, entre solicitantes de servicios y operadores al igual que empresas y solicitantes de servicios <strong>(B2B, B2C)</strong>, con una alta escalabilidad por implementar buenas prácticas comerciales entre los operadores y clientes al pertenecer al marco regulatorio formal, permitiéndonos aprovechar los recursos tecnológicos y convencionales con soluciones disruptivas innovadoras para satisfacer las necesidades de los usuarios y operadores en los sectores de influencia, dándole cumplimiento a nuestros cuatro pilares, Educación, Salud, Vivienda y Tecnología desde nuestras 7 líneas de negocio con base tecnológica,",
       p2: "creada para transformar el transporte público en la modalidad de taxi servicio especial y alternativo, servicios turísticos, carga y Courier. Su propuesta central es <span class='texto-rojo'>SUMYT</span> <strong> (Servicios Unificados de Movilidad y Turismo)</strong>, una plataforma digital que integra transporte, turismo y carga, además conecta servicios complementarios como: <strong>1. Fondo de Asociados, 2. Corredor de Seguros, 3. Operador Turístico, 4. Constructora, 5. Agencia de Publicidad y Marketing, 6. Servicios Jurídicos y Económicos, 7. Desarrollo Tecnológico.</strong>",
-      p3: "El proyecto busca profesionalizar el transporte público como conector de los servicios de turismo y carga, mejorar la calidad de vida de los operadores y cerrar brechas sociales históricas en <strong> Salud, Educación, Vivienda y Tecnología</strong>, Estamos alineados con los <strong> 17 Objetivos de Desarrollo Sostenible</strong>, fomentando la economía circular y promoviendo el uso de energías limpias como vehículos eléctricos y en la construcción de vivienda de interés social, en la creación del plan parcial y el proceso de recuperación ambiental en el proyecto Villa Valentina."
+      p3: "El proyecto busca profesionalizar el transporte público como conector de los servicios de turismo y carga, mejorar la calidad de vida de los operadores y cerrar brechas sociales históricas en <strong> Salud, Educación, Vivienda y Tecnología</strong>, Estamos alineados con los <strong> 17 Objetivos de Desarrollo Sostenible</strong>, fomentando la economía circular y promoviendo el uso de energías limpias como vehículos eléctricos y en la construcción de vivienda de interés social, en la creación del plan parcial y el proceso de recuperación ambiental en el proyecto Villa Valentina.",
     },
     transporte: {
       title: "Transporte",
       subtitle: "Grupo Servitransporte S.A.S",
       p1: "<strong>Grupo Servitransporte S.A.S</strong> construye en tripartita “Estado, Universidades, Sector Privado” implementando los 17 ODS en la profesionalización del transporte Especial, Taxi, Alternativo, Carga y Courier en Colombia, alcanzando la integración de servicios de transporte, turismo y carga desde startups implementando plataformas y e-commerce con usuarios y prestadores de servicios integrados desde nuestra herramienta tecnológica <strong><span class='texto-rojo'>SUMYT</span></strong> como factor fundamental para el crecimiento de las regiones. Prestando asistencia eficiente para nuestros operadores de vehículos de Servicio Especial en sus 5 modalidades <strong>1. Escolar, 2. Empresarial, 3. Turismo, 4. Grupos Homogéneos, 5. Médico</strong> no Especializado, Taxi, Alternativo, Carga y Courier generando de esta forma una óptima experiencia de servicio a nuestros usuarios y operadores <strong>“B2B y B2C”</strong> con vehículos de primera línea, homologados por el ministerio del transporte e implementando herramientas tecnológicas (App, e-commerce), con la inclusión de energías renovables y limpias para Colombia y el mundo convirtiéndose en la primera empresa socialmente responsable en el transporte, el cual incluye proyectos en desarrollo desde nuestros cuatro ejes rectores Salud – Educación – Vivienda – Tecnología con el propósito de mejorar la calidad de vida del sector del transporte.",
       objectiveTitle: "Objetivo Inmediato:",
-      p2: "Ser reconocidos como la primera empresa de Transporte Especial, Taxi, Alternativo, Carga y Courier en caminada al desarrollo de herramientas tecnológicas utilizando IA en nuestras (Plataformas, e-commerce, <strong><span class='texto-rojo'>SUMYT</span></strong>). Implementando la profesionalización del transporte en sus diferentes modalidades de la mano de la academia, utilizando herramientas tecnológicas creadas a las necesidades de nuestro país y el continente desde su marco regulatorio e impulsando el uso de energías renovables y limpias con el propósito de prestar un servicio de calidad dirigido a nuestros usuarios y operadores, con la implementación de programas especiales dirigidos al sector Turístico, volviendo más fuertes de esta forma los eslabones de la cadena de valor de la economía circular. Esta meta la tendremos consolidada al 2027 desde Bogotá a las regiones y de Colombia para el mundo como modelo colaborativo y de integración de los sectores."
+      p2: "Ser reconocidos como la primera empresa de Transporte Especial, Taxi, Alternativo, Carga y Courier en caminada al desarrollo de herramientas tecnológicas utilizando IA en nuestras (Plataformas, e-commerce, <strong><span class='texto-rojo'>SUMYT</span></strong>). Implementando la profesionalización del transporte en sus diferentes modalidades de la mano de la academia, utilizando herramientas tecnológicas creadas a las necesidades de nuestro país y el continente desde su marco regulatorio e impulsando el uso de energías renovables y limpias con el propósito de prestar un servicio de calidad dirigido a nuestros usuarios y operadores, con la implementación de programas especiales dirigidos al sector Turístico, volviendo más fuertes de esta forma los eslabones de la cadena de valor de la economía circular. Esta meta la tendremos consolidada al 2027 desde Bogotá a las regiones y de Colombia para el mundo como modelo colaborativo y de integración de los sectores.",
     },
     innovacion: {
       title: "Innovación y Tecnología",
       subtitle: "Servitransporte S.A.S",
       p1: "El avance tecnológico del proyecto es significativo, alcanzando un <strong>60% de desarrollo</strong>. Se prevé el lanzamiento de la plataforma <span class='texto-rojo'>SUMYT</span> para el último trimestre del 2026. Esta plataforma integral conectará <strong>transporte, turismo y mensajería</strong>, y ha sido desarrollada con el apoyo de instituciones como <strong>la Universidad Santo Tomás, la Universidad Cooperativa de Colombia y el SENA</strong>.",
       p2: "<strong>Movilidad y Conectividad Inteligente:</strong> Se está implementando tecnología avanzada IA enfocada en la <strong>movilidad urbana inteligente</strong>, apoyada en energías limpias y sistemas de transporte público y turístico que promuevan el bienestar y la sostenibilidad.",
-      p3: "<strong>Integración de Servicios Complementarios:</strong> La plataforma no solo abordará el transporte, sino que también incluirá servicios clave como el <strong>fondo de empleados, un corredor de seguros, un operador turístico, una constructora, y una agencia de mercadeo y publicidad, desarrollo tecnológico, con un fuerte enfoque en cuatro pilares: educación, salud, vivienda y tecnología</strong>."
+      p3: "<strong>Integración de Servicios Complementarios:</strong> La plataforma no solo abordará el transporte, sino que también incluirá servicios clave como el <strong>fondo de empleados, un corredor de seguros, un operador turístico, una constructora, y una agencia de mercadeo y publicidad, desarrollo tecnológico, con un fuerte enfoque en cuatro pilares: educación, salud, vivienda y tecnología</strong>.",
     },
     turismo: {
       title: "Operador Turístico",
@@ -63,13 +67,15 @@ export const translations = {
       p1: "El <strong>Operador Turístico</strong> Servitransporte desempeña un papel clave en el desarrollo del segundo módulo de la herramienta tecnológica <span class='texto-rojo'>SUMYT</span>, a través de la cual se generarán acuerdos comerciales con toda la cadena de valor del sector turismo: hoteles, moteles, restaurantes, bares, guías turísticos, agencias de viajes y operadores turísticos. Estos acuerdos garantizarán ganancias equitativas para todos los involucrados, evitando las prácticas de imposición de precios que actualmente afectan al sector.",
       p2: "En la actualidad, el operador turístico cuenta con <strong>260 afiliados a INHOTELCOL</strong>, la asociación de hoteleros y moteles de Colombia, con una fuerte presencia en Bogotá, la región amazónica y el Quindío, regiones con alto potencial turístico. El módulo de la plataforma permitirá a los usuarios reservar, pagar y participar en una amplia gama de ofertas turísticas, con un especial énfasis en el turismo de salud, tanto a nivel nacional como internacional.",
       techTitle: "Desarrollo y Requisitos en Tecnología",
-      p3: "Este operador turístico es de base tecnológica, permitiendo la captación de asociados a través de estrategias de onboarding digital. Los servicios turísticos serán gestionados desde plataformas independientes, lo que permitirá una mayor eficiencia y accesibilidad para los usuarios y operadores."
+      p3: "Este operador turístico es de base tecnológica, permitiendo la captación de asociados a través de estrategias de onboarding digital. Los servicios turísticos serán gestionados desde plataformas independientes, lo que permitirá una mayor eficiencia y accesibilidad para los usuarios y operadores.",
     },
     observatorio: {
       title: "OBSERVATORIO DE SERVICIOS ESPECIALIZADOS TURÍSTICOS “OSET”",
       name: "NOMBRE: OBSERVATORIO DE SERVICIOS ESPECIALIZADOS TURÍSTICOS “OSET”",
-      mission: "<strong>MISIÓN:</strong> Recopilar, analizar y difundir información estratégica sobre la oferta, demanda, tendencias y desempeño de los servicios turísticos especializados en Colombia, para apoyar la formulación de políticas públicas, la toma de decisiones empresariales, mejoramiento de la experiencia turística, sostenibilidad organizacional del sector y la identificación de nuevas oportunidades de negocio.",
-      vision: "<strong>VISIÓN:</strong> Ser el referente nacional e internacional en inteligencia turística para servicios especializados, impulsando el desarrollo sostenible, la innovación y la competitividad de Colombia como destino turístico de alto valor compartido y asociatividad.",
+      mission:
+        "<strong>MISIÓN:</strong> Recopilar, analizar y difundir información estratégica sobre la oferta, demanda, tendencias y desempeño de los servicios turísticos especializados en Colombia, para apoyar la formulación de políticas públicas, la toma de decisiones empresariales, mejoramiento de la experiencia turística, sostenibilidad organizacional del sector y la identificación de nuevas oportunidades de negocio.",
+      vision:
+        "<strong>VISIÓN:</strong> Ser el referente nacional e internacional en inteligencia turística para servicios especializados, impulsando el desarrollo sostenible, la innovación y la competitividad de Colombia como destino turístico de alto valor compartido y asociatividad.",
       structure: "ESTRUCTURA:",
       objectivesTitle: "OBJETIVOS ESTRATEGICOS",
       objectives: [
@@ -78,7 +84,7 @@ export const translations = {
         "3. Detectar nichos de mercado emergentes, brechas en la oferta, desafíos regulatorios y oportunidades de mejora en la calidad y diversificación de los servicios.",
         "4. Suministrar información relevante al Sistema turístico (actores públicos y privados) para la formulación de estrategias de desarrollo turístico, inversión y promoción.",
         "5. Promover la adopción de buenas prácticas, tecnologías emergentes y modelos de negocio innovadores en el sector de servicios turísticos especializados.",
-        "6. Facilitar la colaboración y el intercambio de información entre los actores del sistema turístico (gobierno, academia, gremios privados y las comunidades)."
+        "6. Facilitar la colaboración y el intercambio de información entre los actores del sistema turístico (gobierno, academia, gremios privados y las comunidades).",
       ],
       componentsTitle: "Componentes del Observatorio",
       comp1: {
@@ -89,8 +95,8 @@ export const translations = {
           "<strong>1.2 Herramientas de Business Intelligence (BI):</strong> Dashboards interactivos, herramientas de visualización de datos (ej. Power BI, Tableau, Qlik Sense) para análisis en tiempo real.",
           "<strong>1.3 Software de Análisis Estadístico y Predictivo:</strong> Herramientas para modelado de datos, pronósticos y análisis de tendencias.",
           "<strong>1.4 Plataforma Web/Portal del Observatorio:</strong> Interfaz pública para la difusión de informes, estadísticas, noticias y herramientas interactivas.",
-          "<strong>1.5 Módulos de Big Data y Machine Learning (opcional):</strong> Para procesar grandes volúmenes de datos no estructurados (redes sociales, reseñas) y generar insights avanzados."
-        ]
+          "<strong>1.5 Módulos de Big Data y Machine Learning (opcional):</strong> Para procesar grandes volúmenes de datos no estructurados (redes sociales, reseñas) y generar insights avanzados.",
+        ],
       },
       comp2: {
         title: "2. Equipos de Investigación y Análisis",
@@ -99,8 +105,8 @@ export const translations = {
           "<strong>2.1 Investigadores de todas las categorías:</strong> Con experiencia o interés en trabajar con turismo, economía, estadística, marketing.",
           "<strong>2.2 Analistas de Datos:</strong> Especializados en manejo y modelado de grandes volúmenes de información.",
           "<strong>2.3 Expertos Sectoriales:</strong> Conocedores de nichos específicos de servicios turísticos (ej. guías de turismo de aventura, gestores de destinos culturales).",
-          "<strong>2.4 Equipo de Soporte Tecnológico:</strong> Administradores de bases de datos, desarrolladores web."
-        ]
+          "<strong>2.4 Equipo de Soporte Tecnológico:</strong> Administradores de bases de datos, desarrolladores web.",
+        ],
       },
       comp3: {
         title: "3. Red de Fuentes de Información y Aliados Estratégicos",
@@ -111,8 +117,8 @@ export const translations = {
           "<strong>3.3 Instituciones Académicas y Centros de Investigación:</strong> Universidades con programas de turismo, centros de investigación económica.",
           "<strong>3.4 Operadores y Prestadores de Servicios Turísticos:</strong> Empresas de turismo de aventura, ecoturismo, hoteles boutique, agencias de viajes especializadas.",
           "<strong>3.5 Comunidades Locales:</strong> A través de mesas de trabajo y encuestas directas.",
-          "<strong>3.6 Organismos Internacionales:</strong> OMT, WTTC, BID, Banco Mundial (para benchmarks y mejores prácticas)."
-        ]
+          "<strong>3.6 Organismos Internacionales:</strong> OMT, WTTC, BID, Banco Mundial (para benchmarks y mejores prácticas).",
+        ],
       },
       comp4: {
         title: "4. Mecanismos de Difusión y Comunicación",
@@ -123,8 +129,8 @@ export const translations = {
           "<strong>4.3 Informes Anuales/Especiales:</strong> Estudios profundos sobre temáticas específicas.",
           "<strong>4.4 Eventos y Seminarios:</strong> Presentaciones de resultados, talleres, mesas redondas.",
           "<strong>4.5 Publicaciones Científicas:</strong> Artículos en revistas académicas especializadas.",
-          "<strong>4.6 Presencia en Redes Sociales:</strong> Difusión de contenido y engagement con la audiencia."
-        ]
+          "<strong>4.6 Presencia en Redes Sociales:</strong> Difusión de contenido y engagement con la audiencia.",
+        ],
       },
       orgStructureTitle: "Estructura Organizacional",
       unit1: {
@@ -133,15 +139,15 @@ export const translations = {
         list: [
           "Un representante del Estado: Ministerio de Comercio, Industria y Turismo; Alcaldías entre otros.",
           "Un representante de Gremios de Servicios Turísticos.",
-          "Un representante académico de reconocido prestigio en turismo, escogido entre los investigadores."
+          "Un representante académico de reconocido prestigio en turismo, escogido entre los investigadores.",
         ],
         respTitle: "Responsabilidades:",
         resps: [
           "1. Definir las políticas públicas y prioridades del sector turístico que el observatorio debe monitorear.",
           "2. Asegurar la sostenibilidad financiera a largo plazo del observatorio.",
           "3. Facilitar la articulación con otras entidades gubernamentales y gremios.",
-          "4. Utilizar los insumos del observatorio para la formulación de políticas y planes de desarrollo turístico."
-        ]
+          "4. Utilizar los insumos del observatorio para la formulación de políticas y planes de desarrollo turístico.",
+        ],
       },
       unit2: {
         title: "DIRECCIÓN",
@@ -159,8 +165,8 @@ export const translations = {
           "9. Establecer alianzas estratégicas y gestionar la relación con los stakeholders.",
           "10. Garantizar la calidad, confiabilidad y pertinencia de la información generada.",
           "11. Liderar al equipo de investigación y análisis.",
-          "12. Presentar informes periódicos al Comité Organizacional."
-        ]
+          "12. Presentar informes periódicos al Comité Organizacional.",
+        ],
       },
       unit3: {
         title: "UNIDAD ACADÉMICA",
@@ -170,8 +176,8 @@ export const translations = {
           "1. Participar en el diseño metodológico de los estudios y análisis del observatorio.",
           "2. Realizar investigaciones específicas y publicar artículos científicos derivados de los datos.",
           "3. Ofrecer pasantías y oportunidades de investigación para estudiantes.",
-          "4. Aportar con expertise en áreas especializadas (ej. sostenibilidad, economía del turismo)."
-        ]
+          "4. Aportar con expertise en áreas especializadas (ej. sostenibilidad, economía del turismo).",
+        ],
       },
       unit4: {
         title: "UNIDAD GREMIAL",
@@ -184,8 +190,8 @@ export const translations = {
           "4. Adoptar las recomendaciones y hallazgos del observatorio para mejorar sus operaciones.",
           "5. Participar en talleres, entrevistas y grupos focales para aportar su perspectiva sobre el turismo en sus territorios.",
           "6. Informar sobre los impactos (positivos y negativos) de los servicios turísticos en sus comunidades.",
-          "7. Aportar datos sobre oferta informal o experiencias turísticas emergentes."
-        ]
+          "7. Aportar datos sobre oferta informal o experiencias turísticas emergentes.",
+        ],
       },
       considerationsTitle: "Consideraciones Adicionales",
       considerations: [
@@ -194,10 +200,11 @@ export const translations = {
         "<strong>3. Relevancia y Pertinencia:</strong> Asegurar que la información generada sea útil y oportuna para la toma de decisiones de los diferentes actores.",
         "<strong>4. Transparencia y Acceso a la Información:</strong> Publicar los datos y metodologías siempre que sea posible, promoviendo la confianza y el uso abierto de la información.",
         "<strong>5. Capacitación y Transferencia de Conocimiento:</strong> Desarrollar programas de capacitación para los actores del sector sobre el uso de la información del observatorio.",
-        "<strong>6. Innovación Continua:</strong> Adaptarse a las nuevas tecnologías y fuentes de datos (ej. inteligencia artificial, IoT) para mantener la vanguardia en inteligencia turística."
+        "<strong>6. Innovación Continua:</strong> Adaptarse a las nuevas tecnologías y fuentes de datos (ej. inteligencia artificial, IoT) para mantener la vanguardia en inteligencia turística.",
       ],
-      downloadText: "Para más información, puedes descargar el documento oficial haciendo clic en el siguiente enlace:",
-      downloadButton: "Descargar Documento"
+      downloadText:
+        "Para más información, puedes descargar el documento oficial haciendo clic en el siguiente enlace:",
+      downloadButton: "Descargar Documento",
     },
     fondo: {
       title: "Fondo de <br /> Asociados <span class='texto-rojo'>SUMYT</span>",
@@ -206,11 +213,11 @@ export const translations = {
         "<strong>Sector Transporte:</strong> transporte especial, taxis, vehículos de lujo y transporte alternativo.",
         "<strong>Sector Turismo:</strong> hoteles, restaurantes, guías, agencias de viajes y operadores turísticos.",
         "<strong>Sector Carga:</strong> interconexión entre pequeños transportadores y usuarios de servicio de carga; servicio de courier para estudiantes.",
-        "<strong>Empresas del Holding:</strong> empresas que forman parte del grupo."
+        "<strong>Empresas del Holding:</strong> empresas que forman parte del grupo.",
       ],
       p2: "El propósito principal del fondo es fomentar la cultura del ahorro y la cooperación entre sus afiliados, brindándoles acceso a servicios esenciales como educación, vivienda, recreación, turismo, y una amplia oferta de bienes y servicios. Este fondo también ofrecerá capacitación a sus miembros a través de alianzas con la Universidad Cooperativa Seccional Indesco, y se estima que contará con un promedio de 60,000 afiliados. La afiliación al fondo será un requisito previo para ingresar a la herramienta tecnológica de la plataforma <span class='texto-rojo'>SUMYT</span>.",
       techTitle: "Desarrollo y Requisitos en Tecnología",
-      p3: "El <strong>Fondo de Asociados <span class='texto-rojo'>SUMYT</span></strong> es una entidad basada en tecnología digital, diseñada para maximizar el aprovechamiento del entorno digital. Esto incluye estrategias de onboarding digital para captar asociados y crear rutas eficientes de inscripción y solicitud de servicios, a través de plataformas independientes para cada unidad de negocio interconectadas con la plataforma <span class='texto-rojo'>SUMYT</span>. Además, se facilitará la realización de aportes por medio de descuentos desde la plataforma de transporte, turismo y carga."
+      p3: "El <strong>Fondo de Asociados <span class='texto-rojo'>SUMYT</span></strong> es una entidad basada en tecnología digital, diseñada para maximizar el aprovechamiento del entorno digital. Esto incluye estrategias de onboarding digital para captar asociados y crear rutas eficientes de inscripción y solicitud de servicios, a través de plataformas independientes para cada unidad de negocio interconectadas con la plataforma <span class='texto-rojo'>SUMYT</span>. Además, se facilitará la realización de aportes por medio de descuentos desde la plataforma de transporte, turismo y carga.",
     },
     seguros: {
       title: "Corredor de Seguros",
@@ -218,7 +225,7 @@ export const translations = {
       p1: "El <strong>Corredor de Seguros</strong> está respaldado por <strong>Seguros del Estado</strong> y <strong>Servitransporte S.A.S</strong>, ofreciendo una amplia gama de seguros para el sector del <strong>turismo y el transporte</strong>.",
       p2: "Contamos con una proyección de atención para más de <strong>60,000 operadores</strong> activos en la plataforma <span class='texto-rojo'>SUMYT</span>, garantizando el cumplimiento de la normativa vigente.",
       techTitle: "Desarrollo y Requisitos en Tecnología",
-      p3: "Implementamos procesos de <strong>onboarding</strong> digital para la vinculación de nuevos asegurados, agilizando los trámites y la expedición de pólizas de manera eficiente."
+      p3: "Implementamos procesos de <strong>onboarding</strong> digital para la vinculación de nuevos asegurados, agilizando los trámites y la expedición de pólizas de manera eficiente.",
     },
     marketing: {
       title: "Agencia de Marketing y Publicidad",
@@ -226,14 +233,14 @@ export const translations = {
       p1: "Nuestra <strong>Agencia de Marketing y Publicidad Servitransporte</strong> se enfoca en el posicionamiento de marca y la generación de demanda para todos los servicios del holding, con especial énfasis en <strong>salud, educación, vivienda y tecnología</strong>.",
       p2: "Contamos con el respaldo de instituciones como el <strong>SENA</strong> para la formación de nuestro equipo en estrategias de comunicación digital y mercadeo relacional.",
       techTitle: "Desarrollo y Requisitos en Tecnología",
-      p3: "Utilizamos técnicas de <strong>neuromarketing</strong> para conectar con el <strong>cerebro emocional</strong> de nuestros usuarios, optimizando la experiencia en la plataforma <span class='texto-rojo'>SUMYT</span> y maximizando el retorno de inversión."
+      p3: "Utilizamos técnicas de <strong>neuromarketing</strong> para conectar con el <strong>cerebro emocional</strong> de nuestros usuarios, optimizando la experiencia en la plataforma <span class='texto-rojo'>SUMYT</span> y maximizando el retorno de inversión.",
     },
     juridicos: {
       title: "Servicios Jurídicos y Financieros",
       subtitle: "Servitransporte S.A.S",
       p1: "La unidad de <strong>Servicios Jurídicos y Económicos Servitransporte</strong> proporcionará servicios tanto a las empresas del holding como a los operadores de las plataformas del grupo. Se ofrecerán tarifas y planes de pago accesibles, con la opción de pagos diferidos en línea. Además, la unidad gestionará el financiamiento necesario para el desarrollo de infraestructura turística, ejecutando los proyectos a través de la <strong>Constructora Servitransporte</strong>.",
       techTitle: "Desarrollo y Requisitos en Tecnología",
-      p2: "Este servicio está respaldado por una sólida infraestructura tecnológica, permitiendo el análisis de datos y la gestión de pagos en línea para servicios jurídicos y financieros. Estos pagos podrán ser descontados automáticamente desde los servicios de transporte y otros sectores de la plataforma. Por ser de base tecnológica, implementando estrategias de onboarding digital para la captación de clientes de servicios jurídicos y financieros y el desarrollo de contenidos y campañas publicitarias en línea. Esto permitirá optimizar la comercialización de los productos y el mejoramiento de servicios del grupo a través de plataformas digitales <span class='texto-rojo'>SUMYT</span>."
+      p2: "Este servicio está respaldado por una sólida infraestructura tecnológica, permitiendo el análisis de datos y la gestión de pagos en línea para servicios jurídicos y financieros. Estos pagos podrán ser descontados automáticamente desde los servicios de transporte y otros sectores de la plataforma. Por ser de base tecnológica, implementando estrategias de onboarding digital para la captación de clientes de servicios jurídicos y financieros y el desarrollo de contenidos y campañas publicitarias en línea. Esto permitirá optimizar la comercialización de los productos y el mejoramiento de servicios del grupo a través de plataformas digitales <span class='texto-rojo'>SUMYT</span>.",
     },
     navbar: {
       home: "Inicio",
@@ -245,7 +252,7 @@ export const translations = {
       juridicos: "Jurídicos",
       fondo: "Fondo",
       innovacion: "Innovación",
-      observatorio: "Observatorio"
+      observatorio: "Observatorio",
     },
     history: {
       title: "Historia",
@@ -253,29 +260,31 @@ export const translations = {
         {
           year: "2018",
           title: "Fundación renovando sueños",
-          desc: "Apoyo propietarios y transportadores en la defensa de los derechos del servicio público"
+          desc: "Apoyo propietarios y transportadores en la defensa de los derechos del servicio público",
         },
         {
           year: "2019",
           title: "Grupo Alianza Sevitransporte",
-          desc: "Empresa de transporte público en modalidad de servicio público, especial y todas las modalidades"
+          desc: "Empresa de transporte público en modalidad de servicio público, especial y todas las modalidades",
         },
         {
           year: "2021",
-          title: "Grupo de Servicios de transportes especiales de Colombia - Servitransporte",
-          desc: "Desarrollo Holding"
+          title:
+            "Grupo de Servicios de transportes especiales de Colombia - Servitransporte",
+          desc: "Desarrollo Holding",
         },
         {
           year: "Presente",
           title: "Servicios Unificados de Movilidad y Turismo",
-          desc: "<strong><span class='texto-rojo'>SUMYT</span></strong> Plataforma Tecnológica"
-        }
-      ]
+          desc: "<strong><span class='texto-rojo'>SUMYT</span></strong> Plataforma Tecnológica",
+        },
+      ],
     },
     cookieConsent: {
-      message: "🍪 Usamos cookies para mejorar tu experiencia. Puedes aceptar o rechazar su uso.",
+      message:
+        "🍪 Usamos cookies para mejorar tu experiencia. Puedes aceptar o rechazar su uso.",
       accept: "Aceptar",
-      reject: "Rechazar"
+      reject: "Rechazar",
     },
     footer: {
       contact: "Contáctanos",
@@ -294,10 +303,26 @@ export const translations = {
         validations: {
           name: "El nombre debe tener entre 3 y 50 caracteres.",
           email: "Por favor ingresa un correo válido.",
-          message: "El mensaje debe tener entre 10 y 500 caracteres."
-        }
-      }
-    }
+          message: "El mensaje debe tener entre 10 y 500 caracteres.",
+        },
+      },
+    },
+    cotizador: {
+      title: "Cotizador de Servicios",
+      subtitle: "Solicita tu cotización personalizada",
+      form: {
+        name: "Nombre completo",
+        clientEmail: "Correo del Cliente (Destino)",
+        senderEmail: "Correo del Remitente (Quien envía)",
+        phone: "Teléfono de contacto",
+        service: "Tipo de servicio",
+        details: "Detalles de la solicitud",
+        submit: "Enviar Solicitud",
+        select: "Seleccione un servicio",
+        success:
+          "¡Cotización enviada con éxito! Nos pondremos en contacto pronto.",
+      },
+    },
   },
   en: {
     constructora: {
@@ -306,7 +331,7 @@ export const translations = {
       p1: "The <strong>Servitransporte Construction Company</strong> will be created or managed upon an already established company. This construction company will aim to develop social interest <strong>housing</strong>, such as the <strong>“Villa Valentina”</strong> project, located in the Brazuelos sector, on the border between Usme and Ciudad Bolívar. The first phase of the project will include 2000 housing units with renewable energy implementation and expansion plans in the partial plan. Operators registered and active on the <span class='texto-rojo'>SUMYT</span> platform will have access to national and district housing subsidies managed through compensation funds, allowing them to reach the break-even point together with the <strong>associates fund.</strong>",
       p2: "In addition to housing projects, we are developing the creation of a partial plan between the locality of Usme and Ciudad Bolívar where we have a land extension of <strong>20 hectares in which an average of 20,000 housing units is calculated</strong>, with all the required endowment in infrastructure, public services, and equipment: schools, health centers, parks, community centers, shopping centers, and roads; all embedded in the construction of smart cities, connecting directly as a compensation zone with the <strong>environmental recovery of 20 hectares</strong> in the same area, adjacent to Cantarrana Park. This <strong>environmental recovery</strong> project of tax exchange for forest services called <strong>“Villa Valentina Environmental Recovery”</strong> will be the holding's green project, boosting the economic, social, and environmental growth of the region.",
       techTitle: "Technology Development and Requirements",
-      p3: "The construction company will use digital technologies to attract associates and manage registration and service requests from independent platforms. This will facilitate the purchase of services by users of the <span class='texto-rojo'>SUMYT</span> platforms, with discounts applied automatically from the transport, tourism, and courier platforms. As well as all construction processes in the implementation of smart cities and the implementation of clean energies as a model of sustainable and efficient housing."
+      p3: "The construction company will use digital technologies to attract associates and manage registration and service requests from independent platforms. This will facilitate the purchase of services by users of the <span class='texto-rojo'>SUMYT</span> platforms, with discounts applied automatically from the transport, tourism, and courier platforms. As well as all construction processes in the implementation of smart cities and the implementation of clean energies as a model of sustainable and efficient housing.",
     },
     home: {
       videoGallery: "Video Gallery",
@@ -317,43 +342,47 @@ export const translations = {
         educacion: {
           label: "Education",
           info: "Education and training processes are very important for GST, for this reason, we have top-line professionals in education processes and agreements for technology development with universities such as UCC, USTA, and SENA. At the GST Technology Training Center, people will be trained in Soft Skills, English, and Culture to work with GST S.A.S in its own digital environments and other companies that require their services. We care not only for the well-being of our operators and associates but also for the comprehensive training of their family nucleus, which will be located in “Villa Valentina”, where we have arranged an urban land for the construction and execution of the development center in 1152 m2. It is projected for people residing in the locality of Ciudad Bolívar and the border with Usme, generating technological and cultural tools for improving the quality of life of the inhabitants of the sector and Bogotá, allowing them to have a training and labor process with GST S.A.S and its strategic allies, which through Universities will present the entire academic offer with special discounts for our affiliates and their families.",
-          intro: "Thinking about the development and benefit of the GST community and its e-commerce SUMYT, it has been based on the creation of four fundamental pillars: Education, Health, Housing, and Technology, which serve as support for social development, which is parameterized for the benefit of the community that uses the services of the e-commerce SUMYT being a service provider or consumer thereof."
+          intro:
+            "Thinking about the development and benefit of the GST community and its e-commerce SUMYT, it has been based on the creation of four fundamental pillars: Education, Health, Housing, and Technology, which serve as support for social development, which is parameterized for the benefit of the community that uses the services of the e-commerce SUMYT being a service provider or consumer thereof.",
         },
         vivienda: {
           label: "Housing",
           info: "From GST S.A.S we care about access to decent housing for the transport and tourism sector and its related services; that is why Grupo Servitransporte arranged the social interest housing project called “Villa Valentina”, located in the locality of Ciudad Bolívar on the border with Usme, which is initially being planned for 2000 housing units and the GST development center. In addition to the housing project, we are developing a partial plan between the locality of Usme and Ciudad Bolívar where we have a land extension of 20 hectares with a capacity for 20,000 housing units plus the required endowment in infrastructure, public services, and equipment: schools, health centers, parks, community centers, shopping centers, and roads; joining this to the environmental recovery process of 20 hectares called La Loma, which has a direct connection with the partial plan and Villa Valentina.",
-          intro: "Thinking about the development and benefit of the GST community and its e-commerce SUMYT, it has been based on the creation of four fundamental pillars: Education, Health, Housing, and Technology, which serve as support for social development, which is parameterized for the benefit of the community that uses the services of the e-commerce SUMYT being a service provider or consumer thereof."
+          intro:
+            "Thinking about the development and benefit of the GST community and its e-commerce SUMYT, it has been based on the creation of four fundamental pillars: Education, Health, Housing, and Technology, which serve as support for social development, which is parameterized for the benefit of the community that uses the services of the e-commerce SUMYT being a service provider or consumer thereof.",
         },
         salud: {
           label: "Health",
           info: "For GST S.A.S, Health is very important in the well-being of our collaborators in the different work units. Since the beginning of the information gathering research of the transport sector in 2018 with the Renovando Sueños Foundation due to the loss of value of public service cars, we could observe how there is a giant gap in the health sector due to the same informality of transporters and poor access to decent health services. MedPlus of the CienoGroup group can be acquired at low cost, from $30,000, with the purpose of being able to have quick and efficient access at low cost.",
-          intro: "Thinking about the development and benefit of the GST community and its e-commerce SUMYT, it has been based on the creation of four fundamental pillars: Education, Health, Housing, and Technology, which serve as support for social development, which is parameterized for the benefit of the community that uses the services of the e-commerce SUMYT being a service provider or consumer thereof."
+          intro:
+            "Thinking about the development and benefit of the GST community and its e-commerce SUMYT, it has been based on the creation of four fundamental pillars: Education, Health, Housing, and Technology, which serve as support for social development, which is parameterized for the benefit of the community that uses the services of the e-commerce SUMYT being a service provider or consumer thereof.",
         },
         tecnologia: {
           label: "Technology",
           info: "It is the backbone of Grupo Servitransporte S.A.S. We are a Colombian company with a technological base “startup” that complies with the requirements of Colombian regulations, developing technological resources such as platforms which are transformed into e-commerce using AI with the purpose of improving the logistics of transport, tourism, and cargo between service applicants and operators, as well as companies and service applicants (B2B, B2C). With high scalability by implementing good commercial practices between operators and clients from technological tools, it allows us to take advantage of technological and conventional resources with innovative disruptive solutions to satisfy the needs of users and operators in the sectors of influence, fulfilling our four pillars: Education, Health, Housing, and Technology from our 7 business lines with technological base: 1. SUMYT platform associates fund, 2. Insurance broker, 3. Construction company, 4. Tourism operator, 5. Legal and financial services, 6. Marketing and advertising, 7. Development and technological support.",
-          intro: "Thinking about the development and benefit of the GST community and its e-commerce SUMYT, it has been based on the creation of four fundamental pillars: Education, Health, Housing, and Technology, which serve as support for social development, which is parameterized for the benefit of the community that uses the services of the e-commerce SUMYT being a service provider or consumer thereof."
-        }
-      }
+          intro:
+            "Thinking about the development and benefit of the GST community and its e-commerce SUMYT, it has been based on the creation of four fundamental pillars: Education, Health, Housing, and Technology, which serve as support for social development, which is parameterized for the benefit of the community that uses the services of the e-commerce SUMYT being a service provider or consumer thereof.",
+        },
+      },
     },
     somos: {
       p1: "<strong>Grupo Servitransporte S.A.S.</strong> is a Colombian company with a technological base “startup” that complies with the requirements of the Colombian transport regulations issued by the Ministry of Transport and regulated by the Superintendence of Transport, developing technological resources such as platforms which are transformed into e-commerce using AI with the purpose of improving the logistics of transport, tourism, and cargo, between service applicants and operators as well as companies and service applicants <strong>(B2B, B2C)</strong>, with high scalability by implementing good commercial practices between operators and clients by belonging to the formal regulatory framework, allowing us to take advantage of technological and conventional resources with innovative disruptive solutions to satisfy the needs of users and operators in the sectors of influence, fulfilling our four pillars, Education, Health, Housing, and Technology from our 7 business lines with technological base,",
       p2: "created to transform public transport in the modality of taxi, special and alternative service, tourism services, cargo, and Courier. Its central proposal is <span class='texto-rojo'>SUMYT</span> <strong> (Unified Mobility and Tourism Services)</strong>, a digital platform that integrates transport, tourism, and cargo, also connecting complementary services such as: <strong>1. Associates Fund, 2. Insurance Broker, 3. Tourism Operator, 4. Construction Company, 5. Advertising and Marketing Agency, 6. Legal and Economic Services, 7. Technological Development.</strong>",
-      p3: "The project seeks to professionalize public transport as a connector of tourism and cargo services, improve the quality of life of operators and close historical social gaps in <strong> Health, Education, Housing, and Technology</strong>. We are aligned with the <strong> 17 Sustainable Development Goals</strong>, promoting the circular economy and promoting the use of clean energies such as electric vehicles and in the construction of social interest housing, in the creation of the partial plan and the environmental recovery process in the Villa Valentina project."
+      p3: "The project seeks to professionalize public transport as a connector of tourism and cargo services, improve the quality of life of operators and close historical social gaps in <strong> Health, Education, Housing, and Technology</strong>. We are aligned with the <strong> 17 Sustainable Development Goals</strong>, promoting the circular economy and promoting the use of clean energies such as electric vehicles and in the construction of social interest housing, in the creation of the partial plan and the environmental recovery process in the Villa Valentina project.",
     },
     transporte: {
       title: "Transport",
       subtitle: "Grupo Servitransporte S.A.S",
       p1: "<strong>Grupo Servitransporte S.A.S</strong> builds in tripartite “State, Universities, Private Sector” implementing the 17 SDGs in the professionalization of Special transport, Taxi, Alternative, Cargo, and Courier in Colombia, achieving the integration of transport, tourism, and cargo services from startups implementing platforms and e-commerce with users and service providers integrated from our technological tool <strong><span class='texto-rojo'>SUMYT</span></strong> as a fundamental factor for the growth of the regions. Providing efficient assistance for our Special Service vehicle operators in their 5 modalities <strong>1. School, 2. Business, 3. Tourism, 4. Homogeneous Groups, 5. Medical</strong> non-Specialized, Taxi, Alternative, Cargo, and Courier generating in this way an optimal service experience to our users and operators <strong>“B2B and B2C”</strong> with top-line vehicles, approved by the ministry of transport and implementing technological tools (App, e-commerce), with the inclusion of renewable and clean energies for Colombia and the world becoming the first socially responsible company in transport, which includes projects in development from our four guiding axes Health – Education – Housing – Technology with the purpose of improving the quality of life of the transport sector.",
       objectiveTitle: "Immediate Objective:",
-      p2: "To be recognized as the first Special Transport, Taxi, Alternative, Cargo, and Courier company aimed at the development of technological tools using AI in our (Platforms, e-commerce, <strong><span class='texto-rojo'>SUMYT</span></strong>). Implementing the professionalization of transport in its different modalities hand in hand with the academy, using technological tools created to the needs of our country and the continent from its regulatory framework and promoting the use of renewable and clean energies with the purpose of providing a quality service directed to our users and operators, with the implementation of special programs directed to the Tourism sector, making the links of the circular economy value chain stronger in this way. We will have this goal consolidated by 2027 from Bogotá to the regions and from Colombia to the world as a collaborative model and integration of sectors."
+      p2: "To be recognized as the first Special Transport, Taxi, Alternative, Cargo, and Courier company aimed at the development of technological tools using AI in our (Platforms, e-commerce, <strong><span class='texto-rojo'>SUMYT</span></strong>). Implementing the professionalization of transport in its different modalities hand in hand with the academy, using technological tools created to the needs of our country and the continent from its regulatory framework and promoting the use of renewable and clean energies with the purpose of providing a quality service directed to our users and operators, with the implementation of special programs directed to the Tourism sector, making the links of the circular economy value chain stronger in this way. We will have this goal consolidated by 2027 from Bogotá to the regions and from Colombia to the world as a collaborative model and integration of sectors.",
     },
     innovacion: {
       title: "Innovation and Technology",
       subtitle: "Servitransporte S.A.S",
       p1: "The technological progress of the project is significant, reaching <strong>60% development</strong>. The launch of the <span class='texto-rojo'>SUMYT</span> platform is expected for the last quarter of 2026. This comprehensive platform will connect <strong>transport, tourism, and courier services</strong>, and has been developed with the support of institutions such as <strong>Santo Tomás University, Cooperative University of Colombia, and SENA</strong>.",
       p2: "<strong>Smart Mobility and Connectivity:</strong> Advanced AI technology is being implemented focused on <strong>smart urban mobility</strong>, supported by clean energies and public and tourist transport systems that promote well-being and sustainability.",
-      p3: "<strong>Integration of Complementary Services:</strong> The platform will not only address transport but will also include key services such as the <strong>employees' fund, an insurance broker, a tourism operator, a construction company, and a marketing and advertising agency, technological development, with a strong focus on four pillars: education, health, housing, and technology</strong>."
+      p3: "<strong>Integration of Complementary Services:</strong> The platform will not only address transport but will also include key services such as the <strong>employees' fund, an insurance broker, a tourism operator, a construction company, and a marketing and advertising agency, technological development, with a strong focus on four pillars: education, health, housing, and technology</strong>.",
     },
     turismo: {
       title: "Tourism Operator",
@@ -361,13 +390,15 @@ export const translations = {
       p1: "The <strong>Tourism Operator</strong> Servitransporte plays a key role in the development of the second module of the technological tool <span class='texto-rojo'>SUMYT</span>, through which commercial agreements will be generated with the entire value chain of the tourism sector: hotels, motels, restaurants, bars, tour guides, travel agencies, and tourism operators. These agreements will guarantee equitable profits for all involved, avoiding price imposition practices that currently affect the sector.",
       p2: "Currently, the tourism operator has <strong>260 affiliates to INHOTELCOL</strong>, the association of hoteliers and motels of Colombia, with a strong presence in Bogotá, the Amazon region, and Quindío, regions with high tourism potential. The platform module will allow users to book, pay, and participate in a wide range of tourism offers, with a special emphasis on health tourism, both nationally and internationally.",
       techTitle: "Technology Development and Requirements",
-      p3: "This tourism operator is technology-based, allowing the recruitment of associates through digital onboarding strategies. Tourism services will be managed from independent platforms, which will allow greater efficiency and accessibility for users and operators."
+      p3: "This tourism operator is technology-based, allowing the recruitment of associates through digital onboarding strategies. Tourism services will be managed from independent platforms, which will allow greater efficiency and accessibility for users and operators.",
     },
     observatorio: {
       title: "OBSERVATORY OF SPECIALIZED TOURISM SERVICES “OSET”",
       name: "NAME: OBSERVATORY OF SPECIALIZED TOURISM SERVICES “OSET”",
-      mission: "<strong>MISSION:</strong> Collect, analyze, and disseminate strategic information on the supply, demand, trends, and performance of specialized tourism services in Colombia, to support public policy formulation, business decision-making, improvement of the tourist experience, organizational sustainability of the sector, and identification of new business opportunities.",
-      vision: "<strong>VISION:</strong> To be the national and international benchmark in tourism intelligence for specialized services, promoting sustainable development, innovation, and competitiveness of Colombia as a tourism destination of high shared value and associativity.",
+      mission:
+        "<strong>MISSION:</strong> Collect, analyze, and disseminate strategic information on the supply, demand, trends, and performance of specialized tourism services in Colombia, to support public policy formulation, business decision-making, improvement of the tourist experience, organizational sustainability of the sector, and identification of new business opportunities.",
+      vision:
+        "<strong>VISION:</strong> To be the national and international benchmark in tourism intelligence for specialized services, promoting sustainable development, innovation, and competitiveness of Colombia as a tourism destination of high shared value and associativity.",
       structure: "STRUCTURE:",
       objectivesTitle: "STRATEGIC OBJECTIVES",
       objectives: [
@@ -376,7 +407,7 @@ export const translations = {
         "3. Detect emerging market niches, supply gaps, regulatory challenges, and opportunities for improvement in service quality and diversification.",
         "4. Provide relevant information to the Tourism System (public and private actors) for the formulation of tourism development, investment, and promotion strategies.",
         "5. Promote the adoption of good practices, emerging technologies, and innovative business models in the specialized tourism services sector.",
-        "6. Facilitate collaboration and information exchange among tourism system actors (government, academia, private guilds, and communities)."
+        "6. Facilitate collaboration and information exchange among tourism system actors (government, academia, private guilds, and communities).",
       ],
       componentsTitle: "Observatory Components",
       comp1: {
@@ -387,8 +418,8 @@ export const translations = {
           "<strong>1.2 Business Intelligence (BI) Tools:</strong> Interactive dashboards, data visualization tools (e.g., Power BI, Tableau, Qlik Sense) for real-time analysis.",
           "<strong>1.3 Statistical and Predictive Analysis Software:</strong> Tools for data modeling, forecasting, and trend analysis.",
           "<strong>1.4 Web Platform/Observatory Portal:</strong> Public interface for dissemination of reports, statistics, news, and interactive tools.",
-          "<strong>1.5 Big Data and Machine Learning Modules (optional):</strong> To process large volumes of unstructured data (social networks, reviews) and generate advanced insights."
-        ]
+          "<strong>1.5 Big Data and Machine Learning Modules (optional):</strong> To process large volumes of unstructured data (social networks, reviews) and generate advanced insights.",
+        ],
       },
       comp2: {
         title: "2. Research and Analysis Teams",
@@ -397,8 +428,8 @@ export const translations = {
           "<strong>2.1 Researchers of all categories:</strong> With experience or interest in working with tourism, economics, statistics, marketing.",
           "<strong>2.2 Data Analysts:</strong> Specialized in handling and modeling large volumes of information.",
           "<strong>2.3 Sector Experts:</strong> Knowledgeable in specific niches of tourism services (e.g., adventure tourism guides, cultural destination managers).",
-          "<strong>2.4 Technological Support Team:</strong> Database administrators, web developers."
-        ]
+          "<strong>2.4 Technological Support Team:</strong> Database administrators, web developers.",
+        ],
       },
       comp3: {
         title: "3. Network of Information Sources and Strategic Allies",
@@ -409,8 +440,8 @@ export const translations = {
           "<strong>3.3 Academic Institutions and Research Centers:</strong> Universities with tourism programs, economic research centers.",
           "<strong>3.4 Tourism Service Operators and Providers:</strong> Adventure tourism companies, ecotourism, boutique hotels, specialized travel agencies.",
           "<strong>3.5 Local Communities:</strong> Through working tables and direct surveys.",
-          "<strong>3.6 International Organizations:</strong> UNWTO, WTTC, IDB, World Bank (for benchmarks and best practices)."
-        ]
+          "<strong>3.6 International Organizations:</strong> UNWTO, WTTC, IDB, World Bank (for benchmarks and best practices).",
+        ],
       },
       comp4: {
         title: "4. Dissemination and Communication Mechanisms",
@@ -421,8 +452,8 @@ export const translations = {
           "<strong>4.3 Annual/Special Reports:</strong> In-depth studies on specific topics.",
           "<strong>4.4 Events and Seminars:</strong> Presentation of results, workshops, round tables.",
           "<strong>4.5 Scientific Publications:</strong> Articles in specialized academic journals.",
-          "<strong>4.6 Social Media Presence:</strong> Content dissemination and audience engagement."
-        ]
+          "<strong>4.6 Social Media Presence:</strong> Content dissemination and audience engagement.",
+        ],
       },
       orgStructureTitle: "Organizational Structure",
       unit1: {
@@ -431,15 +462,15 @@ export const translations = {
         list: [
           "A representative of the State: Ministry of Commerce, Industry and Tourism; Mayoralties among others.",
           "A representative of Tourism Services Guilds.",
-          "An academic representative of recognized prestige in tourism, chosen among researchers."
+          "An academic representative of recognized prestige in tourism, chosen among researchers.",
         ],
         respTitle: "Responsibilities:",
         resps: [
           "1. Define public policies and priorities of the tourism sector that the observatory must monitor.",
           "2. Ensure the long-term financial sustainability of the observatory.",
           "3. Facilitate articulation with other government entities and guilds.",
-          "4. Use observatory inputs for the formulation of policies and tourism development plans."
-        ]
+          "4. Use observatory inputs for the formulation of policies and tourism development plans.",
+        ],
       },
       unit2: {
         title: "DIRECTION",
@@ -457,8 +488,8 @@ export const translations = {
           "9. Establish strategic alliances and manage relationships with stakeholders.",
           "10. Ensure quality, reliability, and relevance of generated information.",
           "11. Lead the research and analysis team.",
-          "12. Present periodic reports to the Organizational Committee."
-        ]
+          "12. Present periodic reports to the Organizational Committee.",
+        ],
       },
       unit3: {
         title: "ACADEMIC UNIT",
@@ -468,8 +499,8 @@ export const translations = {
           "1. Participate in the methodological design of observatory studies and analyses.",
           "2. Conduct specific research and publish scientific articles derived from data.",
           "3. Offer internships and research opportunities for students.",
-          "4. Contribute expertise in specialized areas (e.g., sustainability, tourism economics)."
-        ]
+          "4. Contribute expertise in specialized areas (e.g., sustainability, tourism economics).",
+        ],
       },
       unit4: {
         title: "GUILD UNIT",
@@ -482,8 +513,8 @@ export const translations = {
           "4. Adopt observatory recommendations and findings to improve their operations.",
           "5. Participate in workshops, interviews, and focus groups to contribute their perspective on tourism in their territories.",
           "6. Report on impacts (positive and negative) of tourism services in their communities.",
-          "7. Contribute data on informal supply or emerging tourism experiences."
-        ]
+          "7. Contribute data on informal supply or emerging tourism experiences.",
+        ],
       },
       considerationsTitle: "Additional Considerations",
       considerations: [
@@ -492,10 +523,11 @@ export const translations = {
         "<strong>3. Relevance and Pertinence:</strong> Ensure that generated information is useful and timely for decision-making by different actors.",
         "<strong>4. Transparency and Access to Information:</strong> Publish data and methodologies whenever possible, promoting trust and open use of information.",
         "<strong>5. Training and Knowledge Transfer:</strong> Develop training programs for sector actors on the use of observatory information.",
-        "<strong>6. Continuous Innovation:</strong> Adapt to new technologies and data sources (e.g., artificial intelligence, IoT) to maintain the vanguard in tourism intelligence."
+        "<strong>6. Continuous Innovation:</strong> Adapt to new technologies and data sources (e.g., artificial intelligence, IoT) to maintain the vanguard in tourism intelligence.",
       ],
-      downloadText: "For more information, you can download the official document by clicking on the following link:",
-      downloadButton: "Download Document"
+      downloadText:
+        "For more information, you can download the official document by clicking on the following link:",
+      downloadButton: "Download Document",
     },
     fondo: {
       title: "Associates <br /> Fund <span class='texto-rojo'>SUMYT</span>",
@@ -504,11 +536,11 @@ export const translations = {
         "<strong>Transport Sector:</strong> special transport, taxis, luxury vehicles, and alternative transport.",
         "<strong>Tourism Sector:</strong> hotels, restaurants, guides, travel agencies, and tourism operators.",
         "<strong>Cargo Sector:</strong> interconnection between small transporters and cargo service users; courier service for students.",
-        "<strong>Holding Companies:</strong> companies that are part of the group."
+        "<strong>Holding Companies:</strong> companies that are part of the group.",
       ],
       p2: "The main purpose of the fund is to promote the culture of savings and cooperation among its affiliates, providing them access to essential services such as education, housing, recreation, tourism, and a wide range of goods and services. This fund will also offer training to its members through alliances with the Cooperative University Indesco Sectional, and it is estimated to have an average of 60,000 affiliates. Affiliation to the fund will be a prerequisite for entering the technological tool of the <span class='texto-rojo'>SUMYT</span> platform.",
       techTitle: "Technology Development and Requirements",
-      p3: "The <strong><span class='texto-rojo'>SUMYT</span> Associates Fund</strong> is a digital technology-based entity, designed to maximize the use of the digital environment. This includes digital onboarding strategies to attract associates and create efficient registration and service request routes, through independent platforms for each business unit interconnected with the <span class='texto-rojo'>SUMYT</span> platform. In addition, contributions will be facilitated through discounts from the transport, tourism, and cargo platform."
+      p3: "The <strong><span class='texto-rojo'>SUMYT</span> Associates Fund</strong> is a digital technology-based entity, designed to maximize the use of the digital environment. This includes digital onboarding strategies to attract associates and create efficient registration and service request routes, through independent platforms for each business unit interconnected with the <span class='texto-rojo'>SUMYT</span> platform. In addition, contributions will be facilitated through discounts from the transport, tourism, and cargo platform.",
     },
     seguros: {
       title: "Insurance Broker",
@@ -516,7 +548,7 @@ export const translations = {
       p1: "The <strong>Insurance Broker</strong> is backed by <strong>Seguros del Estado</strong> and <strong>Servitransporte S.A.S</strong>, offering a wide range of insurance for the <strong>tourism and transport</strong> sectors.",
       p2: "We have a service projection for more than <strong>60,000 operators</strong> active on the <span class='texto-rojo'>SUMYT</span> platform, guaranteeing compliance with current regulations.",
       techTitle: "Technology Development and Requirements",
-      p3: "We implement digital <strong>onboarding</strong> processes for linking new insured parties, streamlining procedures and the issuance of policies efficiently."
+      p3: "We implement digital <strong>onboarding</strong> processes for linking new insured parties, streamlining procedures and the issuance of policies efficiently.",
     },
     marketing: {
       title: "Marketing and Advertising Agency",
@@ -524,14 +556,14 @@ export const translations = {
       p1: "Our <strong>Servitransporte Marketing and Advertising Agency</strong> focuses on brand positioning and demand generation for all holding services, with a special emphasis on <strong>health, education, housing, and technology</strong>.",
       p2: "We have the support of institutions such as <strong>SENA</strong> for the training of our team in digital communication strategies and relationship marketing.",
       techTitle: "Technology Development and Requirements",
-      p3: "We use <strong>neuromarketing</strong> techniques to connect with the <strong>emotional brain</strong> of our users, optimizing the experience on the <span class='texto-rojo'>SUMYT</span> platform and maximizing return on investment."
+      p3: "We use <strong>neuromarketing</strong> techniques to connect with the <strong>emotional brain</strong> of our users, optimizing the experience on the <span class='texto-rojo'>SUMYT</span> platform and maximizing return on investment.",
     },
     juridicos: {
       title: "Legal and Financial Services",
       subtitle: "Servitransporte S.A.S",
       p1: "The <strong>Servitransporte Legal and Economic Services</strong> unit will provide services to both holding companies and platform operators. Accessible rates and payment plans will be offered, with the option of deferred online payments. Additionally, the unit will manage the necessary financing for tourism infrastructure development, executing projects through the <strong>Servitransporte Construction Company</strong>.",
       techTitle: "Technology Development and Requirements",
-      p2: "This service is backed by a solid technological infrastructure, allowing data analysis and online payment management for legal and financial services. These payments can be automatically deducted from transport services and other platform sectors. Being technology-based, implementing digital onboarding strategies for acquiring legal and financial service clients and developing online content and advertising campaigns. This will optimize product marketing and group service improvement through <span class='texto-rojo'>SUMYT</span> digital platforms."
+      p2: "This service is backed by a solid technological infrastructure, allowing data analysis and online payment management for legal and financial services. These payments can be automatically deducted from transport services and other platform sectors. Being technology-based, implementing digital onboarding strategies for acquiring legal and financial service clients and developing online content and advertising campaigns. This will optimize product marketing and group service improvement through <span class='texto-rojo'>SUMYT</span> digital platforms.",
     },
     navbar: {
       home: "Home",
@@ -543,7 +575,7 @@ export const translations = {
       juridicos: "Legal",
       fondo: "Fund",
       innovacion: "Innovation",
-      observatorio: "Observatory"
+      observatorio: "Observatory",
     },
     history: {
       title: "History",
@@ -551,29 +583,31 @@ export const translations = {
         {
           year: "2018",
           title: "Renewing Dreams Foundation",
-          desc: "Support for owners and transporters in the defense of public service rights"
+          desc: "Support for owners and transporters in the defense of public service rights",
         },
         {
           year: "2019",
           title: "Sevitransporte Alliance Group",
-          desc: "Public transport company in public, special service mode and all modalities"
+          desc: "Public transport company in public, special service mode and all modalities",
         },
         {
           year: "2021",
-          title: "Special Transport Services Group of Colombia - Servitransporte",
-          desc: "Holding Development"
+          title:
+            "Special Transport Services Group of Colombia - Servitransporte",
+          desc: "Holding Development",
         },
         {
           year: "Present",
           title: "Unified Mobility and Tourism Services",
-          desc: "<strong><span class='texto-rojo'>SUMYT</span></strong> Technological Platform"
-        }
-      ]
+          desc: "<strong><span class='texto-rojo'>SUMYT</span></strong> Technological Platform",
+        },
+      ],
     },
     cookieConsent: {
-      message: "🍪 We use cookies to improve your experience. You can accept or reject their use.",
+      message:
+        "🍪 We use cookies to improve your experience. You can accept or reject their use.",
       accept: "Accept",
-      reject: "Reject"
+      reject: "Reject",
     },
     footer: {
       contact: "Contact Us",
@@ -592,9 +626,24 @@ export const translations = {
         validations: {
           name: "Name must be between 3 and 50 characters.",
           email: "Please enter a valid email.",
-          message: "Message must be between 10 and 500 characters."
-        }
-      }
-    }
-  }
+          message: "Message must be between 10 and 500 characters.",
+        },
+      },
+    },
+    cotizador: {
+      title: "Service Quoter",
+      subtitle: "Request your custom quote",
+      form: {
+        name: "Full Name",
+        clientEmail: "Client Email",
+        senderEmail: "Sender Email",
+        phone: "Contact Phone",
+        service: "Service Type",
+        details: "Request Details",
+        submit: "Send Request",
+        select: "Select a service",
+        success: "Quote request sent successfully! We will contact you soon.",
+      },
+    },
+  },
 };

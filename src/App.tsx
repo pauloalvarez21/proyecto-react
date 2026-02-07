@@ -14,6 +14,7 @@ import ServiciosJuridicos from "./pages/juridicos/ServiciosJuridicos";
 import InnovacionTecnologia from "./pages/innovacion/InnovacionTecnologia";
 import Observatorio from "./pages/observatorio/Observatorio";
 import Transporte from "./pages/transporte/Transporte";
+import Cotizador from "./pages/cotizador/Cotizador";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/innovacion" element={<InnovacionTecnologia />} />
           <Route path="/observatorio" element={<Observatorio />} />
           <Route path="/transporte" element={<Transporte />} />
+          <Route path="/cotizador" element={<Cotizador />} />
         </Routes>
       </main>
       <Footer />
