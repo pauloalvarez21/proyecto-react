@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import type { Language } from "../../translations/translations";
-import { translations } from "../../translations/translations";
+import type { Language } from "../../translations";
+import { translations } from "../../translations";
 // Ajusta esta importación según la ubicación real de tu hook de idioma
 // Si no tienes este hook expuesto, puedes usar un estado local temporalmente o importar tu store
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import "./Cotizador.css";
+import SuccessPopup from "../../components/SuccessPopup";
 
 // Definición temporal del store si no se puede importar el existente
 // (Esto es solo para asegurar que el componente funcione de forma aislada si la importación falla)
@@ -41,6 +42,7 @@ const Cotizador = () => {
 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -82,7 +84,7 @@ const Cotizador = () => {
 
       const text = await response.text();
       if (text.includes("success")) {
-        alert("¡Enviado! Su cotización ha sido solicitada correctamente.");
+        setShowPopup(true);
         setFormData({
           name: "",
           clientEmail: "",
@@ -107,6 +109,11 @@ const Cotizador = () => {
 
   return (
     <div className="cotizador-page">
+      <SuccessPopup
+        isOpen={showPopup}
+        onClose={() => setShowPopup(false)}
+        message="Su cotización ha sido enviada correctamente."
+      />
       <div className="cotizador-container">
         <div className="cotizador-header">
           <h1>{t.title}</h1>
