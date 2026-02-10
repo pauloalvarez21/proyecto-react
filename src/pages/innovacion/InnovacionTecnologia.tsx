@@ -1,5 +1,5 @@
 import { translations } from "../../translations";
-import { useLanguageStore } from "../../store";
+import { useLanguageStore } from "../../store/useLanguageStore";
 import "./InnovacionTecnologia.css";
 
 import grupo from "../../assets/image/grupo.png";
@@ -13,12 +13,8 @@ const InnovacionTecnologia = () => {
     <div className="innovacion-page">
       {/* Lado izquierdo */}
       <div className="innovacion-left">
-        <h1>
-          {t.title}
-        </h1>
-        <h2>
-          {t.subtitle}
-        </h2>
+        <h1>{t.title}</h1>
+        <h2>{t.subtitle}</h2>
       </div>
 
       {/* Lado derecho */}

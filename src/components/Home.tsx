@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import CookieConsent from "./CookieConsent";
 import "./Home.css";
 import { translations } from "../translations";
-import { useLanguageStore } from "../store";
+import { useLanguageStore } from "../store/useLanguageStore";
 
 // Importar imágenes y videos
 import aca from "../assets/image/aca.jpeg";

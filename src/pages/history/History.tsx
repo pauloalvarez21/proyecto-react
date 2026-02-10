@@ -1,7 +1,7 @@
-import './History.css';
+import "./History.css";
 import grupo from "../../assets/image/grupo.png";
 import sumyt from "../../assets/image/sumyt.png";
-import { useLanguageStore } from "../../store";
+import { useLanguageStore } from "../../store/useLanguageStore";
 import { translations } from "../../translations";
 
 const History = () => {

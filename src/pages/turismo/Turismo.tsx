@@ -1,5 +1,5 @@
 import { translations } from "../../translations";
-import { useLanguageStore } from "../../store";
+import { useLanguageStore } from "../../store/useLanguageStore";
 import "./Turismo.css";
 
 import grupo from "../../assets/image/grupo.png";

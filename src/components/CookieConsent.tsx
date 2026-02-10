@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import "./CookieConsent.css";
 import cookieImg from "../assets/image/cookie.png";
-import { useLanguageStore } from "../store";
+import { useLanguageStore } from "../store/useLanguageStore";
 import { translations } from "../translations";
 
 const CookieConsent = () => {
@@ -52,4 +52,3 @@ const CookieConsent = () => {
 };
 
 export default CookieConsent;
-

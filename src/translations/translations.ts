@@ -245,12 +245,14 @@ export const translations = {
     navbar: {
       home: "Inicio",
       somos: "Quiénes Somos",
+      history: "Historia",
       transporte: "Transporte",
       turismo: "Turismo",
       constructora: "Constructora",
       seguros: "Seguros",
       juridicos: "Jurídicos",
       fondo: "Fondo",
+      marketing: "Marketing y Publicidad",
       innovacion: "Innovación",
       observatorio: "Observatorio",
     },
@@ -288,6 +290,7 @@ export const translations = {
     },
     footer: {
       contact: "Contáctanos",
+      quoter: "Cotizador",
       rights: "Todos los derechos reservados",
       followUs: "Síguenos",
       form: {
@@ -568,12 +571,14 @@ export const translations = {
     navbar: {
       home: "Home",
       somos: "About Us",
+      history: "History",
       transporte: "Transport",
       turismo: "Tourism",
       constructora: "Construction",
       seguros: "Insurance",
       juridicos: "Legal",
       fondo: "Fund",
+      marketing: "Marketing & Advertising",
       innovacion: "Innovation",
       observatorio: "Observatory",
     },
@@ -611,6 +616,7 @@ export const translations = {
     },
     footer: {
       contact: "Contact Us",
+      quoter: "Service Quoter",
       rights: "All rights reserved",
       followUs: "Follow Us",
       form: {

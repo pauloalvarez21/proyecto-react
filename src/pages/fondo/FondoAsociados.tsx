@@ -1,5 +1,5 @@
 import { translations } from "../../translations";
-import { useLanguageStore } from "../../store";
+import { useLanguageStore } from "../../store/useLanguageStore";
 import "./FondoAsociados.css";
 import sumyt from "../../assets/image/sumyt.png";
 import grupo from "../../assets/image/grupo.png";
@@ -37,17 +37,15 @@ const FondoAsociados: React.FC = () => {
           </ul>
           <p dangerouslySetInnerHTML={{ __html: t.p2 }} />
           <br />
-          <p><strong>{t.techTitle}</strong></p>
+          <p>
+            <strong>{t.techTitle}</strong>
+          </p>
           <br />
           <p dangerouslySetInnerHTML={{ __html: t.p3 }} />
         </section>
 
         <section className="fondo-section fondo-footer">
-          <img
-            src={grupo}
-            alt="Grupo Servitransporte"
-            className="fondo-logo"
-          />
+          <img src={grupo} alt="Grupo Servitransporte" className="fondo-logo" />
         </section>
       </main>
     </div>

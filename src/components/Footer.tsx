@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
-import { useLanguageStore } from "../store";
-import { translations } from "../translations";
+import { useLanguageStore } from "../store/useLanguageStore";
+import { translations } from "../translations/translations";
 
 const Footer = () => {
   const [open, setOpen] = useState(false);
@@ -63,7 +64,7 @@ const Footer = () => {
             correo: correo,
             mensaje: mensaje,
           }),
-        }
+        },
       );
 
       const text = await response.text();
@@ -85,6 +86,17 @@ const Footer = () => {
       <button className="contact-btn" onClick={() => setOpen(true)}>
         📞 {t.contact}
       </button>
+      <Link
+        to="/cotizador"
+        className="contact-btn"
+        style={{
+          marginLeft: "10px",
+          textDecoration: "none",
+          display: "inline-block",
+        }}
+      >
+        📝 {t.quoter}
+      </Link>
 
       {open && (
         <div className="modal-overlay">

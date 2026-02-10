@@ -1,6 +1,6 @@
 import React from "react";
 import { translations } from "../../translations/translations";
-import { useLanguageStore } from "../../store";
+import { useLanguageStore } from "../../store/useLanguageStore";
 import "./Constructora.css";
 
 import grupo from "../../assets/image/grupo.png";
@@ -23,9 +23,21 @@ const Constructora = () => {
       {/* Lado derecho */}
       <div className="constructora-right">
         <p className="imagenes-constructora">
-          <img src={constructora1} alt="Constructora" className="constructora-img" />
-          <img src={constructora2} alt="Constructora" className="constructora-img" />
-          <img src={constructora3} alt="Constructora" className="constructora-img" />
+          <img
+            src={constructora1}
+            alt="Constructora"
+            className="constructora-img"
+          />
+          <img
+            src={constructora2}
+            alt="Constructora"
+            className="constructora-img"
+          />
+          <img
+            src={constructora3}
+            alt="Constructora"
+            className="constructora-img"
+          />
         </p>
         <div className="section">
           <p dangerouslySetInnerHTML={{ __html: t.p1 }} />

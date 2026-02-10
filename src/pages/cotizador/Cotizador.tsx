@@ -1,30 +1,8 @@
 import React, { useState } from "react";
-import type { Language } from "../../translations";
-import { translations } from "../../translations";
-// Ajusta esta importación según la ubicación real de tu hook de idioma
-// Si no tienes este hook expuesto, puedes usar un estado local temporalmente o importar tu store
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { translations } from "../../translations/translations";
+import { useLanguageStore } from "../../store/useLanguageStore";
 import "./Cotizador.css";
 import SuccessPopup from "../../components/SuccessPopup";
-
-// Definición temporal del store si no se puede importar el existente
-// (Esto es solo para asegurar que el componente funcione de forma aislada si la importación falla)
-interface LanguageState {
-  language: Language;
-  setLanguage: (language: Language) => void;
-}
-
-// Intentamos usar el store global, si no, usamos uno local por defecto
-const useLanguageStore = create<LanguageState>()(
-  persist(
-    (set) => ({
-      language: "es",
-      setLanguage: (language) => set({ language }),
-    }),
-    { name: "language-storage" },
-  ),
-);
 
 const Cotizador = () => {
   const { language } = useLanguageStore();
@@ -188,10 +166,13 @@ const Cotizador = () => {
                 <option value="turismo">{navT.turismo}</option>
                 <option value="seguros">{navT.seguros}</option>
                 <option value="constructora">{navT.constructora}</option>
-                <option value="juridicos">{navT.juridicos}</option>
+                <option value="juridicos">
+                  {navT.juridicos} y Financieros
+                </option>
                 <option value="marketing">Marketing</option>
-                <option value="fondos">{navT.fondo}</option>
+                <option value="fondos">{navT.fondo} de Asociados</option>
                 <option value="innovacion">{navT.innovacion}</option>
+                <option value="oset">Oset</option>
               </select>
             </div>
 

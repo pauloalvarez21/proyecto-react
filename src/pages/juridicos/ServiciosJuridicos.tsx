@@ -1,6 +1,6 @@
 import React from "react";
 import { translations } from "../../translations/translations";
-import { useLanguageStore } from "../../store";
+import { useLanguageStore } from "../../store/useLanguageStore";
 import "./ServiciosJuridicos.css";
 
 import grupo from "../../assets/image/grupo.png";

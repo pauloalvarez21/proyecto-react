@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import grupo from "../assets/image/grupo.png";
 import sumyt from "../assets/image/sumyt.png";
-import { useLanguageStore } from "../store";
+import { useLanguageStore } from "../store/useLanguageStore";
 import { translations } from "../translations";
 
 const Navbar = () => {
@@ -13,13 +13,13 @@ const Navbar = () => {
 
   const menu = [
     { label: t.somos, path: "/quienes-somos" },
-    { label: translations[language].navbar.home === "Inicio" ? "Historia" : "History", path: "/historia" }, // Handle "History" specifically if not in navbar translations or update them
+    { label: t.history, path: "/historia" },
     { label: t.transporte, path: "/transporte" },
     { label: t.fondo, path: "/fondos" },
     { label: t.seguros, path: "/seguros" },
     { label: t.turismo, path: "/turistico" },
     { label: t.constructora, path: "/constructora" },
-    { label: translations[language].navbar.home === "Inicio" ? "Marketing y Publicidad" : "Marketing & Advertising", path: "/marketing" },
+    { label: t.marketing, path: "/marketing" },
     { label: t.juridicos, path: "/juridicos" },
     { label: t.innovacion, path: "/innovacion" },
     { label: t.observatorio, path: "/observatorio" },
@@ -45,9 +45,11 @@ const Navbar = () => {
           <button
             className="lang-toggle"
             onClick={toggleLanguage}
-            title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+            title={
+              language === "es" ? "Switch to English" : "Cambiar a Español"
+            }
           >
-            {language === 'es' ? '🇺🇸 EN' : '🇪🇸 ES'}
+            {language === "es" ? "🇺🇸 EN" : "🇪🇸 ES"}
           </button>
 
           <button

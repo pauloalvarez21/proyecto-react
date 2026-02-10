@@ -1,5 +1,5 @@
 import { translations } from "../../translations";
-import { useLanguageStore } from "../../store";
+import { useLanguageStore } from "../../store/useLanguageStore";
 import "./Seguros.css";
 
 import grupo from "../../assets/image/grupo.png";
@@ -30,7 +30,9 @@ const Seguros = () => {
           <p dangerouslySetInnerHTML={{ __html: t.p1 }} />
           <p dangerouslySetInnerHTML={{ __html: t.p2 }} />
           <br />
-          <p><strong>{t.techTitle}</strong></p>
+          <p>
+            <strong>{t.techTitle}</strong>
+          </p>
           <br />
           <p dangerouslySetInnerHTML={{ __html: t.p3 }} />
         </div>
