@@ -28,6 +28,8 @@ import img4 from "../assets/image/img4.jpeg";
 import img5 from "../assets/image/img5.jpeg";
 import img6 from "../assets/image/img6.jpeg";
 import img7 from "../assets/image/img7.jpeg";
+import img8 from "../assets/image/img8.jpeg";
+import img9 from "../assets/image/img9.jpeg";
 
 // Tipos
 type Pillar = {
@@ -59,9 +61,10 @@ const youtubeVideos = [
   "https://www.youtube.com/embed/gtaxiqh395Q",
   "https://www.youtube.com/embed/ezErUQuMxKk",
   "https://www.youtube.com/embed/0C3hzjj4SLk",
+  "https://www.youtube.com/embed/gLdRfDGnVO0",
 ];
 
-const images = [img1, img2, img3, img4, img5, img6, img7];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
 const Home = () => {
   const [selectedPillar, setSelectedPillar] = useState<Pillar | null>(null);
